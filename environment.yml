@@ -1,0 +1,21 @@
+name: ml-gen-energy-design
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - jupyterlab
+  - notebook
+  - ipykernel
+  - tensorflow
+  - streamlit
+  - pip
+  - pip:
+      - deap          # For genetic algorithms
+      - ladybug-core  # Ladybug Tools core (check exact package name)
+      - rhinoinside   # If you plan Rhino/Revit integration via Python
+      - openstudio    # OpenStudio API (check install method)

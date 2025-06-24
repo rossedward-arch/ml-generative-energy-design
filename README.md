@@ -1,0 +1,91 @@
+# ⚙️ ML-Generative-Energy-Design
+
+> A research-driven project integrating **machine learning**, **generative design**, and **energy performance simulation** to support early-stage architectural decision-making.
+
+---
+
+## 🚧 Project Status
+This project is under active development as part of a personal research portfolio supporting a potential PhD application at institutions like **UCL Bartlett**.
+
+Expect incomplete features, placeholder content, and ongoing refactoring.
+
+---
+
+## 🎯 Goals
+- ✅ Automate early-stage building layout generation using generative design (e.g. Genetic Algorithms)
+- ✅ Integrate site conditions (EPW weather, solar orientation, etc.)
+- ✅ Optimise designs based on energy use intensity (EUI) and comfort metrics
+- ✅ Provide a decision-support tool for architects and designers
+
+---
+
+## 🛠️ Technologies & Tools
+- Python (Pandas, Scikit-learn, TensorFlow)
+- Grasshopper + Ladybug Tools
+- Revit (geometry extraction + BIM data)
+- Streamlit (interactive design interface)
+- EnergyPlus / OpenStudio (performance simulation)
+- Git for version control
+
+---
+
+## 🔬 Research Themes
+This work is informed by research in:
+- Generative design for architecture and layout planning
+- Machine learning models for energy prediction
+- Early-stage performance-based design
+- Passivhaus and zero-energy building standards
+
+📖 See `docs/literature_review.md` for citations and background readings.
+
+---
+
+## 📚 Learning Roadmap & Skills
+This project is also part of a structured self-learning journey to prepare for PhD-level research. Key learning milestones:
+
+| Stage | Topic | Tools / Books | Outcome |
+|-------|----------------------------|--------------------------|---------|
+| 1     | Python Fundamentals        | *Python Crash Course*    | Basic scripting and data types |
+| 2     | Data Analysis              | *Python for Data Analysis* | Manipulate EPW, CSV data |
+| 3     | Data Visualisation         | Matplotlib / Seaborn     | Visualise temp, loads, EUI |
+| 4     | Machine Learning (Scikit)  | *Hands-On ML* by Géron   | Train energy prediction models |
+| 5     | Generative Design          | DEAP, Grasshopper        | Optimise layouts with GA |
+| 6     | Simulation Integration     | Ladybug, OpenStudio      | Link ML to real energy engines |
+| 7     | UI / App Interface         | Streamlit / Dash         | Design explorer prototype |
+
+📁 See project notebooks and `docs/dev_log.md` for progress.
+
+---
+
+## 📁 Repo Structure
+
+```text
+ml-generative-energy-design/
+│
+├── data/                        ← Raw & processed datasets (CSV, JSON, EPW)
+├── notebooks/                  ← Jupyter Notebooks for ML and analysis
+├── src/                        ← Core Python modules
+├── results/                    ← Model outputs, charts, and metrics
+├── tools/                      ← Scripts for Grasshopper/Ladybug/Revit
+├── docs/                       ← Research logs, literature review, dev notes
+├── learning_roadmap/           ← Books, projects, tutorials, learning logs
+├── app/                        ← Optional UI with Streamlit or Dash
+│
+├── .gitignore
+├── environment.yml             ← Conda environment
+├── LICENSE
+├── README.md
+├── CITATION.cff
+
+```
+---
+## 📚 References
+See `docs/literature_review.md` for citations and background readings.
+
+
+## 👤 Author
+Ross Edward — MSc in Architectural Technology and Energy Performance, Edinburgh Napier University  
+
+## 🧪 Citation
+Please cite this repo using the `CITATION.cff` file if used in publications.
+

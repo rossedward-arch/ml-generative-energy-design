@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+title: "ML-Driven Generative Design for Energy-Efficient Architecture"
+authors:
+  - family-names: Edward
+    given-names: Ross
+    orcid: "https://orcid.org/0009-0007-6509-5943"
+date-released: 2025-06-19
+version: 0.1.0
+repository-code: "https://github.com/rossedward-arch/ml-generative-energy-design"
+license: MIT
+keywords:
+  - machine learning
+  - generative design
+  - energy performance
+  - architecture
+  - simulation
+  - early-stage design
+abstract: >
+  This project explores how machine learning and generative algorithms can support architects in 
+  designing energy-efficient buildings during early design stages. It integrates site constraints, 
+  user requirements, and energy simulation feedback to iteratively propose optimized spatial layouts.
