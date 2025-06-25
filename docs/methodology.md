@@ -47,16 +47,16 @@ flowchart TD
 
     I --> J["Energy Performance Predictions\n(EUI, Comfort, Loads)"]
 
-    style A fill:#e6f7ff,stroke:#3399cc
-    style E fill:#e6f7ff,stroke:#3399cc
-    style F fill:#e6f7ff,stroke:#3399cc
-    style B fill:#fff2cc,stroke:#e69138
-    style C fill:#fff2cc,stroke:#e69138
-    style D fill:#fde9d9,stroke:#d6604d
-    style G fill:#f4cccc,stroke:#cc0000
-    style H fill:#f4cccc,stroke:#cc0000
-    style I fill:#d9ead3,stroke:#38761d
-    style J fill:#d9ead3,stroke:#38761d
+    style A fill:#e6f7ff,stroke:#3399cc,color:#000000
+    style E fill:#e6f7ff,stroke:#3399cc,color:#000000
+    style F fill:#e6f7ff,stroke:#3399cc,color:#000000
+    style B fill:#fff2cc,stroke:#e69138,color:#000000
+    style C fill:#fff2cc,stroke:#e69138,color:#000000
+    style D fill:#fde9d9,stroke:#d6604d,color:#000000
+    style G fill:#f4cccc,stroke:#cc0000,color:#000000
+    style H fill:#f4cccc,stroke:#cc0000,color:#000000
+    style I fill:#d9ead3,stroke:#38761d,color:#000000
+    style J fill:#d9ead3,stroke:#38761d,color:#000000
 ```
 
 ### Data Preprocessing and Feature Engineering
@@ -133,42 +133,13 @@ flowchart TD
     F["Baselines\n(Rule-of-thumb / Simulation-only)"] --> D
     G["Ensemble Models\n(Stacking / Averaging)"] --> E
 
-    style A fill:#e6f7ff,stroke:#3399cc
-    style B fill:#fff2cc,stroke:#e69138
-    style C fill:#fde9d9,stroke:#d6604d
-    style D fill:#f4cccc,stroke:#cc0000
-    style E fill:#d9ead3,stroke:#38761d
-    style F fill:#cfe2f3,stroke:#3d85c6
-    style G fill:#c9daf8,stroke:#6d9eeb
-## 🔄 Data Flow Diagram
-
-```mermaid
-flowchart TD
-    A["Building Geometry\n(BIM / Revit / IFC)"] --> B["Feature Extraction"]
-    B --> C["Simulation Configuration\n(IDF / OpenStudio)"]
-    C --> D["Energy Simulation\n(EnergyPlus)"]
-
-    E["Climate & Weather Data\n(EPW files)"] --> B
-    F["Performance Benchmarks\n(Passivhaus / Net Zero)"] --> C
-
-    D --> G["Simulation Results\n(CSV / SQLite)"]
-    B --> H["ML-ready Features\n(CSV / Parquet)"]
-
-    G --> I["Model Training\n(ML Algorithms)"]
-    H --> I
-
-    I --> J["Energy Performance Predictions\n(EUI, Comfort, Loads)"]
-
-    style A fill:#e6f7ff,stroke:#3399cc
-    style E fill:#e6f7ff,stroke:#3399cc
-    style F fill:#e6f7ff,stroke:#3399cc
-    style B fill:#fff2cc,stroke:#e69138
-    style C fill:#fff2cc,stroke:#e69138
-    style D fill:#fde9d9,stroke:#d6604d
-    style G fill:#f4cccc,stroke:#cc0000
-    style H fill:#f4cccc,stroke:#cc0000
-    style I fill:#d9ead3,stroke:#38761d
-    style J fill:#d9ead3,stroke:#38761d
+    style A fill:#e6f7ff,stroke:#3399cc,color:#000000
+    style B fill:#fff2cc,stroke:#e69138,color:#000000
+    style C fill:#fde9d9,stroke:#d6604d,color:#000000
+    style D fill:#f4cccc,stroke:#cc0000,color:#000000
+    style E fill:#d9ead3,stroke:#38761d,color:#000000
+    style F fill:#cfe2f3,stroke:#3d85c6,color:#000000
+    style G fill:#c9daf8,stroke:#6d9eeb,color:#000000
 ```
 
 ## 4. Generative Design Workflow
@@ -203,43 +174,14 @@ flowchart TD
     G --> H["Next Generation Designs"]
     H --> C
 
-    style A fill:#e0f7fa,stroke:#00acc1
-    style B fill:#f1f8e9,stroke:#558b2f
-    style C fill:#fff9c4,stroke:#fbc02d
-    style D fill:#f0f4c3,stroke:#c0ca33
-    style E fill:#e1bee7,stroke:#8e24aa
-    style F fill:#ffccbc,stroke:#e64a19
-    style G fill:#ffe082,stroke:#ff6f00
-    style H fill:#c8e6c9,stroke:#43a047
-## 🔄 Data Flow Diagram
-
-```mermaid
-flowchart TD
-    A["Building Geometry\n(BIM / Revit / IFC)"] --> B["Feature Extraction"]
-    B --> C["Simulation Configuration\n(IDF / OpenStudio)"]
-    C --> D["Energy Simulation\n(EnergyPlus)"]
-
-    E["Climate & Weather Data\n(EPW files)"] --> B
-    F["Performance Benchmarks\n(Passivhaus / Net Zero)"] --> C
-
-    D --> G["Simulation Results\n(CSV / SQLite)"]
-    B --> H["ML-ready Features\n(CSV / Parquet)"]
-
-    G --> I["Model Training\n(ML Algorithms)"]
-    H --> I
-
-    I --> J["Energy Performance Predictions\n(EUI, Comfort, Loads)"]
-
-    style A fill:#e6f7ff,stroke:#3399cc
-    style E fill:#e6f7ff,stroke:#3399cc
-    style F fill:#e6f7ff,stroke:#3399cc
-    style B fill:#fff2cc,stroke:#e69138
-    style C fill:#fff2cc,stroke:#e69138
-    style D fill:#fde9d9,stroke:#d6604d
-    style G fill:#f4cccc,stroke:#cc0000
-    style H fill:#f4cccc,stroke:#cc0000
-    style I fill:#d9ead3,stroke:#38761d
-    style J fill:#d9ead3,stroke:#38761d
+    style A fill:#e0f7fa,stroke:#00acc1,color:#000000
+    style B fill:#f1f8e9,stroke:#558b2f,color:#000000
+    style C fill:#fff9c4,stroke:#fbc02d,color:#000000
+    style D fill:#f0f4c3,stroke:#c0ca33,color:#000000
+    style E fill:#e1bee7,stroke:#8e24aa,color:#000000
+    style F fill:#ffccbc,stroke:#e64a19,color:#000000
+    style G fill:#ffe082,stroke:#ff6f00,color:#000000
+    style H fill:#c8e6c9,stroke:#43a047,color:#000000
 ```
 
 ## 5. Energy Simulation Integration
@@ -276,45 +218,16 @@ graph TD
     I --> A
     J --> A
 
-    style A fill:#f0f8ff,stroke:#4682b4
-    style B fill:#e6f7ff,stroke:#66afe9
-    style C fill:#fde9d9,stroke:#d6604d
-    style D fill:#fbe9e7,stroke:#ef6c00
-    style E fill:#fff8dc,stroke:#e6ac00
-    style F fill:#e1f5fe,stroke:#0288d1
-    style G fill:#dcedc8,stroke:#7cb342
-    style H fill:#ffe0b2,stroke:#f57c00
-    style I fill:#f3e5f5,stroke:#9c27b0
-    style J fill:#e8f5e9,stroke:#43a047
-## 🔄 Data Flow Diagram
-
-```mermaid
-flowchart TD
-    A["Building Geometry\n(BIM / Revit / IFC)"] --> B["Feature Extraction"]
-    B --> C["Simulation Configuration\n(IDF / OpenStudio)"]
-    C --> D["Energy Simulation\n(EnergyPlus)"]
-
-    E["Climate & Weather Data\n(EPW files)"] --> B
-    F["Performance Benchmarks\n(Passivhaus / Net Zero)"] --> C
-
-    D --> G["Simulation Results\n(CSV / SQLite)"]
-    B --> H["ML-ready Features\n(CSV / Parquet)"]
-
-    G --> I["Model Training\n(ML Algorithms)"]
-    H --> I
-
-    I --> J["Energy Performance Predictions\n(EUI, Comfort, Loads)"]
-
-    style A fill:#e6f7ff,stroke:#3399cc
-    style E fill:#e6f7ff,stroke:#3399cc
-    style F fill:#e6f7ff,stroke:#3399cc
-    style B fill:#fff2cc,stroke:#e69138
-    style C fill:#fff2cc,stroke:#e69138
-    style D fill:#fde9d9,stroke:#d6604d
-    style G fill:#f4cccc,stroke:#cc0000
-    style H fill:#f4cccc,stroke:#cc0000
-    style I fill:#d9ead3,stroke:#38761d
-    style J fill:#d9ead3,stroke:#38761d
+    style A fill:#f0f8ff,stroke:#4682b4,color:#000000
+    style B fill:#e6f7ff,stroke:#66afe9,color:#000000
+    style C fill:#fde9d9,stroke:#d6604d,color:#000000
+    style D fill:#fbe9e7,stroke:#ef6c00,color:#000000
+    style E fill:#fff8dc,stroke:#e6ac00,color:#000000
+    style F fill:#e1f5fe,stroke:#0288d1,color:#000000
+    style G fill:#dcedc8,stroke:#7cb342,color:#000000
+    style H fill:#ffe0b2,stroke:#f57c00,color:#000000
+    style I fill:#f3e5f5,stroke:#9c27b0,color:#000000
+    style J fill:#e8f5e9,stroke:#43a047,color:#000000
 ```
 
 ## 6. Software Tools & Environment
@@ -423,51 +336,22 @@ flowchart TD
     A7["User Constraints\nGerber et al., 2012"] --> B7["Designer-in-the-loop optimization"]
     A8["Domain Transferability\nZhang et al., 2020"] --> B8["Out-of-sample & ensemble testing"]
 
-    style A1 fill:#f9f,stroke:#333
-    style A2 fill:#f9f,stroke:#333
-    style A3 fill:#f9f,stroke:#333
-    style A4 fill:#f9f,stroke:#333
-    style A5 fill:#f9f,stroke:#333
-    style A6 fill:#f9f,stroke:#333
-    style A7 fill:#f9f,stroke:#333
-    style A8 fill:#f9f,stroke:#333
-    style B1 fill:#d9fdd3,stroke:#333
-    style B2 fill:#d9fdd3,stroke:#333
-    style B3 fill:#d9fdd3,stroke:#333
-    style B4 fill:#d9fdd3,stroke:#333
-    style B5 fill:#d9fdd3,stroke:#333
-    style B6 fill:#d9fdd3,stroke:#333
-    style B7 fill:#d9fdd3,stroke:#333
-    style B8 fill:#d9fdd3,stroke:#333
-## 🔄 Data Flow Diagram
-
-```mermaid
-flowchart TD
-    A["Building Geometry\n(BIM / Revit / IFC)"] --> B["Feature Extraction"]
-    B --> C["Simulation Configuration\n(IDF / OpenStudio)"]
-    C --> D["Energy Simulation\n(EnergyPlus)"]
-
-    E["Climate & Weather Data\n(EPW files)"] --> B
-    F["Performance Benchmarks\n(Passivhaus / Net Zero)"] --> C
-
-    D --> G["Simulation Results\n(CSV / SQLite)"]
-    B --> H["ML-ready Features\n(CSV / Parquet)"]
-
-    G --> I["Model Training\n(ML Algorithms)"]
-    H --> I
-
-    I --> J["Energy Performance Predictions\n(EUI, Comfort, Loads)"]
-
-    style A fill:#e6f7ff,stroke:#3399cc
-    style E fill:#e6f7ff,stroke:#3399cc
-    style F fill:#e6f7ff,stroke:#3399cc
-    style B fill:#fff2cc,stroke:#e69138
-    style C fill:#fff2cc,stroke:#e69138
-    style D fill:#fde9d9,stroke:#d6604d
-    style G fill:#f4cccc,stroke:#cc0000
-    style H fill:#f4cccc,stroke:#cc0000
-    style I fill:#d9ead3,stroke:#38761d
-    style J fill:#d9ead3,stroke:#38761d
+    style A1 fill:#f9f,stroke:#333,color:#000000
+    style A2 fill:#f9f,stroke:#333,color:#000000
+    style A3 fill:#f9f,stroke:#333,color:#000000
+    style A4 fill:#f9f,stroke:#333,color:#000000
+    style A5 fill:#f9f,stroke:#333,color:#000000
+    style A6 fill:#f9f,stroke:#333,color:#000000
+    style A7 fill:#f9f,stroke:#333,color:#000000
+    style A8 fill:#f9f,stroke:#333,color:#000000
+    style B1 fill:#d9fdd3,stroke:#333,color:#000000
+    style B2 fill:#d9fdd3,stroke:#333,color:#000000
+    style B3 fill:#d9fdd3,stroke:#333,color:#000000
+    style B4 fill:#d9fdd3,stroke:#333,color:#000000
+    style B5 fill:#d9fdd3,stroke:#333,color:#000000
+    style B6 fill:#d9fdd3,stroke:#333,color:#000000
+    style B7 fill:#d9fdd3,stroke:#333,color:#000000
+    style B8 fill:#d9fdd3,stroke:#333,color:#000000
 ```
 
 ## 8. Future Work
@@ -532,35 +416,6 @@ flowchart TD
     A --> Short-Term
     A --> Medium-Term
     A --> Long-Term
-## 🔄 Data Flow Diagram
-
-```mermaid
-flowchart TD
-    A["Building Geometry\n(BIM / Revit / IFC)"] --> B["Feature Extraction"]
-    B --> C["Simulation Configuration\n(IDF / OpenStudio)"]
-    C --> D["Energy Simulation\n(EnergyPlus)"]
-
-    E["Climate & Weather Data\n(EPW files)"] --> B
-    F["Performance Benchmarks\n(Passivhaus / Net Zero)"] --> C
-
-    D --> G["Simulation Results\n(CSV / SQLite)"]
-    B --> H["ML-ready Features\n(CSV / Parquet)"]
-
-    G --> I["Model Training\n(ML Algorithms)"]
-    H --> I
-
-    I --> J["Energy Performance Predictions\n(EUI, Comfort, Loads)"]
-
-    style A fill:#e6f7ff,stroke:#3399cc
-    style E fill:#e6f7ff,stroke:#3399cc
-    style F fill:#e6f7ff,stroke:#3399cc
-    style B fill:#fff2cc,stroke:#e69138
-    style C fill:#fff2cc,stroke:#e69138
-    style D fill:#fde9d9,stroke:#d6604d
-    style G fill:#f4cccc,stroke:#cc0000
-    style H fill:#f4cccc,stroke:#cc0000
-    style I fill:#d9ead3,stroke:#38761d
-    style J fill:#d9ead3,stroke:#38761d
 ```
 
 Future Work Roadmap
@@ -653,43 +508,15 @@ flowchart TD
     linkStyle 13 stroke:#9b2226,stroke-width:2px,stroke-dasharray:5,5
     linkStyle 14 stroke:#0b3d91,stroke-width:2px,stroke-dasharray:5,5
 
-    %% Legend definition below main chart
-    subgraph LEGEND [Legend]
+    %% Vertical legend using separate flow
+    subgraph LegendColumn[Legend]
         direction TB
-        ML["■ ML-driven steps"]:::mlStep
-        SIM["■ Simulation-driven steps"]:::simStep
-        HUMAN["■ Human-in-the-loop steps"]:::humanStep
-        DEFAULT["■ Other / Start & End"]:::defaultStep
+        L1["■ ML-driven steps"]:::mlStep
+        L2["■ Simulation-driven steps"]:::simStep
+        L3["■ Human-in-the-loop steps"]:::humanStep
+        L4["■ Other / Start & End"]:::defaultStep
+        L1 --> L2 --> L3 --> L4
     end
-## 🔄 Data Flow Diagram
-
-```mermaid
-flowchart TD
-    A["Building Geometry\n(BIM / Revit / IFC)"] --> B["Feature Extraction"]
-    B --> C["Simulation Configuration\n(IDF / OpenStudio)"]
-    C --> D["Energy Simulation\n(EnergyPlus)"]
-
-    E["Climate & Weather Data\n(EPW files)"] --> B
-    F["Performance Benchmarks\n(Passivhaus / Net Zero)"] --> C
-
-    D --> G["Simulation Results\n(CSV / SQLite)"]
-    B --> H["ML-ready Features\n(CSV / Parquet)"]
-
-    G --> I["Model Training\n(ML Algorithms)"]
-    H --> I
-
-    I --> J["Energy Performance Predictions\n(EUI, Comfort, Loads)"]
-
-    style A fill:#e6f7ff,stroke:#3399cc
-    style E fill:#e6f7ff,stroke:#3399cc
-    style F fill:#e6f7ff,stroke:#3399cc
-    style B fill:#fff2cc,stroke:#e69138
-    style C fill:#fff2cc,stroke:#e69138
-    style D fill:#fde9d9,stroke:#d6604d
-    style G fill:#f4cccc,stroke:#cc0000
-    style H fill:#f4cccc,stroke:#cc0000
-    style I fill:#d9ead3,stroke:#38761d
-    style J fill:#d9ead3,stroke:#38761d
 ```
 
 # References
