@@ -27,25 +27,24 @@ The project utilizes diverse datasets to support machine learning and energy sim
 > To address variability in design and climate conditions, uncertainty in inputs—such as occupancy schedules and weather profiles—is handled using stochastic sampling or Monte Carlo simulation, enabling more robust performance predictions across probabilistic design scenarios.
 
 ---
-
 ### 🔄 Data Flow Diagram
 
 ```mermaid
 flowchart TD
-    A[Building Geometry<br/>(BIM / Revit / IFC)] --> B[Feature Extraction]
-    B --> C[Simulation Configuration<br/>(IDF / OpenStudio)]
-    C --> D[Energy Simulation<br/>(EnergyPlus)]
+    A["Building Geometry\n(BIM / Revit / IFC)"] --> B["Feature Extraction"]
+    B --> C["Simulation Configuration\n(IDF / OpenStudio)"]
+    C --> D["Energy Simulation\n(EnergyPlus)"]
 
-    E[Climate & Weather Data<br/>(EPW files)] --> B
-    F[Performance Benchmarks<br/>(Passivhaus / Net Zero)] --> C
+    E["Climate & Weather Data\n(EPW files)"] --> B
+    F["Performance Benchmarks\n(Passivhaus / Net Zero)"] --> C
 
-    D --> G[Simulation Results<br/>(CSV / SQLite)]
-    B --> H[ML-ready Features<br/>(CSV / Parquet)]
+    D --> G["Simulation Results\n(CSV / SQLite)"]
+    B --> H["ML-ready Features\n(CSV / Parquet)"]
 
-    G --> I[Model Training<br/>(ML Algorithms)]
+    G --> I["Model Training\n(ML Algorithms)"]
     H --> I
 
-    I --> J[Energy Performance Predictions<br/>(EUI, Comfort, Loads)]
+    I --> J["Energy Performance Predictions\n(EUI, Comfort, Loads)"]
 
     style A fill:#e6f7ff,stroke:#3399cc
     style E fill:#e6f7ff,stroke:#3399cc
@@ -58,7 +57,6 @@ flowchart TD
     style I fill:#d9ead3,stroke:#38761d
     style J fill:#d9ead3,stroke:#38761d
 
----
 ### Data Preprocessing and Feature Engineering
 
 Effective preprocessing is critical to ensure model accuracy and interpretability:
@@ -125,13 +123,13 @@ Effective preprocessing is critical to ensure model accuracy and interpretabilit
 
 ```mermaid
 flowchart TD
-    A[Input Features<br/>(Design + Climate + Envelope)] --> B[Model Training<br/>(Supervised Learning)]
-    B --> C[Validation<br/>(Cross-validation / Tuning)]
-    C --> D[Testing<br/>(Performance Metrics)]
-    D --> E[Energy & Comfort Predictions]
+    A["Input Features\n(Design + Climate + Envelope)"] --> B["Model Training\n(Supervised Learning)"]
+    B --> C["Validation\n(Cross-validation / Tuning)"]
+    C --> D["Testing\n(Performance Metrics)"]
+    D --> E["Energy & Comfort Predictions"]
 
-    F[Baselines<br/>(Rule-of-thumb / Simulation-only)] --> D
-    G[Ensemble Models<br/>(Stacking / Averaging)] --> E
+    F["Baselines\n(Rule-of-thumb / Simulation-only)"] --> D
+    G["Ensemble Models\n(Stacking / Averaging)"] --> E
 
     style A fill:#e6f7ff,stroke:#3399cc
     style B fill:#fff2cc,stroke:#e69138
@@ -141,7 +139,6 @@ flowchart TD
     style F fill:#cfe2f3,stroke:#3d85c6
     style G fill:#c9daf8,stroke:#6d9eeb
 
----
 
 ## 4. Generative Design Workflow
 
@@ -166,13 +163,13 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A[Initial Design Parameters<br/>(Bounding Boxes, Adjacency, Splines)] --> B[Encoding into Genotype]
-    B --> C[Genetic Algorithm<br/>(Selection, Crossover, Mutation)]
-    C --> D[Candidate Layouts]
-    D --> E[Simulation & Evaluation<br/>(EnergyPlus / Daylight Tools)]
-    E --> F[Performance Metrics<br/>(EUI, Comfort, Daylight)]
-    F --> G[Fitness Scoring & Pareto Ranking<br/>(NSGA-II)]
-    G --> H[Next Generation Designs]
+    A["Initial Design Parameters\n(Bounding Boxes, Adjacency, Splines)"] --> B["Encoding into Genotype"]
+    B --> C["Genetic Algorithm\n(Selection, Crossover, Mutation)"]
+    C --> D["Candidate Layouts"]
+    D --> E["Simulation & Evaluation\n(EnergyPlus / Daylight Tools)"]
+    E --> F["Performance Metrics\n(EUI, Comfort, Daylight)"]
+    F --> G["Fitness Scoring & Pareto Ranking\n(NSGA-II)"]
+    G --> H["Next Generation Designs"]
     H --> C
 
     style A fill:#e0f7fa,stroke:#00acc1
@@ -184,8 +181,6 @@ flowchart TD
     style G fill:#ffe082,stroke:#ff6f00
     style H fill:#c8e6c9,stroke:#43a047
 
-
----
 
 ## 5. Energy Simulation Integration
 
@@ -209,15 +204,15 @@ flowchart TD
 
 ```mermaid
 graph TD
-    A[Parametric Geometry Definition<br>(Grasshopper + Ladybug)] --> B[Simulation Input Generation<br>(IDF/JSON)]
-    B --> C[Energy Simulation<br>(EnergyPlus / OpenStudio)]
-    C --> D[Raw Simulation Output]
-    D --> E[Output Processing<br>(Smoothing & Aggregation)]
-    E --> F[ML Model Retraining<br>(Prediction Refinement)]
-    F --> G[Generative Design Feedback Loop<br>(Fitness Evaluation)]
-    G --> H{Designer-In-The-Loop?}
-    H -- Yes --> I[Manual Design Adjustment]
-    H -- No --> J[Automated Next Iteration]
+    A["Parametric Geometry Definition\n(Grasshopper + Ladybug)"] --> B["Simulation Input Generation\n(IDF/JSON)"]
+    B --> C["Energy Simulation\n(EnergyPlus / OpenStudio)"]
+    C --> D["Raw Simulation Output"]
+    D --> E["Output Processing\n(Smoothing & Aggregation)"]
+    E --> F["ML Model Retraining\n(Prediction Refinement)"]
+    F --> G["Generative Design Feedback Loop\n(Fitness Evaluation)"]
+    G --> H{"Designer-In-The-Loop?"}
+    H -- Yes --> I["Manual Design Adjustment"]
+    H -- No --> J["Automated Next Iteration"]
     I --> A
     J --> A
 
@@ -232,7 +227,6 @@ graph TD
     style I fill:#f3e5f5,stroke:#9c27b0
     style J fill:#e8f5e9,stroke:#43a047
 
----
 
 ## 6. Software Tools & Environment
 
@@ -331,14 +325,14 @@ This research involves several technical and practical challenges that influence
 
 ```mermaid
 flowchart TD
-    A1[Data Limitations<br><sub>Kotsiantis et al., 2006</sub>] --> B1[Expand datasets or use transfer learning]
-    A2[Model Simplifications<br><sub>Andersen et al., 2014</sub>] --> B2[Stochastic or hybrid models]
-    A3[Computational Cost<br><sub>Zhao et al., 2017</sub>] --> B3[Parallel/surrogate models]
-    A4[Simulation Assumptions<br><sub>Mahdavi & Tahmasebi, 2016</sub>] --> B4[Monte Carlo sampling]
-    A5[Prediction Gaps<br><sub>ASHRAE, 2014</sub>] --> B5[Post-occupancy calibration]
-    A6[Overfitting Risk<br><sub>Goodfellow et al., 2016</sub>] --> B6[Regularization & cross-validation]
-    A7[User Constraints<br><sub>Gerber et al., 2012</sub>] --> B7[Designer-in-the-loop optimization]
-    A8[Domain Transferability<br><sub>Zhang et al., 2020</sub>] --> B8[Out-of-sample & ensemble testing]
+    A1["Data Limitations\nKotsiantis et al., 2006"] --> B1["Expand datasets or use transfer learning"]
+    A2["Model Simplifications\nAndersen et al., 2014"] --> B2["Stochastic or hybrid models"]
+    A3["Computational Cost\nZhao et al., 2017"] --> B3["Parallel/surrogate models"]
+    A4["Simulation Assumptions\nMahdavi & Tahmasebi, 2016"] --> B4["Monte Carlo sampling"]
+    A5["Prediction Gaps\nASHRAE, 2014"] --> B5["Post-occupancy calibration"]
+    A6["Overfitting Risk\nGoodfellow et al., 2016"] --> B6["Regularization & cross-validation"]
+    A7["User Constraints\nGerber et al., 2012"] --> B7["Designer-in-the-loop optimization"]
+    A8["Domain Transferability\nZhang et al., 2020"] --> B8["Out-of-sample & ensemble testing"]
 
     style A1 fill:#f9f,stroke:#333
     style A2 fill:#f9f,stroke:#333
@@ -357,7 +351,6 @@ flowchart TD
     style B7 fill:#d9fdd3,stroke:#333
     style B8 fill:#d9fdd3,stroke:#333
 
----
 
 ## 8. Future Work
 
@@ -391,29 +384,37 @@ This research opens several pathways for future development, ranging from short-
 flowchart TD
     A[Future Work]
 
-    %% Short-Term
-    A --> ST[Short-Term]
-    ST --> ST1[Expand training datasets (types, climates)]
-    ST --> ST2[Enhance interpretability (SHAP, explainable ML)]
-    ST --> ST3[Transferability tests across design stages]
-    ST --> ST4[Occupant behavior & adaptive control modeling]
-    ST --> ST5[Develop intuitive user interfaces]
-    ST --> ST6[Human feedback via visual analytics & preference learning]
-    ST --> ST7[Tutorials for learning roadmap stages]
+    subgraph Short-Term
+        direction TB
+        ST1[Expand training datasets (types, climates)]
+        ST2[Enhance interpretability (SHAP, explainable ML)]
+        ST3[Transferability tests across design stages]
+        ST4[Occupant behavior & adaptive control modeling]
+        ST5[Develop intuitive user interfaces]
+        ST6[Human feedback via visual analytics & preference learning]
+        ST7[Tutorials for learning roadmap stages]
+    end
 
-    %% Medium-Term
-    A --> MT[Medium-Term]
-    MT --> MT1[Real-time sensor data integration]
-    MT --> MT2[Hybrid workflows: measured + simulated data]
-    MT --> MT3[Whole Life Building Carbon Calculations (OneClick LCA, eTool)]
-    MT --> MT4[Enhanced integration & automation of ML + generative + simulation]
-    MT --> MT5[Co-simulation with Radiance, CFD, occupancy simulators]
+    subgraph Medium-Term
+        direction TB
+        MT1[Real-time sensor data integration]
+        MT2[Hybrid workflows: measured + simulated data]
+        MT3[Whole Life Building Carbon Calculations (OneClick LCA, eTool)]
+        MT4[Enhanced integration & automation of ML + generative + simulation]
+        MT5[Co-simulation with Radiance, CFD, occupancy simulators]
+    end
 
-    %% Long-Term
-    A --> LT[Long-Term]
-    LT --> LT1[Digital Twin framework for monitoring & predictive maintenance]
-    LT --> LT2[Ongoing model retraining from real-world data]
-    LT --> LT3[City-scale integration for urban generative design & planning]
+    subgraph Long-Term
+        direction TB
+        LT1[Digital Twin framework for monitoring & predictive maintenance]
+        LT2[Ongoing model retraining from real-world data]
+        LT3[City-scale integration for urban generative design & planning]
+    end
+
+    A --> Short-Term
+    A --> Medium-Term
+    A --> Long-Term
+
 
 Future Work Roadmap
 ───────────────────────────────────────────────────────────────────
@@ -468,7 +469,7 @@ Future Work Roadmap
 
 ## Methodology Workflow Diagram
 
-mermaid
+```mermaid
 flowchart TD
     %% Define styles for different categories
     classDef mlStep fill:#a2d2ff,stroke:#0b3d91,stroke-width:2px,color:#000
@@ -513,6 +514,7 @@ flowchart TD
         HUMAN["■ Human-in-the-loop steps"]:::humanStep
         DEFAULT["■ Other / Start & End"]:::defaultStep
     end
+
 
 # References
 
