@@ -161,7 +161,7 @@ flowchart TD
 
 ---
 
-### 🧬 Generative Design and Simulation Loop (Mermaid)
+### 🧬 Generative Design and Simulation Loop
 
 ```mermaid
 flowchart TD
@@ -361,7 +361,7 @@ This research opens several pathways for future development, ranging from short-
 ### 🔹 Short-Term
 
 - Expand the diversity and volume of training datasets across more building types, broader typologies, and diverse climatic zones.
-- Enhance model interpretability using SHAP values and other explainable ML techniques (Lundberg & Lee, 2017).
+- Enhance model interpretability using **SHAP values** and other explainable ML techniques (Lundberg & Lee, 2017).
 - Conduct transferability tests on different design stages and building typologies.
 - Incorporate occupant behavior modeling and adaptive control strategies to improve prediction realism (Andersen et al., 2014).
 - Develop more intuitive, user-friendly interfaces for architects and designers.
@@ -382,54 +382,58 @@ This research opens several pathways for future development, ranging from short-
 - Enable ongoing model retraining based on real-world building performance and user behavior feedback.
 - Integrate with city-scale energy and climate models for urban-scale generative design and planning.
 
+### 🛠️ Future Work Roadmap for Energy-Efficient Architectural Design
+  
 ```mermaid
-flowchart TD
+graph LR
+    %% Nodes
     A[Future Work]
 
-    subgraph Short-Term
+    subgraph ST["Short-Term"]
         direction TB
-        ST1[Expand training datasets (types, climates)]
-        ST2[Enhance interpretability (SHAP, explainable ML)]
-        ST3[Transferability tests across design stages]
-        ST4[Occupant behavior & adaptive control modeling]
-        ST5[Develop intuitive user interfaces]
-        ST6[Human feedback via visual analytics & preference learning]
-        ST7[Tutorials for learning roadmap stages]
+        ST1[Expand datasets]
+        ST2[Enhance interpretability]
+        ST3[Transferability tests]
+        ST4[Occupant behavior modeling]
     end
 
-    subgraph Medium-Term
+    subgraph MT["Medium-Term"]
         direction TB
-        MT1[Real-time sensor data integration]
-        MT2[Hybrid workflows: measured + simulated data]
-        MT3[Whole Life Building Carbon Calculations (OneClick LCA, eTool)]
-        MT4[Enhanced integration & automation of ML + generative + simulation]
-        MT5[Co-simulation with Radiance, CFD, occupancy simulators]
+        MT1[Real-time sensor data]
+        MT2[Hybrid workflows]
+        MT3[Whole Life Carbon Calculations]
+        MT4[Automation integration]
     end
 
-    subgraph Long-Term
+    subgraph LT["Long-Term"]
         direction TB
-        LT1[Digital Twin framework for monitoring & predictive maintenance]
-        LT2[Ongoing model retraining from real-world data]
-        LT3[City-scale integration for urban generative design & planning]
+        LT1[Digital Twin framework]
+        LT2[Model retraining]
+        LT3[City-scale integration]
     end
 
-    A --> Short-Term
-    A --> Medium-Term
-    A --> Long-Term
+    %% Connections
+    A --> ST
+    A --> MT
+    A --> LT
+
+    %% Styles
+    classDef shortTerm fill:#a2d2ff,stroke:#0b3d91,stroke-width:2px,color:#000
+    classDef mediumTerm fill:#ffb4a2,stroke:#9b2226,stroke-width:2px,color:#000
+    classDef longTerm fill:#caffbf,stroke:#2d6a4f,stroke-width:2px,color:#000
+    classDef future fill:#f0efeb,stroke:#666,stroke-width:1px,color:#000
+
+    class ST1,ST2,ST3,ST4 shortTerm
+    class MT1,MT2,MT3,MT4 mediumTerm
+    class LT1,LT2,LT3 longTerm
+    class A future
 ```
 
-Future Work Roadmap
-───────────────────────────────────────────────────────────────────
-| Short-Term (0-1 year)      | Medium-Term (1-3 years)    | Long-Term (3+ years)       |
-───────────────────────────────────────────────────────────────────
-- Expand datasets           | - Real-time sensor data    | - Digital Twin framework
-- Model interpretability   | - Hybrid workflows          | - Continuous retraining
-- Transferability tests    | - Whole Life Carbon Calc.  | - Urban-scale integration
-- Occupant modeling        | - Integration & automation | 
-- User-friendly interfaces | - Co-simulation methods    | 
-- Human feedback loops     |                            | 
-- Learning tutorials       |                            |
-───────────────────────────────────────────────────────────────────
+| Phase           | Tasks                                                                                                                    |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **Short-Term**  | Expand datasets, Enhance interpretability, Transfer tests, Occupant modeling, User interfaces, Human feedback, Tutorials |
+| **Medium-Term** | Real-time sensor data, Hybrid workflows, Whole Life Carbon, Automation integration, Co-simulation                        |
+| **Long-Term**   | Digital Twin framework, Ongoing retraining, City-scale integration                                                       |
 
 
 ---
