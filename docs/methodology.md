@@ -7,16 +7,16 @@ This methodology outlines the process of integrating machine learning (ML) with 
 ## 📑 Table of Contents
 
 1. [Research Approach](#1-research-approach)  
-2. [Data Sources & Processing](#2-data-sources--processing)  
+2. [Data Sources & Processing](#2-data-sources-and-processing)  
 3. [Machine Learning Methods](#3-machine-learning-methods)  
 4. [Generative Design Workflow](#4-generative-design-workflow)  
 5. [Energy Simulation Integration](#5-energy-simulation-integration)  
-6. [Software Tools & Dissemination](#6-software-tools-user-experience--dissemination)  
-7. [Challenges & Assumptions](#7-challenges--assumptions)  
+6. [Software Tools & Dissemination](#6-software-tools-and-dissemination)  
+7. [Challenges & Assumptions](#7-challenges-and-assumptions)  
 8. [Future Work](#8-future-work)  
-9. [Ethical & Sustainability Considerations](#9-ethical--sustainability-considerations)  
+9. [Ethical & Sustainability Considerations](#9-ethical-and-sustainability-considerations)  
 10. [Interdisciplinary Collaboration](#10-interdisciplinary-collaboration)  
-11. [Documentation & Reporting](#11-documentation--reporting)  
+11. [Documentation & Reporting](#11-documentation-and-reporting)  
 12. [References](#references)
 
 # 1. Research Approach
@@ -242,60 +242,38 @@ flowchart TD
 
 This section outlines the generative design process, specifically adapted for new-build projects. The workflow leverages the design flexibility and standardized data available in new construction, enabling robust optimization and automation of high-performance building layouts.
 
-### Algorithm and Rationale
+- **Algorithm:** 
+  - Genetic Algorithms (GAs) implemented via the DEAP library (Fortin et al., 2012).
+  - Rationale: GAs are well-suited for exploring the large, multi-dimensional design space typical of new builds, where form, orientation, and envelope specifications can be freely optimized.
 
-- The core optimization method employs **Genetic Algorithms (GAs)** implemented via the DEAP library (Fortin et al., 2012).  
-- GAs are well-suited for exploring the large, multi-dimensional design space typical of new builds, where parameters such as form, orientation, and envelope specifications can be freely optimized without legacy constraints.  
-- This evolutionary approach balances exploration and exploitation to efficiently navigate complex trade-offs inherent in architectural design.
+- **Design Encoding:** 
+  - Parameters represent building layouts, including room sizes, orientations, spatial adjacencies, and envelope specifications (Mitchell, 1998).  
+  - Layouts are parameterized using:
+    - **Bounding boxes** for spaces
+    - **Adjacency matrices** to enforce connectivity rules
+    - **Spline-based controls** for flexible envelope geometry adaptation
+  - Rationale: New-build projects allow full control over these parameters, enabling more effective optimization compared to retrofits.
 
-### Design Encoding and Parameterization
+- **Optimization:**  
+  - Multi-objective GA balances trade-offs between energy use, thermal comfort, and compliance with Passivhaus and Net Zero standards for new construction. 
+  - Rationale: Focusing on new builds ensures that all design variables are within the architect’s control, maximizing the potential for energy and comfort optimization.
 
-- Design parameters encode comprehensive building layouts, including room sizes, orientations, spatial adjacencies, and envelope characteristics (Mitchell, 1998).  
-- Key parameterization methods include:  
-  - **Bounding boxes** to define individual space dimensions and volumes  
-  - **Adjacency matrices** enforcing spatial connectivity and functional relationships  
-  - **Spline-based controls** enabling smooth, flexible adaptation of envelope geometry  
-- This encoding fully utilizes new-build flexibility, allowing architects to explore novel configurations unconstrained by existing structures.
+- **Simulation-ML Feedback:**
+  - Each candidate design is evaluated using EnergyPlus or OpenStudio simulations, with results used to train and validate ML models. 
+  - ML predictions guide the GA’s selection and mutation of designs, accelerating the search for optimal solutions.  
+  - Rationale: New-build data allows for consistent, high-quality simulation and ML feedback, improving the reliability of design recommendations.
 
-### Objective Functions and Constraints
+- **Iterative Refinement:**
+  - The workflow iteratively refines designs based on simulation and ML feedback, with each cycle improving energy performance and comfort.
+  - Rationale: The iterative process is more effective in new builds, where design changes can be implemented without legacy constraints.
 
-- Multi-objective optimization targets a balanced trade-off among:  
-  - Minimizing annual **Energy Use Intensity (EUI)**  
-  - Maximizing occupant **thermal comfort** (e.g., PMV/PPD metrics)  
-  - Ensuring compliance with **Passivhaus** and **Net Zero** performance standards, including envelope U-values below 0.15 W/m²K and achieving at least 90% daylight autonomy.  
-  - Limiting embodied carbon to defined thresholds (e.g., < X kgCO₂e/m²)  
-- Constraints enforce design feasibility, regulatory requirements, and architectural programmatic needs.
+- **Scenario Testing:**
+  - Designs are tested against multiple future climate, regulatory, and market scenarios to ensure robustness and adaptability.
+  - Rationale: New-build projects must be resilient to future changes, making scenario testing essential.
 
-### Simulation-ML Feedback Loop
-
-- Each candidate design generated by the GA is evaluated through detailed energy simulations using **EnergyPlus** or **OpenStudio** at fine timestep granularity, capturing dynamic thermal and energy behavior.  
-- Simulation results train and validate machine learning models, which predict performance metrics for new design variants, enabling rapid evaluation without full simulation.  
-- ML predictions guide the GA’s selection, crossover, and mutation operations, accelerating convergence on optimal solutions while maintaining fidelity to high-quality simulation outputs.  
-- Regular calibration protocols ensure simulation accuracy and alignment with real-world conditions and post-occupancy data when available.
-
-### Iterative Refinement Process
-
-- The workflow operates in an iterative loop:  
-  1. **Generate** candidate designs based on current population and genetic operators  
-  2. **Simulate** selected candidates for detailed performance analysis  
-  3. **Evaluate** designs against objective functions and constraints  
-  4. **Learn** from simulation results by updating ML models  
-  5. **Adjust** the population and parameters to guide future generations  
-- This process progressively improves energy performance, occupant comfort, and regulatory compliance, exploiting the design freedom in new builds.
-
-### Scenario Testing and Robustness
-
-- Designs undergo stress testing against multiple future climate scenarios (e.g., varying temperature and humidity profiles), evolving regulatory frameworks, and potential market shifts to ensure resilience and adaptability.  
-- Such robustness testing is essential for new builds expected to remain performant over long service lives under uncertain conditions.
-
-### Outcomes and Benefits
-
-- The generative design workflow produces a Pareto frontier of optimal new-build designs, presenting architects and stakeholders with a curated set of evidence-based, high-performance options.  
-- This methodology empowers data-driven decision-making, enhancing sustainability, occupant wellbeing, and regulatory alignment from the earliest design phases.  
-- By focusing on new-build projects, the workflow maximizes design flexibility and leverages standardized data streams for scalable, repeatable optimization.
-
----
-
+- **Outcome:**
+  - The workflow produces a set of Pareto-optimal new-build designs that balance energy efficiency, comfort, and regulatory compliance.
+  - Rationale: This ensures that the methodology supports architects in making informed, evidence-based decisions for high-performance new construction.
 
 ### 🧬 Generative Design and Simulation Loop
 

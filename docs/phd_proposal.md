@@ -1,8 +1,8 @@
 # PhD Research Proposal  
 **Title**: ML-Driven Generative Design for Energy-Efficient Architecture  
-**Applicant**: Edward Ross  
-**Proposed Institution**: The Bartlett School of Environment, Energy and Resources, UCL  
-**Proposed Supervisor**: [To be determined based on alignment with Bartlett’s Building Performance or Sustainable Design groups]  
+**Applicant**: Ross Edward 
+**Proposed Institution**: Edinburgh University   
+**Proposed Supervisor**: [To be determined based on alignment with ]  
 **Date**: June 2025  
 
 ---
