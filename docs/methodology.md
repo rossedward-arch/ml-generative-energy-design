@@ -1,31 +1,72 @@
 # Methodology
 
+## 🔍 Abstract
+
+This methodology proposes a machine learning–assisted generative design framework tailored for high-performance architecture. It integrates Passivhaus and Net Zero principles into early design stages via simulation-informed optimization, explainable AI, and iterative feedback loops. The approach prioritizes transparency, scalability, and energy equity by combining human-in-the-loop design, digital twins, and real-time data calibration.
+
+## 📑 Table of Contents
+
+1. [Research Approach](#1-research-approach)  
+2. [Data Sources & Processing](#2-data-sources--processing)  
+3. [Machine Learning Methods](#3-machine-learning-methods)  
+4. [Generative Design Workflow](#4-generative-design-workflow)  
+5. [Energy Simulation Integration](#5-energy-simulation-integration)  
+6. [Software Tools & Dissemination](#6-software-tools-user-experience--dissemination)  
+7. [Challenges & Assumptions](#7-challenges--assumptions)  
+8. [Future Work](#8-future-work)  
+9. [Ethical & Sustainability Considerations](#9-ethical--sustainability-considerations)  
+10. [Interdisciplinary Collaboration](#10-interdisciplinary-collaboration)  
+11. [Documentation & Reporting](#11-documentation--reporting)  
+12. [References](#references)
+
 ## 1. Research Approach
 
-This methodology extends prior ML–generative design frameworks by embedding Passivhaus and Net Zero principles early in the conceptual design phase, prioritizing energy performance and comfort metrics through an iterative, data-driven feedback loop. Unlike previous approaches, this integration emphasizes automation at the early-stage decision-making level and is tailored to high-performance architectural targets. The approach supports architectural decisions targeting Passivhaus certification and Net Zero energy performance by integrating performance prediction with design exploration. This research addresses a critical gap by unifying early-stage generative design with continuous ML-predicted energy feedback, targeting Passivhaus/Net Zero compliance at pre-schematic phases—an integration not extensively realized in current architectural design pipelines.
+This methodology is specifically tailored for the early-stage design and optimization of new high-performance building projects.It extends prior ML–generative design frameworks by embedding Passivhaus and Net Zero principles at the conceptual stage, with a focus on new builds where design flexibility, data quality, and regulatory alignment are maximized. The approach prioritizes energy performance and occupant comfort through an iterative, data-driven feedback loop, leveraging the standardized data and construction practices typical of new construction.
 
-- **Predictive Modeling:** Machine learning techniques predict building energy use and occupant comfort based on early design parameters such as geometry, orientation, and materials (Ascione et al., 2017; Goodfellow et al., 2016).  
-- **Generative Optimization:** Genetic algorithms iteratively explore the design space to optimize layouts for energy efficiency and comfort, guided by simulation feedback and ML predictions (Mitchell, 1998; Bendsøe & Sigmund, 2003).  
-- The integration of Passivhaus principles (airtightness, insulation, ventilation) and Net Zero targets provides a robust framework ensuring designs meet stringent energy and sustainability goals (Passivhaus Trust, 2024; UK Government, 2021).
+Unlike previous approaches, this integration emphasizes automation and predictive analytics at the early-stage decision-making level, targeting new builds that seek Passivhaus certification and Net Zero energy performance. By focusing on new construction, the methodology ensures that all predictive modeling, simulation, and optimization steps are based on current best practices, modern materials, and up-to-date regulatory requirements.
+
+This research addresses a critical gap by unifying early-stage generative design with continuous ML-predicted energy feedback for new buildings, enabling compliance with Passivhaus and Net Zero standards from the outset—an integration not extensively realized in current architectural design pipelines for new construction.
+
+This methodology incorporates **explainable AI (XAI)**, **multi-criteria decision analysis (MCDA)**, and **equity auditing** to ensure transparency, stakeholder alignment, and social responsibility across new build typologies. The pipeline is cloud-ready, scalable, and designed for continuous improvement via **human-in-the-loop active learning** and **real-time IoT data integration** from new build pilot projects.
+
+- **Predictive Modeling:** Machine learning techniques predict building energy use and occupant comfort based on early design parameters such as geometry, orientation, and material specifications, all derived from BIM models typical of new construction (Ascione et al., 2017; Goodfellow et al., 2016). 
+- **Generative Optimization:** Genetic algorithms iteratively explore the design space for new builds, optimizing layouts, envelope performance, and renewable integration for energy efficiency and comfort, guided by simulation feedback and ML predictions (Mitchell, 1998; Bendsøe & Sigmund, 2003).  
+- The integration of Passivhaus principles (airtightness, insulation, ventilation) and Net Zero targets is specifically adapted to new build scenarios, providing a robust framework that ensures designs meet stringent energy and sustainability goals from the outset (Passivhaus Trust, 2024; UK Government, 2021).
+
+### Industry Integration & Scalability
+- **Pilot Projects:** The methodology includes a framework for conducting pilot implementations with architectural firms, focusing on collecting real-world feedback and measuring practical performance gains.
+- **Scalability Assessment:** Protocols are established to assess how the methodology scales from individual building designs to neighborhood or district-level applications, addressing computational and data management challenges.
+- **Economic Impact Evaluation:** Economic assessment frameworks are integrated to quantify the cost-benefit relationships of using this methodology compared to traditional design approaches, demonstrating its value proposition to the industry.
 
 ---
 
 ## 2. Data Sources & Processing
 
-The project utilizes diverse datasets to support machine learning and energy simulation tasks:
+The project utilizes standardized, high-quality datasets specific to new-build projects to support machine learning and energy simulation tasks:
 
-- **Building Geometry and Design Parameters:** CAD/BIM exports (e.g., Revit) providing spatial layouts, dimensions, and material specifications (Eastman et al., 2018; Revit, 2023).  
-- **Weather Data:** Typical meteorological year files (EPW format) for site-specific climate conditions (EnergyPlus Weather Data, 2024).  
-- **Energy Simulation Outputs:** EnergyPlus or OpenStudio results capturing energy use intensity (EUI), thermal comfort metrics, HVAC loads, etc. (Crawley et al., 2008).  
-- **Performance Benchmarks:** Passivhaus certification criteria and Net Zero energy targets for reference and validation (Passivhaus Trust, 2024; UK Government, 2021).  
+- **Building Geometry and Design Parameters:** BIM exports (e.g., Revit, IFC) from new construction projects, providing accurate spatial layouts, zoning, and material specifications as defined in current design documentation (Eastman et al., 2018; Revit, 2023).
+Legacy or retrofit-specific data is excluded to ensure consistency and relevance to new builds.  
+- **Weather Data:** Typical meteorological year files (EPW format) for the proposed site of each new build, supporting climate-responsive design (EnergyPlus Weather Data, 2024).  
+- **Energy Simulation Outputs:** EnergyPlus or OpenStudio results capturing Energy Use Intensity (EUI), thermal comfort, and HVAC loads, based on idealized new-build assumptions (Crawley et al., 2008).  
+- **Performance Benchmarks:** Passivhaus and Net Zero targets for new construction are used as validation criteria and for model calibration (Passivhaus Trust, 2024; UK Government, 2021).  
+- **IoT Sensor Streams:** Where available, real-time data from recently completed new builds is used for digital twin validation and model recalibration. If not available, simulated post-occupancy data or literature benchmarks are used for validation.
+- **Equity and Bias Auditing:** Datasets are regularly audited for representation and fairness across new build typologies (e.g., residential, educational, commercial) and urban/rural contexts. Audits focus on ensuring the framework is inclusive for diverse new construction scenarios.
+
+**Data Pipeline Enhancements:**
+- **Active Learning:** The model uses uncertainty sampling to request the most informative new-build design cases for faster learning.
+- **Transfer Learning:** Incorporates external new-build datasets (e.g., open data from UK or EU new construction) to improve generalization.
 
 > The majority of data is tabular or spatial-temporal, with formats including CSV, JSON, and IDF.  
-> Datasets are organized into reproducible data pipelines ensuring consistency across simulations and training workflows.
+> Datasets are organized into reproducible data pipelines ensuring consistency  and scalability for new-build simulation and model training workflows.
 
-> Geometric data from BIM platforms (e.g., Revit) is translated into simulation-ready inputs via IFC parsers or custom Dynamo scripts that extract and structure relevant attributes (e.g., surface areas, zoning, materials) for integration with EnergyPlus-compatible IDF files.
+> Geometric data from BIM platforms (e.g., Revit) is translated into simulation-ready inputs via IFC parsers or custom Dynamo scripts, extracting relevant attributes (surface areas, zoning, materials) for new-build-specific EnergyPlus-compatible IDF files.
 
-> To address variability in design and climate conditions, uncertainty in inputs—such as occupancy schedules and weather profiles—is handled using stochastic sampling or Monte Carlo simulation, enabling more robust performance predictions across probabilistic design scenarios.
+> To address variability in design and climate conditions, uncertainty in inputs—such as occupancy schedules and weather profiles—is handled using stochastic sampling or Monte Carlo simulation, supporting robust predictions for a range of new-build scenarios.
 
+### 2.1 Data Preprocessing and Feature Engineering Enhancements
+- **Bias Detection & Mitigation:** Protocols focus on identifying and addressing underperformance for specific new build typologies or site contexts in the input data and model training..
+- **Equity Auditing:** Regular reviews ensure fair and inclusive outcomes for all relevant new-build categories by assessing dataset representativeness.
+- **Ethical Oversight:** Compliance with data privacy, consent, and responsible AI guidelines is maintained throughout data collection, processing, and model deployment for new construction projects.
 ---
 
 ## 🔄 Data Flow Diagram
@@ -33,23 +74,25 @@ The project utilizes diverse datasets to support machine learning and energy sim
 ```mermaid
 flowchart TD
     A["Building Geometry\n(BIM / Revit / IFC)"] --> B["Feature Extraction"]
-    B --> C["Simulation Configuration\n(IDF / OpenStudio)"]
-    C --> D["Energy Simulation\n(EnergyPlus)"]
-
     E["Climate & Weather Data\n(EPW files)"] --> B
+    X["IoT Sensor Streams"] --> K["Digital Twin Feedback"]
+    Y["Equity Auditing Data"] --> L["Equity Audit Reports"]
+    B --> C["Simulation Configuration\n(IDF / OpenStudio)"]
     F["Performance Benchmarks\n(Passivhaus / Net Zero)"] --> C
-
+    C --> D["Energy Simulation\n(EnergyPlus)"]
     D --> G["Simulation Results\n(CSV / SQLite)"]
     B --> H["ML-ready Features\n(CSV / Parquet)"]
-
     G --> I["Model Training\n(ML Algorithms)"]
     H --> I
-
     I --> J["Energy Performance Predictions\n(EUI, Comfort, Loads)"]
+    K --> I
+    L --> I
 
     style A fill:#e6f7ff,stroke:#3399cc,color:#000000
     style E fill:#e6f7ff,stroke:#3399cc,color:#000000
     style F fill:#e6f7ff,stroke:#3399cc,color:#000000
+    style X fill:#e0f7fa,stroke:#00acc1,color:#000000
+    style Y fill:#fff2cc,stroke:#e69138,color:#000000
     style B fill:#fff2cc,stroke:#e69138,color:#000000
     style C fill:#fff2cc,stroke:#e69138,color:#000000
     style D fill:#fde9d9,stroke:#d6604d,color:#000000
@@ -57,9 +100,12 @@ flowchart TD
     style H fill:#f4cccc,stroke:#cc0000,color:#000000
     style I fill:#d9ead3,stroke:#38761d,color:#000000
     style J fill:#d9ead3,stroke:#38761d,color:#000000
+    style K fill:#f1f8e9,stroke:#558b2f,color:#000000
+    style L fill:#f1f8e9,stroke:#558b2f,color:#000000
 ```
+> ⚠️ Note: If diagrams do not render on GitHub, use [Mermaid Live Editor](https://mermaid.live/edit) or export as SVG.
 
-### Data Preprocessing and Feature Engineering
+### 2.2 Feature Engineering Techniques.
 
 Effective preprocessing is critical to ensure model accuracy and interpretability:
 
@@ -76,48 +122,75 @@ Effective preprocessing is critical to ensure model accuracy and interpretabilit
 
 | **Stage**          | **Type**                 | **Format**       | **Description**                                                               |
 |--------------------|--------------------------|------------------|-------------------------------------------------------------------------------|
-| **Input**          | Building Geometry        | JSON, DXF, IFC   | Parametric models or predefined layouts; includes floor area, WWR, zoning    |
-|                    | Climate / Weather Data   | EPW              | Hourly weather profiles: temperature, radiation, humidity                    |
-|                    | Construction Benchmarks  | CSV, JSON        | U-values, infiltration rates, HVAC presets from Passivhaus datasets          |
-| **Transformation** | Feature Extraction       | Tabular          | Derives ratios, materials, orientations, envelope metrics                    |
-|                    | Data Cleaning & Encoding | Tabular          | One-hot encoding for categories; normalization for numeric data              |
-|                    | Simulation Configuration | IDF (EnergyPlus) | Translated inputs used for energy and comfort simulations                    |
-| **Output**         | Simulation Results       | CSV, SQLite      | Outputs include EUI, daylight autonomy, overheating hours                    |
-|                    | ML-ready Feature Sets    | CSV, Parquet     | Cleaned and structured datasets for training and evaluation                  |
+| **Input**          | Building Geometry        | JSON, DXF, IFC   | Parametric models or predefined layouts; includes floor area, WWR, zoning      |
+|                    | Climate / Weather Data   | EPW              | Hourly weather profiles: temperature, radiation, humidity                      |
+|                    | Construction Benchmarks  | CSV, JSON        | U-values, infiltration rates, HVAC presets from Passivhaus datasets            |
+|                    | IoT Sensor Streams       | JSON, CSV        | Real-time data from built projects for digital twin validation                 |
+|                    | Equity Auditing Data     | CSV, JSON        | Demographic, typology, and usage data for bias and fairness assessment         |
+| **Transformation** | Feature Extraction       | Tabular          | Derives ratios, materials, orientations, envelope metrics                      |
+|                    | Data Cleaning & Encoding | Tabular          | One-hot encoding for categories; normalization for numeric data                |
+|                    | Simulation Configuration | IDF (EnergyPlus) | Translated inputs used for energy and comfort simulations                      |
+| **Output**         | Simulation Results       | CSV, SQLite      | Outputs include EUI, daylight autonomy, overheating hours                      |
+|                    | ML-ready Feature Sets    | CSV, Parquet     | Cleaned and structured datasets for training and evaluation                    |
+|                    | Digital Twin Feedback    | JSON, CSV        | IoT-driven post-occupancy data for model recalibration and validation          |
+|                    | Equity Audit Reports     | PDF, CSV         | Reports on model fairness and bias detection                                   |
 
 ---
 
 ## 3. Machine Learning Methods
 
-- **Models:**  
-  - Linear Regression and Random Forest for regression tasks (Breiman, 2001).  
-  - Neural Networks using TensorFlow for complex energy prediction (Goodfellow et al., 2016).  
+### Overview:
+The machine learning component is specifically designed for new-build projects, leveraging the standardized data quality and design flexibility typical of modern construction. All models are trained and validated exclusively on new-build datasets, ensuring predictions are robust and relevant to current industry practices and regulatory targets.
+
+### Model Selection and Justification
+
+- **Models Used:**  
+  - Linear Regression and Random Forest for initial regression tasks, offering interpretability and insight into key design drivers (Breiman, 2001).  
+  - Neural Networks (TensorFlow/Keras) for capturing complex, multivariate relationships in new-build energy and comfort data (Goodfellow et al., 2016).
+  - Ensemble Stacking to further enhance prediction accuracy within the new-build domain.
 
 - **Model Selection Justification:**  
-  - Linear models offer interpretability and straightforward insights.  
-  - Random Forest captures nonlinear relationships and provides feature importance rankings.  
-  - Neural Networks model complex multivariate energy and comfort patterns.
+  - The homogeneity and completeness of new-build BIM and simulation data allow for more reliable model training and validation. 
+  - Feature importance analysis is particularly actionable for new builds, where design parameters can be flexibly adjusted. 
 
-- **Learning Approaches:**  
-  - Primarily supervised learning for energy use and comfort prediction.  
-  - Future exploration of unsupervised learning (e.g., clustering for building typologies) and reinforcement learning for adaptive design (Sutton & Barto, 2018).
+- **Learning Approaches**  
+  - **Supervised Learning:**
+    - Primary approach for predicting energy use, comfort, and Net Zero compliance from early-stage new-build design parameters.
+
+  - **Active Learning:**
+    - The model identifies the most informative new-build design cases for targeted simulation and data enrichment, accelerating learning and reducing computational load.
+
+  - **Transfer Learning:**
+    - Where appropriate, transfer learning incorporates external new-build datasets (e.g., UK/EU open data) to improve model generalization within the new-build context.
 
 - **Training:**  
-  - Data split into training, validation, and test sets.  
+  - Data split into training, validation, and test sets are preformed on new-cases only.  
   - Hyperparameter tuning and cross-validation optimize model performance (Kohavi, 1995).
+  - **Automated Hyperparameter Optimization:** Bayesian optimization (Optuna/Hyperopt) for all ML and GA parameters, with a focus on optimizing for new-build performance metrics.
+  - EnergyPlus or OpenStudio simulation-only results for new builds serve as the primary baseline, quantifying the added value of ML predictions.
 
 - **Evaluation Metrics:**  
-  - Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and R² score (Willmott & Matsuura, 2005).
+  - Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and R² score, evaluated specifically for new-build performance targets (Willmott & Matsuura, 2005)
+  - Additional evaluation against Passivhaus and Net Zero new-build benchmarks.
 
-- **Interpretability:**  
-  - SHAP values and permutation feature importance enhance transparency for architectural decision-making (Lundberg & Lee, 2017).
+- **Interpretability and Explainability:**  
+  - XAI Tools 
+   - SHAP, LIME, and custom dashboards provide transparent rationales for all new-build predictions, supporting design decision-making.
+   - Feature importance is reported for new-build design parameters, such as envelope U-values, window-to-wall ratio, and renewable system sizing.
 
-- **Baselines for Evaluation:**  
-  - Rule-of-thumb energy estimates and simulation-only predictions (from EnergyPlus or OpenStudio) will serve as performance baselines.  
-  - These baselines provide reference points to measure model uplift and demonstrate value-added by ML approaches.
+- **Uncertainty Quantification:**  
+  - Bayesian methods and Monte Carlo dropout provide predictive confidence intervals, supporting robust early-stage decisions for new builds.
 
-- **Ensemble Techniques:**  
-  - Ensemble learning strategies (e.g., model stacking, weighted averaging) will be explored to improve predictive robustness and accuracy across heterogeneous building types and climates.
+- **Ethics & Bias & Equity:**  
+  - **Fairness Auditing:**
+    - Regular audits focus on detecting and mitigating bias across new-build typologies (e.g., residential, educational, commercial) and site contexts (urban/rural).
+  - **Mitigation:**
+    - Any detected bias is addressed through targeted data augmentation or model adjustment, ensuring inclusive new-build design recommendations.
+
+- **Continuous Improvment** 
+  - **Model Upating:**
+    - The system is designed for continuous improvement, with new data from completed new builds (including post-occupancy or digital twin data where available) incorporated to refine predictions and maintain relevance as industry standards evolv
+
 
 ---
 
@@ -144,20 +217,40 @@ flowchart TD
 
 ## 4. Generative Design Workflow
 
-- **Algorithm:** Genetic Algorithms implemented via the DEAP library (Fortin et al., 2012).  
+This section outlines the generative design process, specifically adapted for new-build projects. The workflow leverages the design flexibility and standardized data available in new construction, enabling robust optimization and automation of high-performance building layouts.
 
-- **Design Encoding:** Parameters represent building layouts, including room sizes, orientations, and spatial adjacencies (Mitchell, 1998).  
-  - Layouts are parameterized using bounding boxes for spaces, adjacency matrices to enforce connectivity rules, and spline-based controls for envelope geometry adaptation.
+- **Algorithm:** 
+  - Genetic Algorithms (GAs) implemented via the DEAP library (Fortin et al., 2012).
+  - Rationale: GAs are well-suited for exploring the large, multi-dimensional design space typical of new builds, where form, orientation, and envelope specifications can be freely optimized.
+
+- **Design Encoding:** 
+  - Parameters represent building layouts, including room sizes, orientations, spatial adjacencies, and envelope specifications (Mitchell, 1998).  
+  - Layouts are parameterized using:
+    - **Bounding boxes** for spaces
+    - **Adjacency matrices** to enforce connectivity rules
+    - **Spline-based controls** for flexible envelope geometry adaptation
+  -Rationale: New-build projects allow full control over these parameters, enabling more effective optimization compared to retrofits.
 
 - **Optimization:**  
-  - Multi-objective GA balances trade-offs between energy use, daylight access, and thermal comfort.  
-  - Trade-offs are managed using Pareto front exploration with NSGA-II, allowing a spectrum of optimal design solutions to be visualized and selected.  
-  - Fitness functions are weighted to reflect Passivhaus and Net Zero performance criteria.  
-  - Constraints ensure constructability, spatial logic, and compliance with user or regulatory requirements (Bendsøe & Sigmund, 2003).  
-  - Iterative mutation, crossover, and selection evolve improved design solutions over successive generations.
+  - Multi-objective GA balances trade-offs between energy use, thermal comfort, and compliance with Passivhaus and Net Zero standards for new construction. 
+  - Rationale: Focusing on new builds ensures that all design variables are within the architect’s control, maximizing the potential for energy and comfort optimization.
 
-- **Validation Loop:**  
-  - Energy simulation outputs (e.g., EUI, comfort scores) are fed back into the GA loop, refining future generations based on performance metrics (Crawley et al., 2008).
+- **Simulation-ML Feedback:**
+  - Each candidate design is evaluated using EnergyPlus or OpenStudio simulations, with results used to train and validate ML models. 
+  - ML predictions guide the GA’s selection and mutation of designs, accelerating the search for optimal solutions..  
+  - Rationale: New-build data allows for consistent, high-quality simulation and ML feedback, improving the reliability of design recommendations.
+
+- **Iterative Refinement**
+  - The workflow iteratively refines designs based on simulation and ML feedback, with each cycle improving energy performance and comfort.
+  - Rationale: The iterative process is more effective in new builds, where design changes can be implemented without legacy constraints.
+
+- **Senario Testing**
+  - Designs are tested against multiple future climate, regulatory, and market scenarios to ensure robustness and adaptability.
+  - Rationale: New-build projects must be resilient to future changes, making scenario testing essentia.
+
+- **Outcome**
+  - The workflow produces a set of Pareto-optimal new-build designs that balance energy efficiency, comfort, and regulatory compliance.
+  - Rationale: This ensures that the methodology supports architects in making informed, evidence-based decisions for high-performance new construction.
 
 ---
 
@@ -186,13 +279,30 @@ flowchart TD
 
 ## 5. Energy Simulation Integration
 
-- Integration with EnergyPlus and OpenStudio validates ML predictions and assesses detailed energy performance (Crawley et al., 2008).  
-- Simulation feedback informs generative algorithm fitness evaluation, guiding optimization toward realistic designs.  
-- Simulation workflow is **partially automated**, allowing **designer-in-the-loop** refinement at key iterations for qualitative input.  
-- **Simulation outputs are smoothed and aggregated** before retraining ML models to improve convergence and reduce noise.  
-- Continuous linking of simulation results with ML retraining enhances prediction accuracy over time.  
-- Parametric tools (Grasshopper + Ladybug Tools) facilitate seamless geometry and simulation data exchange (Roudsari et al., 2013).  
-- Current simulations focus on operational energy and thermal comfort; future work includes **whole life carbon assessments**, integrating embodied carbon data for holistic sustainability (OneClick LCA, 2024; eTool, 2023).
+This section details how energy simulation is integrated into the design and optimization process, with all workflows and assumptions specifically adapted for new-build projects.
+
+- **Simulation Engine Selection:** 
+  - EnergyPlus (with OpenStudio as an interface) is used as the primary simulation engine, due to its industry-standard status and robust support for new-build performance modeling.  
+    *(Rationale: EnergyPlus provides detailed, validated simulation of building physics and is widely used for Passivhaus and Net Zero compliance in new construction.)*
+- **Model Preparation and Input Generation:**
+  - Building geometry, zoning, and material specifications are exported directly from BIM models (e.g., Revit, IFC) for each new-build project. Custom scripts translate BIM data into EnergyPlus-compatible IDF files.  
+   *(Rationale: New builds provide standardized, high-quality BIM data, reducing errors and manual input during simulation setup.)*
+- **Simulation Assumptions:** 
+- All simulations assume modern construction quality, up-to-date insulation, airtightness, and HVAC systems as specified in the design. Occupancy schedules and internal loads are based on current best-practice guidelines for new construction.  
+  *(Rationale: This ensures simulation results are realistic and directly relevant to the performance of new builds.)*
+- **Simulation Outputs:**   
+  - Simulations generate Energy Use Intensity (EUI), thermal comfort hours, overheating risk, and renewable energy generation potential. Results are benchmarked against Passivhaus and Net Zero targets for new construction.
+  *(Rationale: Focusing on these metrics aligns the workflow with regulatory and industry requirements for high-performance new builds.)*
+- **Integration with Generative Design and ML:**    
+  - Simulation results are used to train, validate, and calibrate ML models, which in turn guide generative design optimization. High-fidelity simulations are retained for a representative sample of new-build designs to ensure ML predictions remain accurate and reliable.  
+  *(Rationale: This approach balances computational efficiency with predictive accuracy, leveraging the consistency of new-build data.)*
+- **Scenario and Sensitivity Analysis:** 
+  - Designs are simulated under multiple climate scenarios and regulatory assumptions to test robustness. Sensitivity analysis identifies which new-build design parameters have the greatest impact on performance.  
+  *(Rationale: New builds must be resilient to future uncertainties; scenario testing ensures robust, future-proof designs.)*
+
+- **Validation and Continuous Improvement:**  
+  - Where available, simulation results are validated against post-occupancy or digital twin data from completed new builds. Discrepancies are used to recalibrate simulation assumptions and update ML models.  
+  *(Rationale: Closing the loop with real-world data improves long-term reliability and trust in the methodology.)*
 
 > 📌 **Simulation Calibration Note:** To ensure real-world relevance, future iterations of this workflow will include post-occupancy validation using ASHRAE Guideline 14 calibration techniques (ASHRAE, 2014).
 
@@ -230,72 +340,23 @@ graph TD
     style J fill:#e8f5e9,stroke:#43a047,color:#000000
 ```
 
-## 6. Software Tools & Environment
+## 6. Software Tools, User Experience & Dissemination
 
-This research leverages an integrated stack of tools for data processing, modeling, simulation, and visualization to ensure replicability, modularity, and performance consistency.  
-The system is designed in **modular stages** (data ingestion, modeling, optimization, simulation) to enable individual updates and testing.
+- **Core Software Stack:**  
+  - **BIM & Geometry:** Autodesk Revit, IFC, Dynamo for parametric modeling and data extraction.
+  - **Simulation:** EnergyPlus, OpenStudio for energy and comfort simulation.
+  - **ML & Optimization:** Python (scikit-learn, TensorFlow/Keras, DEAP, Optuna/Hyperopt).
+  - **Data Processing:** Pandas, NumPy, custom scripts for feature engineering and data cleaning.
+  - **Visualization:** Power BI, Plotly, custom dashboards for interpretability and stakeholder engagement.
 
----
+- **User Experience:**  
+  - Modular, scriptable pipeline for integration into existing architectural workflows.
+  - GUI prototypes or Jupyter notebooks for interactive exploration and visualization.
+  - Documentation and example projects for reproducibility.
 
-### Python Libraries
-
-Used for core data handling and modeling workflows:
-
-- **Pandas**, **NumPy** – data wrangling and transformation  
-- **Scikit-learn**, **TensorFlow** – machine learning and neural network modeling  
-- **DEAP** – genetic algorithm-based generative optimization  
-
----
-
-### Parametric Modeling
-
-- **Grasshopper** and **Ladybug Tools** – rule-based visual scripting and environmental analysis  
-- Enable flexible geometric parameterization and climate-informed design exploration  
-
----
-
-### BIM Data Extraction
-
-- **Revit** – exporting geometry and material metadata for downstream simulation and feature generation  
-  *(Eastman et al., 2018; Revit, 2023)*  
-
----
-
-### Energy Simulation Engines
-
-- **EnergyPlus**, **OpenStudio** – used to validate ML predictions and evaluate compliance with Passivhaus and Net Zero standards  
-  *(Crawley et al., 2008)*  
-- Integrated via parametric runs and API hooks to allow seamless ML–simulation loops  
-
----
-
-### Pipeline Orchestration
-
-To manage multi-stage workflows (e.g., preprocessing → simulation → ML training), orchestration tools such as **Airflow**, **Luigi**, or **Prefect** can be integrated.  
-These tools enable task scheduling, monitoring, and retry logic—key for scaling reproducible pipelines across compute clusters or cloud environments.
-
----
-
-### Interactive User Interface
-
-- **Streamlit** – rapid prototyping of web-based interfaces for real-time visualization, user interaction, and feedback collection  
-  *(Streamlit Inc., 2023)*  
-- Supports designer-in-the-loop optimization and decision-making  
-
----
-
-### Environment Reproducibility
-
-- Python environments managed with **Conda** for consistent dependency control  
-- Containerization via **Docker** ensures platform-independent simulation workflows and replicable results across systems  
-
----
-
-### Version Control
-
-- Source code and simulation datasets tracked via **GitHub**  
-- **Git LFS** (Large File Storage) used for handling IDF files, simulation logs, and model weights efficiently  
-
+- **Dissemination:**  
+  - Source code and data pipelines shared via GitHub (where licensing permits).
+  - Results disseminated through academic publications, conference presentations, and workshops with industry partners.
 ---
 
 ## 7. Challenges & Assumptions
@@ -312,12 +373,12 @@ This research involves several technical and practical challenges that influence
 | **Simulation Assumptions**              | Static weather or occupant assumptions may limit realism                        | Use dynamic schedules, stochastic weather sampling (Monte Carlo)   | Mahdavi & Tahmasebi, 2016                                     |
 | **Prediction Gaps**                     | Early predictions often diverge from real post-occupancy performance            | Apply ASHRAE Guideline 14 calibration; post-occupancy feedback     | Mahdavi & Tahmasebi, 2016; ASHRAE, 2014                        |
 | **Overfitting Risk**                    | ML models may overfit on small or unbalanced datasets                           | Use cross-validation, dropout, and regularization techniques        | Goodfellow et al., 2016                                       |
-| **User Constraints**                    | Aesthetic, cost, and functional decisions may be missed by automated workflows  | Include manual review stages; designer-in-the-loop interventions   | Gerber et al., 2012                                           |
+| **User Constraints**                    | Aesthetic, cost, and functional decisions may be missed by automated workflows  | Include manual review stages; designer-in-the-loop (manual overrides and feedback integration) interventions   | Gerber et al., 2012                                           |
 | **Domain Transferability**              | Model may underperform on unseen typologies or climates                         | Out-of-sample validation; ensemble models for broader generality   | Zhang et al., 2020                                            |
 
 > Bias and Overfitting Risk: Since early-stage data may be sparse or imbalanced, overfitting remains a critical risk—especially with high-capacity models like neural networks. Techniques such as regularization, dropout, and k-fold cross-validation are employed to mitigate this.
 
-> Realistic User Constraints: Design decisions in practice often depend on subjective criteria such as aesthetics, cost, or policy—which are difficult to encode into purely performance-based models. To account for this, the system supports **manual overrides** and **designer-in-the-loop feedback loops**.
+> Realistic User Constraints: Design decisions in practice often depend on subjective criteria such as aesthetics, cost, or policy—which are difficult to encode into purely performance-based models. To account for this, the system supports **manual overrides** and **designer-in-the-loop (manual overrides and feedback integration) feedback loops**.
 
 > Simulation Calibration: Future validation will involve **post-occupancy evaluation** and **ASHRAE Guideline 14-compliant calibration** using real-world consumption data where available.
 
@@ -356,97 +417,31 @@ flowchart TD
 
 ## 8. Future Work
 
-This research opens several pathways for future development, ranging from short-term improvements to long-term architectural innovation and urban-scale impact.
+- **Scalability:**  
+  - Expansion to district/neighborhood-scale modeling and optimization.
+  - Integration with urban energy models and city-level digital twins.
 
-### 🔹 Short-Term
+- **Retrofitting & Mixed-Use:**  
+  - Adapting the framework for retrofit projects and mixed-use developments.
 
-- Expand the diversity and volume of training datasets across more building types, broader typologies, and diverse climatic zones.
-- Enhance model interpretability using **SHAP values** and other explainable ML techniques (Lundberg & Lee, 2017).
-- Conduct transferability tests on different design stages and building typologies.
-- Incorporate occupant behavior modeling and adaptive control strategies to improve prediction realism (Andersen et al., 2014).
-- Develop more intuitive, user-friendly interfaces for architects and designers.
-- Include **human feedback incorporation** through interactive visual analytics and preference learning to steer generative outputs toward subjective or aesthetic goals.
-- Create tutorials linked to each stage of the learning roadmap to support knowledge transfer and onboarding.
+- **Advanced ML & Automation:**  
+  - Incorporation of reinforcement learning, unsupervised clustering, and automated design space exploration.
 
-### 🔹 Medium-Term
-
-- Integrate real-time sensor data (e.g., indoor temperature, CO₂ levels, occupancy) for live feedback loops.
-- Develop hybrid workflows that combine measured and simulated data for adaptive design refinement.
-- Incorporate **Whole Life Building Carbon Calculations** to assess both operational and embodied carbon impacts using tools such as OneClick LCA (OneClick LCA, 2024) or eTool (eTool, 2023).
-- Enhance integration and automation between ML models, generative design algorithms, and energy simulation tools.
-- Explore **co-simulation prospects** using tools like Radiance for daylighting, CFD (Computational Fluid Dynamics) for airflow and thermal comfort, and occupancy simulators to capture complex occupant–environment interactions.
-
-### 🔹 Long-Term
-
-- Build a full **Digital Twin framework** for post-occupancy monitoring, continuous learning, and predictive maintenance (Batty et al., 2012; Kritzinger et al., 2018).
-- Enable ongoing model retraining based on real-world building performance and user behavior feedback.
-- Integrate with city-scale energy and climate models for urban-scale generative design and planning.
-
-### 🛠️ Future Work Roadmap for Energy-Efficient Architectural Design
-  
-```mermaid
-graph LR
-    %% Nodes
-    A[Future Work]
-
-    subgraph ST["Short-Term"]
-        direction TB
-        ST1[Expand datasets]
-        ST2[Enhance interpretability]
-        ST3[Transferability tests]
-        ST4[Occupant behavior modeling]
-    end
-
-    subgraph MT["Medium-Term"]
-        direction TB
-        MT1[Real-time sensor data]
-        MT2[Hybrid workflows]
-        MT3[Whole Life Carbon Calculations]
-        MT4[Automation integration]
-    end
-
-    subgraph LT["Long-Term"]
-        direction TB
-        LT1[Digital Twin framework]
-        LT2[Model retraining]
-        LT3[City-scale integration]
-    end
-
-    %% Connections
-    A --> ST
-    A --> MT
-    A --> LT
-
-    %% Styles
-    classDef shortTerm fill:#a2d2ff,stroke:#0b3d91,stroke-width:2px,color:#000
-    classDef mediumTerm fill:#ffb4a2,stroke:#9b2226,stroke-width:2px,color:#000
-    classDef longTerm fill:#caffbf,stroke:#2d6a4f,stroke-width:2px,color:#000
-    classDef future fill:#f0efeb,stroke:#666,stroke-width:1px,color:#000
-
-    class ST1,ST2,ST3,ST4 shortTerm
-    class MT1,MT2,MT3,MT4 mediumTerm
-    class LT1,LT2,LT3 longTerm
-    class A future
-```
-
-| Phase           | Tasks                                                                                                                    |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| **Short-Term**  | Expand datasets, Enhance interpretability, Transfer tests, Occupant modeling, User interfaces, Human feedback, Tutorials |
-| **Medium-Term** | Real-time sensor data, Hybrid workflows, Whole Life Carbon, Automation integration, Co-simulation                        |
-| **Long-Term**   | Digital Twin framework, Ongoing retraining, City-scale integration                                                       |
-
-
+- **Longitudinal Validation:**  
+  - Ongoing collection of post-occupancy and IoT data for continuous model improvement and validation.
 ---
 
 ## 9. Ethical & Sustainability Considerations
 
-- Ensure data privacy and responsible use of simulation and machine learning data.  
-- Promote energy-efficient and environmentally sustainable design outcomes.  
-- Facilitate equitable access to tools supporting green building design.  
-- **Data bias mitigation:** Include a diverse range of building typologies, with special attention to underserved regions to avoid bias and improve model fairness. Apply bias audits or reweighting techniques in training data (e.g., reweighting underrepresented building types or climates).  
-- **Carbon awareness:** Ensure simulations incorporate both embodied carbon and grid energy sources, distinguishing renewable versus fossil-based energy impacts.  
-- **Energy equity:** Address energy justice by designing solutions that support marginalized communities and promote inclusive sustainability.  
-- **Sustainability evaluation framework:** Reference established tools such as the UN SDG framework or RIBA 2030 benchmarks as ethical guides for sustainability goals.
+- **Equity Auditing:**  
+  - Regular audits to ensure fair and inclusive recommendations across new-build typologies and demographics.
+
+- **Data Privacy:**  
+  - All data collection and processing comply with GDPR and university ethical guidelines.
+
+- **Sustainability:**  
+  - The methodology is designed to maximize environmental and social benefit, supporting Net Zero and Passivhaus targets.
+
 
 ---
 
@@ -473,7 +468,7 @@ graph LR
 
 ---
 
-## Methodology Workflow Diagram
+## 11.1 Methodology Workflow Diagram
 
 ```mermaid
 flowchart TD
@@ -522,6 +517,14 @@ flowchart TD
         L1 --> L2 --> L3 --> L4
     end
 ```
+
+## License
+
+This methodology is shared under the Creative Commons Attribution 4.0 International (CC BY 4.0) License. You may share and adapt the material with attribution.
+
+## How to Cite
+
+> Author Edward, R. (2025). *Methodology: Machine Learning–Assisted Generative Design for Energy-Efficient Architecture*. GitHub. https://[github.com/yourusername/yourrep](https://github.com/rossedward-arch/ml-generative-energy-design)
 
 # References
 
