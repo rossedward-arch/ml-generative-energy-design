@@ -316,7 +316,7 @@ All simulations assume modern construction practices with up-to-date insulation 
 
 ### Simulation Outputs and Benchmarking
 
-Simulations produce key performance indicators, including annual Energy Use Intensity (EUI), thermal comfort hours (based on Predicted Mean Vote and overheating risk assessments), and renewable energy generation potential. Results are benchmarked against stringent Passivhaus and Net Zero standards, such as envelope U-values below 0.15 W/m²K, maximum allowable cooling/heating loads, and achievement of daylight autonomy targets. This focus on performance metrics directly relevant to new-build high-performance standards guides design optimization towards regulatory compliance and sustainability goals.
+Simulations produce key performance indicators, including annual Energy Use Intensity (EUI), thermal comfort hours (based on Predicted Mean Vote and overheating risk assessments), and potential for renewable energy generation. Results are benchmarked against stringent Passivhaus and Net Zero standards, such as envelope U-values below 0.15 W/m²K, maximum allowable cooling/heating loads, and achievement of daylight autonomy targets. This focus on performance metrics directly relevant to new-build high-performance standards guides design optimization towards regulatory compliance and sustainability goals.
 
 ### Integration with Generative Design and Machine Learning
 
@@ -406,9 +406,9 @@ This research encounters several technical and practical challenges that impact 
 
 ### Additional Considerations
 
-- **Bias and Overfitting Risk:** Early-stage training data are often sparse or imbalanced, which increases the risk of overfitting, particularly with high-capacity models such as deep neural networks. To mitigate this, regularization methods, dropout layers, and k-fold cross-validation are rigorously applied to enhance model robustness.
+- **Bias and Overfitting Risk:** Early-stage training data are often sparse or imbalanced, which increases the risk of overfitting, particularly with high-capacity models such as deep **neural networks**. To mitigate this, regularization methods, dropout layers, and k-fold cross-validation are rigorously applied to enhance model robustness.
 
-- **Realistic User Constraints:** Practical design decisions frequently depend on subjective factors—such as aesthetics, budget constraints, or policy requirements—that are difficult to quantify in purely performance-driven models. This workflow integrates **manual overrides** and **designer-in-the-loop feedback loops** to ensure human expertise and preferences are effectively incorporated alongside automated optimization.
+- **Realistic User Constraints:** Practical design decisions frequently depend on subjective factors—such as aesthetics, budget constraints, or policy requirements—that are difficult to quantify in purely performance-driven models. This workflow integrates manual overrides and designer-in-the-loop feedback integration to ensure human expertise and preferences are effectively incorporated alongside automated optimization.
 
 - **Simulation Calibration:** To maintain real-world relevance and improve predictive accuracy, the workflow anticipates future integration of **post-occupancy validation** and **ASHRAE Guideline 14-compliant calibration** using empirical energy consumption and indoor environment data from completed projects.
 
