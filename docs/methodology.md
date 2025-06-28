@@ -312,7 +312,7 @@ Building geometry, zoning, and material specifications are directly exported fro
 
 ### Simulation Assumptions
 
-All simulations assume modern construction practices with up-to-date insulation levels, airtightness, and HVAC system specifications as defined by the design. Occupancy schedules, internal heat gains, and equipment loads follow current best-practice guidelines specifically calibrated for new construction. This ensures that simulation outputs realistically represent expected performance under typical new-build operating conditions and support valid benchmarking.
+All simulations assume modern construction standards, including up-to-date insulation, airtightness, and HVAC systems as specified in the design. Occupancy schedules, internal heat gains, and equipment loads follow current best-practice guidelines specifically calibrated for new construction. This ensures that simulation outputs realistically represent expected performance under typical new-build operating conditions and support valid benchmarking.
 
 ### Simulation Outputs and Benchmarking
 
@@ -406,7 +406,7 @@ This research encounters several technical and practical challenges that impact 
 
 ### Additional Considerations
 
-- **Bias and Overfitting Risk:** Early-stage training data are often sparse or imbalanced, which increases the risk of overfitting, particularly with high-capacity models such as deep **neural networks**. To mitigate this, regularization methods, dropout layers, and k-fold cross-validation are rigorously applied to enhance model robustness.
+- **Bias and Overfitting Risk:** Since early-stage data can be sparse or imbalanced, overfitting is a critical risk—particularly with high-capacity models like **neural networks**. To mitigate this, regularization methods, dropout layers, and k-fold cross-validation are rigorously applied to enhance model robustness.
 
 - **Realistic User Constraints:** Practical design decisions frequently depend on subjective factors—such as aesthetics, budget constraints, or policy requirements—that are difficult to quantify in purely performance-driven models. This workflow supports **manual overrides** and **designer-in-the-loop feedback integration** to ensure human expertise and preferences are effectively incorporated alongside automated optimization.
 
