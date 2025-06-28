@@ -408,7 +408,7 @@ This research encounters several technical and practical challenges that impact 
 
 - **Bias and Overfitting Risk:** Early-stage training data are often sparse or imbalanced, which increases the risk of overfitting, particularly with high-capacity models such as deep **neural networks**. To mitigate this, regularization methods, dropout layers, and k-fold cross-validation are rigorously applied to enhance model robustness.
 
-- **Realistic User Constraints:** Practical design decisions frequently depend on subjective factors—such as aesthetics, budget constraints, or policy requirements—that are difficult to quantify in purely performance-driven models. This workflow integrates manual overrides and designer-in-the-loop feedback integration to ensure human expertise and preferences are effectively incorporated alongside automated optimization.
+- **Realistic User Constraints:** Practical design decisions frequently depend on subjective factors—such as aesthetics, budget constraints, or policy requirements—that are difficult to quantify in purely performance-driven models. This workflow supports **manual overrides** and **designer-in-the-loop feedback integration** to ensure human expertise and preferences are effectively incorporated alongside automated optimization.
 
 - **Simulation Calibration:** To maintain real-world relevance and improve predictive accuracy, the workflow anticipates future integration of **post-occupancy validation** and **ASHRAE Guideline 14-compliant calibration** using empirical energy consumption and indoor environment data from completed projects.
 
