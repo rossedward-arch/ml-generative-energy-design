@@ -20,6 +20,29 @@ This methodology outlines a four-phase research and development workflow, combin
   - HVAC system types and control strategies
   - Renewable energy systems (PV, battery storage, etc.)
 
+>The following Python snippet visualizes the key design variables considered in the RL environment’s state-action space.
+
+```python
+import matplotlib.pyplot as plt
+
+variables = [
+    'Building Form',
+    'Orientation',
+    'Envelope Materials',
+    'Glazing Ratios',
+    'Shading',
+    'HVAC Systems',
+    'Renewable Energy'
+]
+
+fig, ax = plt.subplots(figsize=(6,4))
+ax.axis('off')
+for i, var in enumerate(variables):
+    ax.text(0.5, 1 - i*0.15, f"• {var}", fontsize=12, ha='center', va='top')
+ax.set_title('Design Variables in RL State-Action Space')
+plt.show()
+```
+
 - **Reward Function Design**: Formulate a **multi-objective reward function** with tunable weights:
 
   ```math
@@ -58,6 +81,36 @@ This methodology outlines a four-phase research and development workflow, combin
   - Conduct **co-design workshops** with architects, sustainability consultants, and council officers.
   - Use **think-aloud protocols** and **usability surveys** to refine interpretability, trust, and ease of use.
 
+#### Example: Generating a SHAP Summary Plot with Python
+
+> The following Python snippet demonstrates how to generate a SHAP summary plot for model interpretability.
+
+```python
+import shap
+import xgboost
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Load example dataset (e.g., Boston housing)
+from sklearn.datasets import load_boston
+from sklearn.model_selection import train_test_split
+
+# Load data
+X, y = load_boston(return_X_y=True)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Train an XGBoost model
+model = xgboost.XGBRegressor()
+model.fit(X_train, y_train)
+
+# Create SHAP explainer and values
+explainer = shap.Explainer(model)
+shap_values = explainer(X_test)
+
+# Plot summary plot
+shap.summary_plot(shap_values, X_test, feature_names=load_boston().feature_names)
+plt.show()
+```
 ---
 
 ### **Phase 3: Simulation-Driven Generative Design Pipeline**
