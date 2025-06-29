@@ -5,7 +5,7 @@
 ---
 
 ## 🚧 Project Status
-This project is under active development as part of a personal research portfolio supporting a potential PhD application at institutions like **UCL Bartlett**.
+This project is under active development as part of a personal research portfolio supporting a potential PhD application at institutions like **Edinburgh University**.
 
 Expect incomplete features, placeholder content, and ongoing refactoring.
 
