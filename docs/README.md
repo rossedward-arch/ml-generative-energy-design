@@ -21,6 +21,12 @@ A structured plan guiding the acquisition of technical skills and knowledge requ
 ### 5. `impact_statement.md`  
 A statement focused on the potential environmental, academic, and societal impacts of the proposed research and tools.
 
+### 6. `dev_log.md`  
+A development log documenting progress, challenges, and milestones throughout the project lifecycle.
+
+### 7. `literature_review.md`  
+A curated review of relevant academic and industry literature supporting the theoretical framework and contextual background of the research.
+
 ---
 
 ## 🧠 Usage
