@@ -1,6 +1,6 @@
 # Literature Review: Integrated Reinforcement Learning and Explainable AI for Climate-Adapted Generative Design of Passivhaus and Net-Zero Buildings
 
-This literature review synthesizes current research on generative design, reinforcement learning (RL), and explainable AI (XAI) as applied to climate-adapted, high-performance architectural design. It highlights key methodologies, tools, challenges, and emerging integrated workflows aiming to optimize building energy performance in line with Passivhaus and net-zero standards.
+This literature review synthesizes current research on generative design, reinforcement learning (RL), and explainable AI (XAI) as applied to climate-adapted, high-performance architectural design. It aims to establish a foundational understanding of the interdisciplinary methods, tools, and challenges involved in integrating AI-driven optimization and transparency into the generative design workflow for energy-efficient buildings that meet Passivhaus and net-zero standards.
 
 ## 1. Overview of Climate-Adapted Generative Design
 
@@ -47,6 +47,10 @@ Building performance simulation tools and digital twin frameworks validate and c
 - TRNSYS (Klein et al., 2017) offers transient system simulation capabilities for detailed dynamic building performance evaluation [^24].  
 - Digital twin frameworks enable real-time monitoring and iterative performance calibration, crucial for post-occupancy evaluation and adaptive control (Lu et al., 2021; Opoku et al., 2021) [^14][^25].  
 - Post-occupancy evaluation protocols like Probe (Bordass et al., 2001) provide feedback mechanisms to assess real-world building performance against design intentions [^26].
+
+## Conclusion
+
+This review highlights the growing potential of integrating reinforcement learning and explainable AI within generative design workflows to enhance climate-adapted, energy-efficient building design. Key advances include the use of RL for adaptive optimization, ML surrogate models for simulation acceleration, and XAI techniques for transparent model interpretation. However, challenges remain in managing computational complexity, reward function design, and bridging the gap between black-box AI models and architectural practice. Future research should focus on developing scalable, interpretable frameworks that facilitate designer-in-the-loop workflows and validate solutions with real-world performance data.
 
 ---
 
@@ -122,4 +126,3 @@ Building performance simulation tools and digital twin frameworks validate and c
 [^25]: Opoku, D.G.J., et al. (2021). *Digital Twins*.  
 [^26]: Bordass, B., et al. (2001). *Probe Process*.
 
----
