@@ -18,6 +18,32 @@ Reinforcement learning enables adaptive decision-making under uncertainty, while
 
 ---
 
+## Novelty and Research Gaps
+
+### Limitations in Existing RL and Generative Design Methods
+
+Recent studies (e.g., Gao et al., 2023; O’Donnell et al., 2022) highlight that reinforcement learning and generative design applications in architecture often use static or limited climate datasets, failing to capture the full temporal and spatial variability of future climate scenarios such as those from UKCP18. Additionally, many existing models optimize single-objective functions (e.g., energy use) without sufficiently addressing resilience or lifecycle carbon impacts.
+
+Furthermore, current RL frameworks for building design tend to simplify the action space and state representations, limiting the exploration of complex design variables like integrated renewable systems, material choices, or adaptive façade technologies. The coupling between RL agents and detailed simulation engines (EnergyPlus, TRNSYS) is typically loose or computationally expensive, restricting iterative optimization in practical workflows.
+
+In parallel, explainable AI techniques are still nascent in generative design. Most tools provide post-hoc model explanations without domain-specific interpretability or user interaction. This “black-box” nature impedes stakeholder acceptance, as designers, clients, and policymakers require transparent insights to trust AI-driven decisions (Ribeiro et al., 2016).
+
+### Improvements and Innovations in this Research
+
+This project advances the state-of-the-art by:
+
+- **Developing a multi-objective RL framework** with a novel reward function explicitly incorporating energy savings, occupant comfort, embodied carbon, and extreme weather resilience. The reward weights are dynamically tunable, enabling exploration of trade-offs within a climate-adaptive environment.
+
+- **Encoding a rich, high-dimensional action space and state representation** that includes architectural form, envelope characteristics, HVAC systems, and renewable integrations. This allows the RL agent to navigate realistic design complexity beyond simplified parametric models.
+
+- **Tight integration of the RL agent with simulation engines** (EnergyPlus/TRNSYS) through optimized surrogate modeling and parallelization strategies to achieve computationally efficient feedback loops, enabling practical early-stage design exploration.
+
+- **Custom XAI integration using SHAP combined with interactive, domain-specific dashboards** co-developed with architects and policymakers. This enables contextualized interpretation of RL decisions, visualization of trade-offs, and supports iterative human-AI collaboration during design.
+
+- **Benchmarking against traditional parametric optimization and surrogate model workflows** (e.g., Grasshopper + Galapagos/Octopus). The RL-XAI approach aims to demonstrate improved adaptability, performance, and stakeholder trust in design outcomes, particularly under uncertain future climate scenarios.
+
+---
+
 ## Research Aims
 
 ### Objectives
@@ -43,8 +69,8 @@ Reinforcement learning enables adaptive decision-making under uncertainty, while
 - Define action space: building form, envelope, orientation, materials, HVAC, renewable systems.
 - Encode reward function:
 
-```
-R = α * Esavings + β * Ccomfort - γ * Carbonembodied + δ * Resilienceextreme_weather
+```math
+R = \alpha \times E_{\text{savings}} + \beta \times C_{\text{comfort}} - \gamma \times \text{Carbon}_{\text{embodied}} + \delta \times \text{Resilience}_{\text{extreme\_weather}}
 ```
 
 Where α, β, γ, and δ are tunable weights optimized via multi-objective search.
