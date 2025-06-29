@@ -1,6 +1,6 @@
 
 # Research Proposal  
-**Title**: Integrated Reinforcement Learning and Explainable AI for Climate-Adapted Generative Design of Passivhaus and Net-Zero Buildings
+**Title**: Reinforcement Learning and Explainable AI for Climate-Adaptive Generative Design of Passivhaus and Net-Zero Buildings
 
 This research proposes a novel framework combining reinforcement learning (RL) and explainable artificial intelligence (XAI) to optimize generative design for climate-resilient, ultra-low-energy buildings. Tailored to Scotland’s net-zero targets and dynamic climate, the project aligns with the University of Edinburgh’s strengths in AI, sustainable architecture, and urban informatics.
 
@@ -8,13 +8,13 @@ This research proposes a novel framework combining reinforcement learning (RL) a
 
 ## Background and Research Gap
 
-Buildings contribute approximately 40% of global carbon emissions. Passivhaus and net-zero standards offer solutions, but generative design tools currently face three key limitations:
+Buildings account for approximately 40% of global carbon emissions. Passivhaus and net-zero building standards provide promising pathways to drastically reduce energy consumption and carbon footprints. However, current generative design tools for sustainable buildings face three major limitations:
 
-- **Climate adaptation**: Most tools rely on static climate data, failing to model shifting rainfall and wind patterns.
-- **Decision transparency**: "Black-box" AI undermines stakeholder trust in design outcomes.
-- **Dynamic optimization**: Current methods inadequately simulate the combined effects of grid interaction, occupant behavior, and extreme climate events.
+- **Climate adaptation**: Most existing tools rely on static or historic climate data, which fails to capture the shifting rainfall, wind patterns, and temperature extremes projected by climate change.
+- **Decision transparency**: The prevalent use of "black-box" AI models undermines trust among designers, clients, and policymakers by providing limited insight into design decision rationales.
+- **Dynamic optimization**:     Current optimization approaches struggle to simulate the combined effects of grid interactions, occupant behavior, and extreme climate events, limiting adaptive resilience in building design.
 
-Reinforcement learning enables adaptive decision-making under uncertainty, while XAI offers transparency to support stakeholder trust.
+Reinforcement learning (RL) offers a promising approach for adaptive, sequential decision-making under uncertainty. Explainable AI (XAI) techniques can bridge the trust gap by illuminating AI-driven design decisions to human stakeholders.
 
 ---
 
@@ -22,25 +22,25 @@ Reinforcement learning enables adaptive decision-making under uncertainty, while
 
 ### Limitations in Existing RL and Generative Design Methods
 
-Recent studies (e.g., Gao et al., 2023; O’Donnell et al., 2022) highlight that reinforcement learning and generative design applications in architecture often use static or limited climate datasets, failing to capture the full temporal and spatial variability of future climate scenarios such as those from UKCP18. Additionally, many existing models optimize single-objective functions (e.g., energy use) without sufficiently addressing resilience or lifecycle carbon impacts.
+Recent research (e.g., Gao et al., 2023; O’Donnell et al., 2022) indicates that RL applications in architectural design often rely on static or limited climate datasets, failing to capture the full temporal and spatial variability inherent in future climate projections such as the UKCP18 dataset. Moreover, many current models focus on optimizing single objectives like energy use, neglecting critical factors such as resilience to extreme weather or lifecycle carbon impacts.
 
-Furthermore, current RL frameworks for building design tend to simplify the action space and state representations, limiting the exploration of complex design variables like integrated renewable systems, material choices, or adaptive façade technologies. The coupling between RL agents and detailed simulation engines (EnergyPlus, TRNSYS) is typically loose or computationally expensive, restricting iterative optimization in practical workflows.
+Current RL frameworks typically simplify both the action space and state representations, limiting exploration of complex architectural design variables—such as integrated renewable energy systems, advanced material choices, and adaptive façades. Additionally, coupling RL agents with detailed simulation engines (e.g., EnergyPlus, TRNSYS) is usually computationally expensive or loosely integrated, constraining iterative optimization within practical design workflows.
 
-In parallel, explainable AI techniques are still nascent in generative design. Most tools provide post-hoc model explanations without domain-specific interpretability or user interaction. This “black-box” nature impedes stakeholder acceptance, as designers, clients, and policymakers require transparent insights to trust AI-driven decisions (Ribeiro et al., 2016).
+Explainable AI in generative design remains nascent. Most tools provide only post-hoc, model-agnostic explanations without domain-specific context or interactive capabilities, impeding stakeholder acceptance and collaborative design processes (Ribeiro et al., 2016).
 
-### Improvements and Innovations in this Research
+### Innovations in this Research
 
 This project advances the state-of-the-art by:
 
-- **Developing a multi-objective RL framework** with a novel reward function explicitly incorporating energy savings, occupant comfort, embodied carbon, and extreme weather resilience. The reward weights are dynamically tunable, enabling exploration of trade-offs within a climate-adaptive environment.
+- **Developing a multi-objective RL framework** featuring a novel, dynamically tunable reward function incorporating energy savings, occupant comfort, embodied carbon, and resilience to extreme weather. This enables nuanced trade-off exploration in a climate-adaptive environment.
 
-- **Encoding a rich, high-dimensional action space and state representation** that includes architectural form, envelope characteristics, HVAC systems, and renewable integrations. This allows the RL agent to navigate realistic design complexity beyond simplified parametric models.
+- **Encoding a rich, high-dimensional action space and state representation**  that encompasses architectural form, building envelope, HVAC systems, and renewable energy integrations. This supports navigation of realistic design complexities beyond simplified parametric approaches.
+- 
+- **Tight integration of the RL agent with simulation engines** (EnergyPlus and TRNSYS) using surrogate modeling and parallelization strategies, enabling computationally efficient feedback loops suitable for early-stage design exploration.
 
-- **Tight integration of the RL agent with simulation engines** (EnergyPlus/TRNSYS) through optimized surrogate modeling and parallelization strategies to achieve computationally efficient feedback loops, enabling practical early-stage design exploration.
+- **Embedding custom XAI techniques using SHAP**, combined with interactive, domain-specific dashboards co-designed with architects and policymakers. This facilitates contextualized interpretation of RL decisions, visualization of trade-offs, and supports iterative human-AI collaboration during the design process.
 
-- **Custom XAI integration using SHAP combined with interactive, domain-specific dashboards** co-developed with architects and policymakers. This enables contextualized interpretation of RL decisions, visualization of trade-offs, and supports iterative human-AI collaboration during design.
-
-- **Benchmarking against traditional parametric optimization and surrogate model workflows** (e.g., Grasshopper + Galapagos/Octopus). The RL-XAI approach aims to demonstrate improved adaptability, performance, and stakeholder trust in design outcomes, particularly under uncertain future climate scenarios.
+- **Benchmarking against traditional parametric optimization workflows** (e.g., Grasshopper + Galapagos/Octopus), to demonstrate improved adaptability, performance, and stakeholder trust under uncertain future climate conditions.
 
 ---
 
@@ -48,26 +48,26 @@ This project advances the state-of-the-art by:
 
 ### Objectives
 
-- Develop an RL-XAI framework for generative design that adapts to Scotlands future climate scenarios (2030–2050).
-- Balance energy efficiency, grid resilience, lifecycle carbon, and occupant comfort.
-- Validate outputs through Edinburgh-specific case studies aiming for Passivhaus and net-zero compliance.
+- Develop an RL-XAI framework for generative building design that adapts to Scotland’s projected future climate scenarios (2030–2050).
+- Balance energy efficiency, grid resilience, lifecycle carbon, and occupant comfort objectives.
+- Validate framework outputs through Scotland-specific case studies targeting Passivhaus and net-zero compliance.
 
 ### Research Questions
 
 1. How can reinforcement learning dynamically optimize building design under uncertain future climate scenarios?
-2. What forms of explainability best support designer and policymaker trust in generative AI-driven design tools?
-3. Can AI-driven design methods outperform traditional parametric workflows in meeting energy and resilience criteria?
+2. What forms of explainability best support designers’ and policymakers’ trust in AI-driven generative design tool
+3. Can AI-driven design methods outperform traditional parametric workflows in meeting energy efficiency and resilience criteria?
+4. How can multi-objective trade-offs be effectively incorporated and visualized within an RL-XAI framework?
 
 ---
 
 ## Methodology
 
-### Phase 1: Climate-Adaptive Reinforcement Learning
+### Phase 1: Climate-Adaptive Reinforcement Learning Environment
 
-**Environment Design**
-- Use UKCP18 weather projections for Scotlandd (2030–2050).
-- Define action space: building form, envelope, orientation, materials, HVAC, renewable systems.
-- Encode reward function:
+- Utilize UKCP18 weather projections for Scotland (2030–2050) to create a dynamic, climate-adaptive simulation environment.
+- Define a comprehensive action space including building form, envelope properties, orientation, materials, HVAC configurations, and renewable energy systems.
+- Implement a multi-objective reward function:
 
 ```math
 R = \alpha \times E_{\text{savings}} + \beta \times C_{\text{comfort}} - \gamma \times \text{Carbon}_{\text{embodied}} + \delta \times \text{Resilience}_{\text{extreme\_weather}}
@@ -79,22 +79,22 @@ Where α, β, γ, and δ are tunable weights optimized via multi-objective searc
 
 ### Phase 2: Explainable AI (XAI) Integration
 
-- Apply SHAP (SHapley Additive exPlanations) to interpret RL decisions.
-- Generate interactive reports and dashboards showing:
-  - Trade-offs between insulation, HVAC, and renewable systems
-  - Resilience contributions (e.g. storm-resistant façades, passive cooling)
-
+- Apply SHAP (SHapley Additive exPlanations) to interpret the RL agent’s decisions on design variable importance and trade-offs.
+- Develop interactive dashboards and reports co-designed with stakeholders to visualize:
+  - Trade-offs between insulation levels, HVAC systems, and renewable integration.
+  - Contributions of resilience strategies (e.g., storm-resistant façades, passive cooling).
+- Conduct user evaluations with architects and policymakers to refine interpretability and usability.
 ---
 
 ### Phase 3: Generative Design Pipeline
 
 ```mermaid
 graph LR
-    A["Future Climate Data (UKCP18)"] --> B["RL Agent"]
-    B --> C{"Design Optimization"}
-    C --> D["Passivhaus Compliance"]
-    C --> E["Net-Zero Energy"]
-    D --> F["XAI Audit"]
+    A["Future Climate Data (UKCP18)"] --> B["Reinforcement Learning Agent"]
+    B --> C{"Design Optimization Process"}
+    C --> D["Passivhaus Compliance Assessment"]
+    C --> E["Net-Zero Energy Evaluation"]
+    D --> F["XAI Audit & Visualization"]
     E --> F
     F --> G["Generative Design Output"]
 ```
@@ -103,15 +103,16 @@ graph LR
 
 ### Phase 4: Validation
 
-- **Simulation Tools**: Model final designs in EnergyPlus or TRNSYS.
-- **Digital Twin Calibration**: Validate outputs using historical weather and monitored post-occupancy datasets.
-- **Benchmarking Against**:
-  - Traditional parametric tools (e.g. Grasshopper + Galapagos/Octopus)
-  - ASHRAE 90.1, CIBSE TM54
-- **Evaluation Metrics**:
+- Simulate final optimized designs using EnergyPlus or TRNSYS for detailed performance analysis.
+- Calibrate and validate model outputs with digital twin approaches using historical weather and monitored post-occupancy datasets.
+- Benchmark against:
+  - Traditional parametric optimization tools (Grasshopper + Galapagos/Octopus).
+  - Established standards such as ASHRAE 90.1 and CIBSE TM54.
+- Evaluate based on:
   - Energy Use Intensity (EUI)
-  - Lifecycle carbon (embodied + operational)
-  - Resilience: thermal autonomy, passive survivability, recovery time
+  - Lifecycle carbon (embodied and operational)
+  - Resilience metrics: thermal autonomy, passive survivability, and recovery time after extreme events.
+- Conduct uncertainty quantification and sensitivity analysis to assess robustness.
 
 ---
 
@@ -123,36 +124,37 @@ graph LR
 | Net-Zero     | Annual EUI < 35 kWh/m²/year, on-site renewables coverage ≥ 100%              |
 | Resilience   | Operable windows, passive cooling, thermal mass, storm resistance            |
 
-These will be implemented as hard/soft constraints within the RL agent’s environment.
+These criteria will be encoded as hard and soft constraints within the RL environment.
 
 ---
 
 ## Expected Outcomes
 
-- **Open-source toolkit**: Python-based generative design library tailored to Edinburgh’s climate and energy goals.
-- **XAI-informed policy guidance**: Reports and dashboards to support transparent decisions for local councils and developers.
-- **Academic impact**: Peer-reviewed publications showing ≥30% energy improvement vs. ASHRAE 90.1 baselines.
+- An open-source Python toolkit for climate-adaptive generative building design tailored to Edinburgh’s energy and climate goals.
+- XAI-informed policy guidance dashboards to support transparent decision-making for local councils and developers.
+- Peer-reviewed publications demonstrating at least 30% energy improvement compared to ASHRAE 90.1 baselines.
+- A validated methodology embedding explainability into early-stage generative design workflows, enhancing stakeholder trust.
 
 ---
 
 ## Contributions
 
-- A novel RL-XAI framework for adaptive building design under climate uncertainty.
-- A validated, open-source toolchain integrated with industry-standard simulation workflows.
-- A new methodology for embedding explainability in early-stage generative design for energy policy and stakeholder engagement.
+- A novel, multi-objective RL-XAI framework enabling adaptive building design under climate uncertainty.
+- A validated, open-source toolchain tightly integrated with industry-standard simulation engines.
+- An innovative approach for embedding interactive explainability in AI-driven generative design, supporting policy and stakeholder engagement.
 
 ---
 
 ## Alignment with the University of Edinburgh
 
 ### Research Environment
-- **AI Strengths**: Bayes Centre (reinforcement learning labs), School of Informatics.
-- **Built Environment**: Edinburgh School of Architecture and Landscape Architecture (ESALA), Edinburgh Climate Change Institute (ECCI).
+- AI and Informatics expertise at the Bayes Centre and School of Informatics, with leading labs in reinforcement learning.
+- Built environment and climate adaptation strengths at Edinburgh School of Architecture and Landscape Architecture (ESALA) and Edinburgh Climate Change Institute (ECCI)
 
-### Funding Alignment
-- EPSRC "AI for Net-Zero"
+### Funding and Strategic Fit
+- EPSRC programs on "AI for Net-Zero.
 - Scotland’s Climate Emergency Fund
-- UoE Strategic Plan on Climate Leadership and AI Innovation
+- University of Edinburgh’s Strategic Plan emphasizing climate leadership and AI innovation.
 
 ---
 
@@ -168,8 +170,8 @@ These will be implemented as hard/soft constraints within the RL agent’s envir
 
 ## Data and Ethics Considerations
 
-- **Data**: Climate data (UKCP18) is open-access. Access to monitored building data will be requested via ECCI or partner organizations.
-- **Ethics**: By embedding explainability into AI workflows, the project supports ethical, transparent, and responsible AI design decisions.
+- **Data**: UKCP18 climate data is open-access. Access to monitored building and occupancy data will be coordinated via ECCI and partner organizations.
+- **Ethics**: The project promotes ethical, transparent, and responsible AI by embedding explainability and human-in-the-loop processes to mitigate black-box decision-making risks and support equitable design outcomes.
 
 ---
 
@@ -185,7 +187,7 @@ These will be implemented as hard/soft constraints within the RL agent’s envir
 
 ## Conclusion
 
-This research bridges cutting-edge AI with climate-adapted design, enabling transparent, high-performance buildings aligned with Scotland’s net-zero goals. By integrating reinforcement learning and explainability, it positions the University of Edinburgh at the forefront of sustainable, AI-driven innovation in the built environment.
+This research bridges cutting-edge artificial intelligence techniques with climate-adaptive building design, enabling the creation of transparent, resilient, and high-performance buildings aligned with Scotland’s ambitious net-zero carbon targets. By integrating reinforcement learning with explainable AI, the project advances both the technical and ethical dimensions of generative design, fostering trust and collaboration among architects, policymakers, and stakeholders. This work positions the University of Edinburgh at the forefront of sustainable AI-driven innovation within the built environment, contributing impactful tools and methodologies that can accelerate the transition to climate-resilient, low-carbon architecture.
 
 
 
