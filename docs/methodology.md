@@ -58,12 +58,12 @@ plt.show()
     
 ```mermaid 
 flowchart LR
-    subgraph RL Loop
-        A[Agent (Policy/Neural Network)] -- Action --> B(Environment)
-        B -- New State, Reward --> A
-    end
+    Agent -->|Action| Environment
+    Environment -->|New State, Reward| Agent
 ```
-
+>Agent represents the policy or neural network making design decisions.
+Environment includes the energy simulation or surrogate model returning new state and reward signals.
+>
 - **Simulation Integration**: Use **EnergyPlus** or **TRNSYS** for performance simulation, with:
 
   - **Surrogate models** (e.g., Gaussian Process Regression or XGBoost) trained on simulation outputs to reduce computational cost.
