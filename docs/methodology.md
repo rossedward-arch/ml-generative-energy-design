@@ -16,9 +16,8 @@ This research employs an integrated, multi-stage methodology combining climate-a
 - Specify the **action space** as continuous and discrete variables representing design decisions: insulation thickness, glazing type, shading, HVAC controls, renewable deployment, and orientation adjustments.
 - Formulate a **multi-objective reward function**:
 
-\[
-R = \alpha E_{\text{savings}} + \beta C_{\text{comfort}} - \gamma C_{\text{embodied}} + \delta R_{\text{resilience}}
-\]
+R = α E_savings + β C_comfort - γ C_embodied + δ R_resilience
+
 
 where weights \(\alpha, \beta, \gamma, \delta\) balance energy savings, thermal comfort, embodied carbon, and resilience metrics (e.g., passive survivability, grid independence).
 
