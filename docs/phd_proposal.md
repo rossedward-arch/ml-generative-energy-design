@@ -48,7 +48,7 @@ This project advances the state-of-the-art by:
 
 ### Objectives
 
-- Develop an RL-XAI framework for generative design that adapts to Edinburgh’s future climate scenarios (2030–2050).
+- Develop an RL-XAI framework for generative design that adapts to Scotlands future climate scenarios (2030–2050).
 - Balance energy efficiency, grid resilience, lifecycle carbon, and occupant comfort.
 - Validate outputs through Edinburgh-specific case studies aiming for Passivhaus and net-zero compliance.
 
@@ -65,7 +65,7 @@ This project advances the state-of-the-art by:
 ### Phase 1: Climate-Adaptive Reinforcement Learning
 
 **Environment Design**
-- Use UKCP18 weather projections for Edinburgh (2030–2050).
+- Use UKCP18 weather projections for Scotlandd (2030–2050).
 - Define action space: building form, envelope, orientation, materials, HVAC, renewable systems.
 - Encode reward function:
 
@@ -148,11 +148,6 @@ These will be implemented as hard/soft constraints within the RL agent’s envir
 ### Research Environment
 - **AI Strengths**: Bayes Centre (reinforcement learning labs), School of Informatics.
 - **Built Environment**: Edinburgh School of Architecture and Landscape Architecture (ESALA), Edinburgh Climate Change Institute (ECCI).
-
-### Local Relevance
-- Coastal flood adaptation (Leith, Granton)
-- Historic retrofit challenges (Old Town, tenement housing)
-- District heating and grid-interactive buildings
 
 ### Funding Alignment
 - EPSRC "AI for Net-Zero"
