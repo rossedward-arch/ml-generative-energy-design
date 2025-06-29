@@ -38,13 +38,31 @@ De Wilde (2014) emphasizes the need for dynamic resilience metrics in simulation
 
 > **Key Insight**: Most current generative workflows overlook future climate variability, limiting their usefulness for long-term design resilience.
 
-**References:**  
-- Jenkins, D.P., Paszkiewicz, R., & Gibson, G. (2008). *The impact of climate change on energy use in the UK building sector*. **Energy Policy**, 36(12), 4601–4605.  
-- de Wilde, P. (2014). *The gap between predicted and measured energy performance of buildings: A framework for investigation*. **Automation in Construction**, 41, 40–49.
+This gap highlights the urgent need for trustworthy, adaptive design tools that can handle the complexities of future climate data while providing clear, actionable insights to designers and stakeholders. Achieving this level of transparency and reliability necessitates incorporating Explainable AI (XAI) techniques to bridge the interpretability gap in AI-driven generative workflows.
 
 ---
 
-## 1.4 Energy Simulation and Surrogate Models
+## 1.4 Explainable AI (XAI) in Generative Design and Stakeholder Trust
+
+Explainable AI (XAI) aims to make complex machine learning models transparent and interpretable, which is crucial in generative design where AI-driven decisions directly affect building performance, occupant comfort, and sustainability goals. Many current workflows use black-box surrogate models or reinforcement learning agents whose internal decision-making is opaque, limiting stakeholder trust and hindering collaborative design.
+
+Techniques such as LIME (Local Interpretable Model-agnostic Explanations) and SHAP (Shapley Additive Explanations) have been developed to provide post-hoc interpretability by attributing importance to model inputs, enabling designers to understand, validate, and refine AI-generated solutions (Ribeiro et al., 2016; Lundberg & Lee, 2017). 
+
+Recent reviews and applications of XAI in the built environment demonstrate growing interest in explainability for energy performance prediction and design optimization, improving transparency and stakeholder engagement (Doshi-Velez & Kim, 2017; Nouri et al., 2023). However, integrating XAI systematically into generative design workflows remains an open challenge and represents a significant opportunity for advancing human-AI collaboration.
+
+> **Key Insight**: Integrating XAI enhances trust and transparency in AI-assisted generative design, enabling informed decision-making and broader acceptance among stakeholders.
+
+**References:**  
+- Jenkins, D.P., Paszkiewicz, R., & Gibson, G. (2008). *The impact of climate change on energy use in the UK building sector*. **Energy Policy**, 36(12), 4601–4605.  
+- de Wilde, P. (2014). *The gap between predicted and measured energy performance of buildings: A framework for investigation*. **Automation in Construction**, 41, 40–49.  
+- Ribeiro, M.T., Singh, S., & Guestrin, C. (2016). *"Why should I trust you?": Explaining the predictions of any classifier*. Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining.  
+- Lundberg, S.M., & Lee, S.-I. (2017). *A Unified Approach to Interpreting Model Predictions*. Advances in Neural Information Processing Systems, 30.  
+- Doshi-Velez, F., & Kim, B. (2017). *Towards A Rigorous Science of Interpretable Machine Learning*. arXiv preprint arXiv:1702.08608.  
+- Nouri, A., Karimipanah, T., & Ahmad, M.W. (2023). *Explainable AI for sustainable smart buildings: A review and case studies*. **Sustainable Cities and Society**, 89, 104199.
+
+---
+
+## 1.5 Energy Simulation and Surrogate Models
 
 Energy simulation tools such as EnergyPlus and OpenStudio provide detailed thermodynamic analyses essential for performance validation. However, their computational cost poses challenges for iterative generative design. To mitigate this, surrogate models — statistical or machine learning models trained to emulate simulation outputs — have been increasingly used (Evins, 2013).
 
@@ -58,7 +76,7 @@ Common surrogate models include Gaussian Processes, Artificial Neural Networks, 
 
 ---
 
-## 1.5 Multi-Objective Optimization in Building Design
+## 1.6 Multi-Objective Optimization in Building Design
 
 Traditional optimization in building design often focuses on a single metric, such as minimizing energy use or maximizing daylight. However, sustainable and resilient buildings require balancing multiple objectives, including energy efficiency, thermal comfort, embodied and operational carbon, and resilience to future climate stresses (Zuo & Zhao, 2014).
 
@@ -72,7 +90,7 @@ Multi-objective optimization algorithms enable designers to explore trade-offs a
 
 ---
 
-## 1.6 Explainable AI (XAI) in Architecture and Building Design
+## 1.7 Explainable AI (XAI) in Architecture and Building Design
 
 The increasing adoption of AI and ML in architecture necessitates transparency and interpretability to build user trust and support effective human-AI collaboration. Explainable AI (XAI) aims to make black-box models understandable to humans by providing feature attribution, rule extraction, or visual explanations (Ribeiro et al., 2016).
 
@@ -89,7 +107,7 @@ Incorporating XAI into RL and surrogate modeling workflows addresses one of the 
 
 ---
 
-## 1.7 Stakeholder Engagement and Co-Design Methods
+## 1.8 Stakeholder Engagement and Co-Design Methods
 
 To ensure real-world adoption, generative design tools must be interpretable, interactive, and usable by non-experts. Co-design and participatory methods involve stakeholders early in tool development, fostering trust and better aligning tools with user needs (Bardzell et al., 2012).
 
@@ -103,7 +121,7 @@ Think-aloud protocols, dashboard interfaces, and human-in-the-loop strategies ar
 
 ---
 
-## 1.8 Digital Twins and Post-Occupancy Validation
+## 1.9 Digital Twins and Post-Occupancy Validation
 
 Digital twins — dynamic, data-driven models of buildings — offer new avenues for validating and calibrating early design decisions throughout building life cycles (Kritzinger et al., 2018). Integrating digital twins with generative design and ML models enables continuous performance monitoring and iterative design updates informed by real-world data.
 
@@ -117,7 +135,7 @@ Post-occupancy evaluation helps to close the gap between predicted and actual pe
 
 ---
 
-## 1.9 Practical Integration Challenges in ML-Generative-Design Workflows
+## 1.10 Practical Integration Challenges in ML-Generative-Design Workflows
 
 Despite advances, integrating ML, simulation, and generative design remains technically challenging due to:
 
@@ -136,7 +154,7 @@ Furthermore, most existing generative and ML tools optimize for a single perform
 
 ---
 
-## 1.10 Conclusion and Research Gaps
+## 1.11 Conclusion and Research Gaps
 
 This literature review identifies key gaps in current generative design and building performance workflows:
 
