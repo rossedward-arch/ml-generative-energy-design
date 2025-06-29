@@ -1,16 +1,19 @@
 # 1. Literature Review
 
+# 1. Literature Review
+
 ## 1.1 Climate-Responsive Generative Design
 
 The built environment is a major contributor to global carbon emissions, with early-stage design decisions playing a critical role in determining a building’s long-term energy performance and adaptability to future climates. Generative design has gained traction as a method for exploring complex form-function relationships through algorithmic techniques. Tools like Grasshopper, Ladybug, and Galapagos have enabled evolutionary design processes that optimize for parameters such as daylight, solar gains, and thermal comfort (Nguyen et al., 2014).
 
-However, many generative workflows still rely on fixed climate assumptions or single-objective optimization, lacking adaptability to future climate uncertainties. Attia et al. (2013) critique such approaches as being overly dependent on designer intuition or single-pass simulation, limiting their ability to support performance-informed exploration during conceptual stages.
+However, many generative workflows still rely on fixed climate assumptions or single-objective optimization, lacking adaptability to future climate uncertainties. Attia et al. (2013) critique such approaches as being overly dependent on designer intuition or single-pass simulation, limiting their ability to support performance-informed exploration during conceptual stages. Recent work by Reinhart and Davila (2016) has emphasized the need for workflows that can incorporate climate change projections into early design phases.
 
 > **Key Insight**: While generative design methods are maturing, they often fail to address climate resilience and multi-objective trade-offs in a transparent, adaptable way.
 
-**References:**  
-- Nguyen, A.T., Reiter, S. & Rigo, P. (2014). *A review on simulation-based optimization methods applied to building performance analysis*. **Applied Energy**, 113, 1043–1058.  
-- Attia, S., Hensen, J.L.M., Beltrán, L., & De Herde, A. (2013). *Simulation-based decision support tool for early building design*. **Automation in Construction**, 20, 108–125.
+**References**  
+- Nguyen, A.T., Reiter, S. & Rigo, P. (2014). A review on simulation-based optimization methods applied to building performance analysis. *Applied Energy*, 113, 1043–1058.  
+- Attia, S., Hensen, J.L.M., Beltrán, L., & De Herde, A. (2013). Simulation-based decision support tool for early building design. *Automation in Construction*, 20, 108–125.  
+- Reinhart, C.F., & Davila, C.C. (2016). Urban building energy modeling – A review of a nascent field. *Building and Environment*, 97, 196–202.
 
 ---
 
@@ -20,13 +23,14 @@ Reinforcement Learning (RL) has recently emerged as a promising technique in bui
 
 Despite its success in operational controls, RL has not been widely applied to early-stage architectural design, particularly in form-finding or massing processes. Nagpal et al. (2020) explored RL for HVAC control but noted that state-space complexity and training time are critical challenges. Applying RL to conceptual design stages requires reimagining reward structures and integrating design constraints as part of the environment model.
 
-A significant technical hurdle lies in coupling RL algorithms with computationally intensive building simulation engines like EnergyPlus. This necessitates efficient surrogate models to approximate simulation outputs and reduce training times. Integrating RL with surrogate models introduces complexity in ensuring model accuracy, stability, and interpretability — challenges that remain largely unaddressed in existing workflows.
+A significant technical hurdle lies in coupling RL algorithms with computationally intensive building simulation engines like EnergyPlus. This necessitates efficient surrogate models to approximate simulation outputs and reduce training times. Integrating RL with surrogate models introduces complexity in ensuring model accuracy, stability, and interpretability — challenges that remain largely unaddressed in existing workflows (Vazquez-Canteli & Nagy, 2019).
 
 > **Key Insight**: RL has strong potential for exploratory and iterative design processes but remains underexplored in early-stage building geometry and envelope design due to technical and computational challenges.
 
-**References:**  
-- Nagpal, S., Parameswaran, V., & Jain, R. (2020). *Reinforcement Learning for HVAC Control: Challenges and Opportunities*. **Energy and Buildings**, 207, 109482.  
-- Zhao, Y., Li, X., & Wen, J. (2021). *A review of reinforcement learning for building energy optimization*. **Energy and AI**, 4, 100061.
+**References**  
+- Nagpal, S., Parameswaran, V., & Jain, R. (2020). Reinforcement Learning for HVAC Control: Challenges and Opportunities. *Energy and Buildings*, 207, 109482.  
+- Zhao, Y., Li, X., & Wen, J. (2021). A review of reinforcement learning for building energy optimization. *Energy and AI*, 4, 100061.  
+- Vazquez-Canteli, J.R., & Nagy, Z. (2019). Reinforcement learning for demand response: A review of algorithms and modeling techniques. *Applied Energy*, 235, 1072–1089.
 
 ---
 
@@ -34,11 +38,15 @@ A significant technical hurdle lies in coupling RL algorithms with computational
 
 Designing for future climate conditions is essential for ensuring building resilience and energy performance over the long term. Weather data generators such as UKCP09 and UKCP18 offer probabilistic weather files representing future climate scenarios, but their use in early design tools is limited (Jenkins et al., 2008). Many performance tools rely on typical meteorological year (TMY) data that do not capture the range of extremes or temporal shifts expected under climate change.
 
-De Wilde (2014) emphasizes the need for dynamic resilience metrics in simulation environments. Without future weather integration, generative models risk creating buildings optimized for obsolete conditions.
+De Wilde (2014) emphasizes the need for dynamic resilience metrics in simulation environments. Without future weather integration, generative models risk creating buildings optimized for obsolete conditions. Newer works, such as by Belcher et al. (2005) and Eames et al. (2011), have demonstrated methods for generating future weather files compatible with simulation engines.
 
 > **Key Insight**: Most current generative workflows overlook future climate variability, limiting their usefulness for long-term design resilience.
 
-This gap highlights the urgent need for trustworthy, adaptive design tools that can handle the complexities of future climate data while providing clear, actionable insights to designers and stakeholders. Achieving this level of transparency and reliability necessitates incorporating Explainable AI (XAI) techniques to bridge the interpretability gap in AI-driven generative workflows.
+**References**  
+- Jenkins, D.P., Paszkiewicz, R., & Gibson, G. (2008). The impact of climate change on energy use in the UK building sector. *Energy Policy*, 36(12), 4601–4605.  
+- de Wilde, P. (2014). The gap between predicted and measured energy performance of buildings: A framework for investigation. *Automation in Construction*, 41, 40–49.  
+- Belcher, S.E., Hacker, J.N., & Powell, D.S. (2005). Constructing design weather data for future climates. *Building Services Engineering Research and Technology*, 26(1), 49–61.  
+- Eames, M., Kershaw, T., & Coley, D. (2011). On the creation of future probabilistic design weather years from UKCP09. *Building Services Engineering Research and Technology*, 32(2), 127–142.
 
 ---
 
@@ -46,19 +54,16 @@ This gap highlights the urgent need for trustworthy, adaptive design tools that 
 
 Explainable AI (XAI) aims to make complex machine learning models transparent and interpretable, which is crucial in generative design where AI-driven decisions directly affect building performance, occupant comfort, and sustainability goals. Many current workflows use black-box surrogate models or reinforcement learning agents whose internal decision-making is opaque, limiting stakeholder trust and hindering collaborative design.
 
-Techniques such as LIME (Local Interpretable Model-agnostic Explanations) and SHAP (Shapley Additive Explanations) have been developed to provide post-hoc interpretability by attributing importance to model inputs, enabling designers to understand, validate, and refine AI-generated solutions (Ribeiro et al., 2016; Lundberg & Lee, 2017). 
-
-Recent reviews and applications of XAI in the built environment demonstrate growing interest in explainability for energy performance prediction and design optimization, improving transparency and stakeholder engagement (Doshi-Velez & Kim, 2017; Nouri et al., 2023). However, integrating XAI systematically into generative design workflows remains an open challenge and represents a significant opportunity for advancing human-AI collaboration.
+Techniques such as LIME (Local Interpretable Model-agnostic Explanations) and SHAP (Shapley Additive Explanations) have been developed to provide post-hoc interpretability by attributing importance to model inputs (Ribeiro et al., 2016; Lundberg & Lee, 2017). Aleti et al. (2022) emphasized the growing relevance of XAI in design decision support systems, especially in sensitive, high-stakes applications like sustainable buildings.
 
 > **Key Insight**: Integrating XAI enhances trust and transparency in AI-assisted generative design, enabling informed decision-making and broader acceptance among stakeholders.
 
-**References:**  
-- Jenkins, D.P., Paszkiewicz, R., & Gibson, G. (2008). *The impact of climate change on energy use in the UK building sector*. **Energy Policy**, 36(12), 4601–4605.  
-- de Wilde, P. (2014). *The gap between predicted and measured energy performance of buildings: A framework for investigation*. **Automation in Construction**, 41, 40–49.  
-- Ribeiro, M.T., Singh, S., & Guestrin, C. (2016). *"Why should I trust you?": Explaining the predictions of any classifier*. Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining.  
-- Lundberg, S.M., & Lee, S.-I. (2017). *A Unified Approach to Interpreting Model Predictions*. Advances in Neural Information Processing Systems, 30.  
-- Doshi-Velez, F., & Kim, B. (2017). *Towards A Rigorous Science of Interpretable Machine Learning*. arXiv preprint arXiv:1702.08608.  
-- Nouri, A., Karimipanah, T., & Ahmad, M.W. (2023). *Explainable AI for sustainable smart buildings: A review and case studies*. **Sustainable Cities and Society**, 89, 104199.
+**References**  
+- Ribeiro, M.T., Singh, S., & Guestrin, C. (2016). "Why should I trust you?": Explaining the predictions of any classifier. *Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining*.  
+- Lundberg, S.M., & Lee, S.-I. (2017). A Unified Approach to Interpreting Model Predictions. *Advances in Neural Information Processing Systems (NIPS)*.  
+- Doshi-Velez, F., & Kim, B. (2017). Towards A Rigorous Science of Interpretable Machine Learning. *arXiv preprint arXiv:1702.08608*.  
+- Nouri, A., Karimipanah, T., & Ahmad, M.W. (2023). Explainable AI for sustainable smart buildings: A review and case studies. *Sustainable Cities and Society*, 89, 104199.  
+- Aleti, A., Burgueno, L., & Papadopoulos, Y. (2022). Explainable AI in Software Engineering. *ACM Computing Surveys*, 55(9), 1–38.
 
 ---
 
