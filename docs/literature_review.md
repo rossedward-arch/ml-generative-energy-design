@@ -169,5 +169,6 @@ This literature review identifies key gaps in current generative design and buil
 
 This research will address these gaps by developing an integrated, climate-adaptive generative design methodology that combines reinforcement learning with explainable surrogate models and multi-objective optimization. It will leverage XAI to enhance transparency and user trust, employ human-in-the-loop co-design methods for usability, and incorporate future climate data for resilience. This novel framework aims to advance practical, transparent, and robust tools for sustainable architectural design, directly bridging the theoretical insights into an actionable methodology.
 
-The following [methodology](docs/methodology.md) details the technical and practical steps by which these objectives will be achieved.
+The following [methodology](methodology.md) etails the technicaal and practical steps by which these objective will be achieved.
+
 ---
