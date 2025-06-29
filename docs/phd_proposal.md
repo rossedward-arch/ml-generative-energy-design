@@ -68,12 +68,13 @@ R = \alpha \cdot E_{savings} + \beta \cdot C_{comfort} - \gamma \cdot Carbon_{em
 
 ```mermaid
 graph LR
-A[Future Climate Data (UKCP18)] --> B(RL Agent)
-B --> C{Multi-objective Design Space}
-C --> D[Passivhaus Compliance Check]
-C --> E[Net-Zero Energy Check]
-D & E --> F[XAI Interpretability Layer]
-F --> G[Generative Design Output]
+    A("Future Climate Data (UKCP18)") --> B("RL Agent")
+    B --> C{"Design Optimization"}
+    C --> D["Passivhaus Compliance"]
+    C --> E["Net-Zero Energy"]
+    D --> F["XAI Audit"]
+    E --> F
+    F --> G["Generative Design Output"]
 ```
 ## Phase 4: Validation
 
