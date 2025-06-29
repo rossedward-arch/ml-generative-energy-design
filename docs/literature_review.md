@@ -156,6 +156,8 @@ Furthermore, most existing generative and ML tools optimize for a single perform
 
 ## 1.11 Conclusion and Research Gaps
 
+In summary, while generative design and RL offer powerful tools for climate-adaptive architecture, their practical adoption is hampered by limited integration of future climate data and a lack of transparent, explainable AI. This research addresses these gaps by developing a multi-objective RL-XAI framework that combines robust climate adaptation with stakeholder-centered explainability, as outlined in the following methodology.
+
 This literature review identifies key gaps in current generative design and building performance workflows:
 
 - Limited integration of future climate scenarios in early design optimization reduces resilience.  
@@ -167,4 +169,5 @@ This literature review identifies key gaps in current generative design and buil
 
 This research will address these gaps by developing an integrated, climate-adaptive generative design methodology that combines reinforcement learning with explainable surrogate models and multi-objective optimization. It will leverage XAI to enhance transparency and user trust, employ human-in-the-loop co-design methods for usability, and incorporate future climate data for resilience. This novel framework aims to advance practical, transparent, and robust tools for sustainable architectural design, directly bridging the theoretical insights into an actionable methodology.
 
+The following [methodology](docs/methodology.md) details the technical and practical steps by which these objectives will be achieved.
 ---
