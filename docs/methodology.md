@@ -66,12 +66,12 @@ This methodology outlines a four-phase research and development workflow, combin
 
 ```mermaid
 flowchart LR
-    A[UKCP18 Climate Projections] --> B[RL Agent]
-    B --> C[Design Proposals]
-    C --> D[EnergyPlus Simulations]
-    D --> E[XAI Interpretation (SHAP)]
-    E --> F[User Dashboard + Interactive Feedback]
-    F --> G[Refined Generative Designs]
+    A["UKCP18 Climate Projections"] --> B["RL Agent"]
+    B --> C["Design Proposals"]
+    C --> D["EnergyPlus Simulations"]
+    D --> E["XAI Interpretation (SHAP)"]
+    E --> F["User Dashboard + Interactive Feedback"]
+    F --> G["Refined Generative Designs"]
 ```
 
 - Designs are refined iteratively based on simulation feedback and stakeholder input.
