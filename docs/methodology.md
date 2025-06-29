@@ -1,8 +1,9 @@
 # Methodology
 
-## 🔍 Abstract
+> ⚡️ **Summary:**  
+> This methodology outlines a machine learning–integrated generative design framework tailored to energy-efficient architecture. It combines parametric modeling, energy simulation, surrogate modeling, and designer-in-the-loop feedback to optimize early-stage building performance in line with Passivhaus and Net Zero standards.
 
-This methodology outlines the process of integrating machine learning (ML) with generative design and energy simulation to optimize new-build architecture for energy efficiency, thermal comfort, and regulatory compliance. The focus is on leveraging high-quality standardized data typical of modern new builds.
+---
 
 ## 📑 Table of Contents
 
@@ -11,7 +12,7 @@ This methodology outlines the process of integrating machine learning (ML) with 
 3. [Machine Learning Methods](#3-machine-learning-methods)  
 4. [Generative Design Workflow](#4-generative-design-workflow)  
 5. [Energy Simulation Integration](#5-energy-simulation-integration)  
-6. [Software Tools & Dissemination](#6-software-tools-and-dissemination)  
+6. [Software Tools & Dissemination](#6-software-tools-User-Experience-&-dissemination)  
 7. [Challenges & Assumptions](#7-challenges-and-assumptions)  
 8. [Future Work](#8-future-work)  
 9. [Ethical & Sustainability Considerations](#9-ethical-and-sustainability-considerations)  
@@ -19,7 +20,7 @@ This methodology outlines the process of integrating machine learning (ML) with 
 11. [Documentation & Reporting](#11-documentation-and-reporting)  
 12. [References](#references)
 
-# 1. Research Approach
+## 1. Research Approach
 
 This methodology is specifically tailored for the early-stage design and optimization of new high-performance building projects. It extends prior ML–generative design frameworks by embedding Passivhaus and Net Zero principles at the conceptual stage, with a focus on new builds where design flexibility, data quality, and regulatory alignment are maximized. The approach prioritizes energy performance and occupant comfort through an iterative, data-driven feedback loop, leveraging the standardized data and construction practices typical of new construction.
 
@@ -79,9 +80,6 @@ The project utilizes standardized, high-quality datasets specific to new-build p
 
 ---
 
-
----
-
 ## 🔄 Data Flow Diagram
 
 ```mermaid
@@ -116,7 +114,7 @@ flowchart TD
     style K fill:#f1f8e9,stroke:#558b2f,color:#000000
     style L fill:#f1f8e9,stroke:#558b2f,color:#000000
 ```
-> ⚠️ Note: If diagrams do not render on GitHub, use [Mermaid Live Editor](https://mermaid.live/edit) or export as SVG.
+⚠️ Note: If diagrams do not render on GitHub, use [Mermaid Live Editor](https://mermaid.live/edit) or export as SVG.
 
 ### 2.2 Feature Engineering Techniques.
 
@@ -336,7 +334,6 @@ Machine learning surrogate models reduce the time per design evaluation from app
 
 ---
 
----
 
 ### 🔄 Energy Simulation Workflow Diagram (Mermaid)
 
@@ -369,20 +366,21 @@ graph TD
 ## 6. Software Tools, User Experience & Dissemination
 
 - **Core Software Stack:**  
-  - **BIM & Geometry:** Autodesk Revit, IFC, Dynamo for parametric modeling and data extraction.
-  - **Simulation:** EnergyPlus, OpenStudio for energy and comfort simulation.
-  - **ML & Optimization:** Python (scikit-learn, TensorFlow/Keras, DEAP, Optuna/Hyperopt).
-  - **Data Processing:** Pandas, NumPy, custom scripts for feature engineering and data cleaning.
+  - **BIM & Geometry:** Autodesk Revit, IFC, Dynamo for parametric modeling and data extraction.  
+  - **Simulation:** EnergyPlus, OpenStudio for energy and comfort simulation.  
+  - **ML & Optimization:** Python (scikit-learn, TensorFlow/Keras, DEAP, Optuna/Hyperopt).  
+  - **Data Processing:** Pandas, NumPy, custom scripts for feature engineering and data cleaning.  
   - **Visualization:** Power BI, Plotly, custom dashboards for interpretability and stakeholder engagement.
 
 - **User Experience:**  
-  - Modular, scriptable pipeline for integration into existing architectural workflows.
-  - GUI prototypes or Jupyter notebooks for interactive exploration and visualization.
+  - Modular, scriptable pipeline for integration into existing architectural workflows.  
+  - GUI prototypes or Jupyter notebooks for interactive exploration and visualization.  
   - Documentation and example projects for reproducibility.
 
 - **Dissemination:**  
-  - Source code and data pipelines shared via GitHub (where licensing permits).
+  - Source code and data pipelines shared via GitHub (where licensing permits).  
   - Results disseminated through academic publications, conference presentations, and workshops with industry partners.
+
 ---
 
 ## 7. Challenges & Assumptions
@@ -416,6 +414,7 @@ This research encounters several technical and practical challenges that impact 
 
 This balanced approach addresses both the technical challenges inherent in ML-assisted generative design and the practical realities of architectural decision-making, ensuring a robust, adaptable, and trustworthy methodology.
 
+---
 
 ### 🧠 Challenge–Response Flowchart
 
@@ -452,7 +451,7 @@ flowchart TD
 ## 8. Future Work
 
 - **Scalability:**  
-  - Expansion to district/neighborhood-scale modeling and optimization.
+  - Expansion to district/neighborhood-scale modeling and optimization.  
   - Integration with urban energy models and city-level digital twins.
 
 - **Retrofitting & Mixed-Use:**  
@@ -463,6 +462,7 @@ flowchart TD
 
 - **Longitudinal Validation:**  
   - Ongoing collection of post-occupancy and IoT data for continuous model improvement and validation.
+
 ---
 
 ## 9. Ethical & Sustainability Considerations
@@ -476,8 +476,8 @@ flowchart TD
 - **Sustainability:**  
   - The methodology is designed to maximize environmental and social benefit, supporting Net Zero and Passivhaus targets.
 
-
 ---
+
 
 ## 10. Interdisciplinary Collaboration
 
@@ -498,7 +498,6 @@ flowchart TD
 - Adhere to FAIR data principles for dataset curation to ensure data is Findable, Accessible, Interoperable, and Reusable.  
 - Use Jupyter Notebooks and Sphinx to document code, workflows, and model validation results for reproducibility and clarity.  
 - **ML experiment tracking:** Incorporate tools like MLflow, Weights & Biases, or Comet.ml for experiment versioning, which is especially important for retraining loops.
-
 
 ---
 
