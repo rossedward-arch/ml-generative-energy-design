@@ -1,122 +1,178 @@
-# PhD Research Proposal  
-**Title**: ML-Driven Generative Design for Energy-Efficient Architecture  
-**Applicant**: Ross Edward 
-**Proposed Institution**: Edinburgh University   
-**Proposed Supervisor**: [To be determined based on alignment with ]  
-**Date**: June 2025  
+# PhD Research Proposal
+
+## Title  
+**Integrated Reinforcement Learning and Explainable AI for Climate-Adapted Generative Design of Passivhaus and Net-Zero Buildings**
+
+## Abstract  
+This research proposes a novel framework that integrates reinforcement learning (RL) and explainable artificial intelligence (XAI) to optimize climate-adaptive generative design for ultra-low-energy buildings in Edinburgh. By focusing on Scotland’s net-zero targets and shifting climate patterns, the study aims to deliver transparent, policy-aligned design tools tailored for both retrofit and new-build scenarios. The project aligns with the University of Edinburgh’s expertise in AI, sustainable architecture, and urban informatics.
 
 ---
 
-## 1. Research Aims and Objectives
+## 1. Background and Research Gap
 
-The proposed research investigates the integration of machine learning (ML), generative design algorithms, and energy performance simulation to support architects in creating energy-efficient buildings at the early design stage. The primary objectives are:
+Buildings contribute approximately 40% of global carbon emissions. Standards such as **Passivhaus** and **Net-Zero Energy Buildings (NZEBs)** are critical to reducing operational and embodied energy, especially in temperate and coastal cities like Edinburgh. However, current generative design tools face three major limitations:
 
-- To develop predictive models that estimate energy usage and comfort metrics from early-stage design parameters.
-- To implement generative optimization techniques that iteratively evolve spatial layouts toward energy and sustainability targets.
-- To integrate these models with simulation tools like EnergyPlus and OpenStudio to validate, refine, and retrain performance predictions.
-- To explore the application of Passivhaus and Net Zero principles as performance constraints within generative workflows.
+- **Climate Adaptation**: Most rely on historical or static climate files, which fail to capture future weather variability (e.g. UKCP18 projections showing increased rainfall and wind extremes).
+- **Decision Transparency**: Black-box AI methods erode stakeholder confidence in automated design outcomes.
+- **Dynamic Optimization**: Existing workflows rarely integrate occupant behavior, dynamic weather, and energy-grid interaction holistically.
 
----
-
-## 2. Originality and Significance
-
-This research bridges the gap between data-driven architectural performance modeling and early-stage design freedom. While generative design and simulation tools exist independently, their convergence through ML offers a novel approach to automated, performance-informed design. This work is original in that:
-
-- It treats ML not just as a post-analysis tool, but as a core agent of design generation and evaluation.
-- It builds an adaptive loop between prediction, optimization, and simulation feedback.
-- It addresses design vs. as-built performance gaps by incorporating realistic building operation parameters early.
-
-The research is aligned with UCL Bartlett’s focus on sustainable built environment solutions, digital innovation, and performance-led design.
+**Research Gap**: While reinforcement learning has shown potential in control systems and urban-scale energy optimization, its integration with building design tools—particularly when paired with explainable AI—is underexplored.
 
 ---
 
-## 3. Research Questions
+## 2. Research Aims
 
-1. How can supervised machine learning models predict energy performance from early-stage architectural inputs?
-2. What generative design strategies best integrate with ML prediction models to optimize building layouts?
-3. How can energy simulation feedback be looped into the generative-ML pipeline to improve reliability and performance?
-4. Can the resulting workflow consistently generate designs that meet Passivhaus or Net Zero performance thresholds?
-5. How can such tools support decision-making for practicing architects, and what barriers exist to implementation?
+This project aims to develop an **integrated RL-XAI framework** for climate-adaptive building design that:
 
----
-
-## 4. Research Plan
-
-### Phase 1: Literature & Tool Review
-- Review ML applications in architectural design and energy modeling.
-- Analyze strengths/limitations of current generative tools (e.g., Grasshopper, DEAP) and simulation engines (EnergyPlus, OpenStudio).
-
-### Phase 2: Data Collection & Processing
-- Collect and preprocess geometry, material, weather, and simulation datasets.
-- Engineer features such as window-to-wall ratio, compactness, thermal mass indicators, etc.
-
-### Phase 3: ML Model Development
-- Train regression models (Random Forest, XGBoost, Neural Networks) to predict EUI, HVAC loads, and comfort.
-- Apply dimensionality reduction (PCA), normalization, and encoding.
-
-### Phase 4: Generative Design Integration
-- Implement a genetic algorithm using DEAP to evolve spatial configurations.
-- Use ML models as surrogate predictors in the optimization loop.
-- Introduce constraints based on Passivhaus/Net Zero benchmarks.
-
-### Phase 5: Simulation Feedback Loop
-- Validate predicted designs using EnergyPlus/OpenStudio.
-- Incorporate feedback into fitness functions and retrain models iteratively.
-
-### Phase 6: Evaluation & Dissemination
-- Evaluate performance against benchmark targets.
-- Develop a Streamlit or Grasshopper-based UI to demonstrate usability.
-- Prepare publications and document reproducible workflows.
+- Dynamically adapts to **Edinburgh’s future climate** (2030–2050), including precipitation, wind, and temperature variability.
+- Optimizes for **energy efficiency, occupant comfort, resilience**, and **carbon reduction** simultaneously.
+- Produces interpretable, policy-relevant design outputs for **Passivhaus** and **net-zero operational energy** targets.
 
 ---
 
-## 5. Methodology Summary
+## 3. Methodology
 
-See [methodology.md](./methodology.md) for the full breakdown.
+### Phase 1: Climate-Adaptive Reinforcement Learning
 
-This research adopts a hybrid approach combining:
-- Supervised ML (for prediction)
-- Generative optimization (for design evolution)
-- Simulation validation (for performance benchmarking)
+**RL Environment Design**  
+- **State Space**: Includes dynamic climate inputs (UKCP18 future weather files), occupancy schedules, and real-time indoor/outdoor thermal conditions.
+- **Action Space**: Configurable parameters include:
+  - Building form and orientation  
+  - Envelope performance (insulation, airtightness)  
+  - Glazing ratio and shading  
+  - Renewable energy systems  
+  - HVAC system parameters
 
-Tools include:  
-Python, Scikit-learn, TensorFlow, DEAP, EnergyPlus, OpenStudio, Grasshopper, Revit, and Ladybug Tools.
+**RL Algorithm**  
+- **Proximal Policy Optimization (PPO)** or **Soft Actor-Critic (SAC)** will be used to support continuous action spaces and multi-objective tuning.
+
+**Reward Function**  
+\[
+R = \alpha \cdot E_{savings} + \beta \cdot C_{comfort} - \gamma \cdot Carbon_{embodied} + \delta \cdot Resilience_{extreme}
+\]
+- Coefficients \((\alpha, \beta, \gamma, \delta)\) will be tuned using **multi-objective Bayesian optimization** or **NSGA-II**.
+
+### Phase 2: Explainable AI (XAI) Integration
+
+**Goal**: Improve transparency and stakeholder understanding of RL-based design decisions.
+
+- Implement **SHAP** (SHapley Additive exPlanations) to interpret surrogate models trained on RL policies.
+- Explore additional methods:
+  - **Counterfactual path explanations** for building form changes.
+  - **Trajectory summarization** to visualize design evolution.
+- Generate **human-readable reports** that highlight:
+  - Trade-offs (e.g. insulation thickness vs. renewable ROI)
+  - Strategies for flood/wind resilience (e.g. coastal façades, wind buffers)
+
+### Phase 3: Generative Design Pipeline
+
+```mermaid
+graph LR
+A[Future Climate Data (UKCP18)] --> B(RL Agent)
+B --> C{Multi-objective Design Space}
+C --> D[Passivhaus Compliance Check]
+C --> E[Net-Zero Energy Check]
+D & E --> F[XAI Interpretability Layer]
+F --> G[Generative Design Output]
+```
+## Phase 4: Validation
+
+- **Simulation Tools**:  
+  - EnergyPlus or TRNSYS to model final design candidates.
+
+- **Digital Twin Calibration**:  
+  - Validate against historical weather data and monitored post-occupancy performance.
+
+- **Benchmarking Against**:
+  - Traditional parametric optimization (e.g. Grasshopper + Galapagos/Octopus)
+  - Regulatory baselines such as **ASHRAE 90.1** and **CIBSE TM54**
+
+- **Evaluation Metrics**:
+  - **Energy Use Intensity (EUI)**
+  - **Lifecycle Carbon** (embodied + operational)
+  - **Resilience Metrics**:
+    - Thermal autonomy
+    - Recovery time after power loss or environmental disruption
 
 ---
 
-## 6. Impact Statement
+## 4. Design and Certification Criteria
 
-The project has the potential to:
+| **Standard**   | **Key Metrics**                                                                 |
+|----------------|----------------------------------------------------------------------------------|
+| **Passivhaus** | Airtightness (<0.6 ACH), U-values ≤ 0.15 W/m²K, heating demand <15 kWh/m²/year   |
+| **Net-Zero**   | Annual EUI < 35 kWh/m²/year, on-site renewables coverage ≥100%                   |
+| **Resilience** | Operable windows, passive cooling, thermal mass, storm- and flood-resistant façades |
 
-- Enable architects to make informed energy decisions earlier, reducing rework and energy underperformance.
-- Contribute open-source tools and datasets that align with Bartlett’s commitment to public knowledge.
-- Improve pathways for achieving Passivhaus and Net Zero design targets in mainstream architecture.
-- Bridge the designer–engineer divide through accessible interfaces and interpretable feedback.
-- Support the UK’s sustainability goals by embedding energy literacy into generative design processes.
-
----
-
-## 7. Fit with UCL Bartlett
-
-The proposal aligns with the following UCL Bartlett strengths:
-
-- **Bartlett School of Environment, Energy and Resources**: Sustainability, energy modelling, building performance.
-- **Institute for Environmental Design and Engineering (IEDE)**: Occupant comfort, environmental simulation, performance gaps.
-- **Bartlett School of Architecture**: Computational design, generative workflows, BIM integration.
-
-The interdisciplinary nature also fits UCL’s broader strengths in machine learning, data science, and the Built Environment Faculty.
+> These criteria will be embedded as **soft/hard constraints** within the RL environment.
 
 ---
 
-## 8. References (selected)
+## 5. Expected Outcomes
 
-- Reinhart, C. F., & Davila, C. C. (2016). Urban building energy modeling – A review of a nascent field. *Building and Environment*.
-- Nguyen, A. T., Reiter, S., & Rigo, P. (2014). A review on simulation-based optimization methods applied to building performance analysis. *Applied Energy*.
-- Tuhus-Dubrow, D., & Krarti, M. (2010). Genetic algorithm based approach to optimize building envelope design for residential buildings. *Building and Environment*.
-- Passivhaus Trust. (2023). Passivhaus Planning Package (PHPP).
-- UCL Bartlett. (2024). Research themes: Digital innovation and climate-led design.
+- **Open-source toolkit**:  
+  A Python-based, Edinburgh-specific climate-adapted generative design library.
+
+- **XAI-informed policy guidelines**:  
+  Interactive decision dashboards and reports for local authorities and stakeholders.
+
+- **Academic impact**:  
+  Peer-reviewed validation demonstrating ≥30% energy performance improvements compared to ASHRAE 90.1 baselines.
 
 ---
+
+## 6. Alignment with the University of Edinburgh
+
+### Research Environment
+
+- **AI/ML Strengths**:  
+  - Bayes Centre’s reinforcement learning laboratories  
+  - School of Informatics expertise in deep learning and decision systems
+
+- **Sustainable Architecture**:  
+  - Edinburgh Climate Change Institute (ECCI)  
+  - School of Architecture and Landscape Architecture (ESALA)
+
+### Local Relevance
+
+Focus areas include:
+
+- Coastal flooding resilience (Leith, Granton)
+- Heritage retrofit challenges (e.g. tenement housing in the Old Town)
+- Integration with district heating networks and smart grids
+
+### Funding Alignment
+
+- **EPSRC: AI for Net-Zero**  
+- **Scotland’s Climate Emergency Fund**  
+- **University of Edinburgh’s strategic plan** on AI, sustainability, and climate leadership
+
+---
+
+## 7. Implementation Timeline
+
+| **Year** | **Activities**                                                                 |
+|----------|----------------------------------------------------------------------------------|
+| Year 1   | Develop RL environment; design reward function; integrate future weather data    |
+| Year 2   | Implement XAI tools; conduct new-build and retrofit case studies in Edinburgh    |
+| Year 3   | Validate design solutions; deploy toolkit; publish open-access policy guidance   |
+
+---
+
+## References (Selected)
+
+1. UK Met Office (2021). *UKCP18 Climate Projections*.  
+2. Gao, Y., et al. (2023). *Reinforcement Learning for Building Energy Optimization: A Review*. *Applied Energy*.  
+3. Ribeiro, M.T., et al. (2016). *“Why Should I Trust You?”: Explaining the Predictions of Any Classifier*. *KDD*.  
+4. O’Donnell, J., et al. (2022). *AI-Assisted Design for NZEB Retrofits*. *Building and Environment*.  
+5. Lundberg, S., & Lee, S.I. (2017). *A Unified Approach to Interpreting Model Predictions*. *NIPS* (SHAP).
+
+---
+
+## Conclusion
+
+This research bridges cutting-edge AI methods with climate-resilient building design, empowering Scotland’s transition to net-zero through transparent, adaptive, and high-performance architecture. By integrating reinforcement learning and explainability into generative design, the project positions the University of Edinburgh at the forefront of sustainable, AI-driven innovation in the built environment.
+
 
 *This document will evolve in parallel with the research. All major components will be published for academic and professional review.*
 
