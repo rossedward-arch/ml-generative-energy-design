@@ -20,7 +20,9 @@ Reinforcement Learning (RL) has recently emerged as a promising technique in bui
 
 Despite its success in operational controls, RL has not been widely applied to early-stage architectural design, particularly in form-finding or massing processes. Nagpal et al. (2020) explored RL for HVAC control but noted that state-space complexity and training time are critical challenges. Applying RL to conceptual design stages requires reimagining reward structures and integrating design constraints as part of the environment model.
 
-> **Key Insight**: RL has strong potential for exploratory and iterative design processes but remains underexplored in early-stage building geometry and envelope design.
+A significant technical hurdle lies in coupling RL algorithms with computationally intensive building simulation engines like EnergyPlus. This necessitates efficient surrogate models to approximate simulation outputs and reduce training times. Integrating RL with surrogate models introduces complexity in ensuring model accuracy, stability, and interpretability — challenges that remain largely unaddressed in existing workflows.
+
+> **Key Insight**: RL has strong potential for exploratory and iterative design processes but remains underexplored in early-stage building geometry and envelope design due to technical and computational challenges.
 
 **References:**  
 - Nagpal, S., Parameswaran, V., & Jain, R. (2020). *Reinforcement Learning for HVAC Control: Challenges and Opportunities*. **Energy and Buildings**, 207, 109482.  
@@ -44,7 +46,7 @@ De Wilde (2014) emphasizes the need for dynamic resilience metrics in simulation
 
 ## 1.4 Energy Simulation and Surrogate Models
 
-Energy simulation tools such as EnergyPlus and OpenStudio provide detailed thermodynamic analyses, essential for performance validation. However, their computational cost poses challenges for iterative generative design. To mitigate this, surrogate models — statistical or machine learning models trained to emulate simulation outputs — have been increasingly used (Evins, 2013).
+Energy simulation tools such as EnergyPlus and OpenStudio provide detailed thermodynamic analyses essential for performance validation. However, their computational cost poses challenges for iterative generative design. To mitigate this, surrogate models — statistical or machine learning models trained to emulate simulation outputs — have been increasingly used (Evins, 2013).
 
 Common surrogate models include Gaussian Processes, Artificial Neural Networks, and tree-based methods such as XGBoost. While accurate and efficient, these models often act as black boxes, reducing design transparency unless paired with interpretable techniques.
 
@@ -58,9 +60,9 @@ Common surrogate models include Gaussian Processes, Artificial Neural Networks, 
 
 ## 1.5 Multi-Objective Optimization in Building Design
 
-Most traditional optimization in building design focuses on single objectives such as minimizing energy use or maximizing daylight. However, sustainable and resilient buildings require balancing multiple objectives, including energy efficiency, thermal comfort, embodied and operational carbon, and resilience to future climate stresses (Zuo & Zhao, 2014).
+Traditional optimization in building design often focuses on a single metric, such as minimizing energy use or maximizing daylight. However, sustainable and resilient buildings require balancing multiple objectives, including energy efficiency, thermal comfort, embodied and operational carbon, and resilience to future climate stresses (Zuo & Zhao, 2014).
 
-Multi-objective optimization algorithms allow designers to explore trade-offs and Pareto-optimal solutions, enabling more holistic design decisions (Deb, 2001). Integrating these approaches in generative design workflows remains a technical challenge but is critical for future-ready buildings.
+Multi-objective optimization algorithms enable designers to explore trade-offs and Pareto-optimal solutions, facilitating more holistic decision-making (Deb, 2001). This multi-faceted approach is a significant advancement over conventional methods, providing a framework to balance competing priorities crucial for climate-adaptive buildings.
 
 > **Key Insight**: Multi-objective optimization supports balanced, context-sensitive design outcomes beyond simplistic single-metric targets.
 
@@ -72,11 +74,13 @@ Multi-objective optimization algorithms allow designers to explore trade-offs an
 
 ## 1.6 Explainable AI (XAI) in Architecture and Building Design
 
-The increasing adoption of AI and ML in architecture necessitates transparency and interpretability to build user trust and support decision-making. Explainable AI (XAI) seeks to make black-box models understandable to humans by providing feature attribution, rule extraction, or visual explanations (Ribeiro et al., 2016).
+The increasing adoption of AI and ML in architecture necessitates transparency and interpretability to build user trust and support effective human-AI collaboration. Explainable AI (XAI) aims to make black-box models understandable to humans by providing feature attribution, rule extraction, or visual explanations (Ribeiro et al., 2016).
 
-SHAP (Shapley Additive Explanations) has become a popular XAI method, offering theoretically sound and model-agnostic explanations by distributing the prediction among input features fairly (Lundberg & Lee, 2017). Applications of XAI in building energy modeling and design have demonstrated its potential to clarify complex surrogate models and highlight key drivers of performance (Kim et al., 2021).
+SHAP (Shapley Additive Explanations) is a popular XAI method that offers theoretically grounded, model-agnostic explanations by fairly distributing the contribution of each input feature to the model’s prediction (Lundberg & Lee, 2017). In building energy modeling, XAI has been used to clarify complex surrogate models, helping designers understand key performance drivers and enhancing trust in AI-assisted tools (Kim et al., 2021).
 
-> **Key Insight**: XAI techniques like SHAP are essential for bridging the gap between complex ML models and the needs of architects and stakeholders for transparency and trust.
+Incorporating XAI into RL and surrogate modeling workflows addresses one of the main barriers to adoption: the “black box” nature of ML models. By making model decisions transparent and interpretable, XAI supports meaningful human oversight and informed decision-making during design exploration.
+
+> **Key Insight**: XAI techniques like SHAP are essential for bridging the gap between complex ML models and the needs of architects and stakeholders for transparency, trust, and collaborative design.
 
 **References:**  
 - Ribeiro, M.T., Singh, S., & Guestrin, C. (2016). *"Why should I trust you?": Explaining the predictions of any classifier*. In: Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining.  
@@ -87,9 +91,9 @@ SHAP (Shapley Additive Explanations) has become a popular XAI method, offering t
 
 ## 1.7 Stakeholder Engagement and Co-Design Methods
 
-To ensure real-world adoption, generative design tools must be interpretable, interactive, and usable by non-experts. Co-design and participatory methods offer ways to involve stakeholders early in tool development (Bardzell et al., 2012). Think-aloud protocols, dashboard interfaces, and human-in-the-loop strategies are effective for evaluating trust and usability.
+To ensure real-world adoption, generative design tools must be interpretable, interactive, and usable by non-experts. Co-design and participatory methods involve stakeholders early in tool development, fostering trust and better aligning tools with user needs (Bardzell et al., 2012).
 
-Davis et al. (2022) found that explainability and perceived control strongly influence user trust in AI-assisted design environments. This underscores the need for human-centred design in computational tools.
+Think-aloud protocols, dashboard interfaces, and human-in-the-loop strategies are effective for evaluating trust and usability. Davis et al. (2022) found that explainability and perceived control strongly influence user trust in AI-assisted design environments, highlighting the importance of human-centred design in computational tools.
 
 > **Key Insight**: Human factors such as trust, usability, and control are central to tool adoption and should be designed into generative workflows.
 
@@ -120,30 +124,29 @@ Despite advances, integrating ML, simulation, and generative design remains tech
 - Data interoperability between parametric models, simulators, and ML frameworks.  
 - High computational costs for training and iterative simulation.  
 - Workflow complexity and lack of unified platforms supporting interactive and explainable ML.  
-- Managing uncertainty from climate scenarios, model assumptions, and surrogate approximations.
+- Managing uncertainty from climate scenarios, model assumptions, and surrogate approximations.  
+- Technical hurdles in coupling reinforcement learning with simulation engines and ensuring surrogate models provide stable, accurate feedback for iterative learning.
 
-Current research is often siloed, limiting practical deployment in everyday architectural design workflows (Jensen et al., 2023).
+Furthermore, most existing generative and ML tools optimize for a single performance metric, which oversimplifies design goals and risks neglecting important factors such as comfort, embodied carbon, or resilience. This research aims to pioneer a multi-objective optimization framework balancing energy, comfort, carbon emissions, and resilience, representing a significant advancement in holistic, climate-responsive design workflows.
 
-> **Key Insight**: There is a critical need for integrated, interactive platforms that combine ML, simulation, and generative design with explainability and climate resilience in a user-friendly way.
+> **Key Insight**: There is a critical need for integrated, interactive platforms that combine RL, multi-objective optimization, explainable surrogate modeling, and climate resilience within usable design environments.
 
 **References:**  
 - Jensen, R., Smith, A., & Lee, D. (2023). *Challenges and Opportunities in Integrating Machine Learning with Generative Building Design*. **Journal of Building Performance Simulation**, 16(3), 270–285.
 
 ---
 
-# Summary
+## 1.10 Conclusion and Research Gaps
 
-The reviewed literature reveals that:
+This literature review identifies key gaps in current generative design and building performance workflows:
 
-- Generative design is effective but rarely integrates future climate or multi-objective trade-offs robustly.  
-- Reinforcement learning holds promise but is underused in conceptual building design.  
-- Surrogate ML models accelerate energy simulation but need explainability to foster trust.  
-- Explainable AI (e.g., SHAP) is emerging as a crucial enabler for transparent ML in architecture.  
-- Human-centred co-design approaches enhance tool usability and trust.  
-- Digital twins and post-occupancy feedback offer dynamic validation pathways.  
-- Practical integration of these components in workflows remains an open challenge.
+- Limited integration of future climate scenarios in early design optimization reduces resilience.  
+- Underutilization of reinforcement learning in early-stage architectural form-finding due to computational and integration challenges.  
+- Surrogate ML models improve simulation speed but often lack transparency and interpretability, hampering trust and adoption.  
+- Most existing tools optimize single objectives, missing critical trade-offs among energy, comfort, carbon, and resilience.  
+- Explainable AI techniques remain underexplored in building design despite their potential to foster human-AI collaboration.  
+- Practical workflows integrating RL, multi-objective surrogate modeling, XAI, and human-centred design are lacking.
 
-This review motivates a research methodology that integrates reinforcement learning with explainable surrogate modeling in a climate-adaptive generative design framework, supported by human-centred interfaces and iterative validation, aiming to advance resilient, transparent, and usable building design tools.
+This research will address these gaps by developing an integrated, climate-adaptive generative design methodology that combines reinforcement learning with explainable surrogate models and multi-objective optimization. It will leverage XAI to enhance transparency and user trust, employ human-in-the-loop co-design methods for usability, and incorporate future climate data for resilience. This novel framework aims to advance practical, transparent, and robust tools for sustainable architectural design, directly bridging the theoretical insights into an actionable methodology.
 
 ---
-
