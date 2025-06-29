@@ -50,12 +50,12 @@ Cross-disciplinary perspectives from urban climate modeling, occupant behavior s
 
 ```mermaid
 flowchart TD
-    GD[Generative Design<br>(Parametric Model)]
-    RL[Reinforcement Learning<br>(Optimization Agent)]
-    SM[Surrogate ML Performance Model<br>(Accelerated Simulation)]
-    SIM[Simulation-Based Validation<br>(EnergyPlus, Digital Twin)]
-    XAI[Explainable AI<br>(Model Interpretability)]
-    DS[Designer / Decision Support Interface]
+    GD[Generative Design\n(Parametric Model)]
+    RL[Reinforcement Learning\n(Optimization Agent)]
+    SM[Surrogate ML\nPerformance Model]
+    SIM[Simulation-Based\nValidation]
+    XAI[Explainable AI\n(Model Interpretability)]
+    DS[Designer /\nDecision Support Interface]
 
     GD --> RL
     RL --> SM
