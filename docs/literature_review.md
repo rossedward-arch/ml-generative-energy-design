@@ -44,15 +44,15 @@ Digital twins—virtual models of real buildings updated with real-time sensor d
 
 ```mermaid
 graph TD
-    A[Climate Projection Data (UKCP18)] --> B[Generative Design Engine]
-    B --> C[Reinforcement Learning Agent]
-    B --> D[Surrogate ML Models]
-    C --> E[Energy Simulation (EnergyPlus)]
+    A["Climate Projection Data (UKCP18)"] --> B["Generative Design Engine"]
+    B --> C["Reinforcement Learning Agent"]
+    B --> D["Surrogate ML Models"]
+    C --> E["Energy Simulation (EnergyPlus)"]
     D --> E
-    E --> F[XAI Interpretation (SHAP)]
-    F --> G[Design Feedback & Adaptation]
+    E --> F["XAI Interpretation (SHAP)"]
+    F --> G["Design Feedback & Adaptation"]
     G --> B
-    H[Digital Twin Feedback] --> D
+    H["Digital Twin Feedback"] --> D
 ```
 
 ## 7.Conclusion
