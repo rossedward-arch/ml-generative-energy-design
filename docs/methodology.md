@@ -55,10 +55,29 @@ plt.show()
   - \(C_{comfort}\): Occupant thermal comfort score
   - \(C_{embodied}\): Embodied carbon of material choices
   - \(R_{resilience}\): Resilience to extreme events (e.g., passive survivability)
+    
+```mermaid 
+flowchart LR
+    subgraph RL Loop
+        A[Agent (Policy/Neural Network)] -- Action --> B(Environment)
+        B -- New State, Reward --> A
+    end
+```
 
 - **Simulation Integration**: Use **EnergyPlus** or **TRNSYS** for performance simulation, with:
 
-  - **Surrogate models** (e.g., Gaussian Process Regression or XGBoost) trained on simulation outputs to reduce computational cost
+  - **Surrogate models** (e.g., Gaussian Process Regression or XGBoost) trained on simulation outputs to reduce computational cost.
+   ```mermaid 
+   flowchart LR
+    A["Design Parameters"] --> B["Full Simulation (EnergyPlus)"]
+    B --> C["Energy Output"]
+
+    A2["Design Parameters"] --> D["Surrogate Model"]
+    D --> E["Predicted Energy Output"]
+
+    B -.-> D["Training Data"]
+   ```
+ 
   - **Parallelized evaluations** via cluster or cloud computing (e.g., AWS/GCP)
 
 ---
@@ -111,6 +130,8 @@ shap_values = explainer(X_test)
 shap.summary_plot(shap_values, X_test, feature_names=load_boston().feature_names)
 plt.show()
 ```
+>For individual design evaluations, a SHAP force plot can highlight how each feature pushes the model prediction up or down. This can help designers understand how insulation thickness or orientation is influencing the final energy score.
+
 ---
 
 ### **Phase 3: Simulation-Driven Generative Design Pipeline**
