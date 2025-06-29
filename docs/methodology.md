@@ -1,74 +1,161 @@
-# Methodology
+## Methodology
 
-This research employs an integrated, multi-stage methodology combining climate-adaptive reinforcement learning (RL), explainable AI (XAI), surrogate modeling, and rigorous validation to optimize generative design for Passivhaus and net-zero buildings in Edinburgh. The stages reflect an iterative process ensuring both technical robustness and practical relevance.
-
----
-
-## Stage 1: Climate Data Acquisition and Reinforcement Learning Environment Development
-
-### 1.1 Climate Data Processing
-- Utilize the UK Met Office’s UKCP18 probabilistic climate projections to model Edinburgh’s future climate scenarios (2030–2050).
-- Extract high-resolution hourly meteorological variables including temperature, solar radiation, wind speed and direction, precipitation, and humidity.
-- Apply statistical downscaling and uncertainty quantification techniques to generate multiple plausible climate futures, capturing seasonal and extreme weather variability.
-
-### 1.2 RL Environment Design
-- Define the **state space** to include multi-dimensional building attributes such as geometry, envelope thermal properties, orientation, window-to-wall ratio, HVAC parameters, renewable energy system specs, and environmental conditions.
-- Specify the **action space** as continuous and discrete variables representing design decisions: insulation thickness, glazing type, shading, HVAC controls, renewable deployment, and orientation adjustments.
-- Formulate a **multi-objective reward function**:
-
-R = α E_savings + β C_comfort - γ C_embodied + δ R_resilience
-
-
-where weights \(\alpha, \beta, \gamma, \delta\) balance energy savings, thermal comfort, embodied carbon, and resilience metrics (e.g., passive survivability, grid independence).
-
-### 1.3 RL Algorithm and Training
-- Implement advanced RL algorithms such as Proximal Policy Optimization (PPO) and Deep Q-Networks (DQN).
-- Employ curriculum learning to progressively introduce environmental complexity, from static climate conditions to stochastic and extreme weather events.
-- Incorporate domain-specific constraints (e.g., Passivhaus certification limits) as reward penalties or action clipping.
-- Use parallelized simulations and cloud computing for scalable training across multiple climate scenarios and design seeds.
+This methodology outlines a four-phase research and development workflow, combining **reinforcement learning (RL)**, **energy simulation**, and **explainable AI (XAI)**, with a strong emphasis on performance validation and stakeholder usability. The aim is to create a robust, transparent generative design tool responsive to climate uncertainty and practical architectural constraints.
 
 ---
 
-## Stage 2: Integration of Explainable Artificial Intelligence (XAI)
+### **Phase 1: Development of a Climate-Adaptive Reinforcement Learning Environment**
 
-- Apply SHAP (SHapley Additive exPlanations) to interpret RL policy decisions, enhancing transparency and stakeholder trust.
-- Develop interactive dashboards and reports that visualize trade-offs between insulation, HVAC settings, renewable energy deployment, and resilience measures.
-- Conduct user studies with architects, engineers, and policymakers to iteratively refine XAI outputs for clarity and usability.
+**Objective**: Build a generative design environment that enables RL agents to explore building design solutions optimized for future climate scenarios in Scotland.
 
----
+#### Tasks:
 
-## Stage 3: Surrogate Modeling and Efficiency Improvements
+- **Climate Dataset Integration**: Incorporate UKCP18 future weather projections (2030–2050), including temperature, solar radiation, humidity, wind, and precipitation, using EnergyPlus EPW files.
 
-- Develop surrogate machine learning models trained on RL simulation data to accelerate design space exploration.
-- Employ dimensionality reduction techniques and feature importance analysis to focus on key design parameters.
-- Integrate surrogate models within the RL loop for faster policy updates and real-time design feedback.
-- Validate surrogate accuracy against detailed EnergyPlus or TRNSYS simulations.
+- **Design Variable Encoding**: Define a high-dimensional **state-action space** representing:
 
----
+  - Building form and orientation
+  - Envelope materials and U-values
+  - Glazing ratios and shading
+  - HVAC system types and control strategies
+  - Renewable energy systems (PV, battery storage, etc.)
 
-## Stage 4: Validation and Benchmarking
+- **Reward Function Design**: Formulate a **multi-objective reward function** with tunable weights:
 
-- Use EnergyPlus and TRNSYS to simulate final RL-optimized design candidates under diverse climateios.
-- Calibrate digital twin models against historical weather data and monitored post-occupancy performance metrics.
-- Benchmark performance against traditional parametric optimization workflows (e.g., Grasshopper + Galapagos/Octopus) and regulatory baselines such as ASHRAE 90.1 and CIBSE TM54.
-- Evaluate designs based on:
-  - Energy Use Intensity (EUI)
-  - Lifecycle embodied and operational carbon
-  - Resilience metrics, including thermal autonomy and recovery after outages
-- Engage stakeholders in qualitative evaluation through workshops and feedback sessions.
+  ```math
+  R = \alpha \cdot E_{savings} + \beta \cdot C_{comfort} - \gamma \cdot C_{embodied} + \delta \cdot R_{resilience}
+  ```
 
----
+  Where:
 
-## Ethical Considerations and Data Governance
+  - \(E_{savings}\): Energy savings vs. baseline
+  - \(C_{comfort}\): Occupant thermal comfort score
+  - \(C_{embodied}\): Embodied carbon of material choices
+  - \(R_{resilience}\): Resilience to extreme events (e.g., passive survivability)
 
-- Ensure transparent and responsible AI use by embedding explainability throughout the design pipeline.
-- Maintain compliance with data privacy and sharing agreements for monitored building data accessed via partner organizations.
-- Promote open science by releasing code, datasets, and documentation as open-source resources wherever possible.
+- **Simulation Integration**: Use **EnergyPlus** or **TRNSYS** for performance simulation, with:
+
+  - **Surrogate models** (e.g., Gaussian Process Regression or XGBoost) trained on simulation outputs to reduce computational cost
+  - **Parallelized evaluations** via cluster or cloud computing (e.g., AWS/GCP)
 
 ---
 
-## Summary
+### **Phase 2: XAI-Enhanced Interpretability Layer**
 
-This methodology leverages cutting-edge RL and XAI techniques in a climate-adaptive framework, iteratively refined through surrogate modeling and validated via industry-standard simulations and stakeholder engagement. It aims to produce a robust, transparent, and practical generative design tool tailored to Edinburgh’s unique climate and policy context.
+**Objective**: Integrate explainable AI to make RL decision-making transparent to architects, engineers, and policymakers.
 
+#### Tasks:
+
+- **XAI Integration**:
+  - Apply **SHAP** (SHapley Additive exPlanations) to quantify the influence of each design decision on energy, comfort, and carbon outcomes.
+  - Embed **context-specific visualizations** to explain complex trade-offs (e.g., better insulation vs. cost vs. embodied carbon).
+- **Interactive Interface Development**:
+  - Create **dashboards** (using tools like Dash, Streamlit, or React + Plotly) allowing users to:
+    - Explore model outputs
+    - Adjust trade-off weights in real time
+    - Visualize alternative design paths
+- **User Testing**:
+  - Conduct **co-design workshops** with architects, sustainability consultants, and council officers.
+  - Use **think-aloud protocols** and **usability surveys** to refine interpretability, trust, and ease of use.
+
+---
+
+### **Phase 3: Simulation-Driven Generative Design Pipeline**
+
+**Objective**: Deploy and test the full RL-XAI design pipeline.
+
+```mermaid
+flowchart LR
+    A[UKCP18 Climate Projections] --> B[RL Agent]
+    B --> C[Design Proposals]
+    C --> D[EnergyPlus Simulations]
+    D --> E[XAI Interpretation (SHAP)]
+    E --> F[User Dashboard + Interactive Feedback]
+    F --> G[Refined Generative Designs]
+```
+
+- Designs are refined iteratively based on simulation feedback and stakeholder input.
+- Passivhaus and net-zero performance thresholds are encoded as **hard constraints** (e.g., <15 kWh/m²/yr heating) and **soft optimization targets**.
+
+---
+
+### **Phase 4: Testing, Evaluation, and Validation**
+
+This phase includes rigorous simulation-based validation, benchmarking, and user-centered testing to assess the system's technical performance and stakeholder value.
+
+#### 1. **Simulation-Based Performance Testing**
+
+- Generate building designs using the RL agent and simulate:
+  - Annual and peak energy use (EUI)
+  - Comfort hours (PMV/PPD or operative temperature)
+  - Operational and embodied carbon
+  - Resilience metrics (e.g., thermal autonomy, passive survivability)
+- Test across **multiple climate scenarios** (baseline, 2030, 2050 UKCP18 datasets).
+
+#### 2. **Benchmarking Against Traditional Tools**
+
+- Compare RL-generated designs with those from parametric tools (e.g., Grasshopper + Galapagos/Octopus).
+- Use **identical building typologies and weather files** for fairness.
+- Evaluate:
+  - Objective performance (EUI, CO₂e, comfort)
+  - Time and computational efficiency
+  - User trust and perceived control
+
+#### 3. **XAI and Stakeholder Trust Testing**
+
+- Conduct structured interviews and workshops with:
+  - Architects
+  - Policy advisors
+  - Developers
+- Use **explanation evaluation metrics** (e.g., Simulatability, Satisfaction, and Trust scales).
+- Test dashboard usability and understanding of design trade-offs.
+
+#### 4. **Multi-Objective Optimization Validation**
+
+- Adjust reward function weights (e.g., prioritize carbon vs. comfort) and analyze design shifts.
+- Assess:
+  - Pareto front quality
+  - Stakeholder alignment with outcome preferences
+  - Flexibility to adapt to shifting regulatory or budget constraints
+
+#### 5. **Case Studies (New Build + Retrofit)**
+
+- Select two real or representative Scottish buildings:
+  - **New build**: social housing, zero-carbon target
+  - **Retrofit**: 1950s tenement block
+- Apply RL-XAI framework and simulate resulting design strategies
+- Evaluate outcomes against:
+  - Passivhaus Planning Package (PHPP) metrics
+  - Net-zero compliance
+  - Stakeholder feedback
+
+#### 6. **Digital Twin Calibration and Validation**
+
+- Where data is available, calibrate simulation models against **real monitored building data** (via ECCI or other partners).
+- Validate predictions of energy use, thermal comfort, and peak loads.
+- Use statistical methods (e.g., CV(RMSE), NMBE) to measure calibration quality.
+
+---
+
+## Toolchain and Implementation
+
+| Tool                | Purpose                                     |
+| ------------------- | ------------------------------------------- |
+| Python + OpenAI Gym | RL environment and agent training           |
+| EnergyPlus/TRNSYS   | Dynamic simulation of building performance  |
+| SHAP + scikit-learn | Explainability and feature attribution      |
+| Dash/Streamlit      | Interactive visualization and dashboard UI  |
+| GitHub + Docker     | Version control and reproducible containers |
+
+---
+
+## Summary of Improvements Over Existing Methods
+
+| Challenge                      | Solution in This Research                                 |
+| ------------------------------ | --------------------------------------------------------- |
+| Static climate assumptions     | UKCP18 adaptive weather scenarios                         |
+| Black-box AI                   | Integrated SHAP + stakeholder-designed explanations       |
+| Narrow design exploration      | High-dimensional, realistic state-action space            |
+| Poor generalizability          | Case studies + digital twin validation                    |
+| Lack of human-AI collaboration | Real-time interactive dashboard for trade-off exploration |
 
