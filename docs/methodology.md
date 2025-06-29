@@ -45,7 +45,7 @@ plt.show()
 
 - **Reward Function Design**: Formulate a **multi-objective reward function** with tunable weights:
 
-  ```math
+  ```latex
   R = \alpha \cdot E_{\text{savings}} + \beta \cdot C_{\text{comfort}} - \gamma \cdot C_{\text{embodied}} + \delta \cdot R_{\text{resilience}}
   ```
 
