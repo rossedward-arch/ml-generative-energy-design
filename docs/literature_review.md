@@ -1,5 +1,7 @@
 # Literature Review: Integrated Reinforcement Learning and Explainable AI for Climate-Adapted Generative Design of Passivhaus and Net-Zero Buildings
 
+This literature review synthesizes current research on generative design, reinforcement learning (RL), and explainable AI (XAI) as applied to climate-adapted, high-performance architectural design. It highlights key methodologies, tools, challenges, and emerging integrated workflows aiming to optimize building energy performance in line with Passivhaus and net-zero standards.
+
 ## 1. Overview of Climate-Adapted Generative Design
 
 Generative design in architecture uses algorithmic and parametric methods to automatically generate design alternatives based on defined constraints and performance goals. It facilitates exploration of vast design spaces while integrating environmental considerations early in the design process.
@@ -7,7 +9,7 @@ Generative design in architecture uses algorithmic and parametric methods to aut
 - Oxman (2017) highlights generative design as a computational creativity paradigm enabling performance-driven architecture [^1].  
 - Schumacher (2011) discusses parametricism as a new architectural style enabled by digital design tools, emphasizing adaptability and optimization [^2].  
 - Incorporating site-specific weather data and climate projections such as UKCP18 is crucial to ensure resilient and context-aware building designs (Jenkins et al., 2018; Wilby & Wigley, 1997) [^3][^15].  
-- Statistical downscaling techniques are often employed to refine global climate model outputs to local contexts, improving the accuracy of climate-adapted design inputs (Maraun & Widmann, 2018) [^16].  
+- Statistical downscaling techniques refine global climate model outputs to local contexts, improving accuracy of climate-adapted design inputs (Maraun & Widmann, 2018) [^16].  
 - Passivhaus and net-zero building standards set rigorous benchmarks for thermal comfort, airtightness, and energy neutrality, guiding sustainable architectural solutions (Passivhaus Institut, 2023; Torcellini et al., 2006) [^4][^5].
 
 ## 2. Reinforcement Learning in Architectural Optimization
@@ -17,7 +19,7 @@ Reinforcement learning (RL) offers an adaptive optimization framework where agen
 - Bhardwaj et al. (2020) review RL applications in HVAC control showing substantial energy savings and occupant comfort improvements [^6].  
 - Zhou et al. (2023) demonstrate RL for architectural layout optimization, balancing energy use, daylighting, and comfort [^7].  
 - Foundational RL algorithms such as Proximal Policy Optimization (Schulman et al., 2017) and Deep Q-Networks (Mnih et al., 2015) provide effective frameworks for managing complex state spaces [^17][^18].  
-- RL adoption in architecture faces challenges such as computational expense, complex state spaces, and reward function formulation, but curriculum learning and multi-objective RL techniques are promising avenues for more efficient training and balanced optimization (Narvekar et al., 2020; Roijers et al., 2013) [^19][^20].
+- RL adoption in architecture faces challenges such as computational expense, complex state spaces, and reward function formulation, but curriculum learning and multi-objective RL techniques show promise for efficient training and balanced optimization (Narvekar et al., 2020; Roijers et al., 2013) [^19][^20].
 
 ## 3. Explainable AI for Transparent Building Performance Models
 
@@ -50,86 +52,74 @@ Building performance simulation tools and digital twin frameworks validate and c
 
 # Appendix: Supplementary Reading List
 
-## 1. Climate Data Acquisition and Processing
+### 1. Climate Data Acquisition and Processing
 
-- UK Climate Projections: Guidance for Users (UK Met Office) – Official documentation on using UKCP18 data for climate modeling.
-- Wilby, R.L., & Wigley, T.M.L. (1997). *Downscaling General Circulation Model Output: A Review of Methods and Limitations*. Progress in Physical Geography, 21(4), 530-548.
-- Maraun, D., & Widmann, M. (2018). *Statistical Downscaling and Bias Correction for Climate Research*. Cambridge University Press.
-- Katz, R.W. (2002). *Techniques for Estimating Uncertainty in Climate Change Scenarios and Impact Studies*. Climate Research, 20(2), 167-185.
+- UK Climate Projections: Guidance for Users (UK Met Office)  
+- Wilby, R.L., & Wigley, T.M.L. (1997). *Downscaling General Circulation Model Output*  
+- Maraun, D., & Widmann, M. (2018). *Statistical Downscaling and Bias Correction for Climate Research*  
+- Katz, R.W. (2002). *Techniques for Estimating Uncertainty in Climate Change Scenarios*
 
-## 2. Reinforcement Learning (RL) for Building Design
+### 2. Reinforcement Learning (RL) for Building Design
 
-- Sutton, R.S., & Barto, A.G. (2018). *Reinforcement Learning: An Introduction* (2nd ed.). MIT Press.
-- Schulman, J., et al. (2017). *Proximal Policy Optimization Algorithms*. arXiv:1707.06347.
-- Mnih, V., et al. (2015). *Human-level control through deep reinforcement learning*. Nature, 518(7540), 529-533.
-- Nagy, Z., et al. (2018). *Reinforcement learning for optimal control of low energy buildings*. Building and Environment, 143, 424-436.
-- Vázquez-Canteli, J.R., & Nagy, Z. (2019). *Reinforcement learning for demand response: A review of algorithms and modeling techniques*. Applied Energy, 235, 1072-1089.
-- Narvekar, S., et al. (2020). *Curriculum Learning for Reinforcement Learning Domains: A Survey*. arXiv:2003.04960.
-- Roijers, D.M., et al. (2013). *A Survey of Multi-Objective Sequential Decision-Making*. Journal of Artificial Intelligence Research, 48, 67-113.
+- Sutton, R.S., & Barto, A.G. (2018). *Reinforcement Learning: An Introduction*  
+- Schulman, J., et al. (2017). *Proximal Policy Optimization Algorithms*  
+- Mnih, V., et al. (2015). *Human-level control through deep reinforcement learning*  
+- Nagy, Z., et al. (2018). *Reinforcement learning for optimal control of low energy buildings*  
+- Vázquez-Canteli, J.R., & Nagy, Z. (2019). *Reinforcement learning for demand response*  
+- Narvekar, S., et al. (2020). *Curriculum Learning for Reinforcement Learning Domains*  
+- Roijers, D.M., et al. (2013). *A Survey of Multi-Objective Sequential Decision-Making*
 
-## 3. Explainable AI (XAI) and SHAP
+### 3. Explainable AI (XAI) and SHAP
 
-- Arrieta, A.B., et al. (2020). *Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges toward responsible AI*. Information Fusion, 58, 82-115.
-- Lundberg, S.M., & Lee, S.I. (2017). *A Unified Approach to Interpreting Model Predictions*. NeurIPS.
-- Molnar, C. (2022). *Interpretable Machine Learning: A Guide for Making Black Box Models Explainable* (2nd ed.). Available online.
-- Zhang, Y., et al. (2022). *Explainable AI for Building Energy Performance Prediction: A Case Study*. Energy and Buildings, 257, 111746.
+- Arrieta, A.B., et al. (2020). *Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges*  
+- Lundberg, S.M., & Lee, S.I. (2017). *A Unified Approach to Interpreting Model Predictions*  
+- Molnar, C. (2022). *Interpretable Machine Learning*  
+- Zhang, Y., et al. (2022). *Explainable AI for Building Energy Performance Prediction*
 
-## 4. Surrogate Modeling and Efficiency Improvements
+### 4. Surrogate Modeling and Efficiency Improvements
 
-- Forrester, A.I.J., et al. (2008). *Engineering Design via Surrogate Modelling: A Practical Guide*. Wiley.
-- Jolliffe, I.T., & Cadima, J. (2016). *Principal Component Analysis: A Review and Recent Developments*. Philosophical Transactions of the Royal Society A, 374(2065), 20150202.
-- Fisher, A., et al. (2019). *All Models are Wrong, but Many are Useful: Learning a Variable’s Importance by Studying an Entire Class of Prediction Models Simultaneously*. JMLR, 20(177), 1-81.
+- Forrester, A.I.J., et al. (2008). *Engineering Design via Surrogate Modelling*  
+- Jolliffe, I.T., & Cadima, J. (2016). *Principal Component Analysis: A Review*  
+- Fisher, A., et al. (2019). *Learning a Variable’s Importance by Studying an Entire Class of Models*
 
-## 5. Building Performance Simulation and Validation
+### 5. Building Performance Simulation and Validation
 
-- Crawley, D.B., et al. (2001). *EnergyPlus: Creating a new-generation building energy simulation program*. Energy and Buildings, 33(4), 319-331.
-- Klein, S.A., et al. (2017). *TRNSYS 18: A Transient System Simulation Program*. User Manual.
-- ASHRAE Standard 90.1 (latest edition).
-- CIBSE TM54: *Evaluating Operational Energy Performance of Buildings at the Design Stage*.
-- Opoku, D.G.J., et al. (2021). *Digital Twin application in the construction industry: A literature review*. Journal of Building Engineering, 40, 102726.
-- Bordass, B., et al. (2001). *Assessing Building Performance in Use 1: The Probe Process*. Building Research & Information, 29(2), 85-102.
-
-## 6. Adaptive and Multiagent RL in Energy Management (Optional/Background)
-
-- Vázquez-Canteli, J. R., & Nagy, Z. (2019). *Reinforcement learning for demand response: A review of algorithms and modeling techniques*. Applied Energy, 235, 1072-1089.
-- Ruelens, F., et al. (2017). *Residential Demand Response of Thermostatically Controlled Loads Using Batch Reinforcement Learning*. IEEE Transactions on Smart Grid, 10(2), 1092-1102.
-- Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction* (2nd Edition). MIT Press.
-- Ernst, D., et al. (2005). *Tree-Based Batch Mode Reinforcement Learning*. Journal of Machine Learning Research, 6, 503-556.
-- Zhang, K., Yang, Z., & Basar, T. (2019). *Multi-Agent Reinforcement Learning: A Selective Overview of Theories and Algorithms*. arXiv:1911.10635.
-- Nguyen, H. D., et al. (2020). *A Multi-Agent Reinforcement Learning Framework for Smart Grid Energy Management*. IEEE Transactions on Smart Grid.
-- Busoniu, L., Babuska, R., & De Schutter, B. (2008). *Multi-agent Reinforcement Learning: An Overview*. In *Innovations in Multi-Agent Systems and Applications – 1*.
-- Lewis, F. L., et al. (2012). *Reinforcement Learning and Adaptive Dynamic Programming for Feedback Control*. IEEE Circuits and Systems Magazine, 12(2), 20-45.
-- Vamvoudakis, K. G., & Lewis, F. L. (2010). *Online Actor-Critic Algorithm to Solve the Continuous-Time Infinite Horizon Optimal Control Problem*. Automatica, 46(5), 878-888.
-- Busoniu, L., et al. (2010). *Reinforcement Learning and Dynamic Programming Using Function Approximators*. CRC Press.
+- Crawley, D.B., et al. (2001). *EnergyPlus: Creating a new-generation building energy simulation program*  
+- Klein, S.A., et al. (2017). *TRNSYS 18 User Manual*  
+- ASHRAE Standard 90.1 (latest edition)  
+- CIBSE TM54: *Evaluating Operational Energy Performance of Buildings*  
+- Opoku, D.G.J., et al. (2021). *Digital Twin application in construction*  
+- Bordass, B., et al. (2001). *Assessing Building Performance in Use 1: The Probe Process*
 
 ---
 
 # References
 
 [^1]: Oxman, R. (2017). *Theory and design in the first digital age*. Design Studies, 38, 4-39.  
-[^2]: Schumacher, P. (2011). *The Autopoiesis of Architecture, Volume I: A New Framework for Architecture*. Wiley.  
+[^2]: Schumacher, P. (2011). *The Autopoiesis of Architecture, Volume I*. Wiley.  
 [^3]: Jenkins, S., et al. (2018). *Climate Change and Building Design*.  
 [^4]: Passivhaus Institut (2023). *Passivhaus Standard*.  
-[^5]: Torcellini, P., Pless, S., & Deru, M. (2006). *Zero Energy Buildings: A Critical Look at the Definition*. ACEEE Summer Study on Energy Efficiency in Buildings.  
-[^6]: Bhardwaj, A., et al. (2020). *Reinforcement Learning in HVAC Control: A Review*. Energy and Buildings, 224, 110234.  
-[^7]: Zhou, Y., et al. (2023). *Reinforcement Learning for Architectural Layout Optimization*. Journal of Building Engineering, 65, 105792.  
-[^8]: Adadi, A., & Berrada, M. (2018). *Peeking inside the black-box: A survey on Explainable Artificial Intelligence (XAI)*. IEEE Access, 6, 52138-52160.  
-[^9]: Gunning, D. (2017). *Explainable Artificial Intelligence (XAI)*. DARPA.  
-[^10]: Nazari, A., et al. (2021). *Surrogate Modeling for Building Energy Simulation*. Renewable and Sustainable Energy Reviews, 144, 111040.  
-[^11]: Ribeiro, M.T., Singh, S., & Guestrin, C. (2016). *“Why should I trust you?” Explaining the predictions of any classifier*. KDD.  
-[^12]: Wetter, M. (2011). *EnergyPlus*. Energy and Buildings, 43(6), 1574-1580.  
-[^13]: Roudsari, M.S., et al. (2013). *Ladybug: A Parametric Environmental Plugin*.  
-[^14]: Lu, Y., et al. (2021). *Digital Twins in Construction: A Review*. Automation in Construction, 122, 103507.  
-[^15]: Wilby, R.L., & Wigley, T.M.L. (1997). *Downscaling General Circulation Model Output*. Progress in Physical Geography, 21(4), 530-548.  
-[^16]: Maraun, D., & Widmann, M. (2018). *Statistical Downscaling and Bias Correction for Climate Research*. Cambridge University Press.  
-[^17]: Schulman, J., et al. (2017). *Proximal Policy Optimization Algorithms*. arXiv:1707.06347.  
-[^18]: Mnih, V., et al. (2015). *Human-level control through deep reinforcement learning*. Nature, 518(7540), 529-533.  
-[^19]: Narvekar, S., et al. (2020). *Curriculum Learning for Reinforcement Learning Domains: A Survey*. arXiv:2003.04960.  
-[^20]: Roijers, D.M., et al. (2013). *A Survey of Multi-Objective Sequential Decision-Making*. JAIR, 48, 67-113.  
-[^21]: Lundberg, S.M., & Lee, S.I. (2017). *A Unified Approach to Interpreting Model Predictions*. NeurIPS.  
-[^22]: Zhang, Y., et al. (2022). *Explainable AI for Building Energy Performance Prediction*. Energy and Buildings, 257, 111746.  
-[^23]: Molnar, C. (2022). *Interpretable Machine Learning: A Guide for Making Black Box Models Explainable (2nd ed.)*.  
-[^24]: Klein, S.A., et al. (2017). *TRNSYS 18: A Transient System Simulation Program*.  
-[^25]: Opoku, D.G., et al. (2021). *Digital Twin Applications for Smart Buildings*. Journal of Building Engineering, 44, 103256.  
-[^26]: Bordass, B., Leaman, A., & Ruyssevelt, P. (2001). *Assessing Building Performance in Use 3: Energy Performance of the Probe Buildings*. Building Research & Information, 29(2), 114-128.
+[^5]: Torcellini, P., Pless, S., & Deru, M. (2006). *Zero Energy Buildings: A Critical Look at the Definition*.  
+[^6]: Bhardwaj, A., et al. (2020). *Reinforcement learning for HVAC control*. Energy and Buildings, 220.  
+[^7]: Zhou, Y., et al. (2023). *RL for architectural layout optimization*. Journal of Building Performance Simulation.  
+[^8]: Adadi, A., & Berrada, M. (2018). *Explainable AI: A Review*.  
+[^9]: Gunning, D. (2017). *Explainable Artificial Intelligence (XAI)*.  
+[^10]: Nazari, A., et al. (2021). *ML surrogate models for building simulation*.  
+[^11]: Ribeiro, M.T., Singh, S., & Guestrin, C. (2016). *"Why should I trust you?": Explaining the predictions of any classifier*.  
+[^12]: Wetter, M. (2011). *EnergyPlus*.  
+[^13]: Roudsari, M., Pak, M., & Smith, A. (2013). *Ladybug Tools*.  
+[^14]: Lu, Q., et al. (2021). *Digital Twins in Buildings*.  
+[^15]: Wilby, R.L., & Wigley, T.M.L. (1997). *Downscaling General Circulation Model Output*.  
+[^16]: Maraun, D., & Widmann, M. (2018). *Statistical Downscaling*.  
+[^17]: Schulman, J., et al. (2017). *Proximal Policy Optimization*.  
+[^18]: Mnih, V., et al. (2015). *Deep Q-Networks*.  
+[^19]: Narvekar, S., et al. (2020). *Curriculum Learning*.  
+[^20]: Roijers, D.M., et al. (2013). *Multi-Objective Decision Making*.  
+[^21]: Lundberg, S.M., & Lee, S.I. (2017). *SHAP*.  
+[^22]: Zhang, Y., et al. (2022). *Explainable AI for Energy*.  
+[^23]: Molnar, C. (2022). *Interpretable Machine Learning*.  
+[^24]: Klein, S.A., et al. (2017). *TRNSYS Manual*.  
+[^25]: Opoku, D.G.J., et al. (2021). *Digital Twins*.  
+[^26]: Bordass, B., et al. (2001). *Probe Process*.
 
+---
