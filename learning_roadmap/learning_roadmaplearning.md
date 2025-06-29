@@ -1,245 +1,169 @@
-# 🎓 PhD Readiness Roadmap: ML + Generative Design + Energy Simulation
-
-This roadmap outlines a progressive learning and project plan to prepare for a PhD in integrating machine learning, generative design, and energy simulation in architecture. It emphasizes practical skills, tool proficiency, and research rigor across 12+ months.
-
----
-
-## 📑 Table of Contents
-- [Phase 1: Foundations (0–3 months)](#phase-1-foundations-03-months)
-- [Phase 2: ML for Energy Prediction (3–6 months)](#phase-2-ml-for-energy-prediction-36-months)
-- [Phase 3: Generative Design + Optimization (6–9 months)](#phase-3-generative-design--multi-objective-optimization-69-months)
-- [Phase 4: Simulation & Feedback Loop (9–12 months)](#phase-4-simulation--feedback-loop-912-months)
-- [Phase 5: Research Portfolio (12+ months)](#phase-5-research-portfolio--scientific-readiness-12-months)
-- [Integrated Topics](#integrated-topics-advanced-research-skills)
-- [Suggested Timeline](#suggested-timeline)
+# PhD Readiness Roadmap: ML-Integrated Generative Design for Energy-Efficient Architecture
 
 ---
 
 ## 🧱 Phase 1: Foundations (0–3 months)
 
-**🎯 Goal:** Develop fluency in Python, data workflows, and energy modeling basics.
-🏷️ `#python` `#energy-simulation` `#ifc` `#data-handling`
+**Goal:** Develop fluency in Python programming, data workflows, and fundamental energy modeling concepts.
 
-### 🔑 Core Skills & Tools
-- Python Programming: Variables, loops, functions, file I/O
-- Data Science Libraries: `pandas`, `numpy`, `matplotlib`, `seaborn`
-- File Formats: CSV, JSON, IDF, EPW, IFC, gbXML
-- Energy Modeling Concepts:
-  - Passivhaus and Net Zero design principles
-  - EnergyPlus and OpenStudio overview
-- BIM Interoperability: Revit → IFC extraction (via Dynamo scripts)
+### Core Skills & Tools
+- Python basics: variables, control flow, functions, file I/O  
+- Data manipulation: pandas, numpy  
+- Data visualization: matplotlib, seaborn  
+- Energy modeling basics: Passivhaus principles, EnergyPlus overview  
+- BIM data extraction: IFC parsing  
+- Version control basics: Git and GitHub  
 
-> 💡 **Why It Matters:**  
-> These are the minimum foundations to enable automation of simulation workflows and handle building metadata across formats.
+### Mini-Projects
+- EPW weather file parser and summary tool  
+- CSV data visualizer  
+- Simple Python scripts with Git version control
 
-### 📘 Key Resources  
-
-#### Books (selected chapters)  
-- **Python for Data Analysis** by Wes McKinney  
-  - Chapter 1: “Preliminary: Python Language Basics, IPython, and Jupyter Notebooks”  
-  - Chapter 3: “Built-in Data Structures, Functions, and Files”  
-  - Chapter 5: “Getting Started with pandas”  
-- **Energy Simulation in Building Design** by Joseph Clarke  
-  - Chapter 2: “Introduction to EnergyPlus Simulation Engine”  
-  - Chapter 4: “Input Data and Weather Files”  
-
-#### Online Resources  
-- [Official Python Tutorial](https://docs.python.org/3/tutorial/)  
-- [EnergyPlus Documentation & Engineering Reference](https://energyplus.net/documentation)  
-- [Ladybug Tools Tutorials](https://www.ladybug.tools/tutorials.html)  
-- [IFC File Format Overview](https://technical.buildingsmart.org/standards/ifc/)  
-- [Dynamo BIM Tutorials](https://dynamobim.org/learn/)  
-
-### 🧪 Mini-Projects & Exercises
-- [ ] Create a **weather data parser** that extracts and processes data from EPW files.  ⏱ ~3h  
-- [ ] Build a **CSV data visualizer** to plot and explore simple energy or climate datasets.  ⏱ ~2h  
-- [ ] Experiment with file handling: Read/write JSON, CSV, and explore IDF template files. ⏱ ~4h
-- [ ] Practice Python basics: control flow, functions, and I/O.
+### Recommended Reading
+- *Python for Data Analysis* (Wes McKinney) - selected chapters on pandas and numpy  
+- *Energy Simulation in Building Design* (Joseph Clarke) - introductory chapters
 
 ---
 
-## 🧠 Phase 2: ML for Energy Prediction (3–6 months)
+## ⚙️ Phase 2: Machine Learning for Energy Prediction (3–6 months)
 
-**🎯 Goal:** Apply ML to predict building performance from parametric and climate data.
-🏷️ `#ml` `#energy-prediction` `#xai` `#surrogate-modeling`
+**Goal:** Learn supervised ML methods to predict building energy performance.
 
-### 🔑 Skills to Learn
-- Regression & Ensemble Models: Linear Regression, Random Forest, XGBoost
-- Neural Networks: TensorFlow/Keras basics for MLPs
-- Data Handling: One-hot encoding, feature scaling, PCA
-- Evaluation Metrics: MAE, RMSE, R²
-- Explainable AI (XAI) basics: feature importance, SHAP   values
+### Core Skills & Tools
+- Supervised learning algorithms: linear regression, decision trees, random forests  
+- Model evaluation metrics: RMSE, R², cross-validation  
+- Feature engineering and selection  
+- Data pipelines and cleaning  
+- Tools: scikit-learn, Jupyter notebooks  
 
-> 💡 **Why It Matters:**  
-> Feature importance (e.g., SHAP) helps translate ML insights into architectural decisions—essential for explainability in generative design workflows.
+### Mini-Projects
+- Predict annual heating load using building parameters  
+- Compare ML models for energy use prediction  
+- Cross-validation and hyperparameter tuning  
 
-### 🛠 Tools
-- `scikit-learn`, `tensorflow`, `shap`, `matplotlib`, `seaborn`
-
-### 📘 Key Resources  
-
-#### Books (selected chapters)  
-- **Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow** by Aurélien Géron  
-  - Chapter 2: “End-to-End Machine Learning Project”  
-  - Chapter 3: “Classification” (focus on regression methods)  
-  - Chapter 5: “Training Deep Neural Nets” (basic concepts)  
-- **Interpretable Machine Learning** by Christoph Molnar (free online)  
-  - Chapter 2: “Global Surrogate Models”  
-  - Chapter 4: “SHAP Values”  
-  - Online book: [https://christophm.github.io/interpretable-ml-book/](https://christophm.github.io/interpretable-ml-book/)  
-
-#### Online Resources  
-- [Scikit-learn User Guide](https://scikit-learn.org/stable/user_guide.html)  
-- [TensorFlow Tutorials](https://www.tensorflow.org/tutorials)  
-- [SHAP Documentation and Examples](https://shap.readthedocs.io/en/latest/)  
-- Streamlit [Getting Started](https://docs.streamlit.io/library/get-started)  
-
-### 🧪 Mini-Projects & Exercises
-- [ ] Train a **regression model** to predict heating and cooling loads using simulated or real datasets.  ⏱ ~4h 
-- [ ] Implement **model comparison** across Linear Regression, Random Forest, and XGBoost to evaluate performance differences.  ⏱ ~3h 
-- [ ] Create a **simple dashboard** (using Streamlit or Dash) to visualize Energy Use Intensity (EUI) predictions interactively. ⏱ ~5h
+### Recommended Reading
+- *Introduction to Machine Learning with Python* (Andreas C. Müller) - chapters on regression and model validation  
+- Research papers on ML for building energy prediction
 
 ---
 
-## 🔁 Phase 3: Generative Design + Multi-Objective Optimization (6–9 months)
+## 🕹️ Phase 3: ML-Integrated Generative Design (6–12 months)
 
-**🎯 Goal:** Automate design evolution based on ML feedback.
-🏷️ `#generative-design` `#multi-objective` `#evolutionary-algorithms` `#energy+daylight`
+**Goal:** Integrate ML models with parametric generative design workflows.
 
-### 🔑 Skills to Learn
-- Genetic Algorithms: NSGA-II, `DEAP`, `Platypus`
-- Design Encoding: Parametric models, genotype representation
-- Fitness Functions: Combine EUI, DA, UDI, PMV, embodied carbon
-- Multi-Criteria Visualization: Parallel coordinate plots, Pareto analysis
-- User-in-the-Loop Design: Preference learning, UX for human override
+### Core Skills & Tools
+- Parametric modeling basics: Grasshopper, Rhino  
+- Surrogate modeling and ML model deployment in design loops  
+- Optimization techniques: genetic algorithms, Bayesian optimization  
+- Visualization of design iterations and results  
 
-> 💡 **Why It Matters:**  
-> Generative design enables systematic exploration of trade-offs in energy vs comfort vs carbon—beyond what static design allows.
+### Mini-Projects
+- Create parametric models that use ML predictions as fitness functions  
+- Optimize building orientation or window sizes for energy performance  
+- Develop a simple generative design workflow integrated with ML surrogate models  
 
-### 🛠 Tools
-- Rhino + Grasshopper + Ladybug/Honeybee
-- `DEAP`, `Platypus`, `Wallacei`, `Octopus`
-- `Streamlit`/`Dash` for basic UI prototyping
-
-### 📘 Key Resources  
-
-#### Books (selected chapters)  
-- **Evolutionary Computation for Modeling and Optimization** by Daniel Ashlock  
-  - Chapter 3: “Genetic Algorithms”  
-  - Chapter 7: “Multiobjective Optimization”  
-- **Multi-Objective Optimization Using Evolutionary Algorithms** by Kalyanmoy Deb  
-  - Chapter 1: “Introduction”  
-  - Chapter 3: “Non-dominated Sorting Genetic Algorithm (NSGA-II)”  
-- Ladybug Tools official tutorials on parametric optimization:  
-  - [https://www.ladybug.tools/](https://www.ladybug.tools/)  
-
-#### Online Resources  
-- [DEAP Documentation](https://deap.readthedocs.io/en/master/)  
-- [Platypus Optimization Framework](https://platypus.readthedocs.io/en/latest/)  
-- Wallacei plugin tutorials: [https://www.wallacei.com/](https://www.wallacei.com/)  
-- Parallel coordinate plots with `plotly`: [https://plotly.com/python/parallel-coordinates-plot/](https://plotly.com/python/parallel-coordinates-plot/)  
-
-### 🧪 Mini-Projects & Exercises
-- [ ] Code a **simple grid-based layout generator** using random sampling techniques.  ⏱ ~6h 
-- [ ] Develop a **basic genetic algorithm** for floor plan optimization based on multiple objectives like energy and daylight metrics.  ⏱ ~3h 
-- [ ] Visualize multi-objective optimization results with **parallel coordinate plots** or Pareto front charts. ⏱ ~4h
+### Recommended Reading
+- *Generative Design* (Benny B. Lau et al.) - selected chapters  
+- Papers on surrogate-assisted optimization in architecture
 
 ---
 
-## 🔬 Phase 4: Simulation & Feedback Loop (9–12 months)
+## 🔄 Phase 4: Simulation-ML Feedback Loops (12+ months)
 
-**🎯 Goal:** Automate simulations, feed results to ML, refine designs.
-🏷️ `#simulation` `#openstudio` `#uncertainty` `#feedback-loop`
+**Goal:** Develop workflows combining building energy simulation and ML in iterative feedback loops.
 
-### 🔑 Skills to Learn
-- Python APIs: `eppy`, `geomeppy`, OpenStudio CLI
-- Simulation Automation: Batch runs, parameter sweeping
-- Weather + Occupancy Modeling: EPW integration, stochastic modeling
-- Uncertainty Quantification: Monte Carlo sampling, `SALib`
+### Core Skills & Tools
+- Building energy simulation tools: EnergyPlus, OpenStudio  
+- Automating simulations and collecting outputs  
+- Training ML models on simulation data for surrogate modeling  
+- Reinforcement learning and adaptive optimization methods  
 
-> 💡 **Why It Matters:**  
-> Closing the loop between simulation and ML enables smarter generative workflows with faster feedback for designers.
+### Mini-Projects
+- Automate EnergyPlus simulations with parametric inputs  
+- Train surrogate models to approximate simulation outputs  
+- Implement iterative feedback loops combining simulation and ML  
 
-### 🛠 Tools
-- EnergyPlus, OpenStudio, Ladybug Tools, SimTool, URBANopt
-- Streamlit UI for real-time update of performance metrics
-
-### 📘 Key Resources  
-
-#### Books (selected chapters)  
-- **Building Performance Simulation for Design and Operation** by Jan L.M. Hensen and Roberto Lamberts  
-  - Chapter 6: “Simulation Automation and Optimization”  
-  - Chapter 8: “Uncertainty and Sensitivity Analysis”  
-- EnergyPlus Engineering Reference  
-  - Chapters on API usage and scripting automation  
-
-#### Online Resources  
-- [Eppy Documentation](https://eppy.readthedocs.io/en/latest/)  
-- [Geomeppy GitHub](https://github.com/jdselbo/geomeppy)  
-- [OpenStudio SDK Documentation](https://openstudio.net/developer)  
-- [SALib Sensitivity Analysis Library](https://salib.readthedocs.io/en/latest/)  
-
-### 🧪 Mini-Projects & Exercises
-- [ ] Automate **EnergyPlus simulation runs** via Python using `eppy` or OpenStudio API.  ⏱ ~4h  
-- [ ] Run **multiple design iterations** automatically, logging energy usage and performance outputs for analysis.  ⏱ ~3h 
-- [ ] Integrate stochastic **occupancy and weather data** into simulations to model real-world variability.  ⏱ ~5h
+### Recommended Reading
+- *Energy Simulation in Building Design* (Joseph Clarke) - advanced chapters  
+- Research articles on simulation-ML integration and reinforcement learning in building design
 
 ---
 
-## 💻 Phase 5: Research Portfolio & Scientific Readiness (12+ months)
+## 🔧 Integrated Topics (to explore throughout)
 
-**🎯 Goal:** Develop reproducible workflows and demonstrate scientific rigor through documentation and open-source code.
-🏷️ `#reproducibility` `#validation` `#github` `#scientific-method`
-
-### 🔑 Skills to Learn  
-- Scientific writing and documentation best practices  
-- Version control with Git and GitHub workflows  
-- Experiment tracking (MLflow, Weights & Biases)  
-- Post-occupancy calibration and validation metrics (CVRMSE, NMBE)  
-- Designing control and ablation studies  
-
-> 💡 **Why It Matters:**  
-> Scientific reproducibility is critical for PhD proposals and publications—structured workflows with documented metrics are a must.
-
-### 📘 Key Resources  
-
-#### Books & Articles  
-- **The Craft of Research** by Booth, Colomb, and Williams  
-  - Chapters on argumentation, evidence, and reporting research  
-- **Git Pro Book** (free online)  
-  - Chapter on branching and collaboration: [https://git-scm.com/book/en/v2](https://git-scm.com/book/en/v2)  
-- MLflow Documentation: [https://mlflow.org/docs/latest/index.html](https://mlflow.org/docs/latest/index.html)  
-- [ASHRAE Guideline 14-2014: Measurement of Energy and Demand Savings](https://www.ashrae.org/technical-resources/standards-and-guidelines/standards-addenda)  
-
-### 🧪 Mini-Projects & Exercises  
-- [ ] Set up a GitHub repo with code, data, and Jupyter notebooks documenting the full pipeline.  ⏱ ~4h  
-- [ ] Write detailed tutorials/blog posts explaining your methodology.  ⏱ ~6h 
-- [ ] Track experiments with MLflow or Weights & Biases, including metadata and metrics.  
-- [ ] Prepare validation reports comparing simulation predictions with post-occupancy data.  
+- Version control and collaborative workflows (Git)  
+- Advanced visualization and dashboarding (Plotly, Dash)  
+- Data cleaning, feature engineering, and dimensionality reduction  
+- Post-occupancy calibration and model updating (overview)  
+- Explainable AI (XAI) and interpretability methods  
+- Cloud computing basics for scalable simulations and ML training  
 
 ---
 
-## 📦 Integrated Topics: Where to Add Advanced Research Skills
+## Summary Timeline
 
-| Advanced Topic                     | Integration Phase     | Learning Goals                                    | Tools                              |
-|----------------------------------|------------------------|---------------------------------------------------|------------------------------------|
-| Post-Occupancy Calibration       | Phase 4 & 5            | Align predictions with real performance          | OpenStudio Measures, PyBEM, Pandas |
-| Embodied/Whole Life Carbon       | Phase 3 & 4            | Calculate carbon from material data              | OneClick LCA, EC3, IFC + GH        |
-| Multi-Objective Optimization     | Phase 3                | NSGA-II with Pareto visualizations               | DEAP, Platypus, Wallacei           |
-| Explainable AI for Architects    | Phase 2 & 3            | Visual feedback from ML models                   | SHAP, Streamlit                    |
-| Co-Simulation (Lighting, Airflow)| Phase 4+               | EnergyPlus + Radiance/CFD integration            | Honeybee, OpenFOAM, URBANopt       |
-| Designer-in-the-Loop Optimization| Phase 3 & 5            | Real-time feedback and manual override           | Dash, preference learning models   |
-| Scientific Rigor & Validation    | Phase 5                | Experimental design, metrics, reproducibility    | MLflow, Git, Jupyter               |
-| Cloud Computing & Scalability    | Phase 4 & 5            | Parallel simulations and ML training             | AWS, Colab Pro, Prefect, Docker    |
+| Phase                    | Duration        | Core Focus                      |
+|--------------------------|-----------------|--------------------------------|
+| Phase 1: Foundations      | 0–3 months      | Python, data workflows, basics |
+| Phase 2: ML Prediction    | 3–6 months      | Supervised learning, modeling  |
+| Phase 3: Generative Design| 6–12 months     | Parametric design + ML          |
+| Phase 4: Simulation Loop  | 12+ months      | Simulation + ML feedback loops |
 
 ---
 
-## 📚 Suggested Timeline (Gantt-like Summary)
+## 📚 Resource Appendix
 
-| Months  | Focus Area                     | Key Outcome                                        |
-|---------|--------------------------------|----------------------------------------------------|
-| 0–3     | Python + Data + Energy Modeling| First parametric models + energy simulations       |
-| 3–6     | ML for Energy Prediction       | Regression model + validation plots                |
-| 6–9     | Generative Design + Optimization| Evolving layouts based on ML + simulation          |
-| 9–12    | Feedback Loop + XAI + Validation| Automated loop + explainability visualizations     |
-| 12+     | Portfolio + Research Presentation| Documented GitHub + UI + full pipeline ready       |
+### Books
+- **Python for Data Analysis** – Wes McKinney  
+- **Introduction to Machine Learning with Python** – Andreas C. Müller & Sarah Guido  
+- **Energy Simulation in Building Design** – Joseph Clarke  
+- **Generative Design** – Benny B. Lau et al.
+
+### Key Software and Libraries
+- **Python** — core programming language  
+- **pandas, numpy** — data manipulation  
+- **matplotlib, seaborn** — data visualization  
+- **scikit-learn** — machine learning  
+- **Jupyter notebooks** — interactive coding environment  
+- **Grasshopper & Rhino** — parametric modeling  
+- **EnergyPlus & OpenStudio** — building energy simulation  
+- **Git & GitHub** — version control and collaboration
+
+### Important Research Papers and Articles
+
+- Azadeh, A., Sadeghzadeh, M., & Ghaderi, S. F. (2020). *A review of machine learning methods for building energy prediction.* Renewable and Sustainable Energy Reviews, 119, 109545.  
+  [https://doi.org/10.1016/j.rser.2019.109545](https://doi.org/10.1016/j.rser.2019.109545)
+
+- Zhang, L., Chen, Q., & Yan, D. (2020). *Surrogate-assisted optimization for building design and control: A review.* Renewable and Sustainable Energy Reviews, 123, 109755.  
+  [https://doi.org/10.1016/j.rser.2020.109755](https://doi.org/10.1016/j.rser.2020.109755)
+
+- Wei, Z., Luo, X., & Jin, R. (2021). *Reinforcement learning for building energy management: A review.* Applied Energy, 291, 116740.  
+  [https://doi.org/10.1016/j.apenergy.2021.116740](https://doi.org/10.1016/j.apenergy.2021.116740)
+
+- Lundberg, S. M., & Lee, S.-I. (2017). *A unified approach to interpreting model predictions.* Advances in Neural Information Processing Systems (NIPS). (SHAP values paper)  
+  [https://arxiv.org/abs/1705.07874](https://arxiv.org/abs/1705.07874)
+
+### Useful Online Resources
+
+- EnergyPlus Documentation and Tutorials  
+  [https://energyplus.net/documentation](https://energyplus.net/documentation)
+
+- OpenStudio SDK and Tutorials  
+  [https://www.openstudio.net/](https://www.openstudio.net/)
+
+- scikit-learn Documentation  
+  [https://scikit-learn.org/stable/documentation.html](https://scikit-learn.org/stable/documentation.html)
+
+- Rhino + Grasshopper Official Sites  
+  [https://www.rhino3d.com/](https://www.rhino3d.com/)  
+  [https://www.grasshopper3d.com/](https://www.grasshopper3d.com/)
+
+- Git & GitHub Resources for Beginners  
+  [https://git-scm.com/doc](https://git-scm.com/doc)  
+  [https://docs.github.com/en/get-started/quickstart](https://docs.github.com/en/get-started/quickstart)
+
+
+---
+
+*This roadmap is designed as a clear, focused guide for acquiring skills and knowledge required for PhD-level research on integrating machine learning, generative design, and energy simulation in architecture.*
+
