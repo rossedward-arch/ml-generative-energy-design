@@ -114,7 +114,7 @@ Incorporating XAI into RL and surrogate modeling workflows addresses one of the 
 
 o ensure real-world adoption, generative design tools must be interpretable, interactive, and usable by non-experts. Co-design and participatory methods involve stakeholders early in tool development, fostering trust and better aligning tools with user needs (Bardzell et al., 2012).
 
-Think-aloud protocols, dashboard interfaces, and human-in-the-loop strategies are effective for evaluating trust and usability. Davis et al. (2022) found that explainability and perceived control strongly influence user trust in AI-assisted design environments, underscoring the need for systems that not only optimise performance but also support human creativity, interpretation, and decision-making throughout the architectural design process.
+Think-aloud protocols, dashboard interfaces, and human-in-the-loop strategies are effective methods for evaluating trust and usability in AI-assisted design systems. Davis et al. (2022) found that explainability and perceived control significantly influence user trust within such environments, highlighting the importance of systems that not only optimise performance but also support human creativity, interpretation, and decision-making throughout the architectural design process.
 
 > **Key Insight**: Human factors such as trust, usability, and control are central to tool adoption and should be designed into generative workflows.
 
