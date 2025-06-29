@@ -50,7 +50,7 @@ Building performance simulation tools and digital twin frameworks validate and c
 
 # Appendix: Supplementary Reading List
 
-These texts provide foundational knowledge, broader context, or advanced techniques related to your methodology but were not directly integrated into the main literature review.
+These texts provide foundational knowledge, broader context, or advanced techniques related but were not directly integrated into the main literature review.
 
 ### Climate Data Acquisition and Processing
 - UK Climate Projections: Guidance for Users (UK Met Office)  
