@@ -1,5 +1,5 @@
 # Detailed Project Guide for PhD Readiness Roadmap  
-*Integrating ML, Generative Design & Energy Simulation for Architecture*
+*Foundations for Integrated ML, Generative Design & Energy Simulation for Climate-Adapted Net-Zero Buildings
 
 ---
 
