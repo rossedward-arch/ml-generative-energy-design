@@ -1,6 +1,6 @@
-# ⚙️ ML-Generative-Energy-Design
+# ⚙️ Integrated ML & Generative Design for Climate-Adapted Energy-Efficient Buildings
 
-> A research-driven project integrating **machine learning**, **generative design**, and **energy performance simulation** to support early-stage architectural decision-making.
+> A research-driven project integrating **reinforcement learning**, **explainable AI**, **generative design**, and **energy performance simulation** to support early-stage architectural decision-making for climate-adapted, Passivhaus, and net-zero buildings.
 
 ---
 
@@ -12,15 +12,16 @@ Expect incomplete features, placeholder content, and ongoing refactoring.
 ---
 
 ## 🎯 Goals
-- ✅ Automate early-stage building layout generation using generative design (e.g. Genetic Algorithms)
-- ✅ Integrate site conditions (EPW weather, solar orientation, etc.)
-- ✅ Optimise designs based on energy use intensity (EUI) and comfort metrics
-- ✅ Provide a decision-support tool for architects and designers
+- ✅ Automate early-stage building layout generation using generative design and reinforcement learning optimization
+- ✅ Integrate site conditions (EPW weather, solar orientation, etc.) and climate adaptation data.
+- ✅ Optimise designs based on energy use intensity (EUI), thermal comfort, and resilience metrics.
+- ✅ Develop explainable AI models to provide transparent, interpretable energy performance predictions.
+- ✅ Provide a decision-support tool for architects and designers with feedback-driven iterative design.
 
 ---
 
 ## 🛠️ Technologies & Tools
-- Python (Pandas, Scikit-learn, TensorFlow)
+- Python (Pandas, Scikit-learn, TensorFlow, stable-baselines3 for reinforcement learning, SHAP/LIME for explainability)
 - Grasshopper + Ladybug Tools
 - Revit (geometry extraction + BIM data)
 - Streamlit (interactive design interface)
@@ -31,6 +32,8 @@ Expect incomplete features, placeholder content, and ongoing refactoring.
 
 ## 🔬 Research Themes
 This work is informed by research in:
+- Reinforcement learning for adaptive generative design optimization
+- Explainable AI techniques for model transparency and decision support
 - Generative design for architecture and layout planning
 - Machine learning models for energy prediction
 - Early-stage performance-based design
