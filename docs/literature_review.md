@@ -50,31 +50,57 @@ Building performance simulation tools and digital twin frameworks validate and c
 
 # Appendix: Supplementary Reading List
 
-These texts provide foundational knowledge, broader context, or advanced techniques related but were not directly integrated into the main literature review.
+## 1. Climate Data Acquisition and Processing
 
-### Climate Data Acquisition and Processing
-- UK Climate Projections: Guidance for Users (UK Met Office)  
-- Katz, R.W. (2002). Techniques for Estimating Uncertainty in Climate Change Scenarios and Impact Studies. Climate Research, 20(2), 167-185.
+- UK Climate Projections: Guidance for Users (UK Met Office) – Official documentation on using UKCP18 data for climate modeling.
+- Wilby, R.L., & Wigley, T.M.L. (1997). *Downscaling General Circulation Model Output: A Review of Methods and Limitations*. Progress in Physical Geography, 21(4), 530-548.
+- Maraun, D., & Widmann, M. (2018). *Statistical Downscaling and Bias Correction for Climate Research*. Cambridge University Press.
+- Katz, R.W. (2002). *Techniques for Estimating Uncertainty in Climate Change Scenarios and Impact Studies*. Climate Research, 20(2), 167-185.
 
-### Reinforcement Learning and Multi-Agent Systems
-- Nagy, Z., et al. (2018). Reinforcement learning for optimal control of low energy buildings. Building and Environment, 143, 424-436.  
-- Vázquez-Canteli, J.R., & Nagy, Z. (2019). Reinforcement learning for demand response: A review of algorithms and modeling techniques. Applied Energy, 235, 1072-1089.  
-- Narvekar, S., et al. (2020). Curriculum Learning for Reinforcement Learning Domains: A Survey. arXiv:2003.04960.  
-- Roijers, D.M., et al. (2013). A Survey of Multi-Objective Sequential Decision-Making. Journal of Artificial Intelligence Research, 48, 67-113.  
+## 2. Reinforcement Learning (RL) for Building Design
 
-### Surrogate Modeling and Efficiency Improvements
-- Forrester, A.I.J., et al. (2008). Engineering Design via Surrogate Modelling: A Practical Guide. Wiley.  
-- Jolliffe, I.T., & Cadima, J. (2016). Principal Component Analysis: A Review and Recent Developments. Philosophical Transactions of the Royal Society A, 374(2065), 20150202.  
-- Fisher, A., et al. (2019). All Models are Wrong, but Many are Useful: Learning a Variable’s Importance by Studying an Entire Class of Prediction Models Simultaneously. JMLR, 20(177), 1-81.
+- Sutton, R.S., & Barto, A.G. (2018). *Reinforcement Learning: An Introduction* (2nd ed.). MIT Press.
+- Schulman, J., et al. (2017). *Proximal Policy Optimization Algorithms*. arXiv:1707.06347.
+- Mnih, V., et al. (2015). *Human-level control through deep reinforcement learning*. Nature, 518(7540), 529-533.
+- Nagy, Z., et al. (2018). *Reinforcement learning for optimal control of low energy buildings*. Building and Environment, 143, 424-436.
+- Vázquez-Canteli, J.R., & Nagy, Z. (2019). *Reinforcement learning for demand response: A review of algorithms and modeling techniques*. Applied Energy, 235, 1072-1089.
+- Narvekar, S., et al. (2020). *Curriculum Learning for Reinforcement Learning Domains: A Survey*. arXiv:2003.04960.
+- Roijers, D.M., et al. (2013). *A Survey of Multi-Objective Sequential Decision-Making*. Journal of Artificial Intelligence Research, 48, 67-113.
 
-### Standards and Benchmarking
-- ASHRAE Standard 90.1 (latest edition).  
-- CIBSE TM54: Evaluating Operational Energy Performance of Buildings at the Design Stage.
+## 3. Explainable AI (XAI) and SHAP
 
-### Adaptive and Multiagent RL in Energy Management (Optional)
-- [Adaptive Reinforcement Learning for Energy Management – A progressive approach to boost climate resilience and energy flexibility]  
-- [An Adaptive Energy Orchestrator for Cyberphysical Systems Using Multiagent Reinforcement Learning]  
-- [Recent Progress in Reinforcement Learning and Adaptive Dynamic Programming for Advanced Control Applications]
+- Arrieta, A.B., et al. (2020). *Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges toward responsible AI*. Information Fusion, 58, 82-115.
+- Lundberg, S.M., & Lee, S.I. (2017). *A Unified Approach to Interpreting Model Predictions*. NeurIPS.
+- Molnar, C. (2022). *Interpretable Machine Learning: A Guide for Making Black Box Models Explainable* (2nd ed.). Available online.
+- Zhang, Y., et al. (2022). *Explainable AI for Building Energy Performance Prediction: A Case Study*. Energy and Buildings, 257, 111746.
+
+## 4. Surrogate Modeling and Efficiency Improvements
+
+- Forrester, A.I.J., et al. (2008). *Engineering Design via Surrogate Modelling: A Practical Guide*. Wiley.
+- Jolliffe, I.T., & Cadima, J. (2016). *Principal Component Analysis: A Review and Recent Developments*. Philosophical Transactions of the Royal Society A, 374(2065), 20150202.
+- Fisher, A., et al. (2019). *All Models are Wrong, but Many are Useful: Learning a Variable’s Importance by Studying an Entire Class of Prediction Models Simultaneously*. JMLR, 20(177), 1-81.
+
+## 5. Building Performance Simulation and Validation
+
+- Crawley, D.B., et al. (2001). *EnergyPlus: Creating a new-generation building energy simulation program*. Energy and Buildings, 33(4), 319-331.
+- Klein, S.A., et al. (2017). *TRNSYS 18: A Transient System Simulation Program*. User Manual.
+- ASHRAE Standard 90.1 (latest edition).
+- CIBSE TM54: *Evaluating Operational Energy Performance of Buildings at the Design Stage*.
+- Opoku, D.G.J., et al. (2021). *Digital Twin application in the construction industry: A literature review*. Journal of Building Engineering, 40, 102726.
+- Bordass, B., et al. (2001). *Assessing Building Performance in Use 1: The Probe Process*. Building Research & Information, 29(2), 85-102.
+
+## 6. Adaptive and Multiagent RL in Energy Management (Optional/Background)
+
+- Vázquez-Canteli, J. R., & Nagy, Z. (2019). *Reinforcement learning for demand response: A review of algorithms and modeling techniques*. Applied Energy, 235, 1072-1089.
+- Ruelens, F., et al. (2017). *Residential Demand Response of Thermostatically Controlled Loads Using Batch Reinforcement Learning*. IEEE Transactions on Smart Grid, 10(2), 1092-1102.
+- Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction* (2nd Edition). MIT Press.
+- Ernst, D., et al. (2005). *Tree-Based Batch Mode Reinforcement Learning*. Journal of Machine Learning Research, 6, 503-556.
+- Zhang, K., Yang, Z., & Basar, T. (2019). *Multi-Agent Reinforcement Learning: A Selective Overview of Theories and Algorithms*. arXiv:1911.10635.
+- Nguyen, H. D., et al. (2020). *A Multi-Agent Reinforcement Learning Framework for Smart Grid Energy Management*. IEEE Transactions on Smart Grid.
+- Busoniu, L., Babuska, R., & De Schutter, B. (2008). *Multi-agent Reinforcement Learning: An Overview*. In *Innovations in Multi-Agent Systems and Applications – 1*.
+- Lewis, F. L., et al. (2012). *Reinforcement Learning and Adaptive Dynamic Programming for Feedback Control*. IEEE Circuits and Systems Magazine, 12(2), 20-45.
+- Vamvoudakis, K. G., & Lewis, F. L. (2010). *Online Actor-Critic Algorithm to Solve the Continuous-Time Infinite Horizon Optimal Control Problem*. Automatica, 46(5), 878-888.
+- Busoniu, L., et al. (2010). *Reinforcement Learning and Dynamic Programming Using Function Approximators*. CRC Press.
 
 ---
 
