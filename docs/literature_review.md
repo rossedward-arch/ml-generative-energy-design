@@ -1,7 +1,5 @@
 # 1. Literature Review
 
-# 1. Literature Review
-
 ## 1.1 Climate-Responsive Generative Design
 
 The built environment is a major contributor to global carbon emissions, with early-stage design decisions playing a critical role in determining a building’s long-term energy performance and adaptability to future climates. Generative design has gained traction as a method for exploring complex form-function relationships through algorithmic techniques. Tools like Grasshopper, Ladybug, and Galapagos have enabled evolutionary design processes that optimize for parameters such as daylight, solar gains, and thermal comfort (Nguyen et al., 2014).
@@ -54,7 +52,7 @@ De Wilde (2014) emphasizes the need for dynamic resilience metrics in simulation
 
 Explainable AI (XAI) aims to make complex machine learning models transparent and interpretable, which is crucial in generative design where AI-driven decisions directly affect building performance, occupant comfort, and sustainability goals. Many current workflows use black-box surrogate models or reinforcement learning agents whose internal decision-making is opaque, limiting stakeholder trust and hindering collaborative design.
 
-Techniques such as LIME (Local Interpretable Model-agnostic Explanations) and SHAP (Shapley Additive Explanations) have been developed to provide post-hoc interpretability by attributing importance to model inputs (Ribeiro et al., 2016; Lundberg & Lee, 2017). Aleti et al. (2022) emphasized the growing relevance of XAI in design decision support systems, especially in sensitive, high-stakes applications like sustainable buildings.
+Techniques such as LIME (Local Interpretable Model-agnostic Explanations) and SHAP (Shapley Additive Explanations) have been developed to provide post-hoc interpretability by attributing importance to model inputs (Ribeiro et al., 2016; Lundberg & Lee, 2017). Aleti et al. (2022) emphasized the growing relevance of XAI in design decision support systems, especially in sensitive, high-stakes applications like sustainable buildings. While explainability in generative design is crucial for supporting collaborative, early-stage decisions, XAI also plays an increasingly important role across a broader spectrum of architectural machine learning applications, as further discussed in Section 1.7
 
 > **Key Insight**: Integrating XAI enhances trust and transparency in AI-assisted generative design, enabling informed decision-making and broader acceptance among stakeholders.
 
@@ -97,7 +95,7 @@ Multi-objective optimization algorithms enable designers to explore trade-offs a
 
 ## 1.7 Explainable AI (XAI) in Architecture and Building Design
 
-The increasing adoption of AI and ML in architecture necessitates transparency and interpretability to build user trust and support effective human-AI collaboration. Explainable AI (XAI) aims to make black-box models understandable to humans by providing feature attribution, rule extraction, or visual explanations (Ribeiro et al., 2016).
+Beyond generative design, explainable AI techniques have been applied across various architectural ML workflows, including energy use prediction, anomaly detection, and operational optimization. The increasing adoption of AI and ML in architecture necessitates transparency and interpretability to build user trust and support effective human-AI collaboration. Explainable AI (XAI) aims to make black-box models understandable to humans by providing feature attribution, rule extraction, or visual explanations (Ribeiro et al., 2016).
 
 SHAP (Shapley Additive Explanations) is a popular XAI method that offers theoretically grounded, model-agnostic explanations by fairly distributing the contribution of each input feature to the model’s prediction (Lundberg & Lee, 2017). In building energy modeling, XAI has been used to clarify complex surrogate models, helping designers understand key performance drivers and enhancing trust in AI-assisted tools (Kim et al., 2021).
 
@@ -114,9 +112,9 @@ Incorporating XAI into RL and surrogate modeling workflows addresses one of the 
 
 ## 1.8 Stakeholder Engagement and Co-Design Methods
 
-To ensure real-world adoption, generative design tools must be interpretable, interactive, and usable by non-experts. Co-design and participatory methods involve stakeholders early in tool development, fostering trust and better aligning tools with user needs (Bardzell et al., 2012).
+o ensure real-world adoption, generative design tools must be interpretable, interactive, and usable by non-experts. Co-design and participatory methods involve stakeholders early in tool development, fostering trust and better aligning tools with user needs (Bardzell et al., 2012).
 
-Think-aloud protocols, dashboard interfaces, and human-in-the-loop strategies are effective for evaluating trust and usability. Davis et al. (2022) found that explainability and perceived control strongly influence user trust in AI-assisted design environments, highlighting the importance of human-centred design in computational tools.
+Think-aloud protocols, dashboard interfaces, and human-in-the-loop strategies are effective for evaluating trust and usability. Davis et al. (2022) found that explainability and perceived control strongly influence user trust in AI-assisted design environments, underscoring the need for systems that not only optimise performance but also support human creativity, interpretation, and decision-making throughout the architectural design process.
 
 > **Key Insight**: Human factors such as trust, usability, and control are central to tool adoption and should be designed into generative workflows.
 
