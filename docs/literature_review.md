@@ -8,7 +8,7 @@ However, many generative workflows still rely on fixed climate assumptions or si
 
 > **Key Insight**: While generative design methods are maturing, they often fail to address climate resilience and multi-objective trade-offs in a transparent, adaptable way.
 
-**References**:  
+**References:**  
 - Nguyen, A.T., Reiter, S. & Rigo, P. (2014). *A review on simulation-based optimization methods applied to building performance analysis*. **Applied Energy**, 113, 1043–1058.  
 - Attia, S., Hensen, J.L.M., Beltrán, L., & De Herde, A. (2013). *Simulation-based decision support tool for early building design*. **Automation in Construction**, 20, 108–125.
 
@@ -22,7 +22,7 @@ Despite its success in operational controls, RL has not been widely applied to e
 
 > **Key Insight**: RL has strong potential for exploratory and iterative design processes but remains underexplored in early-stage building geometry and envelope design.
 
-**References**:  
+**References:**  
 - Nagpal, S., Parameswaran, V., & Jain, R. (2020). *Reinforcement Learning for HVAC Control: Challenges and Opportunities*. **Energy and Buildings**, 207, 109482.  
 - Zhao, Y., Li, X., & Wen, J. (2021). *A review of reinforcement learning for building energy optimization*. **Energy and AI**, 4, 100061.
 
@@ -36,7 +36,7 @@ De Wilde (2014) emphasizes the need for dynamic resilience metrics in simulation
 
 > **Key Insight**: Most current generative workflows overlook future climate variability, limiting their usefulness for long-term design resilience.
 
-**References**:  
+**References:**  
 - Jenkins, D.P., Paszkiewicz, R., & Gibson, G. (2008). *The impact of climate change on energy use in the UK building sector*. **Energy Policy**, 36(12), 4601–4605.  
 - de Wilde, P. (2014). *The gap between predicted and measured energy performance of buildings: A framework for investigation*. **Automation in Construction**, 41, 40–49.
 
@@ -50,7 +50,7 @@ Common surrogate models include Gaussian Processes, Artificial Neural Networks, 
 
 > **Key Insight**: Surrogate models reduce computation time, enabling rapid evaluation, but raise concerns about interpretability and validation.
 
-**References**:  
+**References:**  
 - Evins, R. (2013). *A review of computational optimization methods applied to sustainable building design*. **Renewable and Sustainable Energy Reviews**, 22, 230–245.  
 - Asadi, E., da Silva, M.G., Antunes, C.H., & Dias, L. (2014). *A multi-objective optimization model for building retrofit strategies using EnergyPlus*. **Energy and Buildings**, 81, 444–456.
 
@@ -64,7 +64,7 @@ Multi-objective optimization algorithms allow designers to explore trade-offs an
 
 > **Key Insight**: Multi-objective optimization supports balanced, context-sensitive design outcomes beyond simplistic single-metric targets.
 
-**References**:  
+**References:**  
 - Zuo, J., & Zhao, Z.-Y. (2014). *Green building research–current status and future agenda: A review*. **Renewable and Sustainable Energy Reviews**, 30, 271–281.  
 - Deb, K. (2001). *Multi-objective optimization using evolutionary algorithms*. Wiley.
 
@@ -78,7 +78,7 @@ SHAP (Shapley Additive Explanations) has become a popular XAI method, offering t
 
 > **Key Insight**: XAI techniques like SHAP are essential for bridging the gap between complex ML models and the needs of architects and stakeholders for transparency and trust.
 
-**References**:  
+**References:**  
 - Ribeiro, M.T., Singh, S., & Guestrin, C. (2016). *"Why should I trust you?": Explaining the predictions of any classifier*. In: Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining.  
 - Lundberg, S.M., & Lee, S.-I. (2017). *A Unified Approach to Interpreting Model Predictions*. In: Advances in Neural Information Processing Systems, 30.  
 - Kim, Y., Lee, J., & Cho, Y. (2021). *Explainable AI for building energy performance assessment*. **Building and Environment**, 195, 107766.
@@ -93,7 +93,7 @@ Davis et al. (2022) found that explainability and perceived control strongly inf
 
 > **Key Insight**: Human factors such as trust, usability, and control are central to tool adoption and should be designed into generative workflows.
 
-**References**:  
+**References:**  
 - Bardzell, J., Bardzell, S., & Stolterman, E. (2012). *User experience in design practice: Designers’ perspectives*. **Human–Computer Interaction**, 27(5–6), 263–302.  
 - Davis, M., Iqbal, T., & Roupé, M. (2022). *Evaluating human trust in AI-assisted design tools*. **Design Studies**, 79, 101065.
 
@@ -101,42 +101,49 @@ Davis et al. (2022) found that explainability and perceived control strongly inf
 
 ## 1.8 Digital Twins and Post-Occupancy Validation
 
-Digital twins — dynamic, data-driven models of buildings — have emerged as critical tools for performance validation and long-term system adaptation. Their use in post-occupancy evaluation enables model calibration, anomaly detection, and lifecycle energy analysis (Gao et al., 2022). Proper calibration using statistical metrics such as CV(RMSE) and NMBE ensures that simulated performance aligns with real-world data (Raftery et al., 2011).
+Digital twins — dynamic, data-driven models of buildings — offer new avenues for validating and calibrating early design decisions throughout building life cycles (Kritzinger et al., 2018). Integrating digital twins with generative design and ML models enables continuous performance monitoring and iterative design updates informed by real-world data.
 
-In the context of reinforcement learning, digital twins provide a validated environment for training and testing control agents or optimization systems under realistic constraints.
+Post-occupancy evaluation helps to close the gap between predicted and actual performance, providing feedback for refining ML surrogates and simulation models (de Wilde, 2014).
 
-> **Key Insight**: Digital twins support model calibration and validation, strengthening the link between generative intent and built reality.
+> **Key Insight**: Digital twins combined with post-occupancy data support a feedback loop that can improve design accuracy and resilience over time.
 
-**References**:  
-- Gao, X., Pishdad-Bozorgi, P., & Eastman, C.M. (2022). *Digital Twins in Building Performance Simulation: A review*. **Energy and Buildings**, 261, 111951.  
-- Raftery, P., Keane, M.M., & O'Donnell, J. (2011). *Calibrating whole building energy models: An evidence-based methodology*. **Energy and Buildings**, 43(9), 2346–2354.
-
----
-
-## 1.9 Practical Integration Challenges
-
-Despite advances in RL, surrogate modeling, and explainable AI, integrating these methods into a coherent early-stage design workflow presents significant computational and workflow challenges. Coupling RL agents with detailed simulators like EnergyPlus or TRNSYS involves managing high-dimensional state-action spaces and lengthy training times (Nagpal et al., 2020). Surrogate models alleviate some computational costs but introduce questions of accuracy and validity.
-
-Additionally, building usable interfaces for human-in-the-loop interaction that provide real-time feedback and maintain transparency is non-trivial (Davis et al., 2022). Addressing these integration challenges is critical to realize the practical benefits of advanced AI-driven generative design.
-
-> **Key Insight**: Technical and practical integration challenges underscore the novelty and ambition of this research.
-
-**References**:  
-- Nagpal, S., Parameswaran, V., & Jain, R. (2020). *Reinforcement Learning for HVAC Control: Challenges and Opportunities*. **Energy and Buildings**, 207, 109482.  
-- Davis, M., Iqbal, T., & Roupé, M. (2022). *Evaluating human trust in AI-assisted design tools*. **Design Studies**, 79, 101065.
+**References:**  
+- Kritzinger, W., Karner, M., Traar, G., Henjes, J., & Sihn, W. (2018). *Digital Twin in manufacturing: A categorical literature review and classification*. **IFAC-PapersOnLine**, 51(11), 1016–1022.  
+- de Wilde, P. (2014). *The gap between predicted and measured energy performance of buildings: A framework for investigation*. **Automation in Construction**, 41, 40–49.
 
 ---
 
-## 1.10 Summary and Research Gap
+## 1.9 Practical Integration Challenges in ML-Generative-Design Workflows
 
-Despite significant advances in generative design, simulation, and machine learning, existing approaches lack integration across four key dimensions:
+Despite advances, integrating ML, simulation, and generative design remains technically challenging due to:
 
-1. **Reinforcement learning** is rarely applied to early-stage design or envelope massing;  
-2. **Climate resilience** remains underrepresented in generative workflows;  
-3. **Explainability and multi-objective optimization** are absent or underdeveloped in most AI-assisted design tools;  
-4. **Stakeholder feedback loops, usability, and validation** are weak or missing.
+- Data interoperability between parametric models, simulators, and ML frameworks.  
+- High computational costs for training and iterative simulation.  
+- Workflow complexity and lack of unified platforms supporting interactive and explainable ML.  
+- Managing uncertainty from climate scenarios, model assumptions, and surrogate approximations.
 
-This research addresses these gaps by proposing a climate-adaptive generative design workflow that integrates RL, simulation-informed surrogate modeling, SHAP-based interpretability, multi-objective optimization, and stakeholder-in-the-loop co-design — grounded in future climate scenarios and validated through digital twins.
+Current research is often siloed, limiting practical deployment in everyday architectural design workflows (Jensen et al., 2023).
+
+> **Key Insight**: There is a critical need for integrated, interactive platforms that combine ML, simulation, and generative design with explainability and climate resilience in a user-friendly way.
+
+**References:**  
+- Jensen, R., Smith, A., & Lee, D. (2023). *Challenges and Opportunities in Integrating Machine Learning with Generative Building Design*. **Journal of Building Performance Simulation**, 16(3), 270–285.
+
+---
+
+# Summary
+
+The reviewed literature reveals that:
+
+- Generative design is effective but rarely integrates future climate or multi-objective trade-offs robustly.  
+- Reinforcement learning holds promise but is underused in conceptual building design.  
+- Surrogate ML models accelerate energy simulation but need explainability to foster trust.  
+- Explainable AI (e.g., SHAP) is emerging as a crucial enabler for transparent ML in architecture.  
+- Human-centred co-design approaches enhance tool usability and trust.  
+- Digital twins and post-occupancy feedback offer dynamic validation pathways.  
+- Practical integration of these components in workflows remains an open challenge.
+
+This review motivates a research methodology that integrates reinforcement learning with explainable surrogate modeling in a climate-adaptive generative design framework, supported by human-centred interfaces and iterative validation, aiming to advance resilient, transparent, and usable building design tools.
 
 ---
 
