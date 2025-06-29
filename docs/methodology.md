@@ -48,7 +48,7 @@ where weights \(\alpha, \beta, \gamma, \delta\) balance energy savings, thermal 
 
 ## Stage 4: Validation and Benchmarking
 
-- Use EnergyPlus and TRNSYS to simulate final RL-optimized design candidates under diverse climate scenarios.
+- Use EnergyPlus and TRNSYS to simulate final RL-optimized design candidates under diverse climateios.
 - Calibrate digital twin models against historical weather data and monitored post-occupancy performance metrics.
 - Benchmark performance against traditional parametric optimization workflows (e.g., Grasshopper + Galapagos/Octopus) and regulatory baselines such as ASHRAE 90.1 and CIBSE TM54.
 - Evaluate designs based on:
