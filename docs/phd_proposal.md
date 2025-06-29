@@ -10,7 +10,7 @@ This research proposes a novel framework combining reinforcement learning (RL) a
 
 Buildings contribute approximately 40% of global carbon emissions. Passivhaus and net-zero standards offer solutions, but generative design tools currently face three key limitations:
 
-- **Climate adaptation**: Most tools rely on static climate data, failing to model Edinburgh’s shifting rainfall and wind patterns.
+- **Climate adaptation**: Most tools rely on static climate data, failing to model shifting rainfall and wind patterns.
 - **Decision transparency**: "Black-box" AI undermines stakeholder trust in design outcomes.
 - **Dynamic optimization**: Current methods inadequately simulate the combined effects of grid interaction, occupant behavior, and extreme climate events.
 
