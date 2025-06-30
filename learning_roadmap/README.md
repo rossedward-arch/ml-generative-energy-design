@@ -71,10 +71,10 @@ By completing this roadmap, I will develop an advanced interdisciplinary skill s
 ## 🧭 Usage
 
 1. **Start** with `learning_roadmap/.md` for the full roadmap.
-2. Track progress via the `learning_roadmaplearning_checklist.md`.
+2. Track progress via the `02_progress_log.md` of each phase.
 3. Use `projects.md` to manage and submit mini-projects.
-4. Explore `books.md` and `tutorials_links.md` for supporting materials.
-5. Regularly update `progress_log.md` with reflections and next steps.
+4. Explore `reference.md` for supporting materials.
+5. Regularly update `02_progress_log.md` with reflections and next steps.
 
 ---
 
