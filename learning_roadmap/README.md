@@ -18,8 +18,6 @@ This roadmap is organized into five progressive phases:
 
 ## 🗂️ Repository Structure
 
-## 📁 Repo Structure
-
 ```text
 learning_roadmap/
 │
