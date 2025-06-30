@@ -18,21 +18,50 @@ This roadmap is organized into five progressive phases:
 
 ## 🗂️ Repository Structure
 
-| File | Description |
-|------|-------------|
-| [`README.md`](README.md) | This overview document. |
-| [`learning_roadmaplearning.md`](learning_roadmaplearning.md) | The full detailed roadmap and project guide. |
-| [`learning_roadmaplearning_checklist.md`](learning_roadmaplearning_checklist.md) | A phase-by-phase checklist for skills and deliverables. |
-| [`projects.md`](projects.md) | List of mini-projects mapped to each learning phase. |
-| [`books.md`](books.md) | Annotated reading list with book chapters tied to skills. |
-| [`progress_log.md`](progress_log.md) | Personal learning log and milestone tracker. |
-| [`tutorials_links.md`](tutorials_links.md) | Curated tutorials and resources for each roadmap section. |
+## 📁 Repo Structure
 
+```text
+learning_roadmap/
+│
+├── 00_overview/
+│   ├── roadmap_index.md           # High-level roadmap structure
+│   ├── checklist.md               # Your phase-wise checklist
+│   └── references.md              # Key reading lists, papers, sources
+│
+├── 01_foundations/
+│   ├── phase_1_summary.md         # Learning goals, outcomes, tools
+│   ├── progress_log.md            # Logs with UK dates
+│   ├── notes_python.md            # Topic-specific notes
+│   └── notes_energyplus.md
+│
+├── 02_ml_prediction/
+│   ├── phase_2_summary.md
+│   ├── progress_log.md
+│   ├── notes_sklearn.md
+│   └── dataset_preparation.md
+│
+├── 03_generative_design/
+│   ├── phase_3_summary.md
+│   ├── progress_log.md
+│   ├── notes_grasshopper.md
+│   └── notes_gan_vs_rl.md
+│
+├── 04_feedback_optimization/
+│   ├── phase_4_summary.md
+│   ├── progress_log.md
+│   ├── notes_feedback_loop.md
+│   └── notes_multiobjective.md
+│
+└── archive/
+    └── old_versions/
+        ├── progress_log_pre_26_06_2025.md (example)
+        └── notes_dump.md (example)
+```
 ---
 
 ## 🚀 Goal
 
-By completing this roadmap, you'll develop an advanced interdisciplinary skill set in:
+By completing this roadmap, I will develop an advanced interdisciplinary skill set in:
 - Python scripting and data workflows for architectural analysis.
 - Machine learning for energy prediction and simulation.
 - Parametric and generative design automation.
@@ -43,7 +72,7 @@ By completing this roadmap, you'll develop an advanced interdisciplinary skill s
 
 ## 🧭 Usage
 
-1. **Start** with `learning_roadmaplearning.md` for the full roadmap.
+1. **Start** with `learning_roadmap/.md` for the full roadmap.
 2. Track progress via the `learning_roadmaplearning_checklist.md`.
 3. Use `projects.md` to manage and submit mini-projects.
 4. Explore `books.md` and `tutorials_links.md` for supporting materials.
