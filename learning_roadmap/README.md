@@ -22,33 +22,33 @@ This roadmap is organized into five progressive phases:
 learning_roadmap/
 │
 ├── 00_overview/
-│   ├── roadmap_index.md           # High-level roadmap structure
-│   ├── checklist.md               # Your phase-wise checklist
-│   └── references.md              # Key reading lists, papers, sources
+│   ├── 01_roadmap_index.md           # High-level roadmap structure
+│   ├── 02_checklist.md               # Your phase-wise checklist
+│   └── 03_references.md              # Key reading lists, papers, sources
 │
 ├── 01_foundations/
-│   ├── phase_1_summary.md         # Learning goals, outcomes, tools
-│   ├── progress_log.md            # Logs with UK dates
-│   ├── notes_python.md            # Topic-specific notes
-│   └── notes_energyplus.md
+│   ├── 01_phase_1_summary.md         # Learning goals, outcomes, tools
+│   ├── 02__progress_log.md            # Logs with UK dates
+│   ├── 03_notes_python.md            # Topic-specific notes
+│   └── 04_notes_energyplus.md
 │
 ├── 02_ml_prediction/
-│   ├── phase_2_summary.md
-│   ├── progress_log.md
-│   ├── notes_sklearn.md
-│   └── dataset_preparation.md
+│   ├── 01_phase_2_summary.md
+│   ├── 02_progress_log.md
+│   ├── 03_notes_sklearn.md
+│   └── 04_dataset_preparation.md
 │
 ├── 03_generative_design/
-│   ├── phase_3_summary.md
-│   ├── progress_log.md
-│   ├── notes_grasshopper.md
-│   └── notes_gan_vs_rl.md
+│   ├── 01_phase_3_summary.md
+│   ├── 02_progress_log.md
+│   ├── 03_notes_grasshopper.md
+│   └── 04_notes_gan_vs_rl.md
 │
 ├── 04_feedback_optimization/
-│   ├── phase_4_summary.md
-│   ├── progress_log.md
-│   ├── notes_feedback_loop.md
-│   └── notes_multiobjective.md
+│   ├── 01_phase_4_summary.md
+│   ├── 02_progress_log.md
+│   ├── 03_notes_feedback_loop.md
+│   └── 04_notes_multiobjective.md
 │
 └── archive/
     └── old_versions/
