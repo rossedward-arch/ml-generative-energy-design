@@ -18,7 +18,7 @@
 - Implement iterative feedback loops combining simulation and ML  
 
 ### Recommended Reading
--- *Net Zero Energy Buildings* (Linda Reeder) - Good intro to high-performance building design.
+- *Net Zero Energy Buildings* (Linda Reeder) - Good intro to high-performance building design.
 - *Energy Simulation in Building Design* (Joseph Clarke) - In-depth technical book linking simulation with real design.
 - Research articles on simulation-ML integration and reinforcement learning in building design
 
