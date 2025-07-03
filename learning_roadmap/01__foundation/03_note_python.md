@@ -99,10 +99,10 @@ Functions help modularise energy-related tasks (e.g., pre-processing input, pars
 
 ```python
 # Example
-def run_simulation(building_name): # Defines a function named 'run_simulation' that takes one parameter 'building_name'
-    print(f"Running simulation for: {building_name}") # Prints a message to the console, inserting the value of 'building_name' into the string
+def run_simulation(building_name):  # Defines a function named 'run_simulation' that takes one parameter 'building_name'
+    print('Running simulation for: ' + building_name)  # Prints a message with the value of 'building_name'
 
-run_simulation("TestBuilding") # Calls the function with argument "TestBuilding"
+run_simulation('TestBuilding')  # Calls the function with argument 'TestBuilding'
 ```
 
 Scope Notes:
