@@ -71,18 +71,20 @@ else:
 ```python
 # Example
 for i in range(3):
-    print(f"Simulation run {i}")
+    print("Simulation run " + str(i))
 ```
 
 ### while loops
 
-```python
 # Example
-iteration = 0 # Initialize a variable 'iteration' with value 0
-while iteration < 3:# Start a while loop that runs as long as 'iteration' is less than 3
-    print(f"Looping: {iteration}")  # Print the current value of 'iteration' with the text 'Looping: 
-    iteration += 1 # Increment 'iteration' by 1 after each loop iteration (is shorthand for iteration = iteration + 1)
+
+```python
+iteration = 0  # Initialize a variable 'iteration' with value 0
+while iteration < 3:  # Start a while loop that runs as long as 'iteration' is less than 3
+    print("Looping: " + str(iteration))  # Convert 'iteration' to a string and print with label
+    iteration += 1  # Increment 'iteration' by 1 after each loop (same as iteration = iteration + 1)
 ```
+
 🧠 Use Cases:
 
 * Loop over multiple .idf files for batch simulations
