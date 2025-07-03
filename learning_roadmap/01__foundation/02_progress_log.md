@@ -18,15 +18,15 @@ This file documents the chronological progress of my learning in ML-integrated g
 
 ### 📆 30/06/2025 | 📘 Reading 
 **What I did**:
-- Readd chapter 1 of *"Automate the Boring Stuff with Python"* by Al Sweigart   
-- Tested basic file handling with CSV and JSON  
-- Reviewed tutorials from *"Automate the Boring Stuff with Python"*
+- Read chapter 1 of *"Automate the Boring Stuff with Python"* by Al Sweigart   
+- Practised core data types (`int`, `float`, `str`, `bool`) and simple expressions  
+- Explored the Python REPL and wrote small test scripts to solidify syntax
 
 **Challenges**:
-- Develop understandding of of differences between Interger, Floating-Point, andd String Data Types
+- Gained clarity on differences between numeric and string types in terms of operations and print formatting
 
 **Next steps**:
-- read chapter 2 of *"Automate the Boring Stuff with Python"*
+- Begin Chapter 2 of *"Automate the Boring Stuff with Python"*
 
 ---
 
@@ -37,3 +37,16 @@ This file documents the chronological progress of my learning in ML-integrated g
 - Need to balance academic depth with practical prototyping speed  
 
 
+### 📆 01/07/2025 | 🔁 Chapter 2 – Flow Control
+
+**What I did**:
+- Completed exercises and examples on `if`, `elif`, `else`, and logical operators (`and`, `or`, `not`)  
+- Explored `while` and `for` loops, including range-based iteration and loop nesting  
+- Began integrating logic into mock energy simulation examples (e.g., trigger cooling/heating based on temperature thresholds)
+
+**Reflections**:
+- Conditional logic is key for creating rule-based design behaviours (e.g., climate adaptation thresholds in simulations)
+- Practising with `while` loops helped reinforce loop termination and control
+
+**Next Steps**:
+- Chapter 3 – Learn about functions and how to structure reusable simulation utilities
