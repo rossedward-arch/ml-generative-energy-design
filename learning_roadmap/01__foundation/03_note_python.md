@@ -81,7 +81,7 @@ for i in range(3):
 iteration = 0 # Initialize a variable 'iteration' with value 0
 while iteration < 3:# Start a while loop that runs as long as 'iteration' is less than 3
     print(f"Looping: {iteration}")  # Print the current value of 'iteration' with the text 'Looping: 
-    iteration += 1 # Increment 'iteration' by 1 after each loop iteration
+    iteration += 1 # Increment 'iteration' by 1 after each loop iteration (is shorthand for iteration = iteration + 1)
 ```
 🧠 Use Cases:
 
