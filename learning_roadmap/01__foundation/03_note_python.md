@@ -37,12 +37,21 @@ Useful Tip: I'll often use float and str types when handling energy simulation d
 
 ```python
 # Example
-temperature = 26
+# Mock temperature data (e.g., from an energy model or sensor reading)
+current_temperature = 28.5  # in °C
 
-if temperature > 24:
-    print("Cooling load triggered.")
+# Define thresholds
+cooling_threshold = 25.0
+heating_threshold = 18.0
+
+# Simple rule-based logic to trigger system
+if current_temperature > cooling_threshold:
+    print('Cooling system ON')
+elif current_temperature < heating_threshold:
+    print('Heating system ON')
 else:
-    print("No cooling required.")
+    print('System OFF – Temperature within comfort range')
+
 ```
 
 ---
