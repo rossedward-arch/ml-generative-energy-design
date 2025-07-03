@@ -36,21 +36,31 @@ Useful Tip: I'll often use float and str types when handling energy simulation d
 ### if statements
 
 ```python
-# Example
 # Mock temperature data (e.g., from an energy model or sensor reading)
 current_temperature = 28.5  # in °C
+# Assigns a temperature reading (28.5°C) to the variable 'current_temperature'
 
 # Define thresholds
 cooling_threshold = 25.0
+# If temperature is above this, cooling is needed
 heating_threshold = 18.0
+# If temperature is below this, heating is needed
 
 # Simple rule-based logic to trigger system
 if current_temperature > cooling_threshold:
+    # Checks if current temperature is above the cooling threshold
     print('Cooling system ON')
+    # If true, prints that the cooling system should be turned on
+
 elif current_temperature < heating_threshold:
+    # If not above cooling threshold, checks if it's below the heating threshold
     print('Heating system ON')
+    # If true, prints that the heating system should be turned on
+
 else:
+    # If neither condition is true (i.e., temp is between 18.0°C and 25.0°C)
     print('System OFF – Temperature within comfort range')
+    # Prints that no heating or cooling is needed
 
 ```
 
@@ -68,10 +78,10 @@ for i in range(3):
 
 ```python
 # Example
-iteration = 0
-while iteration < 3:
-    print(f"Looping: {iteration}")
-    iteration += 1
+iteration = 0 # Initialize a variable 'iteration' with value 0
+while iteration < 3:# Start a while loop that runs as long as 'iteration' is less than 3
+    print(f"Looping: {iteration}")  # Print the current value of 'iteration' with the text 'Looping: 
+    iteration += 1 # Increment 'iteration' by 1 after each loop iteration
 ```
 🧠 Use Cases:
 
@@ -87,10 +97,10 @@ Functions help modularise energy-related tasks (e.g., pre-processing input, pars
 
 ```python
 # Example
-def run_simulation(building_name):
-    print(f"Running simulation for: {building_name}")
+def run_simulation(building_name): # Defines a function named 'run_simulation' that takes one parameter 'building_name'
+    print(f"Running simulation for: {building_name}") # Prints a message to the console, inserting the value of 'building_name' into the string
 
-run_simulation("TestBuilding")
+run_simulation("TestBuilding") # Calls the function with argument "TestBuilding"
 ```
 
 Scope Notes:
@@ -101,11 +111,15 @@ Scope Notes:
 ```python
 # Example
 def calculate_heating_load(temp_inside, temp_outside):
+# Defines a function 'calculate_heating_load' that takes inside and outside temperatures as inputs
     delta = temp_inside - temp_outside
+# Calculates the temperature difference (delta) between inside and outside
     return delta * 1.5  # Arbitrary coefficient for example
+# Returns the heating load estimate by multiplying the temperature difference by 1.5
 
-result = calculate_heating_load(21, 4)
-print("Estimated load:", result)
+
+result = calculate_heating_load(21, 4) # Calls the function with inside temp = 21°C and outside temp = 4°C, stores the result
+print("Estimated load:", result) # Prints the string "Estimated load:" followed by the calculated result
 ```
 
 🔍 Next Topics to Add
