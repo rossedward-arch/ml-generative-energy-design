@@ -124,6 +124,78 @@ result = calculate_heating_load(21, 4) # Calls the function with inside temp = 2
 print("Estimated load:", result) # Prints the string "Estimated load:" followed by the calculated result
 ```
 
+---
+
+### Debugging
+
+#### 🔑 Key Concepts
+
+* **Syntax errors vs. runtime** errors:
+  * *Syntax errors* prevent code from running at all (e.g., missing colon).
+  * *Runtime errors* occur while the code runs (e.g., `ZeroDivisionError`, `TypeError`).
+* **Exceptions** are errors that Python raises when something goes wrong.
+* **Tracebacks** show where errors occurred and are useful for diagnosing the problem step-by-step.
+
+---
+
+#### 🧰 Debugging Techniques
+
+* **Print-based debugging**
+  * Use `print()` to inspect values, types, and program flow.
+  * Place strategically before/after key logic to trace how data changes.
+  * Remember to remove or comment out debug prints once bugs are fixed to keep code clean.
+
+* **Asertions**
+  * Use `assert` to check that conditions hold true while code runs:
+```python
+assert temp > 0, "Temperature must be positive"
+```
+* **Input validation**
+* Always check input types, ranges and format to prevent unexpected bugs.
+```python
+if not isinstance(data, list): 
+    raise TypeError("Expected a list")
+```
+* **Using the Python Debugger `(pdb)` in VS Code**
+VS Code offers a built-in debugger, so you don’t usually need to insert `import pdb; pdb.set_trace()` manually.
+
+How to debug in VS Code:
+
+1. **Set breakpoints:**
+Click in the gutter (left margin) next to the line numbers in your Python file to add a red dot — this marks where the debugger will pause.
+
+2. **Start debugging:**
+
+  * Open the Run and Debug panel (`Ctrl+Shift+D` or click the ▶️ icon on the left sidebar).
+
+  * Select Python: Current File and press the green ▶️ button.
+
+  * The debugger will start and pause execution at your breakpoints.
+
+3. **Use the debug controls:**
+
+  * Continue (F5): Runs until the next breakpoint or program end.
+
+  * Step Over (F10): Executes the current line and pauses on the next line.
+
+  * Step Into (F11): Steps inside a function call to debug it line-by-line.
+
+  * Step Out (Shift+F11): Runs the rest of the current function and pauses after returning.
+
+  * Restart (Ctrl+Shift+F5): Restarts debugging session.
+
+  * Stop (Shift+F5): Stops debugging.
+
+4. **Inspect variables:**
+
+  * Hover over variables in the editor to see their current values.
+
+  * Use the Variables pane to watch all current variables and their values.
+
+  * Use the Debug Console to evaluate expressions and run commands (similar to `p var` in pdb).
+
+
+
 🔍 Next Topics to Add
 
 * File I/O (open, .read(), with)
