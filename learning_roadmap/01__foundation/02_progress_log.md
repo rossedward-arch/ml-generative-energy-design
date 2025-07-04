@@ -76,3 +76,25 @@ This file documents the chronological progress of my learning in ML-integrated g
 - Read Chapter 5 on Debugging to learn how to find and fix errors  
 - Practice debugging on small Python programs after studying the chapter  
 - Prepare to use these skills when starting larger simulation or ML projects
+
+### 📆 04/07/2025 | 📘 Chapter 5 debugging Progress Log
+
+**What I did**:
+-Read Chapter 5 on debugging techniques for Python programs
+-Learned structured steps: identifying, isolating, diagnosing, and fixing bugs
+-Practiced using print() statements and assert for tracing logic errors
+--Experimented with the built-in pdb debugger to step through faulty code
+
+**Reflections**:
+-A systematic approach to debugging makes problem-solving much more efficient
+-Print-based debugging may apear to be useful, but stepping through code is clearer for complex logic.
+-Checking inputs are correct and small test cases are important for catching errors early.
+-Many bugs come from assumtions of the developer about ddata shapes, type and model behaviour.
+
+**Challenges**:
+-Tracking bugs that span multiple tools or data handoffs (e.g., from Grasshopper to Python)
+-Diagnosing silent failures (Would using asssertions throughoput code help?)
+
+**Next steps**:
+-Read Chapter 6 on Lists to deepen understanding of list structures and operations
+-Explore list comprehensions and how they can streamline data transformations
