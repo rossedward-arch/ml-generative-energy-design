@@ -151,7 +151,7 @@ print("Estimated load:", result) # Prints the string "Estimated load:" followed 
 assert temp > 0, "Temperature must be positive"
 ```
 * **Input validation**
-* Always check input types, ranges and format to prevent unexpected bugs.
+  * Always check input types, ranges and format to prevent unexpected bugs.
 ```python
 if not isinstance(data, list): 
     raise TypeError("Expected a list")
