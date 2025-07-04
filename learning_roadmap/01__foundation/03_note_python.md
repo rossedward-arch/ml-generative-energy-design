@@ -166,33 +166,33 @@ Click in the gutter (left margin) next to the line numbers in your Python file t
 
 2. **Start debugging:**
 
-  * Open the Run and Debug panel (`Ctrl+Shift+D` or click the ▶️ icon on the left sidebar).
+   * Open the Run and Debug panel (`Ctrl+Shift+D` or click the ▶️ icon on the left sidebar).
 
-  * Select Python: Current File and press the green ▶️ button.
+   * Select Python: Current File and press the green ▶️ button.
 
-  * The debugger will start and pause execution at your breakpoints.
+   * The debugger will start and pause execution at your breakpoints.
 
 3. **Use the debug controls:**
 
-  * Continue (F5): Runs until the next breakpoint or program end.
+   * Continue (F5): Runs until the next breakpoint or program end.
 
-  * Step Over (F10): Executes the current line and pauses on the next line.
+   * Step Over (F10): Executes the current line and pauses on the next line.
 
-  * Step Into (F11): Steps inside a function call to debug it line-by-line.
+   * Step Into (F11): Steps inside a function call to debug it line-by-line.
 
-  * Step Out (Shift+F11): Runs the rest of the current function and pauses after returning.
+   * Step Out (Shift+F11): Runs the rest of the current function and pauses after returning.
 
-  * Restart (Ctrl+Shift+F5): Restarts debugging session.
+   * Restart (Ctrl+Shift+F5): Restarts debugging session.
 
-  * Stop (Shift+F5): Stops debugging.
+   * Stop (Shift+F5): Stops debugging.
 
 4. **Inspect variables:**
 
-  * Hover over variables in the editor to see their current values.
+   * Hover over variables in the editor to see their current values.
 
-  * Use the Variables pane to watch all current variables and their values.
+   * Use the Variables pane to watch all current variables and their values.
 
-  * Use the Debug Console to evaluate expressions and run commands (similar to `p var` in pdb).
+   * Use the Debug Console to evaluate expressions and run commands (similar to `p var` in pdb).
 
 
 
