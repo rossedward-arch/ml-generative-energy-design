@@ -1,10 +1,10 @@
-📚 Project Documentation Overview
+# 📚 Project Documentation Overview
 
 Welcome to the documentation folder for the ML-Driven Generative Design for Energy-Efficient Architecture project. This folder contains supporting documents that provide context, academic grounding, and methodological depth to the research and development work presented in this repository.
 
 ---
 
-📄 Contents
+## 📄 Contents
 
 -   **`research_methodology.md`**: A comprehensive explanation of the research strategy, data pipeline, machine learning integration, generative design workflow, and simulation tools used. This serves as a blueprint for the technical and scientific aspects of the project.
 
@@ -28,7 +28,7 @@ Welcome to the documentation folder for the ML-Driven Generative Design for Ener
 
 ---
 
-🧠 Usage
+## 🧠 Usage
 
 These documents are intended for:
 
@@ -41,7 +41,7 @@ Each file is standalone but part of a unified research vision and development pi
 
 ---
 
-🛠 Contributing
+## 🛠 Contributing
 
 While the repository code is open to contributions, the documents in this folder represent the author's research intent and academic direction. If you're interested in collaborating on the research, please open a discussion or reach out directly.
 
