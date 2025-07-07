@@ -89,7 +89,7 @@
 
 ## 🔬 Phase 5: Portfolio & Research Extensions (18+ months & Ongoing)
 
-*Goal:** Deepen expertise in advanced ML concept, develop portfolio-ready research components and explore broaader ressearch application.
+**Goal:** Deepen expertise in advanced ML concept, develop portfolio-ready research components and explore broaader ressearch application.
 
 ### Core Skills & Tools
 - Advanced reinforcement learning (e.g., specific algorithms like PPO, SAC)
