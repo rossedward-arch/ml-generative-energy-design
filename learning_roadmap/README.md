@@ -22,42 +22,43 @@ This roadmap is organized into five progressive phases:
 learning_roadmap/
 │
 ├── 00_overview/
-│   ├── 01_roadmap_index.md           # High-level roadmap structure
+│   ├── README.md                     # This acts as the main roadmap index
 │   ├── 02_checklist.md               # Your phase-wise checklist
-│   └── 03_references.md              # Key reading lists, papers, sources
+│   └── 03_resources_reading.md       # Key learning resources, books, courses
 │
 ├── 01_foundations/
-│   ├── 01_phase_1_summary.md         # Learning goals, outcomes, tools
-│   ├── 02__progress_log.md            # Logs with UK dates
-│   ├── 03_notes_python.md            # Topic-specific notes
-│   └── 04_notes_energyplus.md
+│   ├── README.md                     # Formerly 01_phase_1_summary.md - now its homepage
+│   ├── 02_progress_log.md            # Daily/weekly logs with UK dates
+│   ├── 03_notes_python_fundamentals.md
+│   └── 04_notes_energy_file_formats.md
 │
 ├── 02_ml_prediction/
-│   ├── 01_phase_2_summary.md
+│   ├── README.md                     # Formerly 01_phase_2_summary.md
 │   ├── 02_progress_log.md
-│   ├── 03_notes_sklearn.md
-│   └── 04_dataset_preparation.md
+│   ├── 03_notes_sklearn_basics.md
+│   ├── 04_notes_pytorch_intro.md
+│   └── 05_dataset_preparation.md
 │
 ├── 03_generative_design/
-│   ├── 01_phase_3_summary.md
+│   ├── README.md                     # Formerly 01_phase_3_summary.md
 │   ├── 02_progress_log.md
-│   ├── 03_notes_grasshopper.md
-│   └── 04_notes_gan_vs_rl.md
+│   ├── 03_notes_parametric_design.md
+│   └── 04_notes_generative_algorithms.md
 │
 ├── 04_feedback_optimization/
-│   ├── 01_phase_4_summary.md
+│   ├── README.md                     # Formerly 01_phase_4_summary.md
 │   ├── 02_progress_log.md
-│   ├── 03_notes_feedback_loop.md
-│   └── 04_notes_multiobjective.md
+│   ├── 03_notes_simulation_ml_loops.md
+│   └── 04_notes_multi_objective_optimization.md
 │
-├── 05_portfolio_research_extensions/   # NEW PHASE: For advanced topics & concrete project output
-│   ├── 01_phase_5_summary.md
+├── 05_portfolio_research_extensions/
+│   ├── README.md                     # NEW - Summary for this phase
 │   ├── 02_progress_log.md
-│   ├── 03_notes_reinforcement_learning.md # In-depth RL concepts, algorithms
-│   ├── 04_notes_explainable_ai.md    # SHAP, LIME, interpretability methods
-│   ├── 05_notes_climate_adaptation.md # Deeper dive into climate data & resilience design
-│   ├── 06_notes_whole_life_carbon.md # Learning WLC principles & potential for ML integration
-│   └── mini_projects/                # Folder for specific advanced mini-projects demonstrating skills
+│   ├── 03_notes_reinforcement_learning.md
+│   ├── 04_notes_explainable_ai.md
+│   ├── 05_notes_climate_adaptation.md
+│   ├── 06_notes_whole_life_carbon.md
+│   └── mini_projects/
 │       ├── rl_agent_toy_env.ipynb
 │       └── xai_model_interpretation.ipynb
 │
