@@ -106,31 +106,32 @@ This file documents the chronological progress of my learning in ML-integrated g
 
 ---
 
-### 📆 04/07/2025 | 📘 Chapter 5 – Debugging Progress Log
+### 📆 04/07/2025 | 📘 Chapter 5 – Debugging with VS Code
 
 **What I did**:
-* Thoroughly read Chapter 5 on **debugging techniques** for Python programs, understanding the theoretical basis of error identification.
+* Thoroughly read Chapter 5 on **debugging techniques** for Python programs, focusing on **Visual Studio Code's integrated debugging features**.
 * Learned a structured debugging approach: identifying the bug, isolating the problematic code section, diagnosing the root cause, and implementing a fix.
-* Practiced using `print()` statements for tracing variable values and execution flow, understanding their utility and limitations.
-* Experimented with `assert` statements to enforce assumptions about program state and input data, seeing their immediate value in identifying logic errors early.
-* Explored and practiced using the built-in Python Debugger (`pdb`), learning how to set breakpoints, step through code, inspect variables, and evaluate expressions in real-time.
+* Practiced setting **breakpoints** in VS Code by clicking the left gutter, and stepping through code using controls like `Step Over` (F10), `Step Into` (F11), and `Step Out` (Shift+F11).
+* Experimented with inspecting variables in the **Variables pane** and evaluating expressions directly in the **Debug Console** within VS Code.
+* Explored the utility of `print()` statements for quick checks and tracing, understanding how they appear in the VS Code Terminal or Debug Console.
+* Practiced using `assert` statements to enforce assumptions about program state and input data, observing how `AssertionError` is raised and how VS Code highlights the point of failure.
 
 **Reflections & Insights**:
 * A systematic approach to debugging (identify, isolate, diagnose, fix) is far more efficient than trial-and-error, especially as code complexity grows. This will save significant time in developing and refining energy models.
-* While `print()` statements are useful for quick checks, `pdb` offers a much more powerful and precise way to understand program execution, especially for complex logical flows or functions with many variables. This is a critical skill for developing robust simulation and ML code.
+* VS Code's integrated debugger offers a powerful and intuitive way to understand program execution. **Stepping through code, inspecting variables in real-time, and using the Debug Console** provides much deeper insight than `print()` statements alone, especially for complex logical flows or functions with many variables. This is a critical skill for developing robust simulation and ML code.
 * The concept of using `assert` statements throughout code is a powerful proactive measure. It forces developers to explicitly state assumptions about data shapes, types, and model behavior, which can catch errors much earlier in the development cycle, preventing silent failures.
 * **Connection to Project**: Debugging skills are indispensable for developing reliable ML models and energy simulation tools. Issues can arise from incorrect data inputs, flawed algorithms, or unexpected interactions between different code modules. Proficiency here will directly impact the accuracy and trustworthiness of my generative design outcomes.
 
 **Challenges**:
-* Initially found `pdb`'s command-line interface a bit steep; required practice to become comfortable with commands like `n` (next), `s` (step), `c` (continue), and `p` (print).
+* Initially getting comfortable with the various debugging controls (step over, step into, continue) in VS Code and understanding when to use each.
 * Diagnosing silent failures (where a program runs but produces incorrect output without throwing an error) remains challenging; this is where `assert` statements and thorough unit testing become critical.
 
 **How I Addressed It**:
-* Worked through several `pdb` tutorials and intentionally introduced bugs into small scripts to practice stepping through them.
-* Began incorporating `assert` statements into simple functions to validate input types and expected outputs, aiming to make hidden assumptions explicit.
+* Worked through VS Code's official Python debugging tutorials to familiarize myself with the interface and features.
+* Intentionally introduced bugs into small scripts and used the VS Code debugger to pinpoint and resolve them.
+* Began incorporating `assert` statements into simple functions to validate input types and expected outputs, aiming to make hidden assumptions explicit and leverage VS Code's error highlighting.
 
 **Next steps**:
 * Read Chapter 6 ("Lists") to deepen my understanding of list structures and advanced operations, including list comprehensions, which are highly efficient for data transformations.
 * Begin planning how to apply debugging strategies to more complex scenarios, potentially involving external libraries or data files, in preparation for actual energy simulation tasks.
 * Consider exploring unit testing frameworks (e.g., `unittest`, `pytest`) once I have a more solid grasp of Python fundamentals, as they offer a more automated and robust way to catch errors.
-
