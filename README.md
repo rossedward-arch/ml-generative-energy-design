@@ -2,7 +2,7 @@
 
 ## ⚙️ Integrated ML & Generative Design for Climate-Adapted Energy-Efficient Buildings
 
--A research-driven project integrating reinforcement learning, explainable AI, generative design, and energy performance simulation to support early-stage architectural decision-making for climate-adapted, Passivhaus, and net-zero buildings.--
+- A research-driven project integrating reinforcement learning, explainable AI, generative design, and energy performance simulation to support early-stage architectural decision-making for climate-adapted, Passivhaus, and net-zero buildings.--
 
 ---
 
