@@ -87,16 +87,34 @@
 - *Energy Simulation in Building Design* (Joseph Clarke) - advanced chapters  
 - Research articles on simulation-ML integration and reinforcement learning in building design
 
----
+## 🔬 Phase 5: Portfolio & Research Extensions (18+ months & Ongoing)
 
-## 🔧 Integrated Topics (to explore throughout)
+*Goal:** Deepen expertise in advanced ML concept, develop portfolio-ready research components and explore broaader ressearch application.
 
-- Version control and collaborative workflows (Git)  
-- Advanced visualization and dashboarding (Plotly, Dash)  
-- Data cleaning, feature engineering, and dimensionality reduction  
-- Post-occupancy calibration and model updating (overview)  
-- Explainable AI (XAI) and interpretability methods  
-- Cloud computing basics for scalable simulations and ML training  
+### Core Skills & Tools
+- Advanced reinforcement learning (e.g., specific algorithms like PPO, SAC)
+- Explainable AI (XAI) and interpretability methods (e.g., SHAP, LIME)
+- Climate adaptation strategies and resilience modeling
+- Whole-life carbon (WLC) assessment principles and potential for ML integration
+- Advanced visualization and dashboarding (Plotly, Dash, Streamlit for interactive apps)
+- Version control and collaborative workflows (Git, advanced branching strategies)
+- Cloud computing basics for scalable simulations and ML training
+- Post-occupancy calibration and model updating (overview)
+- Data cleaning, advanced feature engineering, and dimensionality reduction
+
+### Mini Projects
+- Implement and demonstrate an XAI technique to interpret an energy prediction model's outputs
+- Develop a prototype interactive dashboard for design exploration and AI insights
+- Explore a specific climate adaptation strategy (e.g., passive cooling) with generative design
+- Integrate initial whole-life carbon considerations into a design optimization workflow
+
+### Recomended Reading
+
+-Research papers on specific RL applications in design and architecture
+- Literature on Explainable AI (XAI) and model interpretability
+- Academic articles on climate-adaptive design and whole-life carbon assessment
+- Advanced documentation for specific libraries (e.g., `stable-baselines3`, SHAP, LIME)
+
 
 ---
 
@@ -107,9 +125,10 @@
 | Phase 1: Foundations      | 0–3 months      | Python, data workflows, basics |
 | Phase 2: ML Prediction    | 3–6 months      | Supervised learning, modeling  |
 | Phase 3: Generative Design| 6–12 months     | Parametric design + ML          |
-| Phase 4: Simulation Loop  | 12+ months      | Simulation + ML feedback loops |
+| Phase 4: Simulation Loop  | 12–18 months      | Simulation + ML feedback loops |
+| Phase : Portfolio & Extensions  | 18+ months      | Advanced ML (RL/XAI), climate, WLC, portfolio |
 
 ---
 
-*This roadmap is designed as a clear, focused guide for acquiring skills and knowledge required for PhD-level research on integrating machine learning, generative design, and energy simulation in architecture.*
+*This roadmap is designed as a clear, focused guide for acquiring skills and knowledge required for PhD-level research on integrating machine learning, generative design, and energy simulation in architecture. It represents a living document, subject to refinement as the research journey progresses.*
 
