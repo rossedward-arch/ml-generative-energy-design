@@ -50,6 +50,17 @@ learning_roadmap/
 │   ├── 03_notes_feedback_loop.md
 │   └── 04_notes_multiobjective.md
 │
+├── 05_portfolio_research_extensions/   # NEW PHASE: For advanced topics & concrete project output
+│   ├── 01_phase_5_summary.md
+│   ├── 02_progress_log.md
+│   ├── 03_notes_reinforcement_learning.md # In-depth RL concepts, algorithms
+│   ├── 04_notes_explainable_ai.md    # SHAP, LIME, interpretability methods
+│   ├── 05_notes_climate_adaptation.md # Deeper dive into climate data & resilience design
+│   ├── 06_notes_whole_life_carbon.md # Learning WLC principles & potential for ML integration
+│   └── mini_projects/                # Folder for specific advanced mini-projects demonstrating skills
+│       ├── rl_agent_toy_env.ipynb
+│       └── xai_model_interpretation.ipynb
+│
 └── archive/
     └── old_versions/
         ├── progress_log_pre_26_06_2025.md (example)
