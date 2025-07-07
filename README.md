@@ -1,22 +1,21 @@
-# ⚙️ Integrated ML & Generative Design for Climate-Adapted Energy-Efficient Buildings
+# ML for Sustainable Architecture: A Research Portfolio
 
-> A research-driven project integrating **reinforcement learning**, **explainable AI**, **generative design**, and **energy performance simulation** to support early-stage architectural decision-making for climate-adapted, Passivhaus, and net-zero buildings.
+## ⚙️ Integrated ML & Generative Design for Climate-Adapted Energy-Efficient Buildings
+
+-A research-driven project integrating reinforcement learning, explainable AI, generative design, and energy performance simulation to support early-stage architectural decision-making for climate-adapted, Passivhaus, and net-zero buildings.--
 
 ---
 
 ## 🚧 Project Status
-This project is under active development as part of a personal research portfolio supporting a potential PhD application at institutions like **Edinburgh University**.
+This project is under active development as part of a personal research portfolio, showcasing my continuous learning and practical application of Machine Learning for a potential PhD application at institutions like Edinburgh University..
 
-Expect incomplete features, placeholder content, and ongoing refactoring.
-
----
 
 ## 🎯 Goals
-- ✅ Automate early-stage building layout generation using generative design and reinforcement learning optimization
-- ✅ Integrate site conditions (EPW weather, solar orientation, etc.) and climate adaptation data.
-- ✅ Optimise designs based on energy use intensity (EUI), thermal comfort, and resilience metrics.
-- ✅ Develop explainable AI models to provide transparent, interpretable energy performance predictions.
-- ✅ Provide a decision-support tool for architects and designers with feedback-driven iterative design.
+- To automate early-stage building layout generation using generative design and reinforcement learning optimization
+- To integrate site conditions (EPW weather, solar orientation, etc.) and climate adaptation data.
+- To optimise designs based on energy use intensity (EUI), thermal comfort, and resilience metrics.
+- To evelop explainable AI models to provide transparent, interpretable energy performance predictions.
+- To provide a decision-support tool for architects and designers with feedback-driven iterative design.
 
 ---
 
@@ -48,7 +47,7 @@ This project is also part of a structured self-learning journey to prepare for P
 
 | Stage | Topic | Tools / Books | Outcome |
 |-------|----------------------------|--------------------------|---------|
-| 1     | Python Fundamentals        | *Python Crash Course*    | Basic scripting and data types |
+| 1     | Python Fundamentals        | Python Fundamentals    | Basic scripting and data types |
 | 2     | Data Analysis              | *Python for Data Analysis* | Manipulate EPW, CSV data |
 | 3     | Data Visualisation         | Matplotlib / Seaborn     | Visualise temp, loads, EUI |
 | 4     | Machine Learning (Scikit)  | *Hands-On ML* by Géron   | Train energy prediction models |
