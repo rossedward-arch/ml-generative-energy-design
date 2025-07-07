@@ -23,8 +23,9 @@ learning_roadmap/
 │
 ├── 00_overview/
 │   ├── README.md                     # This acts as the main roadmap index
-│   ├── 02_checklist.md               # Your phase-wise checklist
-│   └── 03_resources_reading.md       # Key learning resources, books, courses
+│   ├── 01_checklist.md               # Your phase-wise checklist
+│   └── 02_resources_reading.md       # Key learning resources, books, courses
+│   └── tutorial_links.md              # Quick-access online tutorials, documentation, and specific practical tools
 │
 ├── 01_foundations/
 │   ├── README.md                     # Formerly 01_phase_1_summary.md - now its homepage
