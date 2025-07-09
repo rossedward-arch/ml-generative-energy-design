@@ -135,3 +135,30 @@ This file documents the chronological progress of my learning in ML-integrated g
 * Read Chapter 6 ("Lists") to deepen my understanding of list structures and advanced operations, including list comprehensions, which are highly efficient for data transformations.
 * Begin planning how to apply debugging strategies to more complex scenarios, potentially involving external libraries or data files, in preparation for actual energy simulation tasks.
 * Consider exploring unit testing frameworks (e.g., `unittest`, `pytest`) once I have a more solid grasp of Python fundamentals, as they offer a more automated and robust way to catch errors.
+
+### 📆 07/07/2025 - 09/07/25| 📘 Chapter 6 – Manipulating Lists
+
+**What I did**:
+* Learned how to use list methods like `append()`, `insert()`, `remove()`, `sort()`, and `reverse()`
+* Practiced list slicing, indexing, and copying techniques (`list[:]`, `copy.copy()`, `copy.deepcopy()`)
+* Explored how lists store references to objects rather than actual values
+* Experimented with mutability and how changes to one list can affect others if not copied properly.
+* Practiced using `in`, `not in`, and `for` loops to search and iterate through lists
+
+  **Reflections**:
+  * Lists are incredibly versatile, but small mistakes (e.g. off-by-one indexing or reference errors) can break logic
+  * It’s easy to underestimate the complexity of even basic programs when they combine slicing, loops, and conditionals
+  * Sorting and filtering lists will be useful for processing and analyzing building performance datasets
+  * The ability to dynamically update lists should be important for generative workflows and iterative design testing
+
+  **Challenges**:
+  * Remembering the difference when a list operation mutates the list in-place vs returning a new one
+  * Needed to revisit earlier parts of the chapter to understand why certain list manipulations didn’t behave as expected
+  * Avoiding accidental reference sharing when copying complex list structures
+  * Handling mixed-type lists and preserving data consistency.
+ 
+  **Next Step**
+  * Break larger problems into smaller parts and write helper functions where possible
+  * Re-attempt challenging list-based exercises to reinforce understanding (Struggled for an hour with the 'Coin Flip Streak' problem because of an `or` operator precedence bug, due to 'short-circuiting, always 100% or 0%.)
+  * Read Chapter 7 on Dictionaries to understand how key-value data structures can be combined with lists
+  * Create a small mini-project that uses both lists and loops, such as managing sensor data or simulation results over time.
