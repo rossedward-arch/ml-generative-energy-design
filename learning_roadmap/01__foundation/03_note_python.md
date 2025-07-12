@@ -42,8 +42,49 @@ Useful Tip: I'll often use float and str types when handling energy simulation d
 **Useful Tip:** I'll often encounter float and str types when handling energy simulation data, such as parsing numerical outputs from .csv tables or reading descriptive parameters from input files. Explicit type conversion is frequently required to ensure data is in the correct format for calculations or model inputs.
 
 ---
+## 📌 `input()` and Type Conversion
+`input()` allows users to enter data(always a string). You often need to convert this for use in simulation parameters- like temperture threasholds, airflow rates, or building size.
 
-##🔁 Control Structures
+```python
+# Example: input for room dimensions used in a simulation
+width = float(input("Enter room width (in meters): "))
+length = float(input("Enter room length (in meters): "))
+area = width * length
+print("Room area: " + str(area) + " m²")
+```
+
+Which is useful for interactive scripts where users set design parameters before running energy moddels.
+
+---
+
+## 📌 Truthy and Falsy Values
+Falsy values can help check if input values, model settings, or sensor arrays are empty or invalid.
+
+```python
+# Example: checking if a weather data list is empty
+weather_data = []
+
+if not weather_data:
+    print("⚠️ No weather data provided — simulation cannot proceed.")
+```
+
+----
+
+## 📌 The random Module (for Stochastic Simulation)
+Use `random` to **introduce variation in design parameters**, for **Monte Carlo simulations**, or **test robustness** of your models.
+
+```python
+import random
+
+# Example: randomly assign insulation thickness for uncertainty testing
+insulation_thickness = random.uniform(0.05, 0.15)  # in meters
+print("Randomized insulation thickness:", round(insulation_thickness, 3), "m")
+```
+This is good for sensitivity analysis or generating synthetic scenarios.
+
+---
+
+## 🔁 Control Structures
 Control structures are fundamental for implementing dynamic behavior and decision-making logic in energy models and generative design scripts. They allow programs to respond to different conditions and process data iteratively.
 
 ### `if` statements
@@ -100,6 +141,13 @@ while iteration < 3:  # Start a while loop that runs as long as 'iteration' is l
     print("Looping: " + str(iteration))  # Convert 'iteration' to a string and print with label
     iteration += 1  # Increment 'iteration' by 1 after each loop (same as iteration = iteration + 1)
 ```
+### `else` loops
+
+`else`
+
+---
+
+### `range(start, stop, step)` and reverse iteration with negative step
 
 🧠 Use Cases:
 * Loop over multiple `.idf` files for batch simulations or parametric studies.
@@ -170,9 +218,12 @@ Debugging is an essential skill for any developer, especially in complex domains
   * Remember to remove or comment out debug prints once bugs are fixed to keep code clean.
 
 * **Asertions**
-  * Use `assert` to check that conditions hold true while code runs:
+  * Use `assert` to catches invalid or unrealistic values early — vital for trustworthy energy predictions.:
 ```python
-assert temp > 0, "Temperature must be positive"
+# Example: checking heating setpoint range
+heating_setpoint = 10  # in °C
+
+assert 15 <= heating_setpoint <= 23, "❌ Setpoint outside thermal comfort range!"
 ```
 * **Input validation**
   * Always check input types, ranges and format to prevent unexpected bugs.
@@ -180,6 +231,23 @@ assert temp > 0, "Temperature must be positive"
 if not isinstance(data, list): 
     raise TypeError("Expected a list")
 ```
+* **Error Handling with `try` / `except`**
+Simulation workflows often involve reading files, calculating with uncertain inputs, or parsing outputs. Avoid crashes using try blocks.
+
+```python
+# Example: safe division for air change rate
+try:
+    room_volume = float(input("Enter room volume (m³): "))
+    airflow_rate = float(input("Enter airflow rate (m³/h): "))
+    ach = airflow_rate / room_volume  # air changes per hour
+    print("ACH:", round(ach, 2))
+except ZeroDivisionError:
+    print("❌ Room volume can't be zero.")
+except ValueError:
+    print("❌ Please enter valid numeric values.")
+```
+Protects your script from crashing on bad input and helps debug early.
+
 * **Using the Python Debugger `(pdb)` in VS Code**
 VS Code offers a built-in debugger, so you don’t usually need to insert `import pdb; pdb.set_trace()` manually.
 
@@ -221,22 +289,12 @@ Click in the gutter (left margin) next to the line numbers in your Python file t
 ## 🧰 Manipulating Lists
 Lists are fundamental data structures in Python, essential for organizing and managing collections of related data. In energy and ML workflows, lists are perfect for handling sequences like hourly sensor readings, simulation output rows, collections of design alternatives, or even sequences of layers in a building material assembly. Their mutability and flexibility make them powerful tools for data processing.
 
-###📌 What are Lists?
+### 📌 What are Lists?
 Lists are ordered, mutable collections of items. They can store items of different data types (heterogeneous) and are defined by square brackets `[]`
 
 These are fantastic notes! They are well-structured, comprehensive, and tailored to your specific PhD research interests. You've clearly put a lot of thought into connecting Python concepts to energy modeling and machine learning.
 
 Here are the Python notes on Manipulating Lists, following your excellent format and integrating the "Coin Flip Streak" lessons:
-
-🐍 Notes: Python for Energy and ML Foundations
-Note: All code examples in this file are written as part of my learning process, with an emphasis on how Python can be applied to architectural energy simulation and machine learning workflows relevant to my PhD research. The focus is not just on syntax, but on building intuition for practical use in energy modelling, generative design, and performance optimization.
-
-🧰 2. Manipulating Lists
-
-Lists are fundamental data structures in Python, essential for organizing and managing collections of related data. In energy and ML workflows, lists are perfect for handling sequences like hourly sensor readings, simulation output rows, collections of design alternatives, or even sequences of layers in a building material assembly. Their mutability and flexibility make them powerful tools for data processing.
-
-📌 What are Lists?
-Lists are ordered, mutable collections of items. They can store items of different data types (heterogeneous) and are defined by square brackets [].
 
 #### Relevance to Energy/ML:
 * **Time-Series Data**: Storing sequences of hourly temperatures, energy consumption, or CO2 levels.
@@ -275,7 +333,7 @@ print("System status: " + str(system_status))
 print('Type of hourly_temperatures_c: ' + str(type(hourly_temperatures_c))) # <class 'list'>
 ```
 
-###📌 Accessing List Elements (Indexing & Slicing)
+### 📌 Accessing List Elements (Indexing & Slicing)
 Accessing specific data points or subsets of data is crucial for analysis.
 * **Indexing:** Access individual elements using square brackets [] and their position (index). Python uses 0-based indexing. Negative indices count from the end (-1 is the last element).
 * **Slicing:** Extract sub-lists (portions) of a list using a colon `:`. `[start:end:step]` where `end` is *exclusive*.
@@ -399,6 +457,21 @@ nested_data[0].append(5) # Modify a list INSIDE the original nested list
 print("Original nested after deep copy change: " + str(nested_data)) # [[1, 2, 5], [3, 4]]
 print("Deep copy after original change: " + str(deep_copy)) # [[1, 2], [3, 4]] - Deep copy is unaffected
 ```
+
+**Scenario 2**
+**What’s happening?**
+The slice operator (`[:]`) creates a new top-level list with the same elements. Changes to the new list won’t affect the original.
+**Use this when:**
+You're duplicating flat data like temperature sets, daylight factors, or simulation inputs you want to modify independently.
+
+**Scenario 3**
+**What’s happening?**
+Same effect as slicing — `copy.copy()` gives a shallow top-level copy, good for flat lists or objects that don’t contain nested structures.
+**When to use:**
+When you want to be explicit in your code (e.g. during testing or collaboration) that you’re intentionally making a shallow copy.
+
+---
+
 ### 📌 Iterating with for Loops and Membership (in/not in)
 `for` loops are essential for processing each item in a list. Membership operators (`in`, `not in`) check for an item's presence.
 
@@ -438,9 +511,10 @@ if unusual_material not in allowed_materials:
     # Concatenate the string parts, enclosing 'unusual_material' in quotes
     print("'" + str(unusual_material) + "' is not a standard allowed material.")
 ```
+
 ### 🧠 Coin Flip Streak: A Practical Application of List Manipulation and Iteration
 
-The "**Coin Flip Streak**" problem from "**Automate the Boring Stuff with Python**" is a goodd exercise for practicing list generation, iteration, and conditional logic. It highlights how even seemingly simple patterns can appear frequently in random data.
+The "**Coin Flip Streak**" problem from "**Automate the Boring Stuff with Python**" is a good exercise for practicing list generation, iteration, and conditional logic. It highlights how even seemingly simple patterns can appear frequently in random data.
 
 Problem Summary: Simulate 100 coin flips (`H` or `T`), then check if there's a streak of 6 identical flips. Repeat this 100 times and calculate the percentage of experiments with a streak.
 
