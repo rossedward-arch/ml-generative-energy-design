@@ -136,6 +136,8 @@ This file documents the chronological progress of my learning in ML-integrated g
 * Begin planning how to apply debugging strategies to more complex scenarios, potentially involving external libraries or data files, in preparation for actual energy simulation tasks.
 * Consider exploring unit testing frameworks (e.g., `unittest`, `pytest`) once I have a more solid grasp of Python fundamentals, as they offer a more automated and robust way to catch errors.
 
+---
+
 ### 📆 07/07/2025 - 09/07/25| 📘 Chapter 6 – Manipulating Lists
 
 **What I did**:
@@ -165,3 +167,42 @@ This file documents the chronological progress of my learning in ML-integrated g
   * Re-attempt challenging list-based exercises to reinforce understanding (Struggled for an hour with the 'Coin Flip Streak' problem because of an `or` operator precedence bug, due to 'short-circuiting, always 100% or 0%.)
   * Read Chapter 7 on Dictionaries to understand how key-value data structures can be combined with lists
   * Create a small mini-project that uses both lists and loops, such as managing sensor data or simulation results over time.
+
+---
+
+### 📆 12/07/2025 | 🎯 100 Days of Code – Days 1–5 (Angela Yu, Udemy)
+
+**What I did**
+* Startedd the **100 Days of Code: The Complete Python to Pro Bootcamp** to gain structured, project based practice.
+* Completed **Days 1-5**, which covered:
+    * Day 1: Printing, String manipulation, debugging basics, and `input()` usage
+    * Day 2: Variables, data types, and simple mathematical operations
+    * Day 3: Control flow with `if`, `else`, `elif`; logical operators; nested conditionals
+    * Day 4: Randomization and Python lists
+    * Day 5: Python loops (`for`, `while`).
+
+* Built small, projects for each day, including:
+   * Band Name Generrator
+   * A Tip Calculator
+   * A simple Treasure Map Game
+   * A Rock, Paper, Scissor game
+   * Password Generator (with random character selection and user input for complexity
+ 
+ **Reflections & Insights:**
+* The bite sized projects help reinforce understanding of core python syntax and logic building skills in a practical context
+* The course was designed easier for repitiion and gave a greater sense of progression compared to *Automate the Boring Stuff*
+* The practice helped me understand **when to use different list operations, control flow logic, and basic user interaction** — useful for simulation input handling.
+* Practicing both input() styles — input() vs input("Question") — highlighted how clarity for the user matters when building tools others might use (e.g. simulation UI prompts).
+
+**Challenges:**
+* Found it tricky to design the **password generator logic** — especially determining when to use nested loops and how to shuffle characters for randomness.
+* Questioned the best style for user prompts: whether to use input() on its own (*Automate the Boring Stuff*) or input("Enter your password length: ") (*100 Days of Code*) — the latter improves clarity and is better for real-world use, but can clutter code during testing.
+* Occasionally got confused about **loop ranges and indexing**, especially when combining multiple lists of characters.
+
+**How I Adddressed It:**
+* Simplfied the password generator to print letters, symbols then numbers in a string. Then went back, changed string it to an empty list and `apended.(random.choice(letter/symbol/number))`. Then `random.shuffle` the list and used the `for` loop to turn the list back into a string.
+* Settled on always using input("Prompt") with clear labels as a personal best practice
+
+**Next Stage** 
+* Read Chapter 7 Dictionaries and Structuring Data 
+* Continue with Days 6–10, which include Python functions and built-in modules — both highly relevant to structuring energy simulation code. (will supplement Chapter 2, 3, 4, 6 & 7 from *Automate the Boring Stuff*)
