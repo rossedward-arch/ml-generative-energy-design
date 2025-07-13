@@ -156,6 +156,51 @@ while iteration < 3:  # Start a while loop that runs as long as 'iteration' is l
 
 ---
 
+### 🧩 Decision Logic in Control Flow (from Projects)
+
+Recent exercises like Hangman and Reeborg's Maze reinforced the value of clean, modular control flow for simulations and logical agents.
+Hangman-style: input validation and guess tracking
+```python
+# Check whether a guessed letter is valid (not guessed before)
+def is_valid_input(letter, guessed_letters):
+    if letter in guessed_letters:
+        print("Already guessed.")
+        return False
+    return True
+```
+>🔎 Useful for validating user inputs in simulation GUIs, checking for repeated inputs in generative loops, or filtering sensor data events.
+
+**Reeborg-style: movement logic using if/elif/else**
+```python
+# Example maze logic from Day 6: conditional decision-making in a loop
+def decide_next_move():
+    if right_is_clear():
+        turn_right()
+    elif front_is_clear():
+        move()
+    else:
+        turn_left()
+```
+> 🧠 Similar decision structures are used in simulation agents, reinforcement learning (RL), and climate adaptation rule trees — where agents navigate choices based on changing inputs or spatial conditions.
+
+---
+
+### 📝 State Tracking with Lists and Conditions
+
+```python
+guessed_letters = []
+guess = input("Guess a letter: ")
+
+if guess in guessed_letters:
+    print("You already guessed that.")
+else:
+    guessed_letters.append(guess)
+```
+> ✅ Managing state is essential in iterative solvers, simulation result handling, or tracking convergence criteria.
+For example, in energy modeling, a list could track which rooms have been simulated, which design variants are completed, or which constraint checks have passed.
+
+---
+
 ## 🧭 Functions and Scope
 
 Functions are critical for modularizing energy-related tasks, such as pre-processing input data, parsing simulation output files, or calculating performance metrics. They promote code reusability and maintainability, which is vital for complex energy models and ML workflow
@@ -174,7 +219,7 @@ run_simulation('TestBuilding_VariantA')
 run_simulation('OfficeBuilding_Scenario2')
 ```
 
-###Scope Notes:
+### Scope Notes:
 
 * **Local Scope:** Variables defined inside a function are local to that function and are not accessible from outside it. This prevents unintended side effects and promotes modularity.
 * Use return to pass values back
@@ -195,6 +240,31 @@ result = calculate_heating_load(21, 4) # Calls the function with inside temp = 2
 print("Estimated load:", result) # Prints the string "Estimated load:" followed by the calculated result
 ```
 
+---
+
+### 🧩 Modular Logic with Functions (Project Applications)
+
+Building on core function usage, projects like Hangman and Escape the Maze reinforced the power of functions for modular thinking, reusable decision logic, and input/state validation—skills directly transferable to simulation and ML design tasks.
+```python
+# Hangman-style: check if a guessed letter is new
+def is_valid_input(letter, guessed_letters):
+    if letter in guessed_letters:
+        print("Already guessed.")
+        return False
+    return True
+```
+```python
+# Maze-style simulation logic: decide next move
+def decide_next_move():
+    if right_is_clear():
+        turn_right()
+    elif front_is_clear():
+        move()
+    else:
+        turn_left()
+```
+> * 🧠 In energy simulations or design optimizations, similar logic can guide agent behaviors, iterative evaluations, or decision-making under constraints. Modularizing these decisions makes code easier to test, refactor, and plug into pipelines.
+> * 🔁 Reflection: Projects from Days 6–7 of 100 Days of Code taught me to think of logic as small, composable functions. This mirrors how simulation steps, convergence tests, or post-processing modules are structured in real-world workflows.
 ---
 
 ## Debugging
@@ -570,7 +640,40 @@ for experiment_number in range(100):
 print('Chance of streak: %s%%' % (number_of_streaks / 100))
 ```
 
+---
 
+## 🧱 Dictionaries and Structured Data
+
+Dictionaries are ideal for storing named simulation parameters, configuration settings, or simulation outputs with descriptive keys.
+```python
+simulation_inputs = {
+    "insulation_R_value": 3.5,
+    "window_U_value": 1.1,
+    "thermal_mass": "high"
+}
+print(simulation_inputs["window_U_value"])  # ➝ 1.1
+```
+* Use `.keys()`, `.values()`, `.items()` to loop over data:
+```python
+for key, value in simulation_inputs.items():
+    print(f"{key}: {value}")
+```
+* Use get() to safely retrieve values:
+```python
+air_change_rate = simulation_inputs.get("air_change_rate", 0.5)
+```
+>📌 **Why it matters**: Structured key–value data is central in defining reusable inputs for parametric runs, multi-zone models, and simulation frameworks.
+
+---
+
+## 🪜 Nested Dictionaries for Hierarchical Data
+```python
+building = {
+    "zone1": {"temp": 21, "humidity": 40},
+    "zone2": {"temp": 23, "humidity": 45}
+}
+```
+> 🧠 Use for multi-zone simulation data, or storing results by room and sensor type.
 
 
 
