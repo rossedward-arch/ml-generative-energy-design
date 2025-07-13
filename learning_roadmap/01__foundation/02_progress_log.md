@@ -206,3 +206,36 @@ This file documents the chronological progress of my learning in ML-integrated g
 **Next Stage** 
 * Read Chapter 7 Dictionaries and Structuring Data 
 * Continue with Days 6–10, which include Python functions and built-in modules — both highly relevant to structuring energy simulation code. (will supplement Chapter 2, 3, 4, 6 & 7 from *Automate the Boring Stuff*)
+
+### 📆 13/07/2025 | 🎯 Chapter 7 - Dictionaries & Structuiring Data + 100 Days of Code (Days 6 & 7) 
+
+**What I did**
+* Read Chapter 7 of *Automate the Boring Stuff with Python* on **dictionaries andd data structuring**
+* Practiced creating, accessing, modifying and iterating through dictionaries using `.keys()`, `.values()`, `.items()`, `get()`.
+* The importance of using dictionaries for **storing structured data**, especially when working with named inputs or grouped values (e.g materials, properties or simulation parameters).
+* Completed Days 6 & 7 of **Angela Yu's 100 Days of Code (Python Bootcamp):**
+    * **Day 6**:  Revisited  defining and calling functions in Python,  applied control flow to solve logic-based puzzles using **Reeborg’s World** (Karel-style visual maze-solving) and Built the **"Escape the Maze"** project using loops, conditionals, and functions.
+    * **Day 7**: Practiced **string manipulation, flow control, and logic design** in the building **Hangman** game project, using functions and lists together to manage game state, user guesses, and feedback.
+
+**Reflections & Insights:**
+* **Dictionaries** make it easy to store complex, labeled data—especially useful for organizing simulation parameters (e.g. room names and thermal properties).
+* Nested dictionaries will be key when modeling hierarchical data structures like multi-zone buildings, or storing time-series results by date and sensor.
+* **Function-based thinking** allows to break logic into reusable, modular and testable blocks. Which could be applied to different projects and data sets.
+* **The Hangman game (Day 7)** reinforced control flow and state tracking—skills.  These skills help with tasks like iterating through simulation steps or tracking convergence (Convergence Meaning your simulation or model reaches a *stable result* or *target threshold* after a number of iterations...)
+* Karel-style maze logic reinforced algorithmic thinking and helped build confidence with nested conditionals and loops.
+
+**Challenges:**
+* Initially struggled with deeply nested dictionaries—accessing the correct level required careful use of brackets and key names.
+* In Hangman, I had trouble keeping which letters had already been guessed when new guesses were made
+* Reeborg’s maze logic required careful debugging such as loop conditions that depended on sensing walls or openings.
+
+**How I Addressed It:**
+* Started with smaller dictionary examples and used `print` to view nested structures clearly; this made it easier to debug and understand dictionary depth during simulation logic design.
+* I createdd list to store all previously guessed letters in Hangman and added a condition to check if the new guess was already in that list before processing.
+* I broke the maze-solving algorithm into smaller conditional blocks (e.g., if `right_is_clear():`, `elif front_is_clear():`) and stepped through the program one decision at a time. I also added temporary `print()` statements to trace the decision path. This made it easier to spot infinite loops and incorrect wall-following logic.
+
+**Next Steps:**
+*  **Read Chapter 8 – Strings and Text Editing**
+ This chapter will strengthen my ability to work with string data—essential for reading/writing simulation configuration files, interpreting user input, handling filenames, and parsing log outputs.
+*  **Continue with 100 Days of Code (Days 8–10):**
+ Build up confidence with functions, loops, and logic by completing more hands-on projects. These will also support habits in clean, reusable code design.
