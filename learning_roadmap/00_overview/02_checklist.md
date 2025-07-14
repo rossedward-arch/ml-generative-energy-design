@@ -157,3 +157,4 @@ These are additional high-impact goals to pursue if time and opportunity allow, 
 - [ ] Mark tasks `[x]` when complete
 - [ ] Add dates or notes to each task as needed (e.g., `[x] 2025-07-07: Completed EPW parser, see notebooks/01_data_visualisation.ipynb`)
 - [ ] Use this checklist to track granular progress toward PhD readiness and guide daily/weekly learning.
+
