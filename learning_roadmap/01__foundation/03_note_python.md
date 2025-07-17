@@ -5,13 +5,13 @@
 
 ---
 
-## 🧰 1. Python Basics for Energy Simulation
+# 🧰 1. Python Basics for Energy Simulation
 
 These notes cover essential Python concepts needed to begin working with energy simulation workflows and prepare for integrating machine learning later. Each section highlights the relevance of the concept to architectural energy performance analysis and generative design.
 
 ---
 
-### 📌 Data Types
+## 📌 Data Types
 
 Understanding Python's fundamental data types is crucial for accurately representing and manipulating various forms of building performance data, from numerical sensor readings and simulation outputs to descriptive material properties and operational statuses. Correct data typing ensures accurate calculations and avoids common errors.
 
@@ -39,11 +39,11 @@ sensor_reading_float = float(sensor_reading_str)
 print(f"Converted sensor reading: {sensor_reading_float}, Type: {type(sensor_reading_float)}") # 23.7, Type: <class 'float'>
 Useful Tip: I'll often use float and str types when handling energy simulation data like weather files or .csv output tables.
 ```
-**Useful Tip:** I'll often encounter float and str types when handling energy simulation data, such as parsing numerical outputs from .csv tables or reading descriptive parameters from input files. Explicit type conversion is frequently required to ensure data is in the correct format for calculations or model inputs.
+**Useful Tip:** I'll often encounter `float` and `str` types when handling energy simulation data, such as parsing numerical outputs from `.csv` tables or reading descriptive parameters from input files. Explicit type conversion is frequently required to ensure data is in the correct format for calculations or model inputs.
 
 ---
 ## 📌 `input()` and Type Conversion
-`input()` allows users to enter data(always a string). You often need to convert this for use in simulation parameters- like temperture threasholds, airflow rates, or building size.
+`input()` allows users to enter data which is always a **string**. You often need to convert this for use in simulation parameters- like temperture threasholds, airflow rates, or building size.
 
 ```python
 # Example: input for room dimensions used in a simulation
@@ -52,8 +52,7 @@ length = float(input("Enter room length (in meters): "))
 area = width * length
 print("Room area: " + str(area) + " m²")
 ```
-
-Which is useful for interactive scripts where users set design parameters before running energy moddels.
+This is useful for interactive scripts where users set design parameters before running energy moddels.
 
 ---
 
@@ -70,7 +69,7 @@ if not weather_data:
 
 ----
 
-## 📌 The random Module (for Stochastic Simulation)
+## 📌 The `random` Module (for Stochastic Simulation)
 Use `random` to **introduce variation in design parameters**, for **Monte Carlo simulations**, or **test robustness** of your models.
 
 ```python
@@ -89,7 +88,7 @@ Control structures are fundamental for implementing dynamic behavior and decisio
 
 ### `if` statements
 
-Conditional statements (if, elif, else) are crucial for creating rule-based design behaviors, defining climate adaptation thresholds, or managing operational schedules in energy simulations. They enable systems to react intelligently to changing conditions.
+Conditional statements (`if`, `elif`, `else`) are crucial for creating rule-based design behaviors, defining climate adaptation thresholds, or managing operational schedules in energy simulations. They enable systems to react intelligently to changing conditions.
 
 
 ```python
@@ -124,16 +123,41 @@ else:
 `for` loops are indispensable for iterating over collections of data, such as lists of simulation inputs, hourly weather data, or lists of design alternatives. They enable efficient batch processing and analysis.
 
 ```python
-# Example
+# Example 1: Basic iteration
 for i in range(3):
     print("Simulation run " + str(i))
+
+# Example 2: Iterating through characters in a string (from Caesar Cipher)
+message = "hello world"
+for char in message:
+    print(char)
+# Output:
+# h
+# e
+# l
+# l
+# o
+#
+# w
+# o
+# r
+# l
+# d
+
+# Example 3: Iterating with conditional checks for characters
+alphabet_str = 'abcdefghijklmnopqrstuvwxyz' # Using a string for alphabet
+for letter in message:
+    if letter in alphabet_str:
+        print(letter + " is a letter.")
+    else:
+        print(letter + " is NOT a letter.")
 ```
 
 ### `while` loops
 
 `while` loops are useful when the number of iterations is not known beforehand, such as in iterative optimization processes or when waiting for a certain condition to be met in a simulation.
 
-# Example
+#### Example 1 (Basic Iteration)
 
 ```python
 iteration = 0  # Initialize a variable 'iteration' with value 0
@@ -141,14 +165,75 @@ while iteration < 3:  # Start a while loop that runs as long as 'iteration' is l
     print("Looping: " + str(iteration))  # Convert 'iteration' to a string and print with label
     iteration += 1  # Increment 'iteration' by 1 after each loop (same as iteration = iteration + 1)
 ```
-### `else` loops
+#### Example 2 (Continuous Program Execution)
 
-`else`
+```python
+# Example: Continuous program execution based on user input (from Caesar Cipher)
+should_continue_program = True
+while should_continue_program:
+    user_input = input("Do you want to continue (yes/no)? ").lower()
+    if user_input == "no":
+        should_continue_program = False
+        print("Exiting program.")
+    else:
+        print("Continuing...")
+# This demonstrates how a while loop can keep a program running until a specific
+# condition (user typing 'no') is met.
+```
 
 ---
 
-### `range(start, stop, step)` and reverse iteration with negative step
+## 📌 Modulo Operator (%)
 
+The modulo operator (%) returns the remainder of a division. It's particularly useful for operations that involve cycles or checking divisibility
+```python
+# Basic Usage:
+print("10 % 3 =", 10 % 3) # Output: 1 (10 divided by 3 is 3 with remainder 1)
+print("10 % 2 =", 10 % 2) # Output: 0 (10 is even)
+print("7 % 2 =", 7 % 2)   # Output: 1 (7 is odd)
+
+# Application: Wrapping around a sequence (like an alphabet or time)
+alphabet_length = 26
+current_pos = 25 # 'z'
+shift_by = 3
+new_pos = (current_pos + shift_by) % alphabet_length
+print("New position after wrap-around: " + str(new_pos)) # (25 + 3) % 26 = 28 % 26 = 2 (which is 'c')
+
+# Use Case: Essential for any cyclical data processing, like working with hours
+# in a day (0-23) or days in a week (0-6). For example, finding the hour of day
+# after several hours have passed: (current_hour + hours_passed) % 24.
+```
+
+---
+
+## `range(start, stop, step)` and reverse iteration with negative step
+
+The `range()` function generates a sequence of numbers, which is commonly used to control the number of iterations in `for` loops or to generate indices. It's incredibly versatile for managing sequential data.
+* `range(stop)`: Generates numbers from 0 up to (but not including) stop.
+* `range(start, stop)`: Generates numbers from start up to (but not including) stop.
+* `range(start, stop, step)`: Generates numbers from start up to (but not including) stop, incrementing by step each time. A negative step allows for reverse iteration.
+```python
+# Example: Iterating through simulation time steps
+print("Forward iteration:")
+for i in range(0, 10, 2): # Start at 0, stop before 10, step by 2
+    print("Time step: " + str(i))
+# Output:
+# Time step: 0
+# Time step: 2
+# Time step: 4
+# Time step: 6
+# Time step: 8
+
+print("\nReverse iteration:")
+for i in range(10, 0, -2): # Start at 10, stop before 0, step by -2
+    print("Time step: " + str(i))
+# Output:
+# Time step: 10
+# Time step: 8
+# Time step: 6
+# Time step: 4
+# Time step: 2
+```
 🧠 Use Cases:
 * Loop over multiple `.idf` files for batch simulations or parametric studies.
 * Filter through large simulation results datasets based on specific conditions (e.g., finding all hours where indoor temperature exceeded 30°C).
@@ -156,10 +241,11 @@ while iteration < 3:  # Start a while loop that runs as long as 'iteration' is l
 
 ---
 
-### 🧩 Decision Logic in Control Flow (from Projects)
+## 🧩 Decision Logic in Control Flow (from Projects)
 
 Recent exercises like Hangman and Reeborg's Maze reinforced the value of clean, modular control flow for simulations and logical agents.
-Hangman-style: input validation and guess tracking
+
+**Hangman-style: input validation and guess tracking**
 ```python
 # Check whether a guessed letter is valid (not guessed before)
 def is_valid_input(letter, guessed_letters):
@@ -181,11 +267,11 @@ def decide_next_move():
     else:
         turn_left()
 ```
-> 🧠 Similar decision structures are used in simulation agents, reinforcement learning (RL), and climate adaptation rule trees — where agents navigate choices based on changing inputs or spatial conditions.
+> 🧠  In energy simulations or design optimizations, similar decision structures are used in simulation agents, reinforcement learning (RL), and climate adaptation rule trees — where agents navigate choices based on changing inputs or spatial conditions.
 
 ---
 
-### 📝 State Tracking with Lists and Conditions
+## 📝 State Tracking with Lists and Conditions
 
 ```python
 guessed_letters = []
@@ -218,9 +304,7 @@ def run_simulation(building_name): # Defines a function named 'run_simulation' t
 run_simulation('TestBuilding_VariantA')
 run_simulation('OfficeBuilding_Scenario2')
 ```
-
-### Scope Notes:
-
+**Scope Notes:**
 * **Local Scope:** Variables defined inside a function are local to that function and are not accessible from outside it. This prevents unintended side effects and promotes modularity.
 * Use return to pass values back
 * **Global Scope:** Variables defined outside of any function are global and can be accessed (but generally not directly modified without `global` keyword, which should be used sparingly) by functions.
@@ -239,32 +323,101 @@ def calculate_heating_load(temp_inside, temp_outside):
 result = calculate_heating_load(21, 4) # Calls the function with inside temp = 21°C and outside temp = 4°C, stores the result
 print("Estimated load:", result) # Prints the string "Estimated load:" followed by the calculated result
 ```
+### Function Design and Reusability
+
+Designing functions that perform a single, clear task and return results (rather than printing them directly) makes code more modular and easier to integrate into larger systems. The principle of "separation of concerns" helps keep functions focused.
+```python
+# Example: Refactored Caesar Cipher function
+# This function calculates the shifted text and returns it,
+# allowing the calling code to decide how to use or display the result.
+def caesar_cipher_transform(text_to_shift, shift_amount, mode):
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    transformed_text = ""
+
+    if mode == "decode":
+        shift_amount *= -1 # Reverse shift for decoding
+
+    for char in text_to_shift:
+        if char in alphabet:
+            # Calculate new position, using modulo for wrap-around
+            original_index = alphabet.index(char)
+            new_index = (original_index + shift_amount) % len(alphabet)
+            transformed_text += alphabet[new_index]
+        else:
+            # Keep non-alphabet characters as they are (robust input handling)
+            transformed_text += char
+    return transformed_text
+
+# How to use the reusable function:
+original_message = "hello world"
+encrypted_message = caesar_cipher_transform(original_message, 5, "encode")
+print("Encrypted: " + encrypted_message) # Encrypted: mjqqt btwqi
+
+decrypted_message = caesar_cipher_transform(encrypted_message, 5, "decode")
+print("Decrypted: " + decrypted_message) # Decrypted: hello world
+
+# Use Case: Imagine this function as a core "data transformation" utility
+# in an energy workflow, e.g., standardizing sensor IDs or anonymizing data fields.
+```
 
 ---
 
-### 🧩 Modular Logic with Functions (Project Applications)
+## 🚀 Program Structure and Best Practices
 
-Building on core function usage, projects like Hangman and Escape the Maze reinforced the power of functions for modular thinking, reusable decision logic, and input/state validation—skills directly transferable to simulation and ML design tasks.
+Organizing Python code into well-defined functions and controlling the script's execution flow improves readability, maintainability, and makes projects scalable. This is particularly important as scripts grow from simple exercises to robust tools for energy modeling and ML workflows.
+
+Using `main()` Functions and `if __name__ == "__main__":`
+
+This standard Python idiom defines the primary entry point for a script. Code inside `main()` is executed when the file is run directly, but not when it's imported as a module into another script. This is crucial for building libraries and larger applications, ensuring that utility functions don't run automatically when imported elsewhere.
+# Example: Structured program from Caesar Cipher or any command-line tool
+import art # Assuming 'art' module provides the logo or similar functionality
+
+# Core logic (e.g., a function to calculate energy use, clean data, or run a simulation step)
+# (This would be defined elsewhere or imported, like caesar_cipher_transform above)
+def calculate_daily_energy(hourly_data):
+    """Calculates total daily energy from a list of hourly values."""
+    total = sum(hourly_data)
+    # print("Daily total calculated!") # Example of output within a core function
+    return total
+
+# Main function to handle user interaction, orchestrate calls to core logic, and manage program flow
 ```python
-# Hangman-style: check if a guessed letter is new
-def is_valid_input(letter, guessed_letters):
-    if letter in guessed_letters:
-        print("Already guessed.")
-        return False
-    return True
-```
-```python
-# Maze-style simulation logic: decide next move
-def decide_next_move():
-    if right_is_clear():
-        turn_right()
-    elif front_is_clear():
-        move()
+def main():
+    # Use art.logo if available, otherwise a default message
+    if 'art' in globals() and hasattr(art, 'logo'):
+        print(art.logo)
     else:
-        turn_left()
+        print("Welcome to the Program!")
+
+    while True:
+        # Example: Simulating user interaction or loading data
+        user_option = input("Choose an option: (C)alculate Energy, (R)un Caesar Cipher, (Q)uit: ").lower()
+
+        if user_option == 'c':
+            sensor_readings_today = [10.5, 12.1, 11.8, 9.9, 13.0, 10.2, 11.5, 9.5, 12.3, 10.8]
+            energy_sum = calculate_daily_energy(sensor_readings_today)
+            print("Total energy for today: " + str(energy_sum) + " kWh")
+        elif user_option == 'r':
+            direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+            text = input("Type your message:\n").lower()
+            shift = int(input("Type the shift number:\n"))
+            # Assume caesar_cipher_transform function is defined/imported
+            output = caesar_cipher_transform(text, shift, direction) # Calling the function from 'Functions and Scope' section
+            print("Here is the {}d result: {}".format(direction, output))
+        elif user_option == 'q':
+            print("Exiting program. Goodbye!")
+            break
+        else:
+            print("Invalid input. Please choose 'C', 'R', or 'Q'.")
+
+# This block ensures 'main()' runs only when the script is executed directly
+# It's a standard and professional way to structure executable Python scripts.
+if __name__ == "__main__":
+    main()
+
+# Use Case: All energy simulation scripts, ML model training scripts, or generative
+# design tools should ideally be structured this way for professionalism and clarity.
 ```
-> * 🧠 In energy simulations or design optimizations, similar logic can guide agent behaviors, iterative evaluations, or decision-making under constraints. Modularizing these decisions makes code easier to test, refactor, and plug into pipelines.
-> * 🔁 Reflection: Projects from Days 6–7 of 100 Days of Code taught me to think of logic as small, composable functions. This mirrors how simulation steps, convergence tests, or post-processing modules are structured in real-world workflows.
 ---
 
 ## Debugging
@@ -356,10 +509,10 @@ Click in the gutter (left margin) next to the line numbers in your Python file t
 
    * Use the Debug Console to evaluate expressions and run commands (similar to `p var` in pdb).
 
-## 🧰 Manipulating Lists
+# 2. 🧰 Manipulating Lists
 Lists are fundamental data structures in Python, essential for organizing and managing collections of related data. In energy and ML workflows, lists are perfect for handling sequences like hourly sensor readings, simulation output rows, collections of design alternatives, or even sequences of layers in a building material assembly. Their mutability and flexibility make them powerful tools for data processing.
 
-### 📌 What are Lists?
+## 📌 What are Lists?
 Lists are ordered, mutable collections of items. They can store items of different data types (heterogeneous) and are defined by square brackets `[]`
 
 These are fantastic notes! They are well-structured, comprehensive, and tailored to your specific PhD research interests. You've clearly put a lot of thought into connecting Python concepts to energy modeling and machine learning.
@@ -403,7 +556,7 @@ print("System status: " + str(system_status))
 print('Type of hourly_temperatures_c: ' + str(type(hourly_temperatures_c))) # <class 'list'>
 ```
 
-### 📌 Accessing List Elements (Indexing & Slicing)
+## 📌 Accessing List Elements (Indexing & Slicing)
 Accessing specific data points or subsets of data is crucial for analysis.
 * **Indexing:** Access individual elements using square brackets [] and their position (index). Python uses 0-based indexing. Negative indices count from the end (-1 is the last element).
 * **Slicing:** Extract sub-lists (portions) of a list using a colon `:`. `[start:end:step]` where `end` is *exclusive*.
@@ -431,7 +584,7 @@ print("Results from index 5 to end: " + str(simulation_results[5:])) # [10.2, 11
 print("Every second result: " + str(simulation_results[::2])) # [10.5, 11.8, 13.0, 11.5, 12.3]
 print("Copy of the whole list: " + str(simulation_results[:])) # [10.5, ..., 10.8]
 ```
-### 📌 List Methods: Modifying and Querying Lists
+## 📌 List Methods: Modifying and Querying Lists
 Lists are mutable, meaning their contents can be changed after creation. Various methods allow in-place modification or queries about their content.
 
 * `append(item)`: Adds `item` to the end of the list.
@@ -491,7 +644,7 @@ print("Index of 5.2: " + str(numerical_data.index(5.2))) # 1
 * Sorting simulation results by performance metric (`sort()`).
 * Counting occurrences of specific conditions (e.g., `count('overheating_hour')`).
 
-### 📌 Mutability and References (Crucial for ML/Simulations)
+## 📌 Mutability and References (Crucial for ML/Simulations)
 Lists are mutable, meaning their content can be changed in-place. When you assign one list to another variable, you are creating a reference to the same list in memory, not a copy. This is a common source of subtle bugs.
 
 #### Relevance to Energy/ML:
@@ -542,7 +695,7 @@ When you want to be explicit in your code (e.g. during testing or collaboration)
 
 ---
 
-### 📌 Iterating with for Loops and Membership (in/not in)
+## 📌 Iterating with for Loops and Membership (in/not in)
 `for` loops are essential for processing each item in a list. Membership operators (`in`, `not in`) check for an item's presence.
 
 #### Relevance to Energy/ML:
@@ -653,27 +806,66 @@ simulation_inputs = {
 }
 print(simulation_inputs["window_U_value"])  # ➝ 1.1
 ```
-* Use `.keys()`, `.values()`, `.items()` to loop over data:
+###📌 Dictionary Methods and Safe Access
+* Loop over data using `.keys()`, `.values()`, `.items()`: These methods provide views of a dictionary's keys, values, or key-value pairs respectively, which are very useful for iteration
 ```python
+print("\n--- Iterating over simulation_inputs ---")
 for key, value in simulation_inputs.items():
-    print(f"{key}: {value}")
+    # Using string concatenation here instead of f-string
+    print(str(key) + ": " + str(value))
 ```
-* Use get() to safely retrieve values:
+* Use get() to safely retrieve values: The get() method allows you to retrieve a value associated with a key, providing a default value if the key is not found, preventing KeyError exceptions. This is safer than direct key access (dictionary[key]) when a key might be missing.
 ```python
-air_change_rate = simulation_inputs.get("air_change_rate", 0.5)
+# Example: Safely getting an optional parameter
+air_change_rate = simulation_inputs.get("air_change_rate", 0.5) # Default to 0.5 if not found
+print("\nAir change rate (retrieved safely): " + str(air_change_rate))
+
+# Example: Getting an existing key
+window_u_value = simulation_inputs.get("window_U_value", 0.0) # Will get 1.1, default not used
+print("Window U-value (retrieved safely): " + str(window_u_value))
 ```
->📌 **Why it matters**: Structured key–value data is central in defining reusable inputs for parametric runs, multi-zone models, and simulation frameworks.
+>📌 **Why it matters**:  Structured key–value data is central in defining reusable inputs for parametric runs, multi-zone models, and simulation frameworks. get() is crucial for robust code that handles missing optional parameters without crashing.
 
 ---
 
 ## 🪜 Nested Dictionaries for Hierarchical Data
+Dictionaries can contain other dictionaries (or lists, etc.), allowing you to represent hierarchical or complex structured data. This is common in energy simulation for organizing data by building zones, systems, or detailed component properties.
 ```python
-building = {
-    "zone1": {"temp": 21, "humidity": 40},
-    "zone2": {"temp": 23, "humidity": 45}
+# Example: Multi-zone simulation data
+building_data = {
+    "zone1": {
+        "temperature": 21,
+        "humidity": 40,
+        "occupancy": 4,
+        "sensors": {"temp_sensor_id": "TS001", "rh_sensor_id": "HS001"}
+    },
+    "zone2": {
+        "temperature": 23,
+        "humidity": 45,
+        "occupancy": 2,
+        "sensors": {"temp_sensor_id": "TS002", "rh_sensor_id": "HS002"}
+    },
+    "building_params": {
+        "building_type": "Office",
+        "total_area_sqm": 250.5
+    }
 }
+
+# Accessing data in nested dictionaries
+print("\n--- Accessing nested data ---")
+print("Zone1 temperature: " + str(building_data["zone1"]["temperature"]) + "°C")
+print("Zone2 humidity sensor ID: " + str(building_data["zone2"]["sensors"]["rh_sensor_id"]))
+print("Building type: " + str(building_data["building_params"]["building_type"]))
+
+# Iterating over nested dictionaries
+print("\n--- Iterating over zones ---")
+for zone_name, zone_details in building_data.items():
+    # Check if the current item is a zone (e.g., contains 'temperature' key)
+    if "temperature" in zone_details:
+        # Using string concatenation
+        print(str(zone_name) + ": Temp=" + str(zone_details["temperature"]) + "°C, Humid=" + str(zone_details["humidity"]) + "%")
 ```
-> 🧠 Use for multi-zone simulation data, or storing results by room and sensor type.
+> 🧠 **Use for**: Multi-zone simulation data, storing results by room and sensor type, defining complex material layers, or representing configurations of building systems. This structure mirrors the complexity of real-world building models and energy inputs.
 
 
 
