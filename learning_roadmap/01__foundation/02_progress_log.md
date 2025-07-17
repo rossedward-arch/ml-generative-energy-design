@@ -239,3 +239,34 @@ This file documents the chronological progress of my learning in ML-integrated g
  This chapter will strengthen my ability to work with string data—essential for reading/writing simulation configuration files, interpreting user input, handling filenames, and parsing log outputs.
 *  **Continue with 100 Days of Code (Days 8–10):**
  Build up confidence with functions, loops, and logic by completing more hands-on projects. These will also support habits in clean, reusable code design.
+
+### 📆 16/07/2025 | 📘 100 Days of Code: Day 8 – Caesar Cipher Project
+
+**What I did**
+* Completed Day 8 of Angela Yu's "100 Days of Code" bootcamp, focusing on building the **Caesar Cipher** program.
+* Learned about modulo operator (`%`) for wrapping around the alphabet
+* Practiced implementing conditional logic (`if/else`) for handling encoding/decoding and non-alphabetic characters.
+* Reinforced the use of `input()` for user interaction and `while` loops for program continuation.
+
+**Reflections**
+* The Caesar Cipher project provided a good application for several important Python concepts (loops, conditionals, string/list manipulation, indexing).
+* The use of the modulo operator (`% 26`) for handling shifts that go beyond the alphabet length was a particularly intresting technique I hadn't came across yet.
+* Implementing the `if letter not in alphabet:` check was a good practical example of robust input handling. This check for non-alphabet characters is like how I'll need to clean up messy data in my research. If an energy sensor sends a faulty reading, I can't just process it like a normal number; I need to skip it or handle it separately. This was a simple version of that 'robust input handling' idea.
+* This project offered valuable hands-on coding practice, aligning with my goal to improve coding fluency identified in my previous log.
+
+**Challanges**
+* Initially ensuring the shift_amount correctly wrapped around the alphabet for both encoding and decoding required careful thought, as well as understanding and application of the modulo operator.
+* Managing the program's loop (allowing the user to restart or exit) was straightforward but emphasized the importance of clear logical flow.
+
+**Improvements & Research (Self-Directed):**
+* After completing Angela Yu's version, I wasn't fully satisfied with the code structure and identified areas for improvement through independent research.
+* **Encapsulated Core Logic:** Refactored the main Caesar cipher logic into a dedicated caesar() function that returns the result, rather than directly printing it. This makes the function more reusable and adheres to the principle of "separation of concerns."
+* **Organized Program Flow:** Introduced a main() function to manage the primary program loop and user interactions. This significantly improves code organization and readability.
+* **Used if __name__ == "__main__": block:** Added this standard Python idiom to ensure the main() function only runs when the script is executed directly (not when imported as a module). This is a best practice for structuring Python applications.
+* **Simplified alphabet:** Changed alphabet from a list to a simple string ('abcdefghijklmnopqrstuvwxyz'), as strings are iterable and allow indexing, making the code slightly more concise.
+* **Enhanced Readability:** Added more specific comments to functions and key logic blocks.
+
+**Next Step:**
+* Continue with Day 9 and subsequent days of the "100 Days of Code" bootcamp, actively looking for opportunities to refactor and apply best practices beyond the immediate lesson.
+* Maintain focus on understanding the underlying logic and problem-solving patterns, not just syntax.
+* Enure I am logging ,ore specific bug?soulutions ddetails as they arrise, similar to 'coinflip streak' example
