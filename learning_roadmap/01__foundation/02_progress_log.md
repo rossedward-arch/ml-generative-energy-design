@@ -207,6 +207,8 @@ This file documents the chronological progress of my learning in ML-integrated g
 * Read Chapter 7 Dictionaries and Structuring Data 
 * Continue with Days 6–10, which include Python functions and built-in modules — both highly relevant to structuring energy simulation code. (will supplement Chapter 2, 3, 4, 6 & 7 from *Automate the Boring Stuff*)
 
+---
+
 ### 📆 13/07/2025 | 🎯 Chapter 7 - Dictionaries & Structuiring Data + 100 Days of Code (Days 6 & 7) 
 
 **What I did**
@@ -240,6 +242,8 @@ This file documents the chronological progress of my learning in ML-integrated g
 *  **Continue with 100 Days of Code (Days 8–10):**
  Build up confidence with functions, loops, and logic by completing more hands-on projects. These will also support habits in clean, reusable code design.
 
+---
+
 ### 📆 16/07/2025 | 📘 100 Days of Code: Day 8 – Caesar Cipher Project
 
 **What I did**
@@ -270,3 +274,36 @@ This file documents the chronological progress of my learning in ML-integrated g
 * Continue with Day 9 and subsequent days of the "100 Days of Code" bootcamp, actively looking for opportunities to refactor and apply best practices beyond the immediate lesson.
 * Maintain focus on understanding the underlying logic and problem-solving patterns, not just syntax.
 * Enure I am logging ,ore specific bug?soulutions ddetails as they arrise, similar to 'coinflip streak' example
+
+---
+
+### 📆 18/07/2025 | 📘 100 Days of Code: Day 9 – Secret Auction Program
+
+**What I did**
+* Completed Day 9 of Angela Yu's "100 Days of Code" bootcamp, focusing on building the Secret Auction Program.
+* Implemented core auction logic: collecting bidder names and bids, and identifying the highest bidder.
+* Integrated a "screen clear" feature to hide previous bids from subsequent participants, enhancing the "secret" aspect of the auction.
+* 
+**Reflections**
+* The project provided an excellent opportunity to apply and solidify foundational Python concepts in a practical scenario.
+* Deepened my understanding of the `return` statement in functions, specifically how it passes multiple values (`like name`, `bid_amount`, and a boolean `are_more_bidders`) back to the main program for further processing.
+* Gained crucial clarity on how comparison operators (`==`) directly evaluate to boolean (`True`/`False`) values. This allowed for direct assignment to variables (e.g., `are_more_bidders = (more_bidders_answer == "yes"))`, simplifying conditional logic and program flow control.
+* Reinforced the utility of dictionaries for storing key-value pairs (bidder name: bid amount) and iterating through them efficiently to find specific data.
+
+**Challanges**
+* Persistent Typo: Initially struggled with a subtle but critical typo (`biding_finished` vs. `bidding_finished`) in the loop control variable. This caused the main bidding loop to run indefinitely, even when "No" was entered, highlighting the absolute importance of consistent variable naming and careful debugging.
+* Winner Logic Refinement: Had to refine the logic within the `find_highest_bidder` (later `find_auction_winner`) function to correctly track and update both the `highest_bid_so_far` amount and the `winner_name` simultaneously, ensuring the final result was accurate.
+
+**Improvements & Research (Self-Directed):**
+* **Enhanced Readability & Clarity:**
+  * Refactored variable and function names to be more descriptive and intuitive (e.g., `get_bidder_info` instead of `bidders_info`, `is_bidding_finished` instead of `biding_finished`, `all_bids` instead of `name_and_bid`, `find_auction_winner` instead of `find_highest_bidder`).
+  * Added extensive inline comments and docstrings to explain the purpose and logic of each code block and function, significantly improving code maintainability.
+* **Robust Screen Clearing:** Implemented a `dedicated clear_screen()` function and strategically placed calls to it within the bidding loop (after each bid, if more bidders exist) and before the final winner announcement. This effectively obscures previous input for the next user.
+* **Program Structure (`if __name__ == "__main__":`):** Incorporated the `if __name__ == "__main__":` block to encapsulate the main program execution logic. This is a standard best practice for Python scripts, making the code more modular and reusable if functions were to be imported elsewhere.
+* **Function Argument Passing:** Modified the `find_auction_winner function` to explicitly accept the `all_bids` dictionary as an argument, promoting better function independence and data encapsulation.
+
+Next Step:
+* Continue with Day 10 and subsequent days of the "100 Days of Code" bootcamp.
+* Actively apply the principles of clear naming, robust logic, and modular design learned today to all new projects.
+* Maintain focus on understanding the underlying logic and problem-solving patterns, not just syntax.
+* Ensure I am logging more specific bug/solution details as they arise, similar to the "coinflip streak" example.
