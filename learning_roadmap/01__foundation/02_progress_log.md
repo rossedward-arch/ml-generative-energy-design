@@ -307,3 +307,39 @@ Next Step:
 * Actively apply the principles of clear naming, robust logic, and modular design learned today to all new projects.
 * Maintain focus on understanding the underlying logic and problem-solving patterns, not just syntax.
 * Ensure I am logging more specific bug/solution details as they arise, similar to the "coinflip streak" example.
+
+### 📆 20/07/2025 | 📘 100 Days of Code: Day 10 – Calculator Program & PhD learning Environment Setup
+
+**What I did**
+* **Miniconda & Environment Setup**: Successfully initiated Miniconda and verified its installation. Created dedicated Conda environments (`phd_learning_env and phd_research_env`) for my PhD learning work. Installed essential data science and machine learning packages (`numpy`, `pandas`, `matplotlib`, `seaborn`, `scikit-learn`, `jupyterlab`) into `phd_learning_env`.
+* **VS Code Integration**: Configured Visual Studio Code to correctly recognize and utilize the `phd_learning_env` as its Python interpreter for my projects.
+* **GitHub Repository Management**: Addressed issues with my local `ml-generative-energy-design repository`, including untracked files and ensuring it was fully synchronized with my GitHub remote. Opted for a clean re-clone of the repository to establish a pristine and up-to-date local working copy.
+* **Calculator Project (Day 10)**: Engaged in an iterative debugging process for the "Day 10 Calculator" program from Angela Yu's "100 Days of Code" bootcamp. This involved multiple rounds of identifying and fixing errors to achieve a fully functional calculator.
+
+**Reflections**
+* **Environment Management**: Gained a much clearer understanding of isolated Conda environments for different projects and how to manage them (conda env list, conda activate).
+* **VS Code Interpreter Selection**: Linking VS Code to specific Conda environments, recognizing the role of the "Python: Select Interpreter" command and verifying activation in the integrated terminal.
+* **Git Workflow**: Reinforced the practice of cloning a fresh repository from GitHub for a clean start, and the use of `git status` to understand the state of the working directory.
+* **Function Arguments & Return Values**: Understanding of how arguments are passed to function parameters, and the necessity of capturing a function's `return` value in the calling scope to use it later in the program. This was a recurring challenge that led to significant learning.
+* **Variable Scope**: The concept of variable scope, particularly how variables defined inside a function (like `answer` in `calculate`) are local to that function and are not directly accessible outside it without being returned and captured.
+* **Loop Control**: Worked on the correct way to terminate a while loop  using a boolean flag (should_continue = False) instead of return False in the global script scope.
+* **Data Type Conversion**: The importance of converting user input (strings from input()) to appropriate numeric types (float()) before performing mathematical operations.
+* **Modular Design**: Applied principles of modularity by encapsulating the main program logic within a calculator() function and organizing arithmetic operations into separate, reusable functions. It still provides a great deal of work and understanding to get to this stage. But with time I hope to improve
+
+**Challenge**
+* **PowerShell Execution Policy**: Encountered and resolved a `PSSecurityException` in PowerShell that prevented Conda environments from activating correctly in the VS Code terminal, requiring a change in the `Set-ExecutionPolicy` setting.
+* **Persistent Variable Scope Misunderstanding**: The concept of answer being local to calculate and needing to be captured in the main loop was a particularly challenging. This required multiple iterations of feedback and self-correction.
+* **art Module Usage**: When trying to print(art) it doesn't print the desired ASCII art; print(art.logo) was required to access the specific art variable within the module.
+
+**Improvements & Research (Self-Directed):**
+* **Clean GitHub Clone**: Deleted and re-cloned the GitHub repository to ensure a clean, up-to-date starting point, avoiding potential conflicts from previous local work.
+* **Robust Calculator Logic**: Implemented a continuous calculation flow where the previous result can be used as the first number for the next operation.
+* **Input Type Handling**: Switched from `int()` to `float()` for user input to allow for decimal calculations.
+* **Centralized Error Handling (for operations)**: Consolidated error messages for invalid operations and division by zero, returning `None` from lower-level functions and handling the display of the error in the main `calculator` function.
+* **Standard Program Entry Point**: Incorporated the `if __name__ == "__main__":` block for best practice in Python script execution.
+* **Refined art Import**: Corrected the print(art) to print(art.logo) to correctly display the ASCII art.
+
+**Next Step:**
+* **Prioritize "Python for Data Science and Machine Learning" bootcamp on Udemy**: Focus intensely on this bootcamp to build the specific skillset (especially `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`) directly relevant to the PhD research.
+* **Integrate mini-projects with bootcamp learning**: Apply concepts learned in the bootcamp to the "EPW weather file parser and summary tool" and "CSV data visualizer" mini-projects as practical applications, rather than tackling them as separate, isolated tasks.
+* **Pause "100 Days of Code" (Day 11 onwards) for now**: Dedicate full focus to the Data Science/ML bootcamp to ensure deep absorption and efficient progress towards PhD goals. This focused approach is expected to be more sustainable and effective than splitting time between two intensive learning paths. I will go back as a secondary priority for a broader Python proficiency. Probably after I have completed the EPW parser and CSV visualizer.
