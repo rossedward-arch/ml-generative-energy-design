@@ -1445,7 +1445,7 @@ def calculator():
 # This block ensures 'calculator()' runs only when the script is executed directly.
 if __name__ == "__main__":
     calculator()
-
+```
 **Relevance to Energy/ML:**
 * **Modular Function Design**: The calculator demonstrates breaking down a complex task into smaller, reusable functions (`add`, `subtract`, `calculate`, `calculator`). This is crucial for managing the complexity of energy simulation scripts or large-scale ML pipelines.
 * **Dictionaries for Function Mapping**: Using the `operations` dictionary to map string symbols to actual functions is a powerful pattern. In energy/ML, this could be adapted to:
