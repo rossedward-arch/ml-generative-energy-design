@@ -1140,13 +1140,319 @@ Click in the gutter (left margin) next to the line numbers in your Python file t
 * Use the Debug Console to evaluate expressions and run commands (similar to `p var` in pdb).
 
 
+## 🧮 3. Building a Robust Calculator (Day 10 Project)
 
-🔍 Next Topics to Add
+This project served as a comprehensive exercise in integrating fundamental Python concepts, including functions, dictionaries, loops, user input, variable scope, and basic error handling, to create a functional and interactive application. It highlights how these building blocks combine to create more complex programs.
 
-* File I/O (open, .read(), with)
+```python
+import sys
 
-* Reading/writing .csv (with pandas)
+# --- ASCII Art Placeholder ---
+# In a real scenario, you would have an 'art.py' file with a 'logo' variable.
+# For demonstration, let's create a simple placeholder for 'art.logo'.
+# If you have an actual 'art.py' file, ensure it's in the same directory
+# or on your Python path, and it defines 'logo'.
+try:
+    import art
+    # Attempt to use art.logo if the module and attribute exist
+    calculator_logo = art.logo
+except (ImportError, AttributeError):
+    # Fallback if 'art' module is not found or 'logo' attribute is missing
+    calculator_logo = """
+   _____          _            _       _
+  / ____|        | |          | |     | |
+ | |     __ _ ___| |__   ___  | | __ _| |_ ___ _ __
+ | |___| (_| \__ \ | | | (_) || | (_| | ||  __/ |
+  \_____\__,_|___/_| |_|\___/ |_|\__,_|\__\___|_|
 
-* Running EnergyPlus with subprocess.run()
+    """
+    print("Warning: 'art' module or 'art.logo' not found. Using simple ASCII art.")
 
-*  Handling paths with os and pathlib
+
+# --- Basic Arithmetic Operations ---
+def add(n1, n2):
+    """Adds two numbers."""
+    return n1 + n2
+
+def subtract(n1, n2):
+    """Subtracts the second number from the first."""
+    return n1 - n2
+
+def multiply(n1, n2):
+    """Multiplies two numbers."""
+    return n1 * n2
+
+def divide(n1, n2):
+    """Divides the first number by the second. Handles division by zero."""
+    if n2 == 0:
+        # Return None to indicate an error, which will be handled by the caller
+        return None
+    return n1 / n2
+
+# This dictionary maps operation symbols to their corresponding functions.
+# It MUST be defined before the 'calculate' function, as 'calculate' uses it.
+operations = {
+    "+": add,
+    "-": subtract,
+    "*": multiply,
+    "/": divide,
+}
+
+# --- Calculation Logic ---
+def calculate(num_1, operation_symbol, num_2):
+    """
+    Performs a calculation based on two numbers and an operation symbol.
+
+    Args:
+        num_1 (float): The first number.
+        operation_symbol (str): The symbol of operation (e.g., "+", "-").
+        num_2 (float): The second number.
+    Returns:
+        float or None: The result of the calculation, or None if an error occurs (e.g., invalid operation, division by zero).
+    """
+    # Check if the operation symbol is valid
+    if operation_symbol not in operations:
+        print("Error: Invalid operation symbol.")
+        return None
+
+    # Get the function based on the symbol and perform the calculation
+    operation_function = operations[operation_symbol]
+    result = operation_function(num_1, num_2)
+
+    return result
+
+# --- Main Calculator Program ---
+def calculator():
+    """
+    Runs the main calculator program, allowing continuous calculations
+    or starting new ones.
+    """
+    print(calculator_logo) # Print the chosen logo
+
+    first_number = None # This will store the first number for the current calculation.
+                        # It can be either a new input or the result of the previous calculation.
+
+    should_continue = True # This flag controls whether the main calculator loop keeps running.
+
+    while should_continue:
+        # --- Get the first number (n1) ---
+        if first_number is None:
+            # If first_number is None (initial run or user chose 'n'), prompt for a new number.
+            # Expecting valid numeric input here. If non-numeric, a ValueError will occur.
+            n1 = float(input("What's the first number?: "))
+        else:
+            # Otherwise, use the result from the previous calculation.
+            n1 = first_number
+
+        # --- Display available operations ---
+        print("\nAvailable operations:")
+        for symbol in operations: # Changed 'symbols' to 'symbol' for consistency
+            print(symbol)
+
+        # --- Get operation symbol ---
+        operation_input = input("Pick an operation: ")
+
+        # --- Get the second number (n2) ---
+        # Expecting valid numeric input here. If non-numeric, a ValueError will occur.
+        n2 = float(input("What's the next number?: ")) # Changed prompt from "second" to "next" for consistency
+
+        # --- Perform calculation ---
+        result_of_calcs = calculate(n1, operation_input, n2)
+
+        # --- Handle calculation result and user choice ---
+        if result_of_calcs is not None:
+            # If calculation was successful, print the result
+            print(f"{n1} {operation_input} {n2} = {result_of_calcs}")
+
+            # Ask user how to proceed, using the correct variable for the result
+            user_choice = input(
+                f"Type 'y' to continue calculating with {result_of_calcs}, "
+                f"or type 'n' to start a new calculation, "
+                f"or any other key to exit: "
+            ).lower() # Added .lower() for case-insensitivity
+
+            if user_choice == "y":
+                first_number = result_of_calcs # Set the result as the first number for the next iteration
+            elif user_choice == "n":
+                first_number = None # Reset first_number to prompt for a new one in the next iteration
+            else:
+                should_continue = False # If anything else is typed, stop the loop
+                print("Exiting calculator. Goodbye!") # Added an exit message
+        else:
+            # If result_of_calcs was None (e.g., division by zero or invalid operation),
+            # reset first_number to force a new calculation for the next iteration.
+            # The error message is already printed by 'divide' or 'calculate' functions.
+            first_number = None
+            # We don't set should_continue = False here, allowing the user to try again.
+
+# This block ensures 'calculator()' runs only when the script is executed directly.
+if __name__ == "__main__":
+    calculator()
+```
+
+This is an incredibly well-structured and detailed note_python file, Ross! The way you've connected each Python concept to its relevance in energy simulation and ML is truly insightful and will be an invaluable resource for your PhD.
+
+Based on our recent work, the perfect next addition to this file is your Calculator Project. It beautifully ties together many of the concepts you've already documented, providing a comprehensive example of their practical application.
+
+Here's how you can integrate it, maintaining your excellent style:
+Markdown
+
+## 🧮 3. Building a Robust Calculator (Day 10 Project)
+
+This project served as a comprehensive exercise in integrating fundamental Python concepts, including functions, dictionaries, loops, user input, variable scope, and basic error handling, to create a functional and interactive application. It highlights how these building blocks combine to create more complex programs.
+
+```python
+import sys
+
+# --- ASCII Art Placeholder ---
+# In a real scenario, you would have an 'art.py' file with a 'logo' variable.
+# For demonstration, let's create a simple placeholder for 'art.logo'.
+# If you have an actual 'art.py' file, ensure it's in the same directory
+# or on your Python path, and it defines 'logo'.
+try:
+    import art
+    # Attempt to use art.logo if the module and attribute exist
+    calculator_logo = art.logo
+except (ImportError, AttributeError):
+    # Fallback if 'art' module is not found or 'logo' attribute is missing
+    calculator_logo = """
+   _____          _            _       _
+  / ____|        | |          | |     | |
+ | |     __ _ ___| |__   ___  | | __ _| |_ ___ _ __
+ | |___| (_| \__ \ | | | (_) || | (_| | ||  __/ |
+  \_____\__,_|___/_| |_|\___/ |_|\__,_|\__\___|_|
+
+    """
+    print("Warning: 'art' module or 'art.logo' not found. Using simple ASCII art.")
+
+
+# --- Basic Arithmetic Operations ---
+def add(n1, n2):
+    """Adds two numbers."""
+    return n1 + n2
+
+def subtract(n1, n2):
+    """Subtracts the second number from the first."""
+    return n1 - n2
+
+def multiply(n1, n2):
+    """Multiplies two numbers."""
+    return n1 * n2
+
+def divide(n1, n2):
+    """Divides the first number by the second. Handles division by zero."""
+    if n2 == 0:
+        # Return None to indicate an error, which will be handled by the caller
+        return None
+    return n1 / n2
+
+# This dictionary maps operation symbols to their corresponding functions.
+# It MUST be defined before the 'calculate' function, as 'calculate' uses it.
+operations = {
+    "+": add,
+    "-": subtract,
+    "*": multiply,
+    "/": divide,
+}
+
+# --- Calculation Logic ---
+def calculate(num_1, operation_symbol, num_2):
+    """
+    Performs a calculation based on two numbers and an operation symbol.
+
+    Args:
+        num_1 (float): The first number.
+        operation_symbol (str): The symbol of operation (e.g., "+", "-").
+        num_2 (float): The second number.
+    Returns:
+        float or None: The result of the calculation, or None if an error occurs (e.g., invalid operation, division by zero).
+    """
+    # Check if the operation symbol is valid
+    if operation_symbol not in operations:
+        print("Error: Invalid operation symbol.")
+        return None
+
+    # Get the function based on the symbol and perform the calculation
+    operation_function = operations[operation_symbol]
+    result = operation_function(num_1, num_2)
+
+    return result
+
+# --- Main Calculator Program ---
+def calculator():
+    """
+    Runs the main calculator program, allowing continuous calculations
+    or starting new ones.
+    """
+    print(calculator_logo) # Print the chosen logo
+
+    first_number = None # This will store the first number for the current calculation.
+                        # It can be either a new input or the result of the previous calculation.
+
+    should_continue = True # This flag controls whether the main calculator loop keeps running.
+
+    while should_continue:
+        # --- Get the first number (n1) ---
+        if first_number is None:
+            # If first_number is None (initial run or user chose 'n'), prompt for a new number.
+            # Expecting valid numeric input here. If non-numeric, a ValueError will occur.
+            n1 = float(input("What's the first number?: "))
+        else:
+            # Otherwise, use the result from the previous calculation.
+            n1 = first_number
+
+        # --- Display available operations ---
+        print("\nAvailable operations:")
+        for symbol in operations: # Changed 'symbols' to 'symbol' for consistency
+            print(symbol)
+
+        # --- Get operation symbol ---
+        operation_input = input("Pick an operation: ")
+
+        # --- Get the second number (n2) ---
+        # Expecting valid numeric input here. If non-numeric, a ValueError will occur.
+        n2 = float(input("What's the next number?: ")) # Changed prompt from "second" to "next" for consistency
+
+        # --- Perform calculation ---
+        result_of_calcs = calculate(n1, operation_input, n2)
+
+        # --- Handle calculation result and user choice ---
+        if result_of_calcs is not None:
+            # If calculation was successful, print the result
+            print(f"{n1} {operation_input} {n2} = {result_of_calcs}")
+
+            # Ask user how to proceed, using the correct variable for the result
+            user_choice = input(
+                f"Type 'y' to continue calculating with {result_of_calcs}, "
+                f"or type 'n' to start a new calculation, "
+                f"or any other key to exit: "
+            ).lower() # Added .lower() for case-insensitivity
+
+            if user_choice == "y":
+                first_number = result_of_calcs # Set the result as the first number for the next iteration
+            elif user_choice == "n":
+                first_number = None # Reset first_number to prompt for a new one in the next iteration
+            else:
+                should_continue = False # If anything else is typed, stop the loop
+                print("Exiting calculator. Goodbye!") # Added an exit message
+        else:
+            # If result_of_calcs was None (e.g., division by zero or invalid operation),
+            # reset first_number to force a new calculation for the next iteration.
+            # The error message is already printed by 'divide' or 'calculate' functions.
+            first_number = None
+            # We don't set should_continue = False here, allowing the user to try again.
+
+# This block ensures 'calculator()' runs only when the script is executed directly.
+if __name__ == "__main__":
+    calculator()
+
+**Relevance to Energy/ML:**
+* **Modular Function Design**: The calculator demonstrates breaking down a complex task into smaller, reusable functions (`add`, `subtract`, `calculate`, `calculator`). This is crucial for managing the complexity of energy simulation scripts or large-scale ML pipelines.
+* **Dictionaries for Function Mapping**: Using the `operations` dictionary to map string symbols to actual functions is a powerful pattern. In energy/ML, this could be adapted to:
+    * Map user-selected analysis types (e.g., "annual_load", "daylight_analysis") to specific functions.
+    * Select different pre-processing steps or ML models based on configuration parameters.
+* **Iterative Processes (`while` loops)**: The continuous calculation loop mirrors iterative processes common in energy modeling (e.g., convergence algorithms, optimization loops) or ML (e.g., training epochs, hyperparameter tuning).
+* **State Management**: The `first_number` and `should_continue` variables demonstrate how to manage the "state" of a program across iterations, which is important for sequential simulations or multi-step ML workflows.
+* **Basic Error Handling**: The checks for division by zero and invalid operation symbols, returning `None` to signal an issue, are important steps towards building robust code that can handle unexpected inputs or conditions in simulations. (I should try and incorporate `try-except` into existing calculator program)
+* **Clear Output Formatting (f-strings)**: Presenting results clearly using f-strings is essential for reporting simulation outputs or ML model predictions.
+
