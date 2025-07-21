@@ -21,49 +21,62 @@ This roadmap is organized into five progressive phases:
 ```text
 learning_roadmap/
 │
+├── README.md                         # Main learning roadmap index
+│
 ├── 00_overview/
-│   ├── README.md                     # This acts as the main roadmap index
-│   ├── 01_checklist.md               # Your phase-wise checklist
+│   ├── README.md                     # Overview of the entire roadmap
+│   ├── 01_checklist.md               # Phase-wise checklist
 │   └── 02_resources_reading.md       # Key learning resources, books, courses
-│   └── tutorial_links.md              # Quick-access online tutorials, documentation, and specific practical tools
+│   └── tutorial_links.md             # Quick-access online tutorials, documentation, and specific practical tools
 │
 ├── 01_foundations/
-│   ├── README.md                     # Formerly 01_phase_1_summary.md - now its homepage
-│   ├── 02_progress_log.md            # Daily/weekly logs with UK dates
-│   ├── 03_notes_python_fundamentals.md
-│   └── 04_notes_energy_file_formats.md
+│   ├── README.md                              # Homepage for Foundations phase
+│   ├── 01_progress_log.md                     # Daily/weekly logs for this phase
+│   ├── 02_notes_python_fundamentals.md        # Synthesized notes on Python basics (from 100 Days, Udemy, etc.)
+│   └── 03_notes_energy_file_formats.md        # Synthesized notes on energy file formats
+│   └── 05_notes_numpy_for_data.md             # Synthesized notes on NumPy 
+│   └── 06_notes_pandas_data_manipulation.md   # Synthesized notes on Pandas
+│   └── 07_notes_data_visualization.md         # Synthesized notes on Matplotlib/Seaborn
 │
 ├── 02_ml_prediction/
-│   ├── README.md                     # Formerly 01_phase_2_summary.md
-│   ├── 02_progress_log.md
-│   ├── 03_notes_sklearn_basics.md
-│   ├── 04_notes_pytorch_intro.md
-│   └── 05_dataset_preparation.md
+│   ├── README.md                              # Homepage for ML Prediction phase
+│   ├── 01_progress_logs.md                    # Progress log for this phase
+│   ├── 02_notes_sklearn_basics.md             # Synthesized notes on Scikit-learn
+│   ├── 03_notes_pytorch_intro.md              # Synthesized notes on Pytorch
+│   └── 04_dataset__preperation.md             # Notes on dataset preparation
 │
 ├── 03_generative_design/
-│   ├── README.md                     # Formerly 01_phase_3_summary.md
-│   ├── 02_progress_log.md
-│   ├── 03_notes_parametric_design.md
-│   └── 04_notes_generative_algorithms.md
+│   ├── README.md                              # Homepage for Generative Design phase
+│   ├── 01_progress_log.md                     # Progress log for this phase
+│   ├── 02_notes_parametric_design.md          # Synthesized notes on parametric_design
+│   └── 03_notes_generative_algorithms.md      # Synthesized notes on generative_algorithms
 │
 ├── 04_feedback_optimization/
-│   ├── README.md                     # Formerly 01_phase_4_summary.md
-│   ├── 02_progress_log.md
-│   ├── 03_notes_simulation_ml_loops.md
-│   └── 04_notes_multi_objective_optimization.md
+│   ├── README.md                              # Homepage for Feedback Optimization phase
+│   ├── 01_progress_log.md                     # Progress log for this phase
+│   ├── 02_notes_simulation_ml_loops.md        # Synthesized notes on simulation-ML loops
+│   └── 03_notes_multi_objective_optimization.md  # Synthesized notes on multi-objective optimization
 │
 ├── 05_portfolio_research_extensions/
-│   ├── README.md                     # NEW - Summary for this phase
-│   ├── 02_progress_log.md
-│   ├── 03_notes_reinforcement_learning.md
-│   ├── 04_notes_explainable_ai.md
-│   ├── 05_notes_climate_adaptation.md
-│   ├── 06_notes_whole_life_carbon.md
-│   └── mini_projects/
-│       ├── rl_agent_toy_env.ipynb
-│       └── xai_model_interpretation.ipynb
+│   ├── README.md                              # Summary for this phase
+│   ├── 01_progress_log.md                     # Progress log for this phase
+│   ├── 02_notes_reinforcement_learning.md     # Synthesized notes on reinforcement learning
+│   ├── 03_notes_explainable_ai.md             # Synthesized notes on explainable AI
+│   ├── 04_notes_climate_adaptation.md         # Synthesized notes on climate adaptation
+│   ├── 06_notes_whole_life_carbon.md          # Synthesized notes on whole-life carbon
+│   └── mini_projects/                         # PhD Roadmap-defined projects
+│       ├── 01_parse_epw_weather_files
+│           ├── main.py
+│           ├── notebook_eda.ipynb
+│           └── data/
+│       ├── 02_visualize_energyplus_csv_outputs/
+│           ├── viz_script.py
+│           └── data/
+│       └── 03_train_ml_models_energy_performance
+│           ├── train_model.py
+│           └── data/
 │
-└── archive/
+└── 06_archive/
     └── old_versions/
         ├── progress_log_pre_26_06_2025.md (example)
         └── notes_dump.md (example)
@@ -90,6 +103,90 @@ By completing this roadmap, I will develop an advanced interdisciplinary skill s
 5. Regularly update `02_progress_log.md` with reflections and next steps.
 
 ---
+## ⚙️ Setup
+
+### 1. Prerequisites:
+
+* **Miniconda/Anaconda** ([recommended for environment management](https://docs.conda.io/en/latest/miniconda.html)).
+* **Git** ([for cloning and version control](https://git-scm.com/downloads)).
+* **VS Code** ([recommended IDE with Python and Jupyter extensions](https://code.visualstudio.com/download)).
+* **EnergyPlus** ([a building energy simulation program](https://energyplus.net/)).
+* **OpenStudio** ([a platform for whole building energy modeling](https://openstudio.net/)).
+* **Ladybug Tools for Grasshopper** ([for parametric design and environmental analysis within Rhino/Grasshopper](https://www.ladybug.tools/installation.html)).
+
+
+### 2. Clone the Repository:
+```bash
+git clone [https://github.com/rossedward-arch/ml-generative-energy-design.git](https://github.com/rossedward-arch/ml-generative-energy-design.git)
+cd ml-generative-energy-design/learning_roadmap # Navigate into the learning_roadmap folder
+```
+### 3. Create Conda Environment (for this learning roadmap):
+
+It's highly recommended to create a dedicated Conda environment to manage the project's dependencies. This ensures that the required Python packages and their versions do not conflict with other projects on your system.
+```bash
+# Navigate to the root of the cloned repository if you're not already there
+# For example, if you are in 'learning_roadmap', you might need to go up one level:
+# cd ..
+
+# Create the Conda environment using the provided environment.yml file
+conda env create -f environment.yml
+
+# Activate the newly created environment
+conda activate phd_roadmap
+```
+**Note:** If an environment.yml file is not yet available in the repository root, you would typically create it or install packages manually. For this structure, you'd place an `environment.yml` at the `root of ml-generative-energy-design/` (i.e., alongside `learning_roadmap/`). A basic `environment.yml` might look like this:
+```yaml
+# In a file named 'environment.yml' in the root of your 'ml-generative-energy-design' repository
+name: phd_roadmap
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9 # Or your preferred Python version
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - pytorch::pytorch # Example for PyTorch; specify version if needed
+  - jupyter
+  - ipykernel
+  - requests
+  # Add other libraries as needed for your project phases, e.g.,
+  # - honeybee
+  # - ladybug
+  # - openstudio-sdk # Check specific installation for OpenStudio Python bindings
+  # - pip:
+  #   - grasshopper-api # Example if a pip package is needed for Grasshopper interaction
+  ```
+
+### 4. Install Additional Tools and Libraries:
+
+Some tools and libraries, especially those related to building simulation and parametric design, might require separate installations or specific configurations beyond the Conda environment.
+
+* **EnergyPlus & OpenStudio:** Download and install the latest stable versions from their official websites. Ensure their executables are accessible in your system's PATH if you plan to run them programmatically from Python.
+    * [EnergyPlus Official Website](https://energyplus.net/)
+    * [OpenStudio Official Website](https://openstudio.net/)
+  
+* **Ladybug Tools for Grasshopper:** Install these as Rhino/Grasshopper plugins. Refer to the official Ladybug Tools documentation for installation instructions.
+    * [Ladybug Tools Documentation](https://www.ladybug.tools/installation.html)
+
+### 5. Verify Installation:
+
+After completing the steps, you can verify your setup.
+```bash
+# Activate the environment (if not already active)
+conda activate phd_roadmap
+
+# Check Python version
+python --version
+
+# Check if a few key Python packages are installed (e.g., numpy)
+python -c "import numpy; print(numpy.__version__)"
+
+# You might also want to run a simple script from the roadmap, e.g., a test from '01_foundations'
+# python 01_foundations/some_test_script.py
+```
 
 ## 📌 License
 
