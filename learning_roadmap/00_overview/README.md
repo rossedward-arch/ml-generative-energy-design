@@ -1,140 +1,123 @@
-# PhD Readiness Project Guide: Foundations for Integrated ML, Generative Design & Energy Simulation for Climate-Adapted Net-Zero Buildings
+# 🚀 PhD Readiness Project Guide: Overview
+
+This repository documents a structured self-learning roadmap designed to build comprehensive expertise in Machine Learning (ML), Generative Design, and Building Energy Simulation for the development of Climate-Adapted, Net-Zero Buildings. This initiative serves as a foundational "PhD Readiness Project" to prepare for advanced research in this interdisciplinary field.
 
 ---
 
-## 🧱 Phase 1: Foundations (0–3 months)
+## 🎯 Project Vision & Goals
 
-**Goal:** Develop fluency in Python programming, data workflows, and fundamental energy modeling concepts.
+My goal is to integrate computational methods into architectural design, specifically focusing on:
+* **Accelerating Performance Simulation**: Using ML (e.g., surrogate models) to provide rapid feedback on energy performance.
+* **Exploring Design Space**: Leveraging generative design and optimization techniques to discover novel, high-performing architectural solutions.
+* **Climate Adaptation**: Integrating climate data and future scenarios to create resilient and adaptable buildings.
+* **Net-Zero Focus**: Targeting strategies for drastically reducing operational and embodied carbon.
 
-### Core Skills & Tools
-- Python basics: variables, control flow, functions, file I/O  
-- Data manipulation: pandas, numpy  
-- Data visualization: matplotlib, seaborn  
-- Working with climate data (e.g. UKCP18, EPW files)  
-- Energy modeling basics: Passivhaus principles, EnergyPlus overview  
-- BIM data extraction: IFC parsing  
-- Version control basics: Git and GitHub  
-
-### Mini-Projects
-- EPW weather file parser and summary tool  
-- CSV data visualizer with temperature, humidity, solar radiation plots  
-- UKCP18 climate scenario explorer (extract & plot local temperature change trends)  
-- Simple Python scripts with Git version control  
-
-### Recommended Reading
-- *Python for Data Analysis* (Wes McKinney) – selected chapters on pandas and numpy  
-- *Energy Simulation in Building Design* (Joseph Clarke) – introductory chapters
+This roadmap outlines a progressive journey, from foundational programming skills to advanced research concepts, with tangible mini-projects and detailed documentation at each step.
 
 ---
 
-## ⚙️ Phase 2: Machine Learning for Energy Prediction (3–6 months)
+## 🗺️ Roadmap Phases
 
-**Goal:** Learn supervised ML methods to predict building energy performance.
+The entire readiness project is structured into five distinct phases, each building upon the last, culminating in a robust set of skills and a research-ready portfolio.
 
-### Core Skills & Tools
-- Supervised learning: linear regression, decision trees, random forests  
-- Model evaluation metrics: MAE, RMSE, R², cross-validation  
-- Feature engineering and selection  
-- Data pipelines and cleaning (real simulation/climate datasets)  
-- Tools: scikit-learn, Jupyter notebooks  
+### 🧱 Phase 1: Foundations – Python, Data Handling, and Architectural File Parsing
+  * **Duration**: 0–3 months
+  * **Focus**: Core Python, data manipulation (Pandas, NumPy), data visualization, understanding energy/BIM file formats (EPW, CSV, IFC), and Git/GitHub fundamentals.
+  * **Go to Detailed Phase 1 README**: [README.md](../01_foundation/README.md)
 
-### Mini-Projects
-- Predict annual heating load using building parameters  
-- Compare ML models (baseline vs tuned) for energy use prediction  
-- Plot evaluation metrics and explain model strengths/weaknesses  
-- Test basic SHAP values on a trained random forest  
+### ⚙️ Phase 2: Machine Learning for Energy Prediction
+  * **Duration**: 3–6 months
+  * **Focus**: Supervised learning algorithms (Linear Regression, Decision Trees, Random Forests), model evaluation (MAE, RMSE, R²), cross-validation, hyperparameter tuning, feature engineering, scikit-learn, Jupyter notebooks, basic PyTorch.
+  * **Go to Detailed Phase 2 README**: [README.md](../02_ml_predictions/README.md)
 
-### Recommended Reading
-- *Introduction to Machine Learning with Python* (Andreas C. Müller) – regression, validation  
-- Research papers on ML for building energy prediction
+### 🕹️ Phase 3: ML-Integrated Generative Design
+  * **Duration**: 6–12 months
+  * **Focus**: Parametric modeling (Grasshopper, Rhino), deploying ML surrogates as fitness functions, optimization techniques (Genetic Algorithms, Bayesian Optimization), and visualizing design space exploration.
+  * **Go to Detailed Phase 3 README**: [README.md](../03_generative_design/README.md)
 
----
+### 🔄 Phase 4: Simulation-ML Feedback Loops and Automation
+  * **Duration**: 12–18 months
+  * **Focus**: Advanced building energy simulation tools (EnergyPlus, OpenStudio), automating simulation runs, iterative ML model retraining, foundational Reinforcement Learning (RL), and adaptive optimization.
+  * **Go to Detailed Phase 4 README**: [README.md](../04_feedback_optimisation/README.md)
 
-## 🕹️ Phase 3: ML-Integrated Generative Design (6–12 months)
+### 🔬 Phase 5: Portfolio & Research Extensions
+  * **Duration**: 18+ months & Ongoing
+  * **Focus**: Consolidating project outputs into a professional portfolio, advanced RL, Explainable AI (XAI), climate adaptation strategies, Whole-Life Carbon (WLC) modeling, and preparing for PhD proposal defense/publication.
+  * **Go to Detailed Phase 5 README**: [README.md](../05_portfolio_research_extensions/README.md)
 
-**Goal:** Integrate ML models with parametric generative design workflows.
+## 📂 Repository Structure
 
-### Core Skills & Tools
-- Parametric modeling: Grasshopper, Rhino  
-- Surrogate modeling: training ML models to emulate simulation outputs  
-- Optimization: genetic algorithms, Bayesian optimization  
-- Visualization of iterations, convergence, design tradeoffs  
+The repository is organized to reflect the phased learning roadmap and store all associated code, notes, and resources:
+```text
+learning_roadmap/ # Main directory containing the entire PhD readiness learning roadmap.
+                  # This structure guides a systematic progression through key skills.
+├── 00_overview/  # Contains high-level documents providing an overview of the entire roadmap,
+                  # general resources, and administrative items.
+│   ├── 01_checklist.md          # A checklist for tracking overall progress or specific tasks.
+│   ├── 02_reference.md          # General reference notes or summaries applicable across phases.
+│   ├── 03_tutorials_links.md    # A curated list of external tutorials and useful links.
+│   └── README.md                # The primary entry point for the entire learning_roadmap,
+│                                # summarizing the vision, phases, and how to navigate the repo.
+│
+├── 01_foundation/               # Phase 1: Focuses on core Python programming, data handling,
+│                                # and fundamental energy/architectural data formats.
+│   ├── 01_progress_log.md       # Detailed daily/weekly log of learning activities and progress for Phase 1.
+│   ├── 02_note_python_fundamentals.md # Notes on core Python concepts (syntax, data structures, functions, etc.).
+│   ├── 03_notes_energyplus.md   # Notes related to EnergyPlus simulation basics and concepts.
+│   ├── 04_notes_energy_file_formats.md # Documentation on EPW, IDF, CSV, JSON, etc. file formats.
+│   ├── 05_notes_numpy_for_data.md # Notes on NumPy library for numerical operations.
+│   ├── 06_notes_pandas_data_manipulation.md # Notes on Pandas for data structuring and manipulation.
+│   ├── 07_notes_data_visualization.md # Notes on Matplotlib/Seaborn for data plotting.
+│   └── README.md                # Detailed overview, skills, mini-projects, and links for Phase 1.
+│
+├── 02_ml_predictions/           # Phase 2: Dedicated to Machine Learning for building energy prediction,
+│                                # focusing on supervised learning.
+│   ├── 01_progress_logs.md      # Progress log for Phase 2.
+│   ├── 02_notes_sklearn_basics.md # Notes on Scikit-learn for ML algorithm implementation.
+│   ├── 03_notes_pytorch_intro.md # Introduction to PyTorch for deep learning fundamentals.
+│   ├── 04_dataset_preparation.md # Notes on preparing and cleaning datasets for ML models.
+│   └── README.md                # Detailed overview, skills and links for Phase 2.
+│
+├── 03_generative_design/        # Phase 3: Integration of ML models with parametric and generative
+│                                # design workflows.
+│   ├── 01_progress_log.md       # Progress log for Phase 3.
+│   ├── 02_notes_parametric_design.md # Notes on parametric modeling concepts (e.g., Grasshopper, Rhino).
+│   ├── 03_notes_generative_algorithms.md # Notes on algorithms like Genetic Algorithms, Bayesian Optimization.
+│   └── README.md                # Detailed overview, skills and links for Phase 3.
+│
+├── 04_feedback_optimisation/    # Phase 4: Focuses on establishing iterative feedback loops between
+│                                # high-fidelity simulations and ML models, and introducing RL.
+│   ├── 01_progress_log.md       # Progress log for Phase 4.
+│   ├── 02_notes_simulation_ml_loops.md # Notes on automating simulations and integrating with ML retraining.
+│   ├── 03_notes_multi_objective_optimisation.md # Notes on balancing conflicting design objectives.
+│   ├── 04_notes_reinforcement_learning_fundamentals.md # Foundational concepts of Reinforcement Learning.
+│   └── README.md                # Detailed overview, skills, mini-projects, and links for Phase 4.
+│
+├── 05_portfolio_research_extensions/ # Phase 5: Culminating phase for portfolio development,
+│                                     # advanced research topics, and PhD readiness.
+│   ├── 01_progress_log.md            # Progress log for Phase 5.
+│   ├── 02_notes_advanced_rl_xai.md   # Notes on advanced RL techniques and Explainable AI (XAI).
+│   ├── 03_notes_climate_adaptation.md # Notes on strategies for climate-resilient building design.
+│   ├── 04_notes_whole_life_carbon.md # Notes on assessing embodied and operational carbon over a building's lifecycle.
+│   ├── 05_notes_academic_writing_publishing.md # Notes on structuring research, proposals, and publications.
+│   └── README.md                     # Detailed overview, skills, mini-projects, and links for Phase 5.
+│
+├── mini_projects/ # A dedicated directory for standalone, practical coding exercises and
+│                  # small applications demonstrating learned skills from various phases.
+│   ├── 01_parse_epw_weather_files/      # Project: Script to parse and extract data from EPW weather files.
+│   ├── 02_visualize_energyplus_csv_outputs/ # Project: Tool to visualize time-series data from EnergyPlus CSVs.
+│   └── 03_train_ml_models_energy_performance/ # Project: Code for training ML models for energy prediction.
+│
+└── 06_archive/  # Contains outdated, deprecated, or less relevant content that is kept for record,
+                 # but is not actively part of the core roadmap.
+    └── README.md # Explanation of content within the archive.
+```
 
-### Mini-Projects
-- Parametric model optimizing window-to-wall ratio using ML surrogate  
-- Surrogate vs brute-force optimization comparison  
-- Visualize energy-performance Pareto front from design alternatives  
-
-### Recommended Reading
-- *Generative Design* (Benny B. Lau et al.) – selected chapters  
-- Papers on surrogate-assisted optimization in architecture
-
----
-
-## 🔄 Phase 4: Simulation-ML Feedback Loops (12–18 months)
-
-**Goal:** Develop workflows combining building energy simulation and ML in iterative feedback loops.
-
-### Core Skills & Tools
-- Building simulation tools: EnergyPlus, OpenStudio, Ladybug/Honeybee  
-- Automating simulation runs via parametric input scripts  
-- Data extraction, cleaning, and ML re-training  
-- Reinforcement learning basics (concepts + simple environments)  
-- SHAP for simulation-driven model interpretation  
-
-### Mini-Projects
-- Automate EnergyPlus simulations across climate scenarios  
-- Train a surrogate model from simulation results and analyze error  
-- Implement iterative simulation–ML–optimization feedback loop  
-- Run a basic reinforcement learning algorithm (OpenAI Gym: energy scheduling or comfort task)  
-
-### Recommended Reading
-- *Energy Simulation in Building Design* (Joseph Clarke) – advanced chapters  
-- Papers on simulation-ML integration and RL in architecture  
-- SHAP and XAI documentation (interpreting ML predictions for design insight)
-
----
-
-## 🔬 Phase 5: Portfolio & Research Extensions (18+ months & Ongoing)
-
-**Goal:** Deepen expertise in advanced ML, create portfolio-ready research components, and explore broader applications.
-
-### Core Skills & Tools
-- Reinforcement learning (e.g. PPO, SAC)  
-- Explainable AI (e.g. SHAP, LIME) applied to energy models  
-- Climate adaptation strategies (passive design, overheating resilience)  
-- Whole-life carbon (WLC) assessment and integration into generative design  
-- Advanced visualization: Plotly, Dash, Streamlit  
-- Collaborative Git workflows and branching strategies  
-- Cloud computing basics (e.g. Colab, AWS for simulation & ML)  
-- Post-occupancy data integration and model calibration  
-
-### Mini-Projects
-- Use SHAP to interpret design tradeoffs in a generative process  
-- Build an interactive dashboard for visualizing design iterations  
-- Prototype climate-adaptive strategies (e.g., shading or massing) under UKCP18 data  
-- Integrate early-stage WLC estimates in a design optimization loop  
-
-### Recommended Reading
-- Research papers on RL in architectural workflows  
-- XAI literature and use cases in sustainability  
-- Articles on climate-resilient design and WLC workflows  
-- Advanced tool documentation (e.g. SHAP, LIME, `stable-baselines3`)  
-
----
-
-## 📅 Summary Timeline
-
-| Phase                         | Duration        | Core Focus                                      |
-|-------------------------------|-----------------|-------------------------------------------------|
-| Phase 1: Foundations          | 0–3 months      | Python, data workflows, climate & modeling      |
-| Phase 2: ML Prediction        | 3–6 months      | Supervised learning, model evaluation           |
-| Phase 3: Generative Design    | 6–12 months     | Parametric design + surrogate models            |
-| Phase 4: Simulation Loop      | 12–18 months    | Simulation + ML feedback + SHAP/RL foundations  |
-| Phase 5: Portfolio & Extensions | 18+ months      | XAI, climate adaptation, WLC, visualization     |
-
----
-
-*This roadmap is a structured, evolving guide for developing PhD-level research capabilities in machine learning, generative design, and energy simulation for climate-adapted, net-zero architecture. It balances theoretical depth with practical application across tools and methods essential for CDT success.*
-
+## 📈 General Recommendations for Success
+This roadmap adheres to best practices for self-directed learning and project management:
+* **Regular Checkpoints**: Scheduled reviews to assess progress, adjust goals, and incorporate feedback.
+* **Comprehensive Documentation**: Clear, detailed notes and comments for all code, experiments, and learnings.
+* **Effective Version Control**: Consistent use of Git and GitHub for tracking changes and managing the repository.
+* **Community Engagement**: Active participation in relevant online forums or with academic peers.
+* **Robust Data Management**: Regular backup strategies for datasets, models, and scripts.
 
