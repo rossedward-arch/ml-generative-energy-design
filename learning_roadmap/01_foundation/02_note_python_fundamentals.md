@@ -197,6 +197,7 @@ while should_continue_program:
 # This demonstrates how a while loop can keep a program running until a specific
 # condition (user typing 'no') is met.
 ```
+> **Reflection:** I initially struggled with making sure my `while` loop conditions would eventually become false to avoid an infinite loop. Using a clear flag variable like `should_continue` made it much easier to control the program's flow.
 
 ---
 
@@ -1055,7 +1056,7 @@ if __name__ == "__main__":
 
 ---
 
-## 🧰 Debugging
+## 3. 🧰 Debugging
 Debugging is an essential skill for any developer, especially in complex domains like energy simulation and machine learning where models can be intricate and data flows complex. A systematic approach to finding and fixing errors saves significant time and ensures the reliability of your code.
 
 🔑 **Key Concepts**
@@ -1140,7 +1141,7 @@ Click in the gutter (left margin) next to the line numbers in your Python file t
 * Use the Debug Console to evaluate expressions and run commands (similar to `p var` in pdb).
 
 
-## 🧮 3. Building a Robust Calculator (Day 10 Project)
+## 🧮 4. Building a Robust Calculator (Day 10 Project)
 
 This project served as a comprehensive exercise in integrating fundamental Python concepts, including functions, dictionaries, loops, user input, variable scope, and basic error handling, to create a functional and interactive application. It highlights how these building blocks combine to create more complex programs.
 
@@ -1289,163 +1290,12 @@ def calculator():
 if __name__ == "__main__":
     calculator()
 ```
+### Personal Insights from the Project
 
-This is an incredibly well-structured and detailed note_python file, Ross! The way you've connected each Python concept to its relevance in energy simulation and ML is truly insightful and will be an invaluable resource for your PhD.
+- **Challenge:** A key bug was forgetting that `input()` returns a string. I had to explicitly use `float()` and `int()` to perform mathematical operations, which was a great reminder about data types.
+- **Learning:** The dictionary mapping functions (`operations = {"+": add, ...}`) was a powerful concept. It made the code much cleaner than using a long `if/elif/else` chain to check for each operator. This is a pattern I can definitely use to select different analysis models in my research.
+- **Next Step:** I want to come back and add `try-except` blocks to handle non-numeric input gracefully, so the program doesn't crash when someone types a letter.
 
-Based on our recent work, the perfect next addition to this file is your Calculator Project. It beautifully ties together many of the concepts you've already documented, providing a comprehensive example of their practical application.
-
-Here's how you can integrate it, maintaining your excellent style:
-Markdown
-
-## 🧮 3. Building a Robust Calculator (Day 10 Project)
-
-This project served as a comprehensive exercise in integrating fundamental Python concepts, including functions, dictionaries, loops, user input, variable scope, and basic error handling, to create a functional and interactive application. It highlights how these building blocks combine to create more complex programs.
-
-```python
-import sys
-
-# --- ASCII Art Placeholder ---
-# In a real scenario, you would have an 'art.py' file with a 'logo' variable.
-# For demonstration, let's create a simple placeholder for 'art.logo'.
-# If you have an actual 'art.py' file, ensure it's in the same directory
-# or on your Python path, and it defines 'logo'.
-try:
-    import art
-    # Attempt to use art.logo if the module and attribute exist
-    calculator_logo = art.logo
-except (ImportError, AttributeError):
-    # Fallback if 'art' module is not found or 'logo' attribute is missing
-    calculator_logo = """
-   _____          _            _       _
-  / ____|        | |          | |     | |
- | |     __ _ ___| |__   ___  | | __ _| |_ ___ _ __
- | |___| (_| \__ \ | | | (_) || | (_| | ||  __/ |
-  \_____\__,_|___/_| |_|\___/ |_|\__,_|\__\___|_|
-
-    """
-    print("Warning: 'art' module or 'art.logo' not found. Using simple ASCII art.")
-
-
-# --- Basic Arithmetic Operations ---
-def add(n1, n2):
-    """Adds two numbers."""
-    return n1 + n2
-
-def subtract(n1, n2):
-    """Subtracts the second number from the first."""
-    return n1 - n2
-
-def multiply(n1, n2):
-    """Multiplies two numbers."""
-    return n1 * n2
-
-def divide(n1, n2):
-    """Divides the first number by the second. Handles division by zero."""
-    if n2 == 0:
-        # Return None to indicate an error, which will be handled by the caller
-        return None
-    return n1 / n2
-
-# This dictionary maps operation symbols to their corresponding functions.
-# It MUST be defined before the 'calculate' function, as 'calculate' uses it.
-operations = {
-    "+": add,
-    "-": subtract,
-    "*": multiply,
-    "/": divide,
-}
-
-# --- Calculation Logic ---
-def calculate(num_1, operation_symbol, num_2):
-    """
-    Performs a calculation based on two numbers and an operation symbol.
-
-    Args:
-        num_1 (float): The first number.
-        operation_symbol (str): The symbol of operation (e.g., "+", "-").
-        num_2 (float): The second number.
-    Returns:
-        float or None: The result of the calculation, or None if an error occurs (e.g., invalid operation, division by zero).
-    """
-    # Check if the operation symbol is valid
-    if operation_symbol not in operations:
-        print("Error: Invalid operation symbol.")
-        return None
-
-    # Get the function based on the symbol and perform the calculation
-    operation_function = operations[operation_symbol]
-    result = operation_function(num_1, num_2)
-
-    return result
-
-# --- Main Calculator Program ---
-def calculator():
-    """
-    Runs the main calculator program, allowing continuous calculations
-    or starting new ones.
-    """
-    print(calculator_logo) # Print the chosen logo
-
-    first_number = None # This will store the first number for the current calculation.
-                        # It can be either a new input or the result of the previous calculation.
-
-    should_continue = True # This flag controls whether the main calculator loop keeps running.
-
-    while should_continue:
-        # --- Get the first number (n1) ---
-        if first_number is None:
-            # If first_number is None (initial run or user chose 'n'), prompt for a new number.
-            # Expecting valid numeric input here. If non-numeric, a ValueError will occur.
-            n1 = float(input("What's the first number?: "))
-        else:
-            # Otherwise, use the result from the previous calculation.
-            n1 = first_number
-
-        # --- Display available operations ---
-        print("\nAvailable operations:")
-        for symbol in operations: # Changed 'symbols' to 'symbol' for consistency
-            print(symbol)
-
-        # --- Get operation symbol ---
-        operation_input = input("Pick an operation: ")
-
-        # --- Get the second number (n2) ---
-        # Expecting valid numeric input here. If non-numeric, a ValueError will occur.
-        n2 = float(input("What's the next number?: ")) # Changed prompt from "second" to "next" for consistency
-
-        # --- Perform calculation ---
-        result_of_calcs = calculate(n1, operation_input, n2)
-
-        # --- Handle calculation result and user choice ---
-        if result_of_calcs is not None:
-            # If calculation was successful, print the result
-            print(f"{n1} {operation_input} {n2} = {result_of_calcs}")
-
-            # Ask user how to proceed, using the correct variable for the result
-            user_choice = input(
-                f"Type 'y' to continue calculating with {result_of_calcs}, "
-                f"or type 'n' to start a new calculation, "
-                f"or any other key to exit: "
-            ).lower() # Added .lower() for case-insensitivity
-
-            if user_choice == "y":
-                first_number = result_of_calcs # Set the result as the first number for the next iteration
-            elif user_choice == "n":
-                first_number = None # Reset first_number to prompt for a new one in the next iteration
-            else:
-                should_continue = False # If anything else is typed, stop the loop
-                print("Exiting calculator. Goodbye!") # Added an exit message
-        else:
-            # If result_of_calcs was None (e.g., division by zero or invalid operation),
-            # reset first_number to force a new calculation for the next iteration.
-            # The error message is already printed by 'divide' or 'calculate' functions.
-            first_number = None
-            # We don't set should_continue = False here, allowing the user to try again.
-
-# This block ensures 'calculator()' runs only when the script is executed directly.
-if __name__ == "__main__":
-    calculator()
-```
 **Relevance to Energy/ML:**
 * **Modular Function Design**: The calculator demonstrates breaking down a complex task into smaller, reusable functions (`add`, `subtract`, `calculate`, `calculator`). This is crucial for managing the complexity of energy simulation scripts or large-scale ML pipelines.
 * **Dictionaries for Function Mapping**: Using the `operations` dictionary to map string symbols to actual functions is a powerful pattern. In energy/ML, this could be adapted to:
@@ -1456,3 +1306,247 @@ if __name__ == "__main__":
 * **Basic Error Handling**: The checks for division by zero and invalid operation symbols, returning `None` to signal an issue, are important steps towards building robust code that can handle unexpected inputs or conditions in simulations. (I should try and incorporate `try-except` into existing calculator program)
 * **Clear Output Formatting (f-strings)**: Presenting results clearly using f-strings is essential for reporting simulation outputs or ML model predictions.
 
+----
+
+## 🧰 5. Data Science & ML Foundations
+
+These notes cover essential Python tools and functions that are core to data manipulation in data science and machine learning workflows, building on the basic Python concepts.
+
+## 📌 Core Functions for Data Manipulation
+
+These concepts are fundamental for efficiently handling data, which is critical for preprocessing building performance data, weather files, or large datasets for machine learning models.
+
+### List Comprehensions, `map()`, and `filter()`
+
+These functions provide concise and efficient ways to create and transform sequences of data without writing full `for` loops.
+
+```python
+# Example 1: List Comprehension to square numbers
+x = [1, 2, 3, 4]
+squared_list = [num**2 for num in x]
+print(f"Squared numbers: {squared_list}")  # Output: [1, 4, 9, 16]
+
+# Example 2: Using a lambda function with map()
+seq = [1, 2, 3]
+tripled_list = list(map(lambda num: num * 3, seq))
+print(f"Tripled numbers (with map): {tripled_list}")  # Output: [3, 6, 9]
+
+# Example 3: Using a lambda function with filter()
+num_list = [1, 2, 3, 4, 5, 6]
+even_numbers = list(filter(lambda num: num % 2 == 0, num_list))
+print(f"Even numbers (with filter): {even_numbers}") # Output: [2, 4, 6]
+```
+**Relevance to Energy/ML:**
+* I'll use these for concise data preprocessing, like converting a list of temperatures from Celsius to Fahrenheit, or filtering a list of simulation results to find only those that meet a specific energy consumption threshold.
+
+* **String Methods (`.split()`)**
+
+The `.split()` method is essential for parsing structured data from strings, such as extracting numerical values from text-based file formats or parsing logs.
+```python
+# Example: Extracting data from a structured string
+data_string = "Building: Office_A | Load: 150.5 kW"
+parts = data_string.split(" | ")
+print(f"Full string parts: {parts}") # Output: ['Building: Office_A', 'Load: 150.5 kW']
+building_name = parts[0].split(": ")[1]
+peak_load_str = parts[1].split(": ")[1].split(" ")[0] # Extract the number
+peak_load = float(peak_load_str)
+print(f"Building Name: {building_name}")
+print(f"Peak Load: {peak_load} kW")
+```
+**Relevance to Energy/ML:**
+ I'll use this method for parsing key-value pairs from text-based simulation input files (.idf, .inp) or extracting specific data points from unstructured log files.
+
+---
+
+ ### 📌 NumPy Basics: Arrays and Vectorized Computations
+
+ I've learned how to use NumPy for numerical computations, especially with multi-dimensional arrays (tensors). This is crucial for handling large datasets and performing mathematical operations efficiently, which will be vital for my PhD work in climate-adaptive generative design. NumPy's optimized C implementations make it significantly faster than standard Python lists for numerical tasks.
+
+ #### What are Multi-dimensional Arrays (Tensors)?
+
+At its simplest, a multi-dimensional array is an organized collection of data points (numbers, usually) arranged in a grid with one or more dimensions. In the context of Machine Learning and Deep Learning, these multi-dimensional arrays are formally called tensors. The "dimension" refers to the number of axes or indices needed to locate an element.
+
+* **Scalar (0-D Tensor):** A single number.
+
+    * Example: `5` (e.g., a single constant like a U-value or a specific material property.)
+
+* **1-D Array (Vector / 1-D Tensor):** A simple list of numbers. Think of it as a single row or a single column of data.
+
+    * Example: `[1, 2, 3, 4]` (e.g., a list of 4 temperatures recorded over time for a single sensor, or a vector of design parameters like `[wall_thickness, window_area, roof_insulation]`).
+
+* **2-D Array (Matrix / 2-D Tensor):** A table of numbers with rows and columns.
+
+    * Example: `[[1, 2, 3], [4, 5, 6]]` (e.g., a dataset where rows represent different building designs and columns represent their features like energy use, daylight autonomy, and embodied carbon.)
+
+* **3-D Array (3-D Tensor):** A cube of numbers. Think of stacking multiple 2-D arrays on top of each other.
+
+    * Example: `[[[1,2],[3,4]], [[5,6],[7,8]]]` (e.g., hourly temperature data for multiple rooms over several days: `[days, hours, rooms]`, or even hourly performance metrics for different design variants: `[designs, hours, metric_type]`).
+
+* **Higher-dimensional Tensors (4-D, 5-D, etc.):** While harder to visualize, mathematically you can continue adding dimensions. These are common for complex datasets like climate model outputs (e.g., `[year, month, day, hour, latitude, longitude, climate_variable]`) or advanced generative design parameters.
+
+**Key Takeaway:** NumPy's `ndarray` object is designed to efficiently handle all these types of multi-dimensional arrays, providing the core structure for the data you'll manipulate in data science and machine learning.
+
+ ### Core Concepts & Applications for PhD:
+
+#### 1. Array Creation & Manipulation
+
+NumPy arrays are the fundamental data structure, representing grids of values, all of the same type.
+
+* **Concept:** Creating arrays from Python lists or using built-in functions like `np.zeros()`, `np.ones()`, `np.arange()`, and `np.linspace()`. Also, reshaping arrays `(.reshape())` to fit desired dimensions.
+
+* **PhD Relevance:** This allows me to initialize structured data, such as:
+  * Grids for spatial climate parameters over a building site.
+  * Arrays of design variables (e.g., various window-to-wall ratios, material properties).
+  * Sequences for simulation time steps or optimization iterations.
+  * Representing multi-dimensional building geometry data.
+
+```python
+import numpy as np
+
+# Example: Representing a 3D building volume as a grid of discrete cells (e.g., for occupancy or material types)
+building_volume_grid = np.zeros((50, 50, 20)) # 50x50m footprint, 20m high, initialized to 0 (empty)
+print(f"Building volume grid shape: {building_volume_grid.shape}") # (50, 50, 20)
+
+# Example: Creating a sequence of insulation U-values to test in a parametric study
+u_values_to_test = np.linspace(0.1, 0.4, 10) # 10 values from 0.1 to 0.4 W/m²K
+print(f"U-values for testing: {u_values_to_test}") # [0.1  0.133... 0.4 ]
+
+# Example: Reshaping hourly simulation output into daily chunks for easier analysis
+hourly_data_year = np.arange(8760) # Mock 8760 hours of data
+daily_data_chunks = hourly_data_year.reshape(365, 24)
+print(f"Shape of daily data chunks: {daily_data_chunks.shape}") # (365, 24)
+```
+
+#### 2. Array Indexing & Slicing
+
+Efficiently accessing and modifying parts of arrays is crucial for targeting specific data.
+
+* **Concept:** Retrieving specific elements, rows, columns, or sub-arrays using integer indices, boolean masks, or slicing (`start:end:step`).
+* **PhD Relevance:** Essential for:
+  * Extracting specific climate data for a particular month or hour.
+  * Isolating performance metrics from large simulation outputs (e.g., cooling demand for a specific zone).
+  * Modifying specific parts of a generative design structure based on performance feedback.
+  * Selecting data subsets for training machine learning models (e.g., a specific subset of building types).
+* **Crucial Difference:** Slicing (`[1:3]`) returns a view of the original data, so modifications to the slice will also modify the original array. Fancy indexing (`[[1, 3, 5]]`) returns a copy, so modifying the new array will not affect the original.
+* **Logical NOT:** The `~` operator is used to invert a boolean array element-wise.
+```python
+# Example: Mock hourly temperature data for a week (7 days, 24 hours/day)
+weekly_temp_data = np.random.uniform(10, 30, size=(7, 24))
+
+# Get all hourly temperatures for the 3rd day (index 2)
+day_3_temps = weekly_temp_data[2, :]
+print(f"Temperatures for day 3:\n{day_3_temps}\n")
+
+# Get temperature data for all days, only during peak afternoon hours (1 PM to 5 PM, indices 13 to 17)
+afternoon_temps = weekly_temp_data[:, 13:18]
+print(f"Afternoon temperatures (all days):\n{afternoon_temps}\n")
+
+# Using boolean indexing: select days where the average temperature is above 25°C
+hot_days = weekly_temp_data[np.mean(weekly_temp_data, axis=1) > 25]
+print(f"Data for hot days:\n{hot_days}")
+```
+#### 3. Array Operations (Element-wise & Aggregations)
+
+NumPy excels at performing operations across entire arrays rapidly.
+* **Concept:** Applying mathematical operations (addition, subtraction, multiplication, division) element-wise on arrays, faster than Python lists. Using aggregation functions like `np.sum()`, `np.mean()`, `np.std()`, `np.max()`, `np.min()` across entire arrays or specific axes.
+* **Vectorization & Universal Functions (ufuncs):**
+  * **Concept:** This efficiency comes from vectorization, where operations are applied to entire arrays (or parts of arrays) at once, rather than element by element using Python `for` loops. NumPy does this by leveraging highly optimized, pre-compiled C functions (known as Universal Functions or ufuncs). This eliminates the overhead of Python's interpreter loop for each operation, leading to speed gains for large datasets.
+
+  * **PhD Relevance:** Crucial for quickly processing vast amounts of simulation data, applying transformations to design parameters, and performing rapid calculations within your ML models, where speed is paramount for training and optimization.
+
+* **PhD Relevance (Continued from above):** Crucial for calculating building energy loads (e.g., `solar_gain * window_area`), averaging climate data over time, finding peak heating/cooling demands, or computing deviations in design performance. Normalizing input features for machine learning models.
+
+```python
+# Example: Calculating hourly heat loss through a window
+window_area_sqm = np.array([2.5, 3.0, 4.0]) # Areas of different windows
+u_value_window = 1.8 # Window U-value in W/m²K
+temp_diff_hourly = np.random.uniform(5, 15, size=24) # Hourly temp difference across window
+
+# Element-wise multiplication for heat loss per window area
+heat_loss_per_sqm_hourly = u_value_window * temp_diff_hourly
+print(f"Hourly heat loss per sq.m for one window:\n{heat_loss_per_sqm_hourly}\n")
+
+# Total heat loss for each window type over an hour
+total_heat_loss_windows = heat_loss_per_sqm_hourly[:, np.newaxis] * window_area_sqm
+print(f"Total hourly heat loss for each window type (24x3):\n{total_heat_loss_windows}\n")
+
+# Aggregation: Find the maximum hourly heating demand across all simulated hours
+hourly_heating_demand = np.random.uniform(0, 1000, size=8760) # 8760 hours of data
+peak_heating = np.max(hourly_heating_demand)
+print(f"Peak hourly heating demand: {peak_heating:.2f} W")
+```
+
+#### 4. Broadcasting
+A powerful feature that allows operations on arrays of different shapes by conceptually "stretching" the smaller array.
+* **Concept:** Performing operations between arrays with different shapes under certain compatibility rules, simplifying code and improving efficiency.
+* **PhD Relevance:** Useful for:
+  * Applying a single scalar value (e.g., a constant material property) across an entire array of building elements.
+  * Scaling different environmental factors (e.g., wind speed) against an array of façade orientations.
+  * Normalizing datasets by subtracting a mean vector from all data points.
+```python 
+# Example: Applying a solar radiation value (scalar) to an array of facade areas
+solar_radiation_w_per_sqm = 500.0 # W/m²
+facade_areas_sqm = np.array([10.5, 12.0, 8.2, 15.0]) # Different facade areas
+
+# Calculate solar gain for each facade
+solar_gain_watts = facade_areas_sqm * solar_radiation_w_per_sqm
+print(f"Solar gain for each facade: {solar_gain_watts} W")
+
+# Example: Adding a fixed baseline internal heat gain to hourly building loads
+hourly_loads_from_simulation = np.random.uniform(100, 500, size=(24, 7)) # 24hrs x 7 days
+fixed_internal_gain = 200 # W
+
+total_hourly_loads = hourly_loads_from_simulation + fixed_internal_gain
+print(f"\nExample of broadcasting (fixed gain added to all hourly loads):\n{total_hourly_loads.shape}") # Shape remains (24, 7)
+```
+#### 5. Linear Algebra Operations
+
+The bedrock for many machine learning and optimization algorithms.
+* **Concept:** Functions for dot products, matrix multiplication (`np.dot` or `@` operator), transposing (`.T`), solving linear equations, and eigenvalue decomposition.
+* **Key Distinction:** The `.T` attribute transposes the array by reversing the order of the axes, while `np.swapaxes(axis1, axis2)` gives you more granular control to swap any two specified axes.
+* **Statistical Relevance (Covariance):** A key statistical application is that performing `A.T @ A` calculates a **covariance matrix**. This matrix shows the statistical relationships between all pairs of variables in your dataset, which is crucial for understanding how different factors in a building (e.g., temperature and humidity) influence each other.
+* **PhD Relevance:** Fundamental for:
+  * **Machine Learning Models:** The core of training neural networks (matrix multiplications for weights and biases) and many statistical models I'll use for surrogate modeling.
+  * **Optimization:** Solving systems of equations in optimization problems.
+  * **Data Transformation:** Principal Component Analysis (PCA) for dimensionality reduction of large building performance datasets.
+  * **Structural Analysis (Potentially):** If my generative design extends to structural optimization, linear algebra is key.
+
+```python
+# Example: Calculating output of a simple neural network layer (conceptually)
+# 'weights' would be learned parameters, 'inputs' would be features like building attributes
+weights_matrix = np.array([[0.5, 0.2, 0.1],
+                           [0.3, 0.6, 0.4]]) # 2 outputs, 3 inputs
+input_features = np.array([10.0, 5.0, 2.0]) # e.g., Wall U-value, Window-to-Wall Ratio, Occupancy
+
+# Matrix multiplication for layer output
+layer_output = weights_matrix @ input_features
+print(f"Output of a conceptual layer (weights @ inputs): {layer_output}") # [6.2 8.9]
+
+# Example: Transposing a matrix (e.g., for different data views)
+hourly_data_features = np.array([[10, 20, 30],  # Hour 1: Temp, Solar, Wind
+                                 [12, 25, 35]]) # Hour 2: Temp, Solar, Wind
+
+transposed_data = hourly_data_features.T
+print(f"\nOriginal (hourly features):\n{hourly_data_features}")
+print(f"Transposed (features per hour):\n{transposed_data}")
+```
+ **Note to self:** *The examples related to "Machine Learning Models" like neural network layers (`weights_matrix @ input_features`) are from the future ML section of the course. I don't fully understand their ML context yet, but this demonstrates the direct application of NumPy's linear algebra, and I anticipate it will become clearer later.*
+ > Useful Tip: NumPy's efficiency makes it the backbone for handling the large numerical datasets and complex calculations inherent in my climate-adaptive generative design research. Mastering its operations is foundational for developing the high-performance ML models needed for my PhD.
+
+#### 6. Statistical Relevance of Random Number Generation
+
+**Concept:** Functions like np.random.standard_normal() generate random numbers from a specific statistical distribution. The "standard normal" distribution has a mean of 0 and a standard deviation of 1.
+
+**Statistical Meaning:** The standard deviation of 1 means that approximately 68% of the random numbers generated will fall between -1 and 1.
+
+**PhD Relevance:** This is used to add realistic "noise" to your simulated data, making your models more robust. It is also a fundamental method for initializing the weights of a neural network before training begins.
+```python
+# Example: Generate a 4x4 array of random numbers from a standard normal distribution
+random_matrix = np.random.standard_normal(size=(4, 4))
+print(f"Random matrix from standard normal distribution:\n{random_matrix}")
+
+# Example: Generate random noise to add to a temperature simulation
+noise = np.random.standard_normal(size=24) * 0.5 # A small amount of noise with a std. dev. of 0.5
+simulated_temps = np.ones(24) * 20 + noise
+print(f"\nSimulated temperatures with added noise:\n{simulated_temps}")
+```

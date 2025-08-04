@@ -1,12 +1,10 @@
 # 📚 Progress Log
 
-This file documents the chronological progress of my learning in ML-integrated generative design for energy-efficient buildings. Organized by learning phase and UK date format.
+This file documents the progress of my learning in ML-integrated generative design for energy-efficient buildings. Organized by learning phase.
 
 ---
 
 ## 🧱 Phase 1 – Foundations: Python, Data Handling, and Energy Simulation
-
----
 
 ### 📆 26/06/2025 | 🔧 GitHub Structure
 
@@ -34,7 +32,7 @@ This file documents the chronological progress of my learning in ML-integrated g
 **Reflections & Insights**:
 * Gained clarity on the importance of **data types** in Python; operations differ significantly between numeric and string types. This foundational understanding is critical for accurate data handling in energy simulation, where numerical precision and unit consistency are paramount.
 * The interactive REPL was highly effective for immediate feedback and solidifying syntax, reinforcing the iterative nature of programming.
-* **Connection to Project**: A strong grasp of basic data types is fundamental for representing and processing building parameters (e.g., temperature as `float`, material properties as `str`, occupancy status as `bool`) within an energy simulation or ML model.
+* **Connection to Project**: A strong understanding of basic data types is fundamental for representing and processing building parameters (e.g., temperature as `float`, material properties as `str`, occupancy status as `bool`) within an energy simulation or ML model.
 
 **Challenges**:
 * Initially confused by implicit type conversion in certain contexts; needed to explicitly practice `int()`, `float()`, `str()` conversions.
@@ -85,13 +83,13 @@ This file documents the chronological progress of my learning in ML-integrated g
 * Applied functions and loops together to simulate basic HVAC control logic over daily temperature data, where a function might represent an HVAC unit and a list holds temperature readings.
 
 **Reflections & Insights**:
-* **Functions**: Significantly improve code modularity, readability, and reusability. This will be paramount for managing the complexity of different building system models (e.g., separate functions for natural ventilation, lighting control, envelope performance) within a larger simulation framework.
-* **Lists**: Are clearly essential for storing time-series energy data (e.g., hourly energy consumption, sensor readings), building component properties, or simulation outputs. Their flexibility makes them ideal for dynamic data handling.
+* **Functions**: Significantly improve code modularity, readability, and reusability. This will be important for managing the complexity of different building system models (e.g., separate functions for natural ventilation, lighting control, envelope performance) within a larger simulation framework.
+* **Lists**: Are essential for storing time-series energy data (e.g., hourly energy consumption, sensor readings), building component properties, or simulation outputs. Their flexibility makes them ideal for dynamic data handling.
 * **Looping with Data Structures**: The combination of loops and lists enables scalable processing of large datasets, which is critical for energy modeling and machine learning applications that often involve extensive input or output data.
 * **Variable Scope**: Understanding local vs. global scope is critical for preventing unintended side effects and ensuring data integrity across different parts of a program.
 
 **Challenges**:
-* Initially struggled with the nuances of local vs. global variable scope, leading to unexpected behavior in early function calls.
+* Initially struggled with the differences between local vs. global variable scope, leading to unexpected behavior in early function calls.
 * Avoiding common logical errors like off-by-one errors when slicing or iterating through lists.
 * Maintaining clean and readable code, especially when nesting loops and managing complex list manipulations.
 
@@ -101,7 +99,7 @@ This file documents the chronological progress of my learning in ML-integrated g
 * Focused on breaking down complex problems into smaller, manageable functions to improve readability and reduce nesting depth. Employed meaningful variable names.
 
 **Next steps**:
-* Move to Chapter 5 ("Debugging") to formalize debugging techniques. This will be crucial for efficiently identifying and resolving issues in more complex scripts that will combine functions, lists, and flow control for energy simulations.
+* Move to Chapter 5 ("Debugging") to formalize debugging techniques. This will be crucial for identifying and resolving issues in more complex scripts that will combine functions, lists, and flow control for energy simulations.
 * Practice designing simple functions that take lists of "building parameters" and return "energy performance metrics," applying concepts learned so far.
 
 ---
@@ -117,14 +115,14 @@ This file documents the chronological progress of my learning in ML-integrated g
 * Practiced using `assert` statements to enforce assumptions about program state and input data, observing how `AssertionError` is raised and how VS Code highlights the point of failure.
 
 **Reflections & Insights**:
-* A systematic approach to debugging (identify, isolate, diagnose, fix) is far more efficient than trial-and-error, especially as code complexity grows. This will save significant time in developing and refining energy models.
-* VS Code's integrated debugger offers a powerful and intuitive way to understand program execution. **Stepping through code, inspecting variables in real-time, and using the Debug Console** provides much deeper insight than `print()` statements alone, especially for complex logical flows or functions with many variables. This is a critical skill for developing robust simulation and ML code.
+* A systematic approach to debugging (identify, isolate, diagnose, fix) is more efficient than trial-and-error, especially as code complexity grows. This will save time in developing and refining energy models.
+* VS Code's integrated debugger offers a powerful and intuitive way to understand program execution. **Stepping through code, inspecting variables in real-time, and using the Debug Console** provides much deeper insight than `print()` statements alone, especially for complex logical flows or functions with many variables. This is a important skill for developing robust simulation and ML code.
 * The concept of using `assert` statements throughout code is a powerful proactive measure. It forces developers to explicitly state assumptions about data shapes, types, and model behavior, which can catch errors much earlier in the development cycle, preventing silent failures.
-* **Connection to Project**: Debugging skills are indispensable for developing reliable ML models and energy simulation tools. Issues can arise from incorrect data inputs, flawed algorithms, or unexpected interactions between different code modules. Proficiency here will directly impact the accuracy and trustworthiness of my generative design outcomes.
+* **Connection to Project**: Debugging skills are valuable for developing reliable ML models and energy simulation tools. Issues can arise from incorrect data inputs, flawed algorithms, or unexpected interactions between different code modules. Proficiency in this will directly impact the accuracy and trustworthiness of my generative design outcomes.
 
 **Challenges**:
 * Initially getting comfortable with the various debugging controls (step over, step into, continue) in VS Code and understanding when to use each.
-* Diagnosing silent failures (where a program runs but produces incorrect output without throwing an error) remains challenging; this is where `assert` statements and thorough unit testing become critical.
+* Diagnosing silent failures (where a program runs but produces incorrect output without throwing an error) remains challenging; this is where `assert` statements and thorough unit testing become important.
 
 **How I Addressed It**:
 * Worked through VS Code's official Python debugging tutorials to familiarize myself with the interface and features.
@@ -148,7 +146,7 @@ This file documents the chronological progress of my learning in ML-integrated g
 * Practiced using `in`, `not in`, and `for` loops to search and iterate through lists
 
 **Reflections**:
-* Lists are incredibly versatile, but small mistakes (e.g. off-by-one indexing or reference errors) can break logic
+* Lists are versatile, but small mistakes (e.g. off-by-one indexing or reference errors) can break logic
 * It’s easy to underestimate the complexity of even basic programs when they combine slicing, loops, and conditionals
 * Sorting and filtering lists will be useful for processing and analyzing building performance datasets
 * The ability to dynamically update lists should be important for generative workflows and iterative design testing
@@ -163,9 +161,9 @@ This file documents the chronological progress of my learning in ML-integrated g
 **Next Step**
 * **Strategic Adjustment**: I've realized that my understanding from this chapter wasn't solidifying as quickly as I'd like, primarily because I wasn't getting enough hands-on, problem-solving coding practice. To address this and increase my practical coding fluency, I will now begin '100 Days of Code: The Complete Python Pro Bootcamp' (Angela Yu, Udemy). This will provide the intensive, project-based coding experience I need.
 * While working on the bootcam, I will also:
-  * Break larger problems into smaller parts and write helper functions where possible
-  * Re-attempt challenging list-based exercises to reinforce understanding (Struggled for an hour with the 'Coin Flip Streak' problem because of an `or` operator precedence bug, due to 'short-circuiting, always 100% or 0%.)
-  * Read Chapter 7 on Dictionaries to understand how key-value data structures can be combined with lists
+  * Break larger problems into smaller parts and write helper functions where possible.
+  * Re-attempt challenging list-based exercises to reinforce understanding.
+  * Read Chapter 7 on Dictionaries to understand how key-value data structures can be combined with lists.
   * Create a small mini-project that uses both lists and loops, such as managing sensor data or simulation results over time.
 
 ---
@@ -190,7 +188,7 @@ This file documents the chronological progress of my learning in ML-integrated g
  
  **Reflections & Insights:**
 * The bite sized projects help reinforce understanding of core python syntax and logic building skills in a practical context
-* The course was designed easier for repitiion and gave a greater sense of progression compared to *Automate the Boring Stuff*
+* The course was designed easier for repetition and gave a greater sense of progression compared to *Automate the Boring Stuff*
 * The practice helped me understand **when to use different list operations, control flow logic, and basic user interaction** — useful for simulation input handling.
 * Practicing both input() styles — input() vs input("Question") — highlighted how clarity for the user matters when building tools others might use (e.g. simulation UI prompts).
 
@@ -199,8 +197,8 @@ This file documents the chronological progress of my learning in ML-integrated g
 * Questioned the best style for user prompts: whether to use input() on its own (*Automate the Boring Stuff*) or input("Enter your password length: ") (*100 Days of Code*) — the latter improves clarity and is better for real-world use, but can clutter code during testing.
 * Occasionally got confused about **loop ranges and indexing**, especially when combining multiple lists of characters.
 
-**How I Adddressed It:**
-* Simplfied the password generator to print letters, symbols then numbers in a string. Then went back, changed string it to an empty list and `apended.(random.choice(letter/symbol/number))`. Then `random.shuffle` the list and used the `for` loop to turn the list back into a string.
+**How I Addressed It:**
+* Simplified the password generator to print letters, symbols then numbers in a string. Then went back, changed string it to an empty list and `apended.(random.choice(letter/symbol/number))`. Then `random.shuffle` the list and used the `for` loop to turn the list back into a string.
 * Settled on always using input("Prompt") with clear labels as a personal best practice
 
 **Next Stage** 
@@ -340,6 +338,93 @@ Next Step:
 * **Refined art Import**: Corrected the print(art) to print(art.logo) to correctly display the ASCII art.
 
 **Next Step:**
-* **Prioritize "Python for Data Science and Machine Learning" bootcamp on Udemy**: Focus intensely on this bootcamp to build the specific skillset (especially `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`) directly relevant to the PhD research.
+* **Prioritize "Python for Data Science and Machine Learning" bootcamp on Udemy**: Focus intensely on this bootcamp to build the specific skill set (especially `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`) directly relevant to the PhD research.
 * **Integrate mini-projects with bootcamp learning**: Apply concepts learned in the bootcamp to the "EPW weather file parser and summary tool" and "CSV data visualizer" mini-projects as practical applications, rather than tackling them as separate, isolated tasks.
 * **Pause "100 Days of Code" (Day 11 onwards) for now**: Dedicate full focus to the Data Science/ML bootcamp to ensure deep absorption and efficient progress towards PhD goals. This focused approach is expected to be more sustainable and effective than splitting time between two intensive learning paths. I will go back as a secondary priority for a broader Python proficiency. Probably after I have completed the EPW parser and CSV visualizer.
+
+---
+
+### 📆 24/07/2025 | 📘 Udemy - Python for Data Science and Machine Learning Bootcamp (Sections 1-4)
+
+**What I did:**
+
+* **Course Overview & Setup (Sections 1-3):**
+  * Completed the initial course introduction and FAQ.
+  * Reviewed environment setup, refreshing my knowledge even though I had a prior setup.
+  * Explored Jupyter Notebook setup with Anaconda but opted to integrate its benefits with VS Code, directing environments within VS Code to remember folder-specific configurations.
+* **Python Crash Course (Section 4):**
+  * Gained an overview of Python basics.
+  * Learned about **List Comprehensions** `[num**2 for num in x]` for concise list creation and transformation.
+  * Explored `map()` **and** `filter()` functions for applying operations across sequences and selecting elements.
+  * Introduced `lambda` **functions** for creating anonymous, single-expression functions to use with `map()`, `filter()`, etc.
+  * Practiced **String methods** like `.split()` (e.g., `tweet.split("#")[1]` for extracting data).
+
+**Reflections & Insights:**
+* **Foundational Reinforcement**: My understanding of the Python crash course was largely without significant issues, which confirms that my previous learning efforts have established a solid foundation.
+* **List Comprehensions vs. For Loops**: While a traditional `for` loop might initially seem easier to read for very complex logic, I've noted that list comprehensions (e.g., `[num**2 for num in x]`) are not only often more concise and efficient but are also considered highly "Pythonic." I realize that with increased familiarity, they will likely improve readability for common transformations. Given their prevalence and value in data science and machine learning (especially with Pandas and NumPy), I need to become more comfortable using them efficiently for data manipulation.
+* **`map()` and `lambda` for Conciseness**: Using `list(map(lambda num:num*3, seq))` directly within functions like `map()` can significantly reduce the need for writing and defining full, named functions. I understand that `lambda` functions are specifically designed for quick, anonymous operations. Although they might initially appear more difficult to grasp, their conciseness is valued in data processing, particularly when performing simple transformations without excessive code. Their widespread use with Pandas' `.apply()` method further underscores their importance.
+* **Data Preprocessing Fundamentals**: Understanding `filter()` for selective data extraction and `split()` for parsing strings (like extracting hashtags from tweets) are fundamental skills. These will be essential  for crucial data cleaning and preprocessing tasks when handling real-world building performance data.
+
+**Challenges:**
+
+* **Lambda Function Conceptual Hurdle**: While generally clear, `lambda` functions initially presented a slight conceptual hurdle. Their direct integration within `map()` or `filter()` represents a different programming paradigm compared to defining traditional named functions.
+
+**How I Addressed It:**
+
+* I repeated examples involving `lambda` functions and on grasping the core concept: a `lambda` is essentially a mini-function used where a function object is needed for a single, immediate operation. Practicing with various scenarios helped solidify this understanding.
+
+**Next steps:**
+* Continue with the "Python for Data Science and Machine Learning Bootcamp" by Jose Portilla, prioritizing upcoming sections to build the specific data science and machine learning skill set directly relevant to my PhD research.
+
+* Begin to think about how these newly learned concepts (list comprehensions, `map`, `filter`, `lambda`) can be applied to mini-projects like the "EPW weather file parser" and "CSV data visualizer" as I progress through the bootcamp.
+
+
+### 📆 30/07/2025 | 📘 Udemy - Python for Data Science and Machine Learning Bootcamp (NumPy section)
+**What I did:**
+
+**NumPy: Numerical Python for Efficient Array Operations (Core Data Science Libraries):**
+* Gained a foundational understanding of `ndarray` objects and how NumPy provides highly optimized operations for multi-dimensional arrays (tensors).
+
+  * Explored **Array Creation and Manipulation** using functions like `np.zeros()`, `np.ones()`, `np.arange()`, and `np.linspace()`, including `reshape()` for changing array dimensions.
+  * Practiced **Array Indexing and Slicing** for data extraction and modification, including basic integer indexing and boolean masking.
+  * Increase my understanding of **Array Operations (Element-wise & Aggregations)**, noting their speed advantage over Python loops.
+  * Introduced to the concept of **Broadcasting** for simplifying operations between arrays of different (but compatible) shapes.
+  * Explored **Linear Algebra Operations** like dot products and matrix multiplication (`@`), recognizing their fundamental role, especially for future ML applications.
+  
+**Reflections & Insights:**
+  * **Efficiency is Key (Vectorization):** There is a speed difference between NumPy operations and traditional Python loops for numerical tasks. This concept of **vectorization**, powered by underlying C-implemented **Universal Functions (ufuncs)**, is important. I can see its relevance for handling large energy simulation outputs and climate datasets, where performance will be critical for rapid iteration and model training.
+  * **Structured Data Representation:** NumPy's ability to represent data as 1-D vectors, 2-D matrices, and higher-dimensional tensors (arrays) aligns with how I'll need to structure building design parameters, spatial climate grids, and sequential simulation results in my PhD. This provides a clear framework for organizing complex data.
+  * **Foundation for ML:** Even without diving deep into ML yet, the connection between NumPy's linear algebra capabilities and the future development of surrogate models and neural networks is evident. Understanding these foundational operations now will make the ML concepts much clearer when I get to them.
+**Challenges:**
+* **Visualizing Higher Dimensions:** While 1-D and 2-D arrays are straightforward, mentally conceptualizing how to work with 3-D and higher-dimensional tensors for things like building geometry or climate data proved a slight challenge but I'm sure once I practice applying this later, it will become easier.
+* **Linear Algebra ML Context:** As anticipated, the specific application of linear algebra in neural networks (e.g., "weights and biases") is still abstract without prior ML knowledge. I am just aware that it will become more important later
+
+**How I Addressed It:**
+* For visualizing higher dimensions, I focused on relating them to real-world data structures (e.g., 3D grid as `[x, y, z]` for building volumes, or `[time, location, variable]` for climate data) and drawing simple diagrams.
+* For the ML linear algebra, I added a specific note in my `note_python_fundamentals.md` to acknowledge that I'll revisit these examples once I researched into the ML sections of the bootcamp, ensuring I don't get stuck prematurely.
+
+**Next steps:**
+* Continue with the "Python for Data Science and Machine Learning Bootcamp" by Jose Portilla, moving into the Pandas section. I anticipate this will build directly on NumPy and provide even more powerful tools for data manipulation.
+* Look for opportunities to apply NumPy's array creation, indexing, and vectorized operations to small practice problems or conceptual mini-projects related to building data, even before formally starting my PhD research.
+
+---
+
+### 📆 04/08/2025 | 📘 Learning from "Python for Data Analysis: Data Wrangling with pandas, NumPy, and Jupyter" by Wes McKinney
+**What I did:**
+* **Shifted Learning Approach:** I have switched from "Python for Data Science and Machine Learning Bootcamp" by Jose Portilla to Wes McKinney's "Python for Data Analysis" to get a more systematic, in-depth approach to data science fundamentals.
+* **NumPy Deep Dive (Building on previous knowledge):**
+  * I reaffirmed my understanding of core NumPy concepts, including `ndarray` objects as multi-dimensional arrays (tensors).
+  * I went into more depth on key operations, recognizing the "how" and "why" behind the code.
+  * I focused on the difference between slicing (view) and fancy indexing (copy) and how that impacts data manipulation.
+  * I explored the use of `np.swapaxes()` for more granular control over axis manipulation compared to the simple `.T` transpose.
+  * I connected the technical implementation of linear algebra (`A.T @ A`) to its statistical meaning: the calculation of a **covariance matrix** for understanding relationships between variables.
+  * I also made a connection between `np.random.standard_normal()` and its statistical meaning as a distribution with a **mean of 0** and a **standard deviation of 1**, which is crucial for adding noise or initializing ML model weights.
+
+**Reflections & Insights:**
+* **Value of In-Depth Learning:** The change in learning resources has been beneficial, providing a more structured and detailed explanation of why these tools work the way they do, which is more suited to a research context. I believe this will create a stronger foundation for my PhD work.
+* **Bridging the Gap (Code & Statistics):** A key insight from today's session was the importance of connecting the technical code with the underlying statistical principles. Understanding that a simple matrix multiplication can produce a covariance matrix gives a much deeper and more practical understanding of the tool.
+* **Strategic Note-Taking:** My notes are becoming more robust by including both the code and the conceptual/statistical explanations in the same place, which will be a great reference later on.
+
+**Next steps:**
+* Finish the chapter on Numpy Basics: Arrays and Vectorized Computation.
+* I will continue with the "Python for Data Analysis" book, moving into the pandas section, which builds directly on the NumPy concepts. I expect this to provide tools for structured data handling. I will also continue to relate these concepts to my PhD research areas as I learn them, making the notes as practical as possible.
