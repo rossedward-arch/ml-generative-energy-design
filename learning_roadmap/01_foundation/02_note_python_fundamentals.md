@@ -1533,6 +1533,24 @@ print(f"Transposed (features per hour):\n{transposed_data}")
  **Note to self:** *The examples related to "Machine Learning Models" like neural network layers (`weights_matrix @ input_features`) are from the future ML section of the course. I don't fully understand their ML context yet, but this demonstrates the direct application of NumPy's linear algebra, and I anticipate it will become clearer later.*
  > Useful Tip: NumPy's efficiency makes it the backbone for handling the large numerical datasets and complex calculations inherent in my climate-adaptive generative design research. Mastering its operations is foundational for developing the high-performance ML models needed for my PhD.
 
+#### Eigenvalue Decomposition & PCA
+
+**What is Eigenvalue Decomposition?**
+
+Think of your building performance data (like a matrix of temperatures, humidity, and solar radiation) as a cloud of points in space. These points aren't random; they have a certain shape and orientation.
+* **The goal of eigenvalue decomposition is to find the most important "directions" or "axes" of that data.**
+
+It breaks down a complex matrix into two key components:
+* **Eigenvectors:** These are the new "axes" that describe the most significant directions of the data. They tell you how the data is spread out. For your research, an eigenvector might represent a combination of variables (e.g., 70% temperature + 30% solar radiation) that explains a huge portion of the overall variation in a building's performance.
+
+* **Eigenvalues:** These are scalar values that correspond to each eigenvector. They tell you the "magnitude" or "importance" of that eigenvector. A large eigenvalue means its eigenvector is a very significant direction, while a small eigenvalue means that direction is less important.
+
+**Relevance to my PhD (PCA)**
+
+* **Note to self:** The decomposition of a matrix into its eigenvectors and eigenvalues is the foundational math used for a powerful technique called **Principal Component Analysis (PCA)**. My notes on PCA will be more detailed once I have formally covered this topic later in my learning journey.
+* PCA is a form of **dimensionality reduction** that I can use to simplify large building performance datasets.
+
+
 #### 6. Statistical Relevance of Random Number Generation
 
 **Concept:** Functions like np.random.standard_normal() generate random numbers from a specific statistical distribution. The "standard normal" distribution has a mean of 0 and a standard deviation of 1.
